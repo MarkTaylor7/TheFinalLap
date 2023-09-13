@@ -12,12 +12,12 @@ function createData(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo
 }
 
 const rows = [
-  createData('Max Verstappen', 1, 1, 1, 1, 1),
+  createData('Max Verstappen', 1, 1, 1, 1, 2),
   createData('Sergio Perez', 6, 3, 2, 4, 2),
-  createData('Fernando Alonso', 262, 16.0, 24, 6.0),
-  createData('Lewis Hamilton', 305, 3.7, 67, 4.3),
-  createData('Carlos Sainz', 356, 16.0, 49, 3.9),
-  createData('Charles Leclerc', 356, 16.0, 49, 3.9),
+  createData('Fernando Alonso', 7, 9, 5, 2, 9),
+  createData('Lewis Hamilton', 3, 4, 4, 6, 6),
+  createData('Carlos Sainz', 10, 8, 'DNF', 5, 3),
+  createData('Charles Leclerc', 9, 7, 3, 'DNF', 4),
 ];
 
 export default function DenseTable() {
