@@ -23,4 +23,4 @@ The Final Lap (working title) is an app that allows Formula 1 enthusiasts to vie
 <li>Sports betting is huge, and F1 has a rapidly growing profile. Place your bet with (relative) confidence.</li>
 <li>F1, like any sport, has fantasy leagues and pools. Make informed predictions with ease.</li>
 <li>Long-term enthusiasts who just like to geek out about this stuff.</li>
-<li>New fans who watched Drive to Survive and want to know what's going on when they sit down to watch a race.</li>
+<li>New fans who watched Drive to Survive and want to know what's going on when they sit down to watch a race.</li> 
