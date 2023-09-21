@@ -23,5 +23,3 @@ export default function App() {
     </>
   )
 }
-
-//return <DenseTable data={racerData} />
