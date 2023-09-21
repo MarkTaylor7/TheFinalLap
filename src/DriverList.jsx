@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { createRoot } from 'react-dom/client';
 
 const DriverList = () => {
-    const [driverList, setDriverList] = useState('');
+    const [driverList, setDriverList] = useState([]);
 
     useEffect(() => {
         const url = "http://ergast.com/api/f1/2023/drivers.json";
@@ -15,13 +15,12 @@ const DriverList = () => {
                 const namesDriverArray = rawDriverList.map(function(element){
                     return `${element.givenName} ${element.familyName}`;
                 });
+                setDriverList(namesDriverArray);
                 console.log(namesDriverArray);
-                const namesDriverList = namesDriverArray.map((nameOfDriver,i) => <li key={'nameOfDriver'+ i}>{nameOfDriver}</li>);
-                setDriverList(namesDriverList);
-
-                } catch (error) {
-                    console.log("error", error);
-                }
+                
+            } catch (error) {
+                console.log("error", error);
+            }
         };
 
         fetchData();
@@ -30,7 +29,7 @@ const DriverList = () => {
 
     return (
         <div>
-            <p>{driverList}</p>
+            <p>{driverList.map((nameOfDriver,i) => <li key={'nameOfDriver'+ i}>{nameOfDriver}</li>)}</p>
         </div>
     );
     

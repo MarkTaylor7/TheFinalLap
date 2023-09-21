@@ -16,7 +16,12 @@ const racerData = [
 ];
 
 export default function App() {
-  return <DriverList />
+  return (
+    <>
+    <DenseTable data={racerData} />
+    <DriverList />
+    </>
+  )
 }
 
 //return <DenseTable data={racerData} />
