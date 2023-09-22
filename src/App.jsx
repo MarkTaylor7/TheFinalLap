@@ -2,6 +2,7 @@ import * as React from 'react';
 import DenseTable from './DenseTable';
 import DriverList from './DriverList';
 
+
 function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo) {
   return { name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo };
 }
