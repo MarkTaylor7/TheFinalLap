@@ -20,7 +20,7 @@ const DriverList = () => {
                     return `${element.givenName} ${element.familyName}`;
             });
                 setDriverList(namesDriverArray);
-                console.log(namesDriverArray);
+                console.log(driverList);
             } catch (error) {
                 console.log("error", error);
             }
