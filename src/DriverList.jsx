@@ -1,22 +1,21 @@
 import React, {useEffect, useState} from 'react';
+import getDriverData from './utilities';
 
 
+
+{getDriverData("hamilton")};
 
 const DriverList = () => {
     const [driverList, setDriverList] = useState([]);
 
     useEffect(() => {
-        const url = "http://ergast.com/api/f1/2023/drivers/alonso.json";
-        //const names = ???
-
+        const url = "http://ergast.com/api/f1/2023/drivers.json";
         
         const fetchData = async() => {
             try {
                 const response = await fetch(url);
                 const json = await response.json();
-                console.log(json);
                 const rawDriverList = json.MRData.DriverTable.Drivers;
-                console.log(rawDriverList);
                 const namesDriverArray = rawDriverList.map(function(element){
                     return `${element.givenName} ${element.familyName}`;
             });
@@ -28,6 +27,7 @@ const DriverList = () => {
         };
 
         fetchData();
+        
         
     },[]);
 
