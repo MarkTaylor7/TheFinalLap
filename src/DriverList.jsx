@@ -5,7 +5,7 @@ import getDriverData from './utilities';
 
 {getDriverData("hamilton")};
 
-const DriverList = () => {
+export default function DriverList ()  {
     const [driverList, setDriverList] = useState([]);
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const DriverList = () => {
             }
         };
 
-        fetchData();
+        fetchData()
         
         
     },[]);
@@ -40,5 +40,5 @@ const DriverList = () => {
 };
 
 
-export default DriverList;
+
 
