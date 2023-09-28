@@ -1,7 +1,18 @@
-import * as React from 'react';
 import DenseTable from './DenseTable';
-import DriverList from './DriverList';
+import {fetchAllDriverNames} from './utilities';
+import {getDriverData} from './utilities';
 
+getDriverData('hamilton');
+
+
+async function testFetchAllDriverNames()
+  
+{
+  const results = await fetchAllDriverNames();
+  console.log(results);
+  };
+
+testFetchAllDriverNames();
 
 function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo) {
   return { name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo };
@@ -35,10 +46,7 @@ const racerData = [
 export default function App() {
   return (
     <>
-    
-    <DenseTable data={racerData} />
-    <DriverList />
-    
+      <DenseTable data={racerData} />
     </>
   )
 }
