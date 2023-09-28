@@ -1,3 +1,4 @@
+import {useEffect, useState} from 'react';
 import DenseTable from './DenseTable';
 import {fetchAllDriverNames} from './utilities';
 import {getDriverData} from './utilities';
@@ -5,21 +6,27 @@ import {getDriverData} from './utilities';
 getDriverData('hamilton');
 
 
-async function testFetchAllDriverNames()
-  
-{
+
+const driverArray = [];
+
+async function testFetchAllDriverNames() {
   const results = await fetchAllDriverNames();
   console.log(results);
+  driverArray.push(...results);
+  console.log(driverArray);
   };
 
 testFetchAllDriverNames();
+
+console.log(driverArray);
+
 
 function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo) {
   return { name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo };
 }
 
 const racerData = [
-  formatRow('Max Verstappen', 1, 1, 1, 1, 1),
+  formatRow('Max', 1, 1, 1, 1, 1),
   formatRow('Sergio Perez', 6, 3, 2, 4, 2),
   formatRow('Fernando Alonso', 7, 9, 5, 2, 9),
   formatRow('Lewis Hamilton', 3, 4, 4, 6, 6),
