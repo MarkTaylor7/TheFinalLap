@@ -5,55 +5,52 @@ import {getDriverData} from './utilities';
 
 getDriverData('hamilton');
 
-
-
-const driverArray = [];
-
 async function testFetchAllDriverNames() {
   const results = await fetchAllDriverNames();
-  console.log(results);
-  driverArray.push(...results);
-  console.log(driverArray);
-  };
-
-testFetchAllDriverNames();
-
-console.log(driverArray);
-
-
-function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo) {
-  return { name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo };
-}
-
-const racerData = [
-  formatRow('Max', 1, 1, 1, 1, 1),
-  formatRow('Sergio Perez', 6, 3, 2, 4, 2),
-  formatRow('Fernando Alonso', 7, 9, 5, 2, 9),
-  formatRow('Lewis Hamilton', 3, 4, 4, 6, 6),
-  formatRow('Carlos Sainz', 10, 8, 'DNF', 5, 3),
-  formatRow('Charles Leclerc', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 7', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 8', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 9', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 10', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 11', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 12', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 13', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 14', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 15', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 16', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 17', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 18', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 19', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 20', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 21', 9, 7, 3, 'DNF', 4),
-  formatRow('Driver 22', 9, 7, 3, 'DNF', 4),
-];
+  return results;
+};
 
 export default function App() {
+  const [names, setNames] = useState([]);
+
+  useEffect(() => {
+    testFetchAllDriverNames()
+    .then(results => setNames(results)); 
+  }, []);
+
+  function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo) {
+    return { name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo };
+  }
+  
+  const racerData = [
+    formatRow(names[0], null, null, null, null, null),
+    formatRow(names[1], null, null, null, null, null),
+    formatRow(names[2], null, null, null, null, null),
+    formatRow(names[3], null, null, null, null, null),
+    formatRow(names[4], null, null, null, null, null),
+    formatRow(names[5], null, null, null, null, null),
+    formatRow(names[6], null, null, null, null, null),
+    formatRow(names[7], null, null, null, null, null),
+    formatRow(names[8], null, null, null, null, null),
+    formatRow(names[9], null, null, null, null, null),
+    formatRow(names[10], null, null, null, null, null),
+    formatRow(names[11], null, null, null, null, null),
+    formatRow(names[12], null, null, null, null, null),
+    formatRow(names[13], null, null, null, null, null),
+    formatRow(names[14], null, null, null, null, null),
+    formatRow(names[15], null, null, null, null, null),
+    formatRow(names[16], null, null, null, null, null),
+    formatRow(names[17], null, null, null, null, null),
+    formatRow(names[18], null, null, null, null, null),
+    formatRow(names[19], null, null, null, null, null),
+    formatRow(names[20], null, null, null, null, null),
+    formatRow(names[21], null, null, null, null, null),
+  ];
+
   return (
     <>
       <DenseTable data={racerData} />
     </>
   )
 }
+
