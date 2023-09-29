@@ -1,12 +1,9 @@
 import {useEffect, useState} from 'react';
 import DenseTable from './DenseTable';
-import {fetchAllDriverNames} from './utilities';
-import {getDriverData} from './utilities';
+import {fetchCurrentStandings} from './utilities';
 
-getDriverData('hamilton');
-
-async function testFetchAllDriverNames() {
-  const results = await fetchAllDriverNames();
+async function testFetchCurrentStandings() {
+  const results = await fetchCurrentStandings();
   return results;
 };
 
@@ -14,7 +11,7 @@ export default function App() {
   const [names, setNames] = useState([]);
 
   useEffect(() => {
-    testFetchAllDriverNames()
+    testFetchCurrentStandings()
     .then(results => setNames(results)); 
   }, []);
 
