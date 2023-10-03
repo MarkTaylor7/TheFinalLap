@@ -37,8 +37,10 @@ export async function fetchCurrentStandings() {
         const response = await fetch(url);
         const json = await response.json();
         const standings = json.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+        console.log(standings);
         const results = standings.map(function(element){
-            return `${element.Driver.givenName} ${element.Driver.familyName}`;
+            return `${element.Driver.code}`;
+            //return `${element.Driver.givenName} ${element.Driver.familyName}`;
         });
         return results;
 
@@ -49,3 +51,38 @@ export async function fetchCurrentStandings() {
     return null;
 };
 
+export async function fetchLastFiveRaceResults() {
+    const url = "https://ergast.com/api/f1/2023/results.json?limit=500"
+    try {
+        const response = await fetch(url);
+        const json = await response.json();
+        const results = json.MRData.RaceTable.Races;
+        console.log(results);
+    } catch (error) {
+        console.log("error", error);
+        }
+    
+        return null;
+};
+
+export async function fetchLastRaceResults() {
+    const url = "http://ergast.com/api/f1/current/last/results.json"
+    try {
+        const response = await fetch(url);
+        const json = await response.json();
+        const raceResults = json.MRData.RaceTable.Races[0].Results;
+        console.log(raceResults);
+        const results = raceResults.map(function(element){
+            return `${element.Driver.code}`;
+            //return `${element.positionText}`;
+        });
+        return (results);
+    
+    } catch (error) {
+    console.log("error", error);
+    }
+
+    return null;
+};
+
+//https://ergast.com/api/f1/2023/drivers/alonso/results
