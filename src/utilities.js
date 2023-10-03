@@ -51,19 +51,6 @@ export async function fetchCurrentStandings() {
     return null;
 };
 
-export async function fetchLastFiveRaceResults() {
-    const url = "https://ergast.com/api/f1/2023/results.json?limit=500"
-    try {
-        const response = await fetch(url);
-        const json = await response.json();
-        const results = json.MRData.RaceTable.Races;
-        console.log(results);
-    } catch (error) {
-        console.log("error", error);
-        }
-    
-        return null;
-};
 
 export async function fetchLastRaceResults() {
     const url = "http://ergast.com/api/f1/current/last/results.json"
@@ -85,4 +72,22 @@ export async function fetchLastRaceResults() {
     return null;
 };
 
-//https://ergast.com/api/f1/2023/drivers/alonso/results
+export async function fetchLastFiveRaceResults() {
+    const url = "https://ergast.com/api/f1/2023/results.json?limit=500"
+    try {
+        const response = await fetch(url);
+        const json = await response.json();
+        const allRaces = json.MRData.RaceTable.Races;
+        const reverseAllRaces = allRaces.reverse();
+        const lastFiveRaces = reverseAllRaces.slice(0, 5);
+        console.log(lastFiveRaces);
+    } catch (error) {
+        console.log("error", error);
+        }
+    
+        return null;
+};
+
+
+
+
