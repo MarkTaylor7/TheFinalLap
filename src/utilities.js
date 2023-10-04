@@ -39,8 +39,8 @@ export async function fetchCurrentStandings() {
         const standings = json.MRData.StandingsTable.StandingsLists[0].DriverStandings;
         console.log(standings);
         const results = standings.map(function(element){
-            return `${element.Driver.code}`;
-            //return `${element.Driver.givenName} ${element.Driver.familyName}`;
+            //return `${//element.Driver.code}`;
+            return `${element.Driver.givenName} ${element.Driver.familyName}`;
         });
         return results;
 
@@ -60,8 +60,8 @@ export async function fetchLastRaceResults() {
         const raceResults = json.MRData.RaceTable.Races[0].Results;
         console.log(raceResults);
         const results = raceResults.map(function(element){
-            return `${element.Driver.code}`;
-            //return `${element.positionText}`;
+            //return `${element.Driver.code}`;
+            return `${element.positionText}`;
         });
         return (results);
     
@@ -79,8 +79,17 @@ export async function fetchLastFiveRaceResults() {
         const json = await response.json();
         const allRaces = json.MRData.RaceTable.Races;
         const reverseAllRaces = allRaces.reverse();
-        const lastFiveRaces = reverseAllRaces.slice(0, 5);
-        console.log(lastFiveRaces);
+        const lastFiveResults = reverseAllRaces.slice(0, 5);
+        console.log(lastFiveResults);
+        const resultsP1 = lastFiveResults.map(function(element){
+            return `${element.Results[0].Driver.code}`;
+        });
+        console.log(resultsP1);
+        const results = lastFiveResults.map(function(element){
+            return `${element.Results[0].positionText}`;
+        });
+        console.log(results);
+        return results;
     } catch (error) {
         console.log("error", error);
         }
