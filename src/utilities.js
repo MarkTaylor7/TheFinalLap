@@ -81,15 +81,14 @@ export async function fetchLastFiveRaceResults() {
         const reverseAllRaces = allRaces.reverse();
         const lastFiveResults = reverseAllRaces.slice(0, 5);
         console.log(lastFiveResults);
-        const resultsP1 = lastFiveResults.map(function(element){
-            return `${element.Results[0].Driver.code}`;
-        });
-        console.log(resultsP1);
-        const results = lastFiveResults.map(function(element){
-            return `${element.Results[0].positionText}`;
-        });
-        console.log(results);
-        return results;
+        //const resultsP1 = lastFiveResults.map(function(element){
+            //return `${element.Results[0].Driver.code}`;
+        //});
+        //console.log(resultsP1);
+        //const results = lastFiveResults.map(function(element){
+            //return `${element.Results[0].positionText}`;
+        //});
+        return lastFiveResults;
     } catch (error) {
         console.log("error", error);
         }
