@@ -16,12 +16,18 @@ async function testFetchLastFiveRaceResults() {
 export default function App() {
   const [names, setNames] = useState([]);
   const [lastFiveRaceResults, setLastFiveRaceResults] = useState([]);
-  
+  const [driverResults, setDriverResults] = useState([]);
 
   useEffect(() => {
     testFetchCurrentStandings()
     .then(results => setNames(results)); 
   }, []);
+
+  useEffect(() => {
+    testFetchLastFiveRaceResults()
+    .then(results => setLastFiveRaceResults(results)); 
+  }, []);
+
 
   const driver1 = [];
   const driver2 = [];
@@ -50,8 +56,10 @@ export default function App() {
      driver7, driver8, driver9, driver10, driver11, driver12,
       driver13, driver14, driver15, driver16, driver17, driver18, driver19, driver20, driver21, driver22];
 
+  
+
   function mapNamesToDrivers() {
-    driver1.name = names[0],
+    driver1.name = names[0]
     driver2.name = names[1]
     driver3.name = names[2]
     driver4.name = names[3]
@@ -77,29 +85,36 @@ export default function App() {
 
   mapNamesToDrivers();
 
-  console.log(driverData[0]);
+  
   console.log(driver15);
     
-  useEffect(() => {
-    testFetchLastFiveRaceResults()
-    .then(results => setLastFiveRaceResults(results)); 
-  }, []);
 
-
+function mapResultsToDriver() {
   const fiveRacesAgo = lastFiveRaceResults[4];
   const fourRacesAgo = lastFiveRaceResults[3];
   const threeRacesAgo = lastFiveRaceResults[2];
   const twoRacesAgo = lastFiveRaceResults[1];
   const oneRaceAgo = lastFiveRaceResults[0];
+  if (oneRaceAgo.Results[0].Driver.givenName === "Max") {
+    driver1.push(oneRaceAgo.Results[0].positionText)};
+};
 
+setTimeout(() => { 
+  mapResultsToDriver();
+}, 200);
 
+console.log(driver1);
+console.log(driverData);
 
-  function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo) {
-    return { name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo };
+//Have to find way to link DriverData to setDriverResults
+const x = driverData[0];
+
+  function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, x) {
+    return { name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, x };
   }
   
 
-  const racerData = driverData.map(driverData => formatRow(driverData.name, null, null, null, null, null)); 
+  const racerData = driverData.map(driverData => formatRow(driverData.name, null, null, null, null, x)); 
   
   return (
     <>

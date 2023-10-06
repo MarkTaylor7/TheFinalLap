@@ -34,7 +34,7 @@ export default function DenseTable({data}) {
                 <TableCell align="center">{row.fourRacesAgo}</TableCell>
                 <TableCell align="center">{row.threeRacesAgo}</TableCell>
                 <TableCell align="center">{row.twoRacesAgo}</TableCell>
-                <TableCell align="center">{row.oneRaceAgo}</TableCell>
+                <TableCell align="center">{row.x}</TableCell>
               </TableRow>
             ))}
           </TableBody>
