@@ -1,4 +1,4 @@
-# 🏗️ Project Under Development 
+# 🏗️ Project Under Development
 
 The Final Lap (working title) is an app that allows Formula 1 enthusiasts to view each current driver's historical and in-season results, allowing them to make informed predictions about the outcome of the next race. There are many resources online that show things like total wins, podiums, poles, fastest laps, etc., but these are just counting numbers that don't provide any context to a fan about the current competitive order. Instead, The Final Lap focuses on 3 key variables: 
 1.	The driver's in-season results, with an emphasis on the last 5 races, as a driver's car can get relatively faster or slower over a season.
