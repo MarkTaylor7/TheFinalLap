@@ -39,7 +39,6 @@ export default function App() {
       driverNames.push(driverData[i].name);
       const nameParts = driverNames[0]?.split(' ');
       driverData[i].firstName = nameParts[0];
-      driverData[i].lastFiveResults = [];
     };
   };
 
@@ -47,39 +46,37 @@ export default function App() {
     mapNamesToDrivers();
   }, 200);
   
-  
-  
-
   function mapResultsToDriver() {
-    
+    for (let i = 0; i < 22; i++ ) {
+      driverData[i].lastFiveResults = ['N/A', 'N/A', 'N/A', 'N/A', 'N/A'];
+    };
       for (let j = 0; j < 22; j++ ) {
         
       for (let k = 0; k < 22; k++) {
         
-        if (lastFiveRaceResults[0].Results[j].Driver.givenName === driverData[k].firstName) {
-          driverData[k].lastFiveResults.splice(4, 0, lastFiveRaceResults[0].Results[j].positionText)};
+        if (lastFiveRaceResults[4].Results[j].Driver.givenName === driverData[k].firstName) {
+          driverData[k].lastFiveResults.splice(0, 1, lastFiveRaceResults[4].Results[j].positionText)};
           
 
-          if (lastFiveRaceResults[1].Results[j].Driver.givenName === driverData[k].firstName) {
-            driverData[k].lastFiveResults.splice(3, 0, lastFiveRaceResults[1].Results[j].positionText)};
+          if (lastFiveRaceResults[3].Results[j].Driver.givenName === driverData[k].firstName) {
+            driverData[k].lastFiveResults.splice(1, 1, lastFiveRaceResults[3].Results[j].positionText)};
             
 
             if (lastFiveRaceResults[2].Results[j].Driver.givenName === driverData[k].firstName) {
-              driverData[k].lastFiveResults.splice(2, 0, lastFiveRaceResults[2].Results[j].positionText)};
+              driverData[k].lastFiveResults.splice(2, 1, lastFiveRaceResults[2].Results[j].positionText)};
               
 
-              if (lastFiveRaceResults[3].Results[j].Driver.givenName === driverData[k].firstName) {
-                driverData[k].lastFiveResults.splice(1, 0, lastFiveRaceResults[3].Results[j].positionText)};
+              if (lastFiveRaceResults[1].Results[j].Driver.givenName === driverData[k].firstName) {
+                driverData[k].lastFiveResults.splice(3, 1, lastFiveRaceResults[1].Results[j].positionText)};
                 
 
-                if (lastFiveRaceResults[4].Results[j].Driver.givenName === driverData[k].firstName) {
-                  driverData[k].lastFiveResults.splice(0, 0, lastFiveRaceResults[4].Results[j].positionText)};
+                if (lastFiveRaceResults[0].Results[j].Driver.givenName === driverData[k].firstName) {
+                  driverData[k].lastFiveResults.splice(4, 1, lastFiveRaceResults[0].Results[j].positionText)};
                        
       }
     }
   };
-
-
+  
   //const fiveRacesAgo = lastFiveRaceResults[4];
     //const fourRacesAgo = lastFiveRaceResults[3];
     //const threeRacesAgo = lastFiveRaceResults[2];
