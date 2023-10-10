@@ -47,24 +47,52 @@ export default function App() {
     mapNamesToDrivers();
   }, 200);
   
-  setTimeout(() => {
-    console.log(driverData);
-  }, 2000);
+  
   
 
   function mapResultsToDriver() {
-    const fiveRacesAgo = lastFiveRaceResults[4];
-    const fourRacesAgo = lastFiveRaceResults[3];
-    const threeRacesAgo = lastFiveRaceResults[2];
-    const twoRacesAgo = lastFiveRaceResults[1];
-    const oneRaceAgo = lastFiveRaceResults[0];
-      if (oneRaceAgo.Results[0].Driver.givenName === driverData[0].firstName) {
-        driverData[0].lastFiveResults.push(oneRaceAgo.Results[0].positionText)};
+    
+      for (let j = 0; j < 22; j++ ) {
+        
+      for (let k = 0; k < 22; k++) {
+        
+        if (lastFiveRaceResults[0].Results[j].Driver.givenName === driverData[k].firstName) {
+          driverData[k].lastFiveResults.splice(4, 0, lastFiveRaceResults[0].Results[j].positionText)};
+          
+
+          if (lastFiveRaceResults[1].Results[j].Driver.givenName === driverData[k].firstName) {
+            driverData[k].lastFiveResults.splice(3, 0, lastFiveRaceResults[1].Results[j].positionText)};
+            
+
+            if (lastFiveRaceResults[2].Results[j].Driver.givenName === driverData[k].firstName) {
+              driverData[k].lastFiveResults.splice(2, 0, lastFiveRaceResults[2].Results[j].positionText)};
+              
+
+              if (lastFiveRaceResults[3].Results[j].Driver.givenName === driverData[k].firstName) {
+                driverData[k].lastFiveResults.splice(1, 0, lastFiveRaceResults[3].Results[j].positionText)};
+                
+
+                if (lastFiveRaceResults[4].Results[j].Driver.givenName === driverData[k].firstName) {
+                  driverData[k].lastFiveResults.splice(0, 0, lastFiveRaceResults[4].Results[j].positionText)};
+                       
+      }
+    }
   };
+
+
+  //const fiveRacesAgo = lastFiveRaceResults[4];
+    //const fourRacesAgo = lastFiveRaceResults[3];
+    //const threeRacesAgo = lastFiveRaceResults[2];
+    //const twoRacesAgo = lastFiveRaceResults[1];
+    //const oneRaceAgo = lastFiveRaceResults[0];
 
   setTimeout(() => { 
     mapResultsToDriver();
   }, 500);
+
+  setTimeout(() => {
+    console.log(driverData);
+  }, 1000);
 
 
   //Have to find way to link DriverData to setDriverResults
