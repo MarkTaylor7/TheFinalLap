@@ -79,16 +79,16 @@ export async function fetchLastFiveRaceResults() {
         const json = await response.json();
         const allRaces = json.MRData.RaceTable.Races;
         const reverseAllRaces = allRaces.reverse();
-        const lastFiveResults = reverseAllRaces.slice(0, 5);
-        console.log(lastFiveResults);
-        //const resultsP1 = lastFiveResults.map(function(element){
+        const lastFiveRaceResults = reverseAllRaces.slice(0, 5);
+        console.log(lastFiveRaceResults);
+        //const resultsP1 = lastFiveRaceResults.map(function(element){
             //return `${element.Results[0].Driver.code}`;
         //});
         //console.log(resultsP1);
-        //const results = lastFiveResults.map(function(element){
+        //const results = lastFiveRaceResults.map(function(element){
             //return `${element.Results[0].positionText}`;
         //});
-        return lastFiveResults;
+        return lastFiveRaceResults;
     } catch (error) {
         console.log("error", error);
         }
