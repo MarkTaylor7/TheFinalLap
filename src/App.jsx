@@ -31,15 +31,16 @@ export default function App() {
   const driverData = [];
 
   function mapNamesAndResultsToDrivers() {
-    for (let i = 0; i < 22; i++ ) {
-      const driver = [];
-      const driverNames = [];
-      driverData.push(driver);
-      driverData[i].name = names[i];
-      driverNames.push(driverData[i].name);
-      const nameParts = driverNames[0]?.split(' ');
-      driverData[i].firstName = nameParts[0];
-    };
+    names.forEach((name, i) => {
+      const driver = {
+        name: "",
+        firstName: "",
+        lastFiveResults: []
+      };
+      //Create a new list, replace the old list with a new list
+      //Todo: Populate the driver object with actual data
+      //driver.name = names[i] 
+    });
 
     for ( let i = 0; i < 22; i++ ) {
       driverData[i].lastFiveResults = ['N/A', 'N/A', 'N/A', 'N/A', 'N/A'];
@@ -68,7 +69,10 @@ export default function App() {
                   driverData[k].lastFiveResults.splice(4, 1, lastFiveRaceResults[0].Results[j].positionText)};             
       }
     }
+    //THIS HAS TO BE PUT IN THE END:setDriverResults([...driverResults, //driver]);
   };
+
+
   //const fiveRacesAgo = driverData.lastFiveResults[4];
   //const fourRacesAgo = driverData.lastFiveeResults[3];
   //const threeRacesAgo = driverData.lastFiveResults[2];
@@ -80,9 +84,11 @@ export default function App() {
   }, 200);
   
   //return [driverData[0].lastFiveResults, driverData[1].lastFiveResults];
-  setTimeout(() => {
-    console.log(driverData);
-  }, 500);
+  
+
+  useEffect(() => {
+    console.log(driverData)
+  }, [lastFiveRaceResults]);
 
   //Have to find way to link DriverData to setDriverResults
 
