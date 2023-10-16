@@ -35,7 +35,11 @@ export default function App() {
       const driver = {
         name: "",
         firstName: "",
-        lastFiveResults: ['N/A', 'N/A', 'N/A', 'N/A', 'N/A']
+        fiveRacesAgo: "N/A",
+        fourRacesAgo: "N/A",
+        threeRacesAgo: "N/A",
+        twoRacesAgo: "N/A",
+        oneRaceAgo: "N/A"
       };
       driver.name = names[i];
       const nameParts = driver.name.split(" ");
@@ -44,39 +48,29 @@ export default function App() {
       for ( let i = 0; i < 20; i++ ) {
         
         if (lastFiveRaceResults[4].Results[i].Driver.givenName === driver.firstName) {
-            driver.lastFiveResults.splice(0, 1, lastFiveRaceResults[4].Results[i].positionText)};
+            driver.fiveRacesAgo = lastFiveRaceResults[4].Results[i].positionText};
             
             if (lastFiveRaceResults[3].Results[i].Driver.givenName === driver.firstName) {
-              driver.lastFiveResults.splice(1, 1, lastFiveRaceResults[3].Results[i].positionText)};
+              driver.fourRacesAgo = lastFiveRaceResults[3].Results[i].positionText};
               
               if (lastFiveRaceResults[2].Results[i].Driver.givenName === driver.firstName) {
-                driver.lastFiveResults.splice(2, 1, lastFiveRaceResults[2].Results[i].positionText)};
+                driver.threeRacesAgo = lastFiveRaceResults[2].Results[i].positionText};
                 
                 if (lastFiveRaceResults[1].Results[i].Driver.givenName === driver.firstName) {
-                  driver.lastFiveResults.splice(3, 1, lastFiveRaceResults[1].Results[i].positionText)};
+                  driver.twoRacesAgo = lastFiveRaceResults[1].Results[i].positionText};
                   
                   if (lastFiveRaceResults[0].Results[i].Driver.givenName === driver.firstName) {
-                    driver.lastFiveResults.splice(4, 1, lastFiveRaceResults[0].Results[i].positionText)};            
+                    driver.oneRaceAgo = lastFiveRaceResults[0].Results[i].positionText};            
       };
   
       driverData.push(driver);
       //Should I use map instead?^
-
-      //Create a new list, replace the old list with a new list
-      //Todo: Populate the driver object with actual data
-      //driver.name = names[i] 
+ 
     });
     
-    setDriverResults([...driverResults, driverData]);
+    setDriverResults(...driverResults, driverData);
     //THIS HAS TO BE PUT IN THE END:setDriverResults([...driverResults, //driver]);
   };
-
-
-  //const fiveRacesAgo = driverData.lastFiveResults[4];
-  //const fourRacesAgo = driverData.lastFiveeResults[3];
-  //const threeRacesAgo = driverData.lastFiveResults[2];
-  //const twoRacesAgo = driverData.lastFiveResults[1];
-  //const oneRaceAgo = driverData.lastFiveResults[0];
 
   useEffect(() => {
     mapNamesAndResultsToDrivers(); 
@@ -84,14 +78,13 @@ export default function App() {
 
   useEffect(() => {
     console.log(driverResults);
-  }, [driverResults]);
+  }, [driverResults[21]]);
 
   function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo) {
     return { name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo };
   };
   
-  
-  const racerData = names.map(driver => formatRow(driver, null, null, null, null, null));
+  const racerData = driverResults.map(driver => formatRow(driver.name, driver.fiveRacesAgo, driver.fourRacesAgo, driver.threeRacesAgo, driver.twoRacesAgo, driver.oneRaceAgo));
   
   
   return (
