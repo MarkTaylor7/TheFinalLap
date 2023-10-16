@@ -19,6 +19,11 @@ export default function DenseTable({data}) {
               <TableCell align="right">Three Races Ago</TableCell>
               <TableCell align="right">Two Races Ago</TableCell>
               <TableCell align="right">One Race Ago</TableCell>
+              <TableCell align="right">NextTrack1</TableCell>
+              <TableCell align="right">NextTrack2</TableCell>
+              <TableCell align="right">NextTrack3</TableCell>
+              <TableCell align="right">NextTrack4</TableCell>
+              <TableCell align="right">NextTrack5</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -35,6 +40,11 @@ export default function DenseTable({data}) {
                 <TableCell align="center">{row.threeRacesAgo}</TableCell>
                 <TableCell align="center">{row.twoRacesAgo}</TableCell>
                 <TableCell align="center">{row.oneRaceAgo}</TableCell>
+                <TableCell align="center"></TableCell>
+                <TableCell align="center"></TableCell>
+                <TableCell align="center"></TableCell>
+                <TableCell align="center"></TableCell>
+                <TableCell align="center"></TableCell>
               </TableRow>
             ))}
           </TableBody>

@@ -2,6 +2,9 @@ import {useEffect, useState} from 'react';
 import DenseTable from './DenseTable';
 import {fetchCurrentStandings} from './utilities';
 import {fetchLastFiveRaceResults} from './utilities'
+import {fetchNextRace} from './utilities'
+
+fetchNextRace();
 
 async function testFetchCurrentStandings() {
   const results = await fetchCurrentStandings();

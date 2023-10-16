@@ -39,7 +39,6 @@ export async function fetchCurrentStandings() {
         const standings = json.MRData.StandingsTable.StandingsLists[0].DriverStandings;
         console.log(standings);
         const results = standings.map(function(element){
-            //return `${//element.Driver.code}`;
             return `${element.Driver.givenName} ${element.Driver.familyName}`;
         });
         return results;
@@ -60,7 +59,6 @@ export async function fetchLastRaceResults() {
         const raceResults = json.MRData.RaceTable.Races[0].Results;
         console.log(raceResults);
         const results = raceResults.map(function(element){
-            //return `${element.Driver.code}`;
             return `${element.positionText}`;
         });
         return (results);
@@ -81,14 +79,38 @@ export async function fetchLastFiveRaceResults() {
         const reverseAllRaces = allRaces.reverse();
         const lastFiveRaceResults = reverseAllRaces.slice(0, 5);
         console.log(lastFiveRaceResults);
-        //const resultsP1 = lastFiveRaceResults.map(function(element){
-            //return `${element.Results[0].Driver.code}`;
-        //});
-        //console.log(resultsP1);
-        //const results = lastFiveRaceResults.map(function(element){
-            //return `${element.Results[0].positionText}`;
-        //});
         return lastFiveRaceResults;
+    } catch (error) {
+        console.log("error", error);
+        }
+    
+        return null;
+};
+
+export async function fetchNextRace() {
+    const url = "https://ergast.com/api/f1/current.json"
+    try {
+        const response = await fetch(url);
+        const json = await response.json();
+        const eventList = json.MRData.RaceTable.Races;
+        console.log(eventList);
+        const today = new Date();
+        const jsonDateAndTime = today.toJSON();
+        const splitJsonDateAndTime = jsonDateAndTime.split("T") 
+        const jsonDate = splitJsonDateAndTime[0];
+        console.log(jsonDateAndTime);
+        console.log(new Date(jsonDate).toUTCString());
+        console.log(jsonDate);
+        console.log(json);
+        for (let i = 0; i < eventList.length; i++ ) {
+            const race = eventList[0];
+            const raceDate = race.date;
+            console.log(raceDate);
+            if (raceDate < today) {
+                eventList.filter(race) //filter method is the way to go. Or maybe use switch statement?
+            }
+        };
+        console.log(eventList);
     } catch (error) {
         console.log("error", error);
         }
