@@ -2,9 +2,12 @@ import {useEffect, useState} from 'react';
 import DenseTable from './DenseTable';
 import {fetchCurrentStandings} from './utilities';
 import {fetchLastFiveRaceResults} from './utilities'
-import {fetchNextRace} from './utilities'
+import {fetchEventList} from './utilities'
 
-fetchNextRace();
+async function testFetchEventList() {
+  const results = await fetchEventList();
+  return results;
+};
 
 async function testFetchCurrentStandings() {
   const results = await fetchCurrentStandings();
@@ -20,6 +23,7 @@ export default function App() {
   const [names, setNames] = useState([]);
   const [lastFiveRaceResults, setLastFiveRaceResults] = useState([]);
   const [driverResults, setDriverResults] = useState([]);
+  const [eventList, setEventList] = useState([]);
 
   useEffect(() => {
     testFetchCurrentStandings()
@@ -28,8 +32,36 @@ export default function App() {
 
   useEffect(() => {
     testFetchLastFiveRaceResults()
-    .then(results => setLastFiveRaceResults(results)); 
+    .then(results => setLastFiveRaceResults(results)) 
   }, []);
+
+  useEffect(() => {
+    console.log(lastFiveRaceResults[0]);
+  }, [lastFiveRaceResults]);
+  
+  useEffect(() => {
+    testFetchEventList()
+    .then(results => setEventList(results))
+  }, []);
+
+  let nextCircuitId;
+
+  async function getNextCircuitId() {
+    let lastRound = Number(lastFiveRaceResults[0].round);
+    console.log(lastRound);
+    let nextRound = (lastRound += 1);
+    console.log(nextRound);
+    for ( let i = 0; i < eventList.length; i++ ) {
+      if (Number(eventList[i].round) === nextRound) {
+        nextCircuitId = eventList[i].Circuit.circuitId;
+      };
+    }
+    console.log(nextCircuitId);
+  };
+
+  useEffect (() => {
+    getNextCircuitId();
+  }, [lastFiveRaceResults]);
 
   const driverData = [];
   
