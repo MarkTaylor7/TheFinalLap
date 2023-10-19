@@ -47,7 +47,8 @@ export default function App() {
   let nextCircuitId;
 
   async function getNextCircuitId() {
-    let lastRound = Number(lastFiveRaceResults[0].round);
+    const results = await fetchLastFiveRaceResults();
+    let lastRound = Number(results[0].round);
     console.log(lastRound);
     let nextRound = (lastRound += 1);
     console.log(nextRound);
