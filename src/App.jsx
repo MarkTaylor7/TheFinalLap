@@ -22,8 +22,9 @@ async function testFetchLastFiveRaceResults() {
 export default function App() {
   const [names, setNames] = useState([]);
   const [lastFiveRaceResults, setLastFiveRaceResults] = useState([]);
-  const [driverResults, setDriverResults] = useState([]);
+  const [driverTableData, setDriverResults] = useState([]);
   const [eventList, setEventList] = useState([]);
+  const [nextRace, setNextRace] = useState([]);
 
   useEffect(() => {
     testFetchCurrentStandings()
@@ -35,9 +36,9 @@ export default function App() {
     .then(results => setLastFiveRaceResults(results)) 
   }, []);
 
-  useEffect(() => {
-    console.log(lastFiveRaceResults[0]);
-  }, [lastFiveRaceResults]);
+  //useEffect(() => {
+    //console.log(lastFiveRaceResults[0]);
+  //}, [lastFiveRaceResults]);
   
   useEffect(() => {
     testFetchEventList()
@@ -49,78 +50,67 @@ export default function App() {
   async function getNextCircuitId() {
     const results = await fetchLastFiveRaceResults();
     let lastRound = Number(results[0].round);
-    console.log(lastRound);
     let nextRound = (lastRound += 1);
-    console.log(nextRound);
     for ( let i = 0; i < eventList.length; i++ ) {
       if (Number(eventList[i].round) === nextRound) {
         nextCircuitId = eventList[i].Circuit.circuitId;
       };
     }
-    console.log(nextCircuitId);
+    setNextRace(nextCircuitId);
   };
 
   useEffect (() => {
     getNextCircuitId();
   }, [lastFiveRaceResults]);
 
+  //async function fetchNextTrackData() {
+  //  console.log(nextRace);
+  //};
+
+  //fetchNextTrackData();
+
   const driverData = [];
   
-  function mapNamesAndResultsToDrivers() {
+  async function mapNamesAndResultsToDrivers() {
+    const results = await fetchLastFiveRaceResults();
     names.forEach((name, i) => {
       const driver = {
-        name: "",
-        firstName: "",
-        fiveRacesAgo: "N/A",
-        fourRacesAgo: "N/A",
-        threeRacesAgo: "N/A",
-        twoRacesAgo: "N/A",
-        oneRaceAgo: "N/A"
+        name: names[i],
+        firstName: names[i].split(" ")[0],
+        lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+        nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
       };
-      driver.name = names[i];
-      const nameParts = driver.name.split(" ");
-      driver.firstName = nameParts[0];
-      
-      for ( let i = 0; i < 20; i++ ) {
         
-        if (lastFiveRaceResults[4].Results[i].Driver.givenName === driver.firstName) {
-            driver.fiveRacesAgo = lastFiveRaceResults[4].Results[i].positionText};
+      for ( let z = 0; z < lastFiveRaceResults.length; z++ ) {
+
+        for ( let i = 0; i < lastFiveRaceResults[0].Results.length; i++ ) {
             
-            if (lastFiveRaceResults[3].Results[i].Driver.givenName === driver.firstName) {
-              driver.fourRacesAgo = lastFiveRaceResults[3].Results[i].positionText};
-              
-              if (lastFiveRaceResults[2].Results[i].Driver.givenName === driver.firstName) {
-                driver.threeRacesAgo = lastFiveRaceResults[2].Results[i].positionText};
-                
-                if (lastFiveRaceResults[1].Results[i].Driver.givenName === driver.firstName) {
-                  driver.twoRacesAgo = lastFiveRaceResults[1].Results[i].positionText};
-                  
-                  if (lastFiveRaceResults[0].Results[i].Driver.givenName === driver.firstName) {
-                    driver.oneRaceAgo = lastFiveRaceResults[0].Results[i].positionText};            
+            if (lastFiveRaceResults[z].Results[i].Driver.givenName === driver.firstName) {
+                driver.lastFiveRaces[z] = lastFiveRaceResults[z].Results[i].positionText;
+            };
+        };
       };
-  
+            
       driverData.push(driver);
       //Should I use map instead?^
- 
     });
-    
-    setDriverResults(...driverResults, driverData);
-    //THIS HAS TO BE PUT IN THE END:setDriverResults([...driverResults, //driver]);
+    setDriverResults(...driverTableData, driverData);
   };
 
   useEffect(() => {
     mapNamesAndResultsToDrivers(); 
   }, [lastFiveRaceResults]);
 
-  useEffect(() => {
-    console.log(driverResults);
-  }, [driverResults[21]]);
+  //useEffect(() => {
+   // console.log(driverTableData);
+  //}, [driverTableData]);
 
-  function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo) {
-    return { name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo };
+  function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo, nextRace1, nextRace2, nextRace3, nextRace4, nextRace5) {
+    return { name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo, nextRace1, nextRace2, nextRace3, nextRace4, nextRace5 };
   };
   
-  const racerData = driverResults.map(driver => formatRow(driver.name, driver.fiveRacesAgo, driver.fourRacesAgo, driver.threeRacesAgo, driver.twoRacesAgo, driver.oneRaceAgo));
+  const racerData = driverTableData.map(driver => formatRow(driver.name, driver.lastFiveRaces[0], driver.lastFiveRaces[1], driver.lastFiveRaces[2], driver.lastFiveRaces[3], driver.lastFiveRaces[4],
+    driver.nextRaceResults[0], driver.nextRaceResults[1], driver.nextRaceResults[2], driver.nextRaceResults[3], driver.nextRaceResults[4]));
   
   
   return (

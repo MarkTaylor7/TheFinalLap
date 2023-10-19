@@ -77,7 +77,8 @@ export async function fetchLastFiveRaceResults() {
         const json = await response.json();
         const allRaces = json.MRData.RaceTable.Races;
         const reverseAllRaces = allRaces.reverse();
-        const lastFiveRaceResults = reverseAllRaces.slice(0, 5);
+        const lastFiveRaceResultsReverse = reverseAllRaces.slice(0, 5);
+        const lastFiveRaceResults = lastFiveRaceResultsReverse.reverse();
         console.log(lastFiveRaceResults);
         return lastFiveRaceResults;
     } catch (error) {

@@ -40,11 +40,11 @@ export default function DenseTable({data}) {
                 <TableCell align="center">{row.threeRacesAgo}</TableCell>
                 <TableCell align="center">{row.twoRacesAgo}</TableCell>
                 <TableCell align="center">{row.oneRaceAgo}</TableCell>
-                <TableCell align="center"></TableCell>
-                <TableCell align="center"></TableCell>
-                <TableCell align="center"></TableCell>
-                <TableCell align="center"></TableCell>
-                <TableCell align="center"></TableCell>
+                <TableCell align="center">{row.nextRace1}</TableCell>
+                <TableCell align="center">{row.nextRace2}</TableCell>
+                <TableCell align="center">{row.nextRace3}</TableCell>
+                <TableCell align="center">{row.nextRace4}</TableCell>
+                <TableCell align="center">{row.nextRace5}</TableCell>
               </TableRow>
             ))}
           </TableBody>
