@@ -19,12 +19,17 @@ async function testFetchLastFiveRaceResults() {
   return results;
 };
 
+
+
 export default function App() {
   const [names, setNames] = useState([]);
   const [lastFiveRaceResults, setLastFiveRaceResults] = useState([]);
   const [driverTableData, setDriverResults] = useState([]);
   const [eventList, setEventList] = useState([]);
   const [nextRace, setNextRace] = useState([]);
+  const [nextRaceHistory, setNextRaceHistory] = useState([]);
+
+  
 
   useEffect(() => {
     testFetchCurrentStandings()
@@ -35,10 +40,6 @@ export default function App() {
     testFetchLastFiveRaceResults()
     .then(results => setLastFiveRaceResults(results)) 
   }, []);
-
-  //useEffect(() => {
-    //console.log(lastFiveRaceResults[0]);
-  //}, [lastFiveRaceResults]);
   
   useEffect(() => {
     testFetchEventList()
@@ -49,7 +50,7 @@ export default function App() {
 
   async function getNextCircuitId() {
     const results = await fetchLastFiveRaceResults();
-    let lastRound = Number(results[0].round);
+    let lastRound = Number(results[4].round);
     let nextRound = (lastRound += 1);
     for ( let i = 0; i < eventList.length; i++ ) {
       if (Number(eventList[i].round) === nextRound) {
@@ -63,16 +64,43 @@ export default function App() {
     getNextCircuitId();
   }, [lastFiveRaceResults]);
 
-  //async function fetchNextTrackData() {
-  //  console.log(nextRace);
-  //};
+  async function fetchNextTrackData(nextRace) {
 
-  //fetchNextTrackData();
+    console.log(nextRace);
+    const url = `https://ergast.com/api/f1/circuits/${nextRace}/results.json?limit=1000`;
+
+    try {
+      const response = await fetch(url);
+      const json = await response.json();
+      
+      const nextRaceAllEvents = json.MRData.RaceTable.Races;
+      const reverseNextRaceAllEvents = nextRaceAllEvents.reverse();
+      const nextRaceLastFiveEventsReverse = reverseNextRaceAllEvents.slice(0, 5);
+      const nextRaceLastFiveEvents = nextRaceLastFiveEventsReverse.reverse();
+      return nextRaceLastFiveEvents;
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
+  async function testFetchNextTrackData(nextRace) {
+    const results = await fetchNextTrackData(nextRace);
+    return results;
+  };
+
+  useEffect(() => {
+    testFetchNextTrackData(nextRace)
+    .then(results => setNextRaceHistory(results))
+  }, [nextRace]);
+
+  console.log(nextRace);
+  
+  console.log(nextRaceHistory);
+
 
   const driverData = [];
   
-  async function mapNamesAndResultsToDrivers() {
-    const results = await fetchLastFiveRaceResults();
+  function mapNamesAndResultsToDrivers() {
     names.forEach((name, i) => {
       const driver = {
         name: names[i],
@@ -90,6 +118,9 @@ export default function App() {
             };
         };
       };
+
+      //Use similar code to above to get Next Race History
+
             
       driverData.push(driver);
       //Should I use map instead?^
@@ -102,7 +133,7 @@ export default function App() {
   }, [lastFiveRaceResults]);
 
   //useEffect(() => {
-   // console.log(driverTableData);
+   // console.log(driverTableData); (consider renaming the title of mapNamesAndResultsToDrivers to this)
   //}, [driverTableData]);
 
   function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo, nextRace1, nextRace2, nextRace3, nextRace4, nextRace5) {
