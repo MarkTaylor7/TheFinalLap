@@ -24,7 +24,7 @@ async function testFetchLastFiveRaceResults() {
 export default function App() {
   const [names, setNames] = useState([]);
   const [lastFiveRaceResults, setLastFiveRaceResults] = useState([]);
-  const [driverTableData, setDriverResults] = useState([]);
+  const [driverTableData, setDriverTableData] = useState([]);
   const [eventList, setEventList] = useState([]);
   const [nextRace, setNextRace] = useState([]);
   const [nextRaceHistory, setNextRaceHistory] = useState([]);
@@ -65,7 +65,6 @@ export default function App() {
   }, [lastFiveRaceResults]);
 
   async function fetchNextTrackData(nextRace) {
-
     console.log(nextRace);
     const url = `https://ergast.com/api/f1/circuits/${nextRace}/results.json?limit=1000`;
 
@@ -100,7 +99,9 @@ export default function App() {
 
   const driverData = [];
   
-  function mapNamesAndResultsToDrivers() {
+  async function mapNamesAndResultsToDrivers() {
+    await testFetchLastFiveRaceResults();
+    await testFetchNextTrackData(nextRace); 
     names.forEach((name, i) => {
       const driver = {
         name: names[i],
@@ -119,18 +120,26 @@ export default function App() {
         };
       };
 
-      //Use similar code to above to get Next Race History
+      for ( let z = 0; z < nextRaceHistory.length; z++ ) {
 
+        for ( let i = 0; i < nextRaceHistory[0].Results.length; i++ ) {
             
+            if (nextRaceHistory[z].Results[i].Driver.givenName === driver.firstName) {
+                driver.nextRaceResults[z] = nextRaceHistory[z].Results[i].positionText;
+            };
+        };
+      };
+      
+      console.log(driver);     
       driverData.push(driver);
       //Should I use map instead?^
     });
-    setDriverResults(...driverTableData, driverData);
+    setDriverTableData(...driverTableData, driverData);
   };
 
   useEffect(() => {
     mapNamesAndResultsToDrivers(); 
-  }, [lastFiveRaceResults]);
+  }, [lastFiveRaceResults, nextRaceHistory]);
 
   //useEffect(() => {
    // console.log(driverTableData); (consider renaming the title of mapNamesAndResultsToDrivers to this)
