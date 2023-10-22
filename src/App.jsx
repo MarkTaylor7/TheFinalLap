@@ -26,7 +26,7 @@ export default function App() {
   const [lastFiveRaceResults, setLastFiveRaceResults] = useState([]);
   const [driverTableData, setDriverTableData] = useState([]);
   const [eventList, setEventList] = useState([]);
-  const [nextRace, setNextRace] = useState([]);
+  const [nextRace, setNextRace] = useState('');
   const [nextRaceHistory, setNextRaceHistory] = useState([]);
 
   
@@ -65,6 +65,7 @@ export default function App() {
   }, [lastFiveRaceResults]);
 
   async function fetchNextTrackData(nextRace) {
+    await getNextCircuitId();
     console.log(nextRace);
     const url = `https://ergast.com/api/f1/circuits/${nextRace}/results.json?limit=1000`;
 
@@ -100,8 +101,9 @@ export default function App() {
   const driverData = [];
   
   async function mapNamesAndResultsToDrivers() {
-    await testFetchLastFiveRaceResults();
-    await testFetchNextTrackData(nextRace); 
+    
+    await fetchLastFiveRaceResults();
+    await fetchNextTrackData(nextRace); 
     names.forEach((name, i) => {
       const driver = {
         name: names[i],
