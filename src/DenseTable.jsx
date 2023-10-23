@@ -14,16 +14,21 @@ export default function DenseTable({data}) {
           <TableHead>
             <TableRow>
               <TableCell>Driver</TableCell>
-              <TableCell align="right">Five Races Ago</TableCell>
-              <TableCell align="right">Four Races Ago</TableCell>
-              <TableCell align="right">Three Races Ago</TableCell>
-              <TableCell align="right">Two Races Ago</TableCell>
-              <TableCell align="right">One Race Ago</TableCell>
-              <TableCell align="right">NextTrack1</TableCell>
-              <TableCell align="right">NextTrack2</TableCell>
-              <TableCell align="right">NextTrack3</TableCell>
-              <TableCell align="right">NextTrack4</TableCell>
-              <TableCell align="right">NextTrack5</TableCell>
+              <TableCell align="right">ITA '23</TableCell>
+              <TableCell align="right">SIN '23</TableCell>
+              <TableCell align="right">JAP '23</TableCell>
+              <TableCell align="right">QAT '23</TableCell>
+              <TableCell align="right">USA' 23</TableCell>
+              <TableCell align="right">MEX '17</TableCell>
+              <TableCell align="right">MEX '18</TableCell>
+              <TableCell align="right">MEX '19</TableCell>
+              <TableCell align="right">MEX '21</TableCell>
+              <TableCell align="right">MEX '22</TableCell>
+              <TableCell align="right">Race 1</TableCell>
+              <TableCell align="right">Race 2</TableCell>
+              <TableCell align="right">Race 3</TableCell>
+              <TableCell align="right">Race 4</TableCell>
+              <TableCell align="right">Race 5</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -45,6 +50,11 @@ export default function DenseTable({data}) {
                 <TableCell align="center">{row.nextRace3}</TableCell>
                 <TableCell align="center">{row.nextRace4}</TableCell>
                 <TableCell align="center">{row.nextRace5}</TableCell>
+                <TableCell align="center">{row.nextRaceType1}</TableCell>
+                <TableCell align="center">{row.nextRaceType2}</TableCell>
+                <TableCell align="center">{row.nextRaceType3}</TableCell>
+                <TableCell align="center">{row.nextRaceType4}</TableCell>
+                <TableCell align="center">{row.nextRaceType5}</TableCell>
               </TableRow>
             ))}
           </TableBody>

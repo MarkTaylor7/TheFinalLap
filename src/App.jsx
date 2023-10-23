@@ -28,6 +28,8 @@ export default function App() {
   const [eventList, setEventList] = useState([]);
   const [nextRace, setNextRace] = useState('');
   const [nextRaceHistory, setNextRaceHistory] = useState([]);
+  const [nextRaceType, setNextRaceType] = useState('');
+  const [nextRaceTypeHistory, setNextRaceTypeHistory] = useState([]);
 
   
 
@@ -47,6 +49,13 @@ export default function App() {
   }, []);
 
   let nextCircuitId;
+  let nextCircuitType;
+
+  const highDownforceCircuitIds = ['albert_park', 'monaco', 'catalunya', 'hungaroring', 'zandvoort', 'marina_bay', 'suzuka', 'losail', 'rodriguez'  ];
+  const balancedCircuitIds = ['miami', 'red_bull_ring', 'silverstone', 'americas', 'interlagos' ];
+  const powerCircuitIds = ['bahrain', 'jeddah', 'baku', 'villeneuve', 'spa', 'monza', 'vegas' ];
+  const circuitTypes = [highDownforceCircuitIds, balancedCircuitIds, powerCircuitIds ];
+  console.log(circuitTypes);
 
   async function getNextCircuitId() {
     const results = await fetchLastFiveRaceResults();
@@ -57,7 +66,13 @@ export default function App() {
         nextCircuitId = eventList[i].Circuit.circuitId;
       };
     }
+    for ( let i = 0; i < circuitTypes.length; i++ ) {
+      if (circuitTypes[i].includes(nextCircuitId)) {
+        nextCircuitType = circuitTypes[i];
+      };
+    }
     setNextRace(nextCircuitId);
+    console.log(nextCircuitType);
   };
 
   useEffect (() => {
@@ -96,7 +111,6 @@ export default function App() {
   
   console.log(nextRaceHistory);
 
-
   const driverData = [];
   
   async function mapNamesAndResultsToDrivers() {
@@ -108,6 +122,7 @@ export default function App() {
         lastName: names[i].substring(names[i].indexOf(' ') + 1),
         lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
         nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+        nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
       };
         
       for ( let z = 0; z < lastFiveRaceResults.length; z++ ) {
@@ -145,8 +160,10 @@ export default function App() {
    // console.log(driverTableData); (consider renaming the title of mapNamesAndResultsToDrivers to this)
   //}, [driverTableData]);
 
-  function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo, nextRace1, nextRace2, nextRace3, nextRace4, nextRace5) {
-    return { name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo, nextRace1, nextRace2, nextRace3, nextRace4, nextRace5 };
+  function formatRow(name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo, nextRace1, nextRace2, nextRace3, nextRace4, nextRace5,
+      nextRaceType1, nextRaceType2, nextRaceType3, nextRaceType4, nextRaceType5) {
+    return { name, fiveRacesAgo, fourRacesAgo, threeRacesAgo, twoRacesAgo, oneRaceAgo, nextRace1, nextRace2, nextRace3, nextRace4, nextRace5, 
+      nextRaceType1, nextRaceType2, nextRaceType3, nextRaceType4, nextRaceType5};
   };
   
   const racerData = driverTableData.map(driver => formatRow(driver.name, driver.lastFiveRaces[0], driver.lastFiveRaces[1], driver.lastFiveRaces[2], driver.lastFiveRaces[3], driver.lastFiveRaces[4],
