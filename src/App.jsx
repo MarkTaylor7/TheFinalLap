@@ -65,7 +65,6 @@ export default function App() {
   }, [lastFiveRaceResults]);
 
   async function fetchNextTrackData(nextRace) {
-    await getNextCircuitId();
     console.log(nextRace);
     const url = `https://ergast.com/api/f1/circuits/${nextRace}/results.json?limit=1000`;
 
@@ -101,13 +100,12 @@ export default function App() {
   const driverData = [];
   
   async function mapNamesAndResultsToDrivers() {
-    
     await fetchLastFiveRaceResults();
     await fetchNextTrackData(nextRace); 
     names.forEach((name, i) => {
       const driver = {
         name: names[i],
-        firstName: names[i].split(" ")[0],
+        lastName: names[i].substring(names[i].indexOf(' ') + 1),
         lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
         nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
       };
@@ -116,7 +114,7 @@ export default function App() {
 
         for ( let i = 0; i < lastFiveRaceResults[0].Results.length; i++ ) {
             
-            if (lastFiveRaceResults[z].Results[i].Driver.givenName === driver.firstName) {
+            if (lastFiveRaceResults[z].Results[i].Driver.familyName === driver.lastName) {
                 driver.lastFiveRaces[z] = lastFiveRaceResults[z].Results[i].positionText;
             };
         };
@@ -126,7 +124,7 @@ export default function App() {
 
         for ( let i = 0; i < nextRaceHistory[0].Results.length; i++ ) {
             
-            if (nextRaceHistory[z].Results[i].Driver.givenName === driver.firstName) {
+            if (nextRaceHistory[z].Results[i].Driver.familyName === driver.lastName) {
                 driver.nextRaceResults[z] = nextRaceHistory[z].Results[i].positionText;
             };
         };
