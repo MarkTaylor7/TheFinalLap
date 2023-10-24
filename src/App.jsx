@@ -69,6 +69,7 @@ export default function App() {
   async function getNextCircuitIdAndType() {
     const results = await fetchLastFiveRaceResults();
     let lastRound = Number(results[4].round);
+    console.log(lastRound);
     let nextRound = (lastRound += 1);
     for ( let i = 0; i < eventList.length; i++ ) {
       if (Number(eventList[i].round) === nextRound) {
@@ -117,15 +118,37 @@ export default function App() {
     .then(results => setNextRaceHistory(results))
   }, [nextRace]);
 
+  async function fetchNextTrackTypeData(nextRaceType) {
+    console.log(eventList);
+    const pastEvents = eventList.filter((event) => Number(event.round) <= lastFiveRaceResults[4].round);
+    console.log(pastEvents);
+    //for ( let i = 0; i < circuitTypes.length; i++ ) {
+      //if circuitTypes[i].includes
+    //};
+  };
+
+  async function testFetchNextTrackTypeData(nextRaceType) {
+    const results = await fetchNextTrackTypeData(nextRaceType);
+    return results;
+  };
+
+  useEffect(() => {
+    testFetchNextTrackTypeData(nextRaceType)
+    .then(results => setNextRaceTypeHistory(results))
+  }, [nextRaceType]);
+
   console.log(nextRace);
   
   console.log(nextRaceHistory);
+
+
 
   const driverData = [];
   
   async function mapNamesAndResultsToDrivers() {
     await fetchLastFiveRaceResults();
-    await fetchNextTrackData(nextRace); 
+    await testFetchNextTrackData(nextRace);
+    await getNextCircuitIdAndType();
     names.forEach((name, i) => {
       const driver = {
         name: names[i],
@@ -148,7 +171,6 @@ export default function App() {
       for ( let z = 0; z < nextRaceHistory.length; z++ ) {
 
         for ( let i = 0; i < nextRaceHistory[0].Results.length; i++ ) {
-            
             if (nextRaceHistory[z].Results[i].Driver.familyName === driver.lastName) {
                 driver.nextRaceResults[z] = nextRaceHistory[z].Results[i].positionText;
             };
