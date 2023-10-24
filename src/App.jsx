@@ -51,13 +51,22 @@ export default function App() {
   let nextCircuitId;
   let nextCircuitType;
 
-  const highDownforceCircuitIds = ['albert_park', 'monaco', 'catalunya', 'hungaroring', 'zandvoort', 'marina_bay', 'suzuka', 'losail', 'rodriguez'  ];
-  const balancedCircuitIds = ['miami', 'red_bull_ring', 'silverstone', 'americas', 'interlagos' ];
-  const powerCircuitIds = ['bahrain', 'jeddah', 'baku', 'villeneuve', 'spa', 'monza', 'vegas' ];
-  const circuitTypes = [highDownforceCircuitIds, balancedCircuitIds, powerCircuitIds ];
+  const highDownforceCircuits = {
+    circuitType: 'High Downforce',
+    circuitIds: ['albert_park', 'monaco', 'catalunya', 'hungaroring', 'zandvoort', 'marina_bay', 'suzuka', 'losail', 'rodriguez']
+  };
+  const balancedCircuits = {
+    circuitType: 'Balanced',
+    circuitIds: ['miami', 'red_bull_ring', 'silverstone', 'americas', 'interlagos' ]
+  };
+  const powerCircuits = {
+    circuitType: 'Power',
+    circuitIds: ['bahrain', 'jeddah', 'baku', 'villeneuve', 'spa', 'monza', 'vegas' ]
+  };
+  const circuitTypes = [highDownforceCircuits, balancedCircuits, powerCircuits];
   console.log(circuitTypes);
 
-  async function getNextCircuitId() {
+  async function getNextCircuitIdAndType() {
     const results = await fetchLastFiveRaceResults();
     let lastRound = Number(results[4].round);
     let nextRound = (lastRound += 1);
@@ -67,20 +76,21 @@ export default function App() {
       };
     }
     for ( let i = 0; i < circuitTypes.length; i++ ) {
-      if (circuitTypes[i].includes(nextCircuitId)) {
-        nextCircuitType = circuitTypes[i];
+      if (circuitTypes[i].circuitIds.includes(nextCircuitId)) {
+       nextCircuitType = circuitTypes[i].circuitType;
       };
     }
     setNextRace(nextCircuitId);
-    console.log(nextCircuitType);
+    setNextRaceType(nextCircuitType);
   };
 
   useEffect (() => {
-    getNextCircuitId();
+    getNextCircuitIdAndType();
   }, [lastFiveRaceResults]);
 
   async function fetchNextTrackData(nextRace) {
     console.log(nextRace);
+    console.log(nextRaceType);
     const url = `https://ergast.com/api/f1/circuits/${nextRace}/results.json?limit=1000`;
 
     try {
