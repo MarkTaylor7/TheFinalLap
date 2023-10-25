@@ -16,7 +16,7 @@ export default function DenseTable({data}) {
               <TableCell>Driver</TableCell>
               <TableCell align="right">ITA '23</TableCell>
               <TableCell align="right">SIN '23</TableCell>
-              <TableCell align="right">JAP '23</TableCell>
+              <TableCell align="right">JPN '23</TableCell>
               <TableCell align="right">QAT '23</TableCell>
               <TableCell align="right">USA' 23</TableCell>
               <TableCell align="right">MEX '17</TableCell>
@@ -24,11 +24,11 @@ export default function DenseTable({data}) {
               <TableCell align="right">MEX '19</TableCell>
               <TableCell align="right">MEX '21</TableCell>
               <TableCell align="right">MEX '22</TableCell>
-              <TableCell align="right">Race 1</TableCell>
-              <TableCell align="right">Race 2</TableCell>
-              <TableCell align="right">Race 3</TableCell>
-              <TableCell align="right">Race 4</TableCell>
-              <TableCell align="right">Race 5</TableCell>
+              <TableCell align="right">HUN '23</TableCell>
+              <TableCell align="right">NED '23</TableCell>
+              <TableCell align="right">SIN '23</TableCell>
+              <TableCell align="right">JPN '23</TableCell>
+              <TableCell align="right">QAT '23</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

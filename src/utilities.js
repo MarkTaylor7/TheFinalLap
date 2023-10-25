@@ -70,17 +70,14 @@ export async function fetchLastRaceResults() {
     return null;
 };
 
-export async function fetchLastFiveRaceResults() {
+export async function fetchCurrentSeasonRaceResults() {
     const url = "https://ergast.com/api/f1/2023/results.json?limit=500"
     try {
         const response = await fetch(url);
         const json = await response.json();
         const allRaces = json.MRData.RaceTable.Races;
-        const reverseAllRaces = allRaces.reverse();
-        const lastFiveRaceResultsReverse = reverseAllRaces.slice(0, 5);
-        const lastFiveRaceResults = lastFiveRaceResultsReverse.reverse();
-        console.log(lastFiveRaceResults);
-        return lastFiveRaceResults;
+        console.log(allRaces);
+        return allRaces;
     } catch (error) {
         console.log("error", error);
         }

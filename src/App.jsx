@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import DenseTable from './DenseTable';
 import {fetchCurrentStandings} from './utilities';
-import {fetchLastFiveRaceResults} from './utilities'
+import {fetchCurrentSeasonRaceResults} from './utilities'
 import {fetchEventList} from './utilities'
 
 async function testFetchEventList() {
@@ -14,8 +14,8 @@ async function testFetchCurrentStandings() {
   return results;
 };
 
-async function testFetchLastFiveRaceResults() {
-  const results = await fetchLastFiveRaceResults();
+async function testFetchCurrentSeasonRaceResults() {
+  const results = await fetchCurrentSeasonRaceResults();
   return results;
 };
 
@@ -23,6 +23,7 @@ async function testFetchLastFiveRaceResults() {
 
 export default function App() {
   const [names, setNames] = useState([]);
+  const [currentSeasonRaceResults, setCurrentSeasonRaceResults] = useState([]);
   const [lastFiveRaceResults, setLastFiveRaceResults] = useState([]);
   const [driverTableData, setDriverTableData] = useState([]);
   const [eventList, setEventList] = useState([]);
@@ -31,17 +32,40 @@ export default function App() {
   const [nextRaceType, setNextRaceType] = useState('');
   const [nextRaceTypeHistory, setNextRaceTypeHistory] = useState([]);
 
-  
-
   useEffect(() => {
     testFetchCurrentStandings()
     .then(results => setNames(results)); 
   }, []);
 
   useEffect(() => {
-    testFetchLastFiveRaceResults()
-    .then(results => setLastFiveRaceResults(results)) 
+    testFetchCurrentSeasonRaceResults()
+    .then(results => setCurrentSeasonRaceResults(results)) 
   }, []);
+
+  async function getLastFiveRaceResults() {
+    await testFetchCurrentSeasonRaceResults();
+    console.log(currentSeasonRaceResults);
+    const reverseCurrentSeasonRaceResults = currentSeasonRaceResults
+      .slice()
+      .reverse()
+      .map(element => {
+        return element;
+      });
+    const lastFiveRaceResultsReversed = reverseCurrentSeasonRaceResults.slice(0, 5);
+    const lastFiveRaceResults = lastFiveRaceResultsReversed.reverse();
+    console.log(lastFiveRaceResults)
+    return lastFiveRaceResults;
+  };
+
+  async function testGetLastFiveRaceResults() {
+    const results = await getLastFiveRaceResults();
+    return results;
+  };
+
+  useEffect(() => {
+    testGetLastFiveRaceResults()
+    .then(results => setLastFiveRaceResults(results)) 
+  }, [currentSeasonRaceResults]);
   
   useEffect(() => {
     testFetchEventList()
@@ -67,10 +91,11 @@ export default function App() {
   console.log(circuitTypes);
 
   async function getNextCircuitIdAndType() {
-    const results = await fetchLastFiveRaceResults();
+    const results = await getLastFiveRaceResults();
     let lastRound = Number(results[4].round);
     console.log(lastRound);
     let nextRound = (lastRound += 1);
+    console.log(nextRound);
     for ( let i = 0; i < eventList.length; i++ ) {
       if (Number(eventList[i].round) === nextRound) {
         nextCircuitId = eventList[i].Circuit.circuitId;
@@ -97,7 +122,6 @@ export default function App() {
     try {
       const response = await fetch(url);
       const json = await response.json();
-      
       const nextRaceAllEvents = json.MRData.RaceTable.Races;
       const reverseNextRaceAllEvents = nextRaceAllEvents.reverse();
       const nextRaceLastFiveEventsReverse = reverseNextRaceAllEvents.slice(0, 5);
@@ -121,25 +145,22 @@ export default function App() {
   async function fetchNextTrackTypeData(nextRaceType) {
     let circuitTypeMatches;
     let circuitTypeMatchesMostRecent = [];
-    ///Shouldn't be using eventList, as it doesn't include results. Must access current season race results.
-    ///Will probably need another API call like in fetchLastFiveRaceResults(), or modify that function so that it returns the data you need?
-    console.log(eventList);
-    const pastEvents = eventList.filter((event) => Number(event.round) <= lastFiveRaceResults[4].round);
-    console.log(pastEvents);
+    console.log(currentSeasonRaceResults);
     for ( let i = 0; i < circuitTypes.length; i++ ) {
       if (circuitTypes[i].circuitType === nextRaceType) {
         circuitTypeMatches = circuitTypes[i].circuitIds;
+      //}
       }
     };
-      console.log(circuitTypeMatches);
-      for ( let x = 0; x < pastEvents.length; x++ ) {
+    console.log(circuitTypeMatches);
+      for ( let x = 0; x < currentSeasonRaceResults.length; x++ ) {
         for ( let z = 0; z < circuitTypeMatches.length; z++ ) {
-          if (pastEvents[x].Circuit.circuitId === circuitTypeMatches[z]) {
-            circuitTypeMatchesMostRecent.push(pastEvents[x]);
+          if (currentSeasonRaceResults[x].Circuit.circuitId === circuitTypeMatches[z]) {
+            circuitTypeMatchesMostRecent.push(currentSeasonRaceResults[x]);
           }
         };
       };  
-        console.log(circuitTypeMatchesMostRecent);
+      console.log(circuitTypeMatchesMostRecent);
         if (circuitTypeMatchesMostRecent.length > 5) {
           const reverseCircuitTypeMatchesMostRecent = circuitTypeMatchesMostRecent.reverse();
           const reverseLastFiveCircuitTypeMatches = reverseCircuitTypeMatchesMostRecent.slice(0, 5);
@@ -169,8 +190,9 @@ export default function App() {
   const driverData = [];
   
   async function mapNamesAndResultsToDrivers() {
-    await fetchLastFiveRaceResults();
+    await fetchCurrentSeasonRaceResults();
     await testFetchNextTrackData(nextRace);
+    await testFetchNextTrackTypeData(nextRaceType);
     await getNextCircuitIdAndType();
     names.forEach((name, i) => {
       const driver = {
@@ -218,7 +240,7 @@ export default function App() {
 
   useEffect(() => {
     mapNamesAndResultsToDrivers(); 
-  }, [lastFiveRaceResults, nextRaceHistory]);
+  }, [lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
 
   //useEffect(() => {
    // console.log(driverTableData); (consider renaming the title of mapNamesAndResultsToDrivers to this)
@@ -231,7 +253,8 @@ export default function App() {
   };
   
   const racerData = driverTableData.map(driver => formatRow(driver.name, driver.lastFiveRaces[0], driver.lastFiveRaces[1], driver.lastFiveRaces[2], driver.lastFiveRaces[3], driver.lastFiveRaces[4],
-    driver.nextRaceResults[0], driver.nextRaceResults[1], driver.nextRaceResults[2], driver.nextRaceResults[3], driver.nextRaceResults[4]));
+    driver.nextRaceResults[0], driver.nextRaceResults[1], driver.nextRaceResults[2], driver.nextRaceResults[3], driver.nextRaceResults[4],
+    driver.nextRaceTypeResults[0], driver.nextRaceTypeResults[1], driver.nextRaceTypeResults[2], driver.nextRaceTypeResults[3], driver.nextRaceTypeResults[4]));
   
   
   return (
