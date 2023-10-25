@@ -119,12 +119,35 @@ export default function App() {
   }, [nextRace]);
 
   async function fetchNextTrackTypeData(nextRaceType) {
+    let circuitTypeMatches;
+    let circuitTypeMatchesMostRecent = [];
+    ///Shouldn't be using eventList, as it doesn't include results. Must access current season race results.
+    ///Will probably need another API call like in fetchLastFiveRaceResults(), or modify that function so that it returns the data you need?
     console.log(eventList);
     const pastEvents = eventList.filter((event) => Number(event.round) <= lastFiveRaceResults[4].round);
     console.log(pastEvents);
-    //for ( let i = 0; i < circuitTypes.length; i++ ) {
-      //if circuitTypes[i].includes
-    //};
+    for ( let i = 0; i < circuitTypes.length; i++ ) {
+      if (circuitTypes[i].circuitType === nextRaceType) {
+        circuitTypeMatches = circuitTypes[i].circuitIds;
+      }
+    };
+      console.log(circuitTypeMatches);
+      for ( let x = 0; x < pastEvents.length; x++ ) {
+        for ( let z = 0; z < circuitTypeMatches.length; z++ ) {
+          if (pastEvents[x].Circuit.circuitId === circuitTypeMatches[z]) {
+            circuitTypeMatchesMostRecent.push(pastEvents[x]);
+          }
+        };
+      };  
+        console.log(circuitTypeMatchesMostRecent);
+        if (circuitTypeMatchesMostRecent.length > 5) {
+          const reverseCircuitTypeMatchesMostRecent = circuitTypeMatchesMostRecent.reverse();
+          const reverseLastFiveCircuitTypeMatches = reverseCircuitTypeMatchesMostRecent.slice(0, 5);
+          const lastFiveCircuitTypeMatches = reverseLastFiveCircuitTypeMatches.reverse();
+          console.log(lastFiveCircuitTypeMatches);
+          return lastFiveCircuitTypeMatches;
+        }
+        ////Must add 'else if' statements to handle when circuitTypeMatchesMostRecent.length is = or < 5
   };
 
   async function testFetchNextTrackTypeData(nextRaceType) {
@@ -141,7 +164,7 @@ export default function App() {
   
   console.log(nextRaceHistory);
 
-
+  console.log(nextRaceTypeHistory)
 
   const driverData = [];
   
@@ -168,14 +191,23 @@ export default function App() {
         };
       };
 
-      for ( let z = 0; z < nextRaceHistory.length; z++ ) {
+        for ( let z = 0; z < nextRaceHistory.length; z++ ) {
 
-        for ( let i = 0; i < nextRaceHistory[0].Results.length; i++ ) {
-            if (nextRaceHistory[z].Results[i].Driver.familyName === driver.lastName) {
-                driver.nextRaceResults[z] = nextRaceHistory[z].Results[i].positionText;
-            };
+          for ( let i = 0; i < nextRaceHistory[0].Results.length; i++ ) {
+              if (nextRaceHistory[z].Results[i].Driver.familyName === driver.lastName) {
+                  driver.nextRaceResults[z] = nextRaceHistory[z].Results[i].positionText;
+              };
+          };
         };
-      };
+
+          for ( let z = 0; z < nextRaceTypeHistory.length; z++ ) {
+
+            for ( let i = 0; i < nextRaceTypeHistory[0].Results.length; i++ ) {
+                if (nextRaceTypeHistory[z].Results[i].Driver.familyName === driver.lastName) {
+                    driver.nextRaceTypeResults[z] = nextRaceTypeHistory[z].Results[i].positionText;
+                };
+            };
+          };
       
       console.log(driver);     
       driverData.push(driver);
