@@ -93,22 +93,6 @@ export async function fetchEventList() {
         const results = json.MRData.RaceTable.Races;
         console.log(results);
         return results;
-        //const today = new Date();
-        //const jsonDateAndTime = today.toJSON();
-        //const splitJsonDateAndTime = jsonDateAndTime.split("T") 
-        //const jsonDate = splitJsonDateAndTime[0];
-        //console.log(jsonDateAndTime);
-        //console.log(new Date(jsonDate).toUTCString());
-        //console.log(jsonDate);
-        //console.log(json);
-        //for (let i = 0; i < 22; i++ ) {
-            //const race = eventList[0];
-            //const raceDate = race.date;
-            //console.log(raceDate);
-            //if (raceDate < today) {
-                //eventList.filter(race) //filter method is the way to go. Or maybe use switch statement?
-            //}
-        //};
     } catch (error) {
         console.log("error", error);
         }
