@@ -105,7 +105,7 @@ export default function App() {
   //This function identifies the next race's circuitId, and circuitType.
   async function getNextCircuitIdAndType() {
     const results = await getLastFiveRaceResults();
-    let lastRound = Number(results[4].round);
+    let lastRound = Number(results[4]?.round);
     let nextRound = (lastRound += 1);
     for ( let i = 0; i < eventList.length; i++ ) {
       if (Number(eventList[i].round) === nextRound) {
@@ -160,7 +160,7 @@ export default function App() {
   //the next race's circuit type. (I.e. If the next race is a power circuit, it will get the last 5 race results
   //from power circuits)
   async function fetchNextTrackTypeData(nextRaceType) {
-    let circuitTypeMatches;
+    let circuitTypeMatches = [];
     let circuitTypeMatchesMostRecent = [];
     console.log(currentSeasonRaceResults);
     for ( let i = 0; i < circuitTypes.length; i++ ) {
@@ -240,13 +240,13 @@ export default function App() {
         for ( let z = 0; z < nextRaceHistory.length; z++ ) {
 
           for ( let i = 0; i < nextRaceHistory[0].Results.length; i++ ) {
-              if (nextRaceHistory[z].Results[i].Driver.familyName === driver.lastName) {
+              if (nextRaceHistory[z].Results[i]?.Driver.familyName === driver.lastName) {
                   driver.nextRaceResults[z] = nextRaceHistory[z].Results[i].positionText;
               };
           };
         };
 
-          for ( let z = 0; z < nextRaceTypeHistory.length; z++ ) {
+          for ( let z = 0; z < nextRaceTypeHistory?.length; z++ ) {
 
             for ( let i = 0; i < nextRaceTypeHistory[0].Results.length; i++ ) {
                 if (nextRaceTypeHistory[z].Results[i].Driver.familyName === driver.lastName) {
