@@ -18,7 +18,7 @@ export default function DenseTable({data}) {
               <TableCell align="right">SIN '23</TableCell>
               <TableCell align="right">JPN '23</TableCell>
               <TableCell align="right">QAT '23</TableCell>
-              <TableCell align="right">USA' 23</TableCell>
+              <TableCell align="right">USA '23</TableCell>
               <TableCell align="right">MEX '17</TableCell>
               <TableCell align="right">MEX '18</TableCell>
               <TableCell align="right">MEX '19</TableCell>
