@@ -97,10 +97,6 @@ export default function App() {
   }, [nextRace]);
 
   useEffect(() => {
-    console.log(nextRaceHistory);
-  }, [nextRaceHistory]);
-
-  useEffect(() => {
     /**
      * This function returns full race results for the last 5 races that have a circuit type which matches the next race's circuit type. (I.e. If the next race is a power circuit, it will get the last 5 race results from power circuits)
      */
