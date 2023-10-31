@@ -100,124 +100,106 @@ export default function App() {
     console.log(nextRaceHistory);
   }, [nextRaceHistory]);
 
-  // //This function returns full race results for the last 5 races that have a circuit type which matches
-  // //the next race's circuit type. (I.e. If the next race is a power circuit, it will get the last 5 race results
-  // //from power circuits)
-  // async function fetchNextTrackTypeData(nextRaceType) {
-  //   let circuitTypeMatches = [];
-  //   let circuitTypeMatchesMostRecent = [];
-  //   for (let i = 0; i < circuitTypes.length; i++) {
-  //     if (circuitTypes[i].circuitType === nextRaceType) {
-  //       circuitTypeMatches = circuitTypes[i].circuitIds;
-  //     }
-  //   }
-  //   for (let x = 0; x < currentSeasonRaceResults.length; x++) {
-  //     for (let z = 0; z < circuitTypeMatches.length; z++) {
-  //       if (
-  //         currentSeasonRaceResults[x].Circuit.circuitId ===
-  //         circuitTypeMatches[z]
-  //       ) {
-  //         circuitTypeMatchesMostRecent.push(currentSeasonRaceResults[x]);
-  //       }
-  //     }
-  //   }
-  //   if (circuitTypeMatchesMostRecent.length > 5) {
-  //     const reverseCircuitTypeMatchesMostRecent =
-  //       circuitTypeMatchesMostRecent.reverse();
-  //     const reverseLastFiveCircuitTypeMatches =
-  //       reverseCircuitTypeMatchesMostRecent.slice(0, 5);
-  //     const lastFiveCircuitTypeMatches =
-  //       reverseLastFiveCircuitTypeMatches.reverse();
-  //     return lastFiveCircuitTypeMatches;
-  //   }
-  //   ////Must add 'else if' statements to handle when circuitTypeMatchesMostRecent.length is = or < 5
-  // }
+  useEffect(() => {
+    /**
+     * This function returns full race results for the last 5 races that have a circuit type which matches the next race's circuit type. (I.e. If the next race is a power circuit, it will get the last 5 race results from power circuits)
+     */
+    const getNextTrackType = (nextRaceType) => {
+      const typeMatch = circuitTypes.find(
+        (type) => type.circuitType === nextRaceType
+      );
+      const circuitTypeMatches = typeMatch ? typeMatch.circuitIds : [];
 
-  // async function testFetchNextTrackTypeData(nextRaceType) {
-  //   const results = await fetchNextTrackTypeData(nextRaceType);
-  //   return results;
-  // }
+      const circuitTypeMatchesMostRecent = currentSeasonRaceResults.filter(
+        (result) => circuitTypeMatches.includes(result.Circuit.circuitId)
+      );
 
-  // useEffect(() => {
-  //   testFetchNextTrackTypeData(nextRaceType).then((results) =>
-  //     setNextRaceTypeHistory(results)
-  //   );
-  // }, [nextRaceType, testFetchNextTrackTypeData]);
+      if (circuitTypeMatchesMostRecent.length > 5) {
+        return circuitTypeMatchesMostRecent.slice(-5).reverse();
+      }
 
-  // const driverData = [];
+      // Todo: Add 'else if' statements for cases where circuitTypeMatchesMostRecent.length <= 5
+    };
 
-  // //This function creates a variable called driver - each driver has props that are updated based on three metrics:
-  // //1. Results from the last five races.
-  // //2. Results from the next five races held at the next circuit.
-  // //3. Results from the last five races held circuits that have the same circuit type as the next circuit.
-  // //If a driver didn't participate in a particular race, "N/A" will populate.
-  // //The lastName prop is used to match individual race finishing positions with each driver. (I.e. The driver who
-  // //finished 3rd in the last race has the last name "Hamilton", so Lewis Hamilton finished 3rd in the last race.)
-  // //After each driver's props are fully updated, the driver object is pushed to an empty array called "driverData".
-  // //The driverData array is used to set the state of driverTableData.
-  // async function mapNamesAndResultsToDrivers() {
-  //   await fetchCurrentSeasonRaceResults();
-  //   await testFetchNextTrackData(nextRace);
-  //   await testFetchNextTrackTypeData(nextRaceType);
-  //   await getNextCircuitIdAndType();
-  //   names.forEach((name, i) => {
-  //     const driver = {
-  //       name: names[i],
-  //       lastName: names[i].substring(names[i].indexOf(" ") + 1),
-  //       lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-  //       nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-  //       nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-  //     };
+    const nextTrackType = getNextTrackType(nextRaceType);
 
-  //     for (let z = 0; z < lastFiveRaceResults.length; z++) {
-  //       for (let i = 0; i < lastFiveRaceResults[0].Results.length; i++) {
-  //         if (
-  //           lastFiveRaceResults[z].Results[i].Driver.familyName ===
-  //           driver.lastName
-  //         ) {
-  //           driver.lastFiveRaces[z] =
-  //             lastFiveRaceResults[z].Results[i].positionText;
-  //         }
-  //       }
-  //     }
+    setNextRaceTypeHistory(nextTrackType);
+  }, [currentSeasonRaceResults, nextRaceType]);
 
-  //     for (let z = 0; z < nextRaceHistory.length; z++) {
-  //       for (let i = 0; i < nextRaceHistory[0].Results.length; i++) {
-  //         if (
-  //           nextRaceHistory[z].Results[i]?.Driver.familyName === driver.lastName
-  //         ) {
-  //           driver.nextRaceResults[z] =
-  //             nextRaceHistory[z].Results[i].positionText;
-  //         }
-  //       }
-  //     }
+  useEffect(() => {
+    const driverData = [];
 
-  //     for (let z = 0; z < nextRaceTypeHistory?.length; z++) {
-  //       for (let i = 0; i < nextRaceTypeHistory[0].Results.length; i++) {
-  //         if (
-  //           nextRaceTypeHistory[z].Results[i].Driver.familyName ===
-  //           driver.lastName
-  //         ) {
-  //           driver.nextRaceTypeResults[z] =
-  //             nextRaceTypeHistory[z].Results[i].positionText;
-  //         }
-  //       }
-  //     }
+    /**
+     * This function creates a variable called driver - each driver has props that are updated based on three metrics:
+     * 1. Results from the last five races.
+     * 2. Results from the next five races held at the next circuit.
+     * 3. Results from the last five races held circuits that have the same circuit type as the next circuit.
+     * If a driver didn't participate in a particular race, "N/A" will populate.
+     * The lastName prop is used to match individual race finishing positions with each driver. (I.e. The driver who
+     * finished 3rd in the last race has the last name "Hamilton", so Lewis Hamilton finished 3rd in the last race.)
+     * After each driver's props are fully updated, the driver object is pushed to an empty array called "driverData".
+     * The driverData array is used to set the state of driverTableData.
+     */
+    async function mapNamesAndResultsToDrivers() {
+      names.forEach((name, i) => {
+        const driver = {
+          name: names[i],
+          lastName: names[i].substring(names[i].indexOf(" ") + 1),
+          lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+          nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+          nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+        };
 
-  //     driverData.push(driver);
-  //   });
+        for (let z = 0; z < lastFiveRaceResults.length; z++) {
+          for (let i = 0; i < lastFiveRaceResults[0].Results.length; i++) {
+            if (
+              lastFiveRaceResults[z].Results[i].Driver.familyName ===
+              driver.lastName
+            ) {
+              driver.lastFiveRaces[z] =
+                lastFiveRaceResults[z].Results[i].positionText;
+            }
+          }
+        }
 
-  //   setDriverTableData([...driverTableData, driverData]);
-  // }
+        for (let z = 0; z < nextRaceHistory.length; z++) {
+          for (let i = 0; i < nextRaceHistory[0].Results.length; i++) {
+            if (
+              nextRaceHistory[z].Results[i]?.Driver.familyName ===
+              driver.lastName
+            ) {
+              driver.nextRaceResults[z] =
+                nextRaceHistory[z].Results[i].positionText;
+            }
+          }
+        }
 
-  // useEffect(() => {
-  //   mapNamesAndResultsToDrivers();
-  // }, [
-  //   currentSeasonRaceResults,
-  //   lastFiveRaceResults,
-  //   nextRaceHistory,
-  //   nextRaceTypeHistory,
-  // ]);
+        for (let z = 0; z < nextRaceTypeHistory?.length; z++) {
+          for (let i = 0; i < nextRaceTypeHistory[0].Results.length; i++) {
+            if (
+              nextRaceTypeHistory[z].Results[i].Driver.familyName ===
+              driver.lastName
+            ) {
+              driver.nextRaceTypeResults[z] =
+                nextRaceTypeHistory[z].Results[i].positionText;
+            }
+          }
+        }
+
+        driverData.push(driver);
+      });
+
+      setDriverTableData([...driverTableData, driverData]);
+    }
+
+    mapNamesAndResultsToDrivers();
+  }, [
+    driverTableData,
+    lastFiveRaceResults,
+    names,
+    nextRaceHistory,
+    nextRaceTypeHistory,
+  ]);
 
   function formatRow(
     name,
