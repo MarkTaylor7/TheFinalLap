@@ -126,80 +126,81 @@ export default function App() {
     setNextRaceTypeHistory(nextTrackType);
   }, [currentSeasonRaceResults, nextRaceType]);
 
-  useEffect(() => {
-    const driverData = [];
+  //Todo: Something wonky in this function.
+  // useEffect(() => {
+  //   const driverData = [];
 
-    /**
-     * This function creates a variable called driver - each driver has props that are updated based on three metrics:
-     * 1. Results from the last five races.
-     * 2. Results from the next five races held at the next circuit.
-     * 3. Results from the last five races held circuits that have the same circuit type as the next circuit.
-     * If a driver didn't participate in a particular race, "N/A" will populate.
-     * The lastName prop is used to match individual race finishing positions with each driver. (I.e. The driver who
-     * finished 3rd in the last race has the last name "Hamilton", so Lewis Hamilton finished 3rd in the last race.)
-     * After each driver's props are fully updated, the driver object is pushed to an empty array called "driverData".
-     * The driverData array is used to set the state of driverTableData.
-     */
-    async function mapNamesAndResultsToDrivers() {
-      names.forEach((name, i) => {
-        const driver = {
-          name: names[i],
-          lastName: names[i].substring(names[i].indexOf(" ") + 1),
-          lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-          nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-          nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-        };
+  //   /**
+  //    * This function creates a variable called driver - each driver has props that are updated based on three metrics:
+  //    * 1. Results from the last five races.
+  //    * 2. Results from the next five races held at the next circuit.
+  //    * 3. Results from the last five races held circuits that have the same circuit type as the next circuit.
+  //    * If a driver didn't participate in a particular race, "N/A" will populate.
+  //    * The lastName prop is used to match individual race finishing positions with each driver. (I.e. The driver who
+  //    * finished 3rd in the last race has the last name "Hamilton", so Lewis Hamilton finished 3rd in the last race.)
+  //    * After each driver's props are fully updated, the driver object is pushed to an empty array called "driverData".
+  //    * The driverData array is used to set the state of driverTableData.
+  //    */
+  //   async function mapNamesAndResultsToDrivers() {
+  //     names.forEach((name, i) => {
+  //       const driver = {
+  //         name: names[i],
+  //         lastName: names[i].substring(names[i].indexOf(" ") + 1),
+  //         lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+  //         nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+  //         nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+  //       };
 
-        for (let z = 0; z < lastFiveRaceResults.length; z++) {
-          for (let i = 0; i < lastFiveRaceResults[0].Results.length; i++) {
-            if (
-              lastFiveRaceResults[z].Results[i].Driver.familyName ===
-              driver.lastName
-            ) {
-              driver.lastFiveRaces[z] =
-                lastFiveRaceResults[z].Results[i].positionText;
-            }
-          }
-        }
+  //       for (let z = 0; z < lastFiveRaceResults.length; z++) {
+  //         for (let i = 0; i < lastFiveRaceResults[0].Results.length; i++) {
+  //           if (
+  //             lastFiveRaceResults[z].Results[i].Driver.familyName ===
+  //             driver.lastName
+  //           ) {
+  //             driver.lastFiveRaces[z] =
+  //               lastFiveRaceResults[z].Results[i].positionText;
+  //           }
+  //         }
+  //       }
 
-        for (let z = 0; z < nextRaceHistory.length; z++) {
-          for (let i = 0; i < nextRaceHistory[0].Results.length; i++) {
-            if (
-              nextRaceHistory[z].Results[i]?.Driver.familyName ===
-              driver.lastName
-            ) {
-              driver.nextRaceResults[z] =
-                nextRaceHistory[z].Results[i].positionText;
-            }
-          }
-        }
+  //       for (let z = 0; z < nextRaceHistory.length; z++) {
+  //         for (let i = 0; i < nextRaceHistory[0].Results.length; i++) {
+  //           if (
+  //             nextRaceHistory[z].Results[i]?.Driver.familyName ===
+  //             driver.lastName
+  //           ) {
+  //             driver.nextRaceResults[z] =
+  //               nextRaceHistory[z].Results[i].positionText;
+  //           }
+  //         }
+  //       }
 
-        for (let z = 0; z < nextRaceTypeHistory?.length; z++) {
-          for (let i = 0; i < nextRaceTypeHistory[0].Results.length; i++) {
-            if (
-              nextRaceTypeHistory[z].Results[i].Driver.familyName ===
-              driver.lastName
-            ) {
-              driver.nextRaceTypeResults[z] =
-                nextRaceTypeHistory[z].Results[i].positionText;
-            }
-          }
-        }
+  //       for (let z = 0; z < nextRaceTypeHistory?.length; z++) {
+  //         for (let i = 0; i < nextRaceTypeHistory[0].Results.length; i++) {
+  //           if (
+  //             nextRaceTypeHistory[z].Results[i].Driver.familyName ===
+  //             driver.lastName
+  //           ) {
+  //             driver.nextRaceTypeResults[z] =
+  //               nextRaceTypeHistory[z].Results[i].positionText;
+  //           }
+  //         }
+  //       }
 
-        driverData.push(driver);
-      });
+  //       driverData.push(driver);
+  //     });
 
-      setDriverTableData([...driverTableData, driverData]);
-    }
+  //     setDriverTableData([...driverTableData, driverData]);
+  //   }
 
-    mapNamesAndResultsToDrivers();
-  }, [
-    driverTableData,
-    lastFiveRaceResults,
-    names,
-    nextRaceHistory,
-    nextRaceTypeHistory,
-  ]);
+  //   mapNamesAndResultsToDrivers();
+  // }, [
+  //   driverTableData,
+  //   lastFiveRaceResults,
+  //   names,
+  //   nextRaceHistory,
+  //   nextRaceTypeHistory,
+  // ]);
 
   function formatRow(
     name,
