@@ -90,3 +90,26 @@ export async function fetchEventList() {
 
   return null;
 }
+
+/**
+     * This function fetches the full race results for the last 5 events held at the next race circuit
+     * (typically the last 5 years, with some exceptions due to COVID)
+     */
+export async function fetchNextTrackData(nextRace) {
+  const url = `https://ergast.com/api/f1/circuits/${nextRace}/results.json?limit=1000`;
+
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    const nextRaceAllEvents = json.MRData.RaceTable.Races;
+    const reverseNextRaceAllEvents = nextRaceAllEvents.reverse();
+    const nextRaceLastFiveEventsReverse = reverseNextRaceAllEvents.slice(
+      0,
+      5
+    );
+    const nextRaceLastFiveEvents = nextRaceLastFiveEventsReverse.reverse();
+    return nextRaceLastFiveEvents;
+  } catch (error) {
+    console.log("error", error);
+  }
+}

@@ -4,6 +4,7 @@ import {
   fetchCurrentSeasonRaceResults,
   fetchCurrentStandings,
   fetchEventList,
+  fetchNextTrackData,
 } from "./utilities";
 
 import { circuitTypes } from "./consts";
@@ -33,94 +34,79 @@ export default function App() {
 
   // Update last five race results
   useEffect(() => {
-    const reverseCurrentSeasonRaceResults = currentSeasonRaceResults
+    const lastFiveRaceResults = currentSeasonRaceResults
+      //making copy for reverse
       .slice()
       .reverse()
-      .map((element) => {
-        return element;
-      });
-
-    const lastFiveRaceResultsReversed = reverseCurrentSeasonRaceResults.slice(
+      .slice(
       0,
       5
-    );
-
-    setLastFiveRaceResults(lastFiveRaceResultsReversed.reverse());
+    ).reverse()
+    setLastFiveRaceResults(lastFiveRaceResults);
   }, [currentSeasonRaceResults]);
 
   // Set next race data
   useEffect(() => {
-    let nextCircuitId;
-    let nextCircuitType;
-    let lastRound = Number(lastFiveRaceResults[4]?.round);
-    let nextRound = (lastRound += 1);
-    for (let i = 0; i < eventList.length; i++) {
-      if (Number(eventList[i].round) === nextRound) {
-        nextCircuitId = eventList[i].Circuit.circuitId;
+    if (lastFiveRaceResults.length === 5) {
+      let nextCircuitId;
+      let nextCircuitType;
+      let lastRound = Number(lastFiveRaceResults[4]?.round);
+      let nextRound = (lastRound += 1);
+      for (let i = 0; i < eventList.length; i++) {
+        if (Number(eventList[i].round) === nextRound) {
+          nextCircuitId = eventList[i].Circuit.circuitId;
+        }
       }
-    }
-    for (let i = 0; i < circuitTypes.length; i++) {
-      if (circuitTypes[i].circuitIds.includes(nextCircuitId)) {
-        nextCircuitType = circuitTypes[i].circuitType;
+      for (let i = 0; i < circuitTypes.length; i++) {
+        if (circuitTypes[i].circuitIds.includes(nextCircuitId)) {
+          nextCircuitType = circuitTypes[i].circuitType;
+        }
       }
+      setNextRace(nextCircuitId);
+      setNextRaceType(nextCircuitType);
     }
-    setNextRace(nextCircuitId);
-    setNextRaceType(nextCircuitType);
   }, [eventList, lastFiveRaceResults]);
+  
 
   // Update next race history
   useEffect(() => {
-    /**
-     * This function fetches the full race results for the last 5 events held at the next race circuit
-     * (typically the last 5 years, with some exceptions due to COVID)
-     */
-    async function fetchNextTrackData(nextRace) {
-      const url = `https://ergast.com/api/f1/circuits/${nextRace}/results.json?limit=1000`;
-
-      try {
-        const response = await fetch(url);
-        const json = await response.json();
-        const nextRaceAllEvents = json.MRData.RaceTable.Races;
-        const reverseNextRaceAllEvents = nextRaceAllEvents.reverse();
-        const nextRaceLastFiveEventsReverse = reverseNextRaceAllEvents.slice(
-          0,
-          5
-        );
-        const nextRaceLastFiveEvents = nextRaceLastFiveEventsReverse.reverse();
-        return nextRaceLastFiveEvents;
-      } catch (error) {
-        console.log("error", error);
-      }
-    }
-
     fetchNextTrackData(nextRace).then((results) => setNextRaceHistory(results));
   }, [nextRace]);
 
   useEffect(() => {
-    /**
-     * This function returns full race results for the last 5 races that have a circuit type which matches the next race's circuit type. (I.e. If the next race is a power circuit, it will get the last 5 race results from power circuits)
-     */
-    const getNextTrackType = (nextRaceType) => {
-      const typeMatch = circuitTypes.find(
-        (type) => type.circuitType === nextRaceType
-      );
-      const circuitTypeMatches = typeMatch ? typeMatch.circuitIds : [];
+    if (nextRaceType != "" && currentSeasonRaceResults.length != 0) {
+      /**
+       * This function returns full race results for the last 5 races that have a circuit type which matches the next race's circuit type. (I.e. If the next race is a power circuit, it will get the last 5 race results from power circuits)
+       */
+      const getNextTrackType = (nextRaceType) => {
+        const typeMatch = circuitTypes.find(
+          (type) => type.circuitType === nextRaceType
+        );
+        const circuitTypeMatches = typeMatch ? typeMatch.circuitIds : [];
 
-      const circuitTypeMatchesMostRecent = currentSeasonRaceResults.filter(
-        (result) => circuitTypeMatches.includes(result.Circuit.circuitId)
-      );
+        const circuitTypeMatchesMostRecent = currentSeasonRaceResults.filter(
+          (result) => circuitTypeMatches.includes(result.Circuit.circuitId)
+        );
 
-      if (circuitTypeMatchesMostRecent.length > 5) {
-        return circuitTypeMatchesMostRecent.slice(-5).reverse();
-      }
+        if (circuitTypeMatchesMostRecent.length > 5) {
+          return circuitTypeMatchesMostRecent.slice(-5).reverse();
+        }
 
-      // Todo: Add 'else if' statements for cases where circuitTypeMatchesMostRecent.length <= 5
+        //if (circuitTypeMatchesMostRecent.length < 5) {
+          //setTimeout(function, 1000);
+        //}
+
+        // Todo: Add 'else if' statements for cases where circuitTypeMatchesMostRecent.length <= 5
+      };
     };
-
     const nextTrackType = getNextTrackType(nextRaceType);
 
     setNextRaceTypeHistory(nextTrackType);
   }, [currentSeasonRaceResults, nextRaceType]);
+
+  useEffect(() => {
+    console.log(nextRaceTypeHistory);
+  }, [nextRaceTypeHistory]);
 
   //Todo: Something wonky in this function.
   // useEffect(() => {
@@ -197,6 +183,15 @@ export default function App() {
   //   nextRaceHistory,
   //   nextRaceTypeHistory,
   // ]);
+
+  //console.log(currentSeasonRaceResults);
+  //console.log(eventList);
+  //console.log(names);
+  //console.log(lastFiveRaceResults);
+  //console.log(nextRace);
+  //console.log(nextRaceType);
+  //console.log(nextRaceHistory);
+  //console.log(nextRaceTypeHistory);
 
   function formatRow(
     name,
