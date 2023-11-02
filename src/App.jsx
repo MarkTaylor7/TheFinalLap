@@ -5,6 +5,7 @@ import {
   fetchCurrentStandings,
   fetchEventList,
   fetchNextTrackData,
+  fetchPreviousSeasonRaceResults,
 } from "./utilities";
 
 import { circuitTypes } from "./consts";
@@ -92,7 +93,7 @@ export default function App() {
           return circuitTypeMatchesMostRecent.slice(-5).reverse();
         }
 
-        //if (circuitTypeMatchesMostRecent.length < 5) {
+        //else if (circuitTypeMatchesMostRecent.length < 5) {
           //setTimeout(function, 1000);
         //}
 

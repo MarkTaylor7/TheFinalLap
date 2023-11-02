@@ -64,7 +64,21 @@ export async function fetchLastRaceResults() {
 }
 
 export async function fetchCurrentSeasonRaceResults() {
-  const url = "https://ergast.com/api/f1/2023/results.json?limit=500";
+  const url = "https://ergast.com/api/f1/current/results.json?limit=500";
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    const allRaces = json.MRData.RaceTable.Races;
+    return allRaces;
+  } catch (error) {
+    console.log("error", error);
+  }
+
+  return null;
+}
+
+export async function fetchPreviousSeasonRaceResults() {
+  const url = "https://ergast.com/api/f1/2022/results.json?limit=500";
   try {
     const response = await fetch(url);
     const json = await response.json();
@@ -113,3 +127,4 @@ export async function fetchNextTrackData(nextRace) {
     console.log("error", error);
   }
 }
+
