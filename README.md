@@ -7,11 +7,12 @@ The Final Lap (working title) is an app that allows Formula 1 enthusiasts to vie
    
 # 🏁 MVP Features (minimum viable product)
 <li>A dashboard on the main page, which gives at-a-glance info at each driver’s last 5 race results in 3 categories: Current form (last 5 races contested), Track history (last 5 races contested at the upcoming track), and Circuit Type (last 5 races contested on track layouts that are similar to the upcoming track).</li>
-<li>Each driver will have a profile page, providing full career race results in the same categories featured in the dashboard.</li>
+<li>Contextual results: all results are measured against that driver’s in-season average, and color-coded green or red if they are significantly better or worse than normal. This makes it easier to see when a driver’s form is improving/declining, excels/ struggles at particular tracks, track-types, etc.</li>
 
 
 # 🏁 Additional Features (will add to project if development time allows)
-<li>Contextual results: all results are measured against that driver’s in-season average, and color-coded green or red if they are significantly better or worse than normal. This makes it easier to see when a driver’s form is improving/declining, excels/ struggles at particular tracks, track-types, etc.</li>
+
+<li>Each driver will have a profile page, providing full career race results in the same categories featured in the dashboard.</li>
 <li>Qualifying results in same categories mentioned above.</li>
 <li>Results in rain-affected races. (Some drivers excel or struggle in the wet)</li>
 <li>Weather predictor – widget that has up-to-date forecast for upcoming race weekend.</li>
