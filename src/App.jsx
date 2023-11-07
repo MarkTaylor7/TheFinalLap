@@ -12,6 +12,7 @@ import { circuitTypes } from "./consts";
 
 export default function App() {
   const [names, setNames] = useState([]);
+  const [previousSeasonRaceResults, setPreviousSeasonRaceResults] = useState([]);
   const [currentSeasonRaceResults, setCurrentSeasonRaceResults] = useState([]);
   const [lastFiveRaceResults, setLastFiveRaceResults] = useState([]);
   const [driverTableData, setDriverTableData] = useState([]);
