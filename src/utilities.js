@@ -117,10 +117,7 @@ export async function fetchNextTrackData(nextRace) {
     const json = await response.json();
     const nextRaceAllEvents = json.MRData.RaceTable.Races;
     const reverseNextRaceAllEvents = nextRaceAllEvents.reverse();
-    const nextRaceLastFiveEventsReverse = reverseNextRaceAllEvents.slice(
-      0,
-      5
-    );
+    const nextRaceLastFiveEventsReverse = reverseNextRaceAllEvents.slice(0, 5);
     const nextRaceLastFiveEvents = nextRaceLastFiveEventsReverse.reverse();
     return nextRaceLastFiveEvents;
   } catch (error) {
