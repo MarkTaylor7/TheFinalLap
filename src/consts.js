@@ -34,8 +34,8 @@ const balancedCircuits = {
 const powerCircuits = {
   circuitType: "Power",
   circuitIds: [
-    "bahrain",
-    "jeddah",
+    //"bahrain",
+    //"jeddah",
     "baku",
     "villeneuve",
     "spa",

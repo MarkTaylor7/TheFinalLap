@@ -114,9 +114,26 @@ export default function App() {
           setNextRaceTypeHistory(results);
         }
 
-        //else if (circuitTypeMatchesMostRecent.length < 5) {
-          //setTimeout(function, 1000);
-        //}
+        else if (circuitTypeMatchesMostRecent.length < 5) {
+          console.log(circuitTypeMatchesMostRecent);
+          const thisSeasonResults = circuitTypeMatchesMostRecent;
+
+          //Does this need to be async??
+          setTimeout(fetchPreviousSeasonRaceResults()
+            .then((results) => setPreviousSeasonRaceResults(results)), 1000);
+          const previousSeasonTypeMatch = circuitTypes.find(
+            (type) => type.circuitType === nextRaceType
+          );
+          const previousSeasonsCircuitTypeMatches = previousSeasonTypeMatch ? previousSeasonTypeMatch.circuitIds : [];
+          const previousCircuitTypeMatchesMostRecent = previousSeasonRaceResults.filter(
+            (result) => previousSeasonsCircuitTypeMatches.includes(result.Circuit.circuitId)
+          );
+          console.log(previousCircuitTypeMatchesMostRecent)
+          const newArray = previousCircuitTypeMatchesMostRecent.concat(circuitTypeMatchesMostRecent);
+          console.log(newArray);
+          //const results = 
+          //setNextRaceTypeHistory(results);
+        }
 
         // Todo: Add 'else if' statements for cases where circuitTypeMatchesMostRecent.length <= 5
       };
@@ -124,11 +141,14 @@ export default function App() {
     };
   }, [currentSeasonRaceResults, nextRaceType]);
 
-  useEffect(() => {
-    console.log(nextRaceTypeHistory);
-  }, [nextRaceTypeHistory]);
+  //useEffect(() => {
+    //console.log(nextRaceTypeHistory);
+  //}, [nextRaceTypeHistory]);
 
-  //Todo: Something wonky in this function.
+  useEffect(() => {
+    console.log(previousSeasonRaceResults);
+  }, [previousSeasonRaceResults]);
+
   useEffect(() => {
     const driverData = [];
 
