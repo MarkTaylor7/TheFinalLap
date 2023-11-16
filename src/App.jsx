@@ -34,15 +34,6 @@ export default function App() {
     fetchEventList().then((results) => setEventList(results));
   }, []);
 
-
-
-  useEffect(() => {
-    console.log(names);
-    console.log(currentSeasonRaceResults)
-    console.log(eventList);
-  }, [names, currentSeasonRaceResults, eventList]);
-
-  
   // Update last five race results
   useEffect(() => {
     const lastFiveRaceResults = currentSeasonRaceResults
@@ -53,10 +44,6 @@ export default function App() {
       .reverse()
     setLastFiveRaceResults(lastFiveRaceResults);
   }, [currentSeasonRaceResults]);
-
-  useEffect(() => {
-    console.log(lastFiveRaceResults);
-  }, [lastFiveRaceResults]);
 
   // Set next race data
   useEffect(() => {
@@ -79,20 +66,11 @@ export default function App() {
       setNextRaceType(nextCircuitType);
     }
   }, [eventList, lastFiveRaceResults]);
-  
-  useEffect(() => {
-    console.log(nextRace);
-    console.log(nextRaceType);
-  }, [nextRace, nextRaceType]);
 
   // Update next race history
   useEffect(() => {
     fetchNextTrackData(nextRace).then((results) => setNextRaceHistory(results));
   }, [nextRace]);
-
-  useEffect(() => {
-    console.log(nextRaceHistory);
-  }, [nextRaceHistory]);
 
   useEffect(() => {
     if (nextRaceType != "" && currentSeasonRaceResults.length != 0) {
@@ -125,17 +103,16 @@ export default function App() {
             (type) => type.circuitType === nextRaceType
           );
           const previousSeasonsCircuitTypeMatches = previousSeasonTypeMatch ? previousSeasonTypeMatch.circuitIds : [];
-          const previousCircuitTypeMatchesMostRecent = previousSeasonRaceResults.filter(
+          const previousSeasonsCircuitTypeMatchesMostRecent = previousSeasonRaceResults.filter(
             (result) => previousSeasonsCircuitTypeMatches.includes(result.Circuit.circuitId)
           );
-          console.log(previousCircuitTypeMatchesMostRecent);
-          const newArray = previousCircuitTypeMatchesMostRecent.concat(circuitTypeMatchesMostRecent);
-          console.log(newArray);
-          const results = newArray.slice(-5);
+          console.log(previousSeasonsCircuitTypeMatchesMostRecent);
+
+          const bothSeasonsCircuitTypeMatchesMostRecent = previousSeasonsCircuitTypeMatchesMostRecent.concat(circuitTypeMatchesMostRecent);
+          console.log(bothSeasonsCircuitTypeMatchesMostRecent);
+          const results = bothSeasonsCircuitTypeMatchesMostRecent.slice(-5);
           setNextRaceTypeHistory(results);
         }
-
-        // Todo: Add 'else if' statements for cases where circuitTypeMatchesMostRecent.length <= 5
       };
       getNextTrackType(nextRaceType)
     };
@@ -219,10 +196,6 @@ export default function App() {
   }, [
      nextRaceTypeHistory,
     ]);
-
-  useEffect(() => {
-    console.log(driverTableData);
-  }, [driverTableData]);
 
   function formatRow(
     name,
