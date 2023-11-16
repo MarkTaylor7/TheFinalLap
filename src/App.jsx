@@ -128,14 +128,6 @@ export default function App() {
   }, [currentSeasonRaceResults, nextRaceType, previousSeasonRaceResults]);
 
   useEffect(() => {
-    console.log(nextRaceTypeHistory);
-  }, [nextRaceTypeHistory]);
-
-  useEffect(() => {
-    console.log(previousSeasonRaceResults);
-  }, [previousSeasonRaceResults]);
-
-  useEffect(() => {
     const driverData = [];
 
     /**
