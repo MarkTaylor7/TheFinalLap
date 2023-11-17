@@ -22,6 +22,7 @@ export default function App() {
   const [nextRace, setNextRace] = useState("");
   const [nextRaceHistory, setNextRaceHistory] = useState([]);
   const [nextRaceType, setNextRaceType] = useState("");
+  const [currentSeasonCircuitTypeMatches, setCurrentSeasonCircuitTypeMatches] = useState([]);
   const [nextRaceTypeHistory, setNextRaceTypeHistory] = useState([]);
   const [racerData, setRacerData] = useState([]);
 
@@ -79,7 +80,7 @@ export default function App() {
       /**
        * This function returns full race results for the last 5 races that have a circuit type which matches the next race's circuit type. (I.e. If the next race is a power circuit, it will get the last 5 race results from power circuits)
        */
-      function getNextTrackType(nextRaceType) {
+      function getCurrentSeasonTypeMatches(nextRaceType) {
         const typeMatch = circuitTypes.find(
           (type) => type.circuitType === nextRaceType
         );
@@ -89,44 +90,45 @@ export default function App() {
           (result) => circuitTypeMatches.includes(result.Circuit.circuitId)
         );
 
-        if (circuitTypeMatchesMostRecent.length > 5) {
-          const results = circuitTypeMatchesMostRecent.slice(-5);
-          setNextRaceTypeHistory(results);
-        } else if (circuitTypeMatchesMostRecent.length < 5) {
-          console.log(circuitTypeMatchesMostRecent);
-          function getLastSeasonRaceResults() {
-            fetchPreviousSeasonRaceResults().then((results) =>
-              setPreviousSeasonRaceResults(results)
-            );
-          }
-          setTimeout(getLastSeasonRaceResults(), 1000);
-          const previousSeasonTypeMatch = circuitTypes.find(
-            (type) => type.circuitType === nextRaceType
+        setCurrentSeasonCircuitTypeMatches(circuitTypeMatchesMostRecent);
+      };
+      getCurrentSeasonTypeMatches(nextRaceType);
+    };
+  }, [currentSeasonRaceResults, nextRaceType]);
+  
+  useEffect(() => {
+    if (currentSeasonCircuitTypeMatches.length >= 5) {
+      const results = currentSeasonCircuitTypeMatches.slice(-5);
+      setNextRaceTypeHistory(results);
+    } else if (currentSeasonCircuitTypeMatches.length < 5) {
+        function getLastSeasonRaceResults() {
+          fetchPreviousSeasonRaceResults().then((results) =>
+            setPreviousSeasonRaceResults(results)
           );
-          const previousSeasonsCircuitTypeMatches = previousSeasonTypeMatch
-            ? previousSeasonTypeMatch.circuitIds
-            : [];
-          const previousSeasonsCircuitTypeMatchesMostRecent =
-            previousSeasonRaceResults.filter((result) =>
-              previousSeasonsCircuitTypeMatches.includes(
-                result.Circuit.circuitId
-              )
-            );
-          console.log(previousSeasonsCircuitTypeMatchesMostRecent);
+        }
+        setTimeout(getLastSeasonRaceResults(), 1000);
 
-          const bothSeasonsCircuitTypeMatchesMostRecent =
+        const previousSeasonTypeMatch = circuitTypes.find(
+          (type) => type.circuitType === nextRaceType
+        );
+        const previousSeasonsCircuitTypeMatches = previousSeasonTypeMatch
+          ? previousSeasonTypeMatch.circuitIds
+          : [];
+        const previousSeasonsCircuitTypeMatchesMostRecent =
+          previousSeasonRaceResults.filter((result) =>
+            previousSeasonsCircuitTypeMatches.includes(
+              result.Circuit.circuitId
+            )
+          );
+        const bothSeasonsCircuitTypeMatchesMostRecent =
             previousSeasonsCircuitTypeMatchesMostRecent.concat(
-              circuitTypeMatchesMostRecent
+              currentSeasonCircuitTypeMatches
             );
-          console.log(bothSeasonsCircuitTypeMatchesMostRecent);
           const results = bothSeasonsCircuitTypeMatchesMostRecent.slice(-5);
           setNextRaceTypeHistory(results);
-        }
-      }
-      getNextTrackType(nextRaceType);
     }
-  }, [currentSeasonRaceResults, nextRaceType, previousSeasonRaceResults]);
-
+  }, [currentSeasonCircuitTypeMatches]); 
+  
   useEffect(() => {
     const driverData = [];
 
