@@ -14,21 +14,21 @@ export default function DenseTable({data}) {
           <TableHead>
             <TableRow>
               <TableCell>Driver</TableCell>
-              <TableCell align="right">JPN '23</TableCell>
               <TableCell align="right">QAT '23</TableCell>
               <TableCell align="right">USA '23</TableCell>
               <TableCell align="right">MEX '23</TableCell>
               <TableCell align="right">BRA '23</TableCell>
-              <TableCell align="right">N/A</TableCell>
-              <TableCell align="right">N/A</TableCell>
-              <TableCell align="right">N/A</TableCell>
-              <TableCell align="right">N/A</TableCell>
-              <TableCell align="right">N/A</TableCell>
-              <TableCell align="right">SAU '23</TableCell>
-              <TableCell align="right">AZB '23</TableCell>
-              <TableCell align="right">CAN '23</TableCell>
-              <TableCell align="right">BEL '23</TableCell>
-              <TableCell align="right">ITA '23</TableCell>
+              <TableCell align="right">LVG '23</TableCell>
+              <TableCell align="right">ABD '18</TableCell>
+              <TableCell align="right">ABD '19</TableCell>
+              <TableCell align="right">ABD '20</TableCell>
+              <TableCell align="right">ABD '21</TableCell>
+              <TableCell align="right">ABD '22</TableCell>
+              <TableCell align="right">MIA '23</TableCell>
+              <TableCell align="right">AUT '23</TableCell>
+              <TableCell align="right">GBR '23</TableCell>
+              <TableCell align="right">USA '23</TableCell>
+              <TableCell align="right">BRA '23</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
