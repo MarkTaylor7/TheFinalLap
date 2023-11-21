@@ -261,7 +261,7 @@ export default function App() {
 
   return (
     <>
-      <DenseTable data={racerData} />
+      <DenseTable /*data1={trackNames}*/ data2={racerData}/>
     </>
   );
 }

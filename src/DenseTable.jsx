@@ -7,32 +7,36 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 
-export default function DenseTable({data}) {
+export default function DenseTable({data1, data2}) {
     return (
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>
-            <TableRow>
-              <TableCell>Driver</TableCell>
-              <TableCell align="right">QAT '23</TableCell>
-              <TableCell align="right">USA '23</TableCell>
-              <TableCell align="right">MEX '23</TableCell>
-              <TableCell align="right">BRA '23</TableCell>
-              <TableCell align="right">LVG '23</TableCell>
-              <TableCell align="right">ABD '18</TableCell>
-              <TableCell align="right">ABD '19</TableCell>
-              <TableCell align="right">ABD '20</TableCell>
-              <TableCell align="right">ABD '21</TableCell>
-              <TableCell align="right">ABD '22</TableCell>
-              <TableCell align="right">MIA '23</TableCell>
-              <TableCell align="right">AUT '23</TableCell>
-              <TableCell align="right">GBR '23</TableCell>
-              <TableCell align="right">USA '23</TableCell>
-              <TableCell align="right">BRA '23</TableCell>
-            </TableRow>
+            {/*{data1.map((row, i) => (*/}
+              <TableRow
+              /*key={i}*/
+              >
+                <TableCell>Driver</TableCell>
+                <TableCell align="right">QAT '23</TableCell>
+                <TableCell align="right">USA '23</TableCell>
+                <TableCell align="right">MEX '23</TableCell>
+                <TableCell align="right">BRA '23</TableCell>
+                <TableCell align="right">LVG '23</TableCell>
+                <TableCell align="right">ABD '18</TableCell>
+                <TableCell align="right">ABD '19</TableCell>
+                <TableCell align="right">ABD '20</TableCell>
+                <TableCell align="right">ABD '21</TableCell>
+                <TableCell align="right">ABD '22</TableCell>
+                <TableCell align="right">MIA '23</TableCell>
+                <TableCell align="right">AUT '23</TableCell>
+                <TableCell align="right">GBR '23</TableCell>
+                <TableCell align="right">USA '23</TableCell>
+                <TableCell align="right">BRA '23</TableCell>
+              </TableRow>
+              {/*))}*/}
           </TableHead>
           <TableBody>
-            {data.map((row, i) => (
+            {data2.map((row, i) => (
               <TableRow
                 key={i}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
