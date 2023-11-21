@@ -15,6 +15,7 @@ export default function App() {
   const [previousSeasonRaceResults, setPreviousSeasonRaceResults] = useState([]);
   const [currentSeasonRaceResults, setCurrentSeasonRaceResults] = useState([]);
   const [lastFiveRaceResults, setLastFiveRaceResults] = useState([]);
+  const [tableHeadingsContent, setTableHeadingsContent] = useState([]);
   const [driverTableData, setDriverTableData] = useState([]);
   const [eventList, setEventList] = useState([]);
   const [nextRace, setNextRace] = useState("");
@@ -22,6 +23,7 @@ export default function App() {
   const [nextRaceType, setNextRaceType] = useState("");
   const [currentSeasonCircuitTypeMatches, setCurrentSeasonCircuitTypeMatches] = useState([]);
   const [nextRaceTypeHistory, setNextRaceTypeHistory] = useState([]);
+  const [tableHeadings, setTableHeadings] = useState([]);
   const [racerData, setRacerData] = useState([]);
 
   // Getting driver names, current season results and events list
@@ -128,8 +130,41 @@ export default function App() {
   }, [currentSeasonCircuitTypeMatches]); 
   
   useEffect(() => {
-    const driverData = [];
+    const raceNames = [];
+    
+    async function mapRaceNamesToHeadings() {
 
+      const tableHeading = {
+        name: "Driver",
+        
+        lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+        nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+        nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+      };
+
+      for (let z = 0; z < lastFiveRaceResults.length; z++) {
+        if (
+          lastFiveRaceResults[z].raceName === 'Qatar Grand Prix'
+        ) {
+          tableHeading.lastFiveRaces[z] = 'QAT'
+        }
+      }
+      raceNames.push(tableHeading);
+      setTableHeadingsContent(raceNames);
+    }
+    
+    mapRaceNamesToHeadings();
+
+  }, [lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
+
+  useEffect(() => {
+    console.log(lastFiveRaceResults);
+    console.log(nextRaceHistory);
+    console.log(nextRaceTypeHistory);
+  }, [lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory])
+
+  useEffect(() => {
+    const driverData = [];
     /**
      * This function creates a variable called driver - each driver has props that are updated based on three metrics:
      * 1. Results from the last five races.
@@ -235,6 +270,31 @@ export default function App() {
   }
 
   useEffect(() => {
+    setTableHeadings(
+      tableHeadingsContent.map((tableHeading) =>
+        formatRow(
+          tableHeading.name,
+          tableHeading.lastFiveRaces[0],
+          tableHeading.lastFiveRaces[1],
+          tableHeading.lastFiveRaces[2],
+          tableHeading.lastFiveRaces[3],
+          tableHeading.lastFiveRaces[4],
+          tableHeading.nextRaceResults[0],
+          tableHeading.nextRaceResults[1],
+          tableHeading.nextRaceResults[2],
+          tableHeading.nextRaceResults[3],
+          tableHeading.nextRaceResults[4],
+          tableHeading.nextRaceTypeResults[0],
+          tableHeading.nextRaceTypeResults[1],
+          tableHeading.nextRaceTypeResults[2],
+          tableHeading.nextRaceTypeResults[3],
+          tableHeading.nextRaceTypeResults[4]
+        )
+      )
+    );
+  }, [tableHeadingsContent]);
+
+  useEffect(() => {
     setRacerData(
       driverTableData.map((driver) =>
         formatRow(
@@ -261,7 +321,7 @@ export default function App() {
 
   return (
     <>
-      <DenseTable /*data1={trackNames}*/ data2={racerData}/>
+      <DenseTable data1={tableHeadings} data2={racerData}/>
     </>
   );
 }

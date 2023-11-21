@@ -12,12 +12,12 @@ export default function DenseTable({data1, data2}) {
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>
-            {/*{data1.map((row, i) => (*/}
+            {data1.map((row, i) => (
               <TableRow
-              /*key={i}*/
+              key={i}
               >
                 <TableCell>Driver</TableCell>
-                <TableCell align="right">QAT '23</TableCell>
+                <TableCell align="right">{row.fiveRacesAgo}</TableCell>
                 <TableCell align="right">USA '23</TableCell>
                 <TableCell align="right">MEX '23</TableCell>
                 <TableCell align="right">BRA '23</TableCell>
@@ -33,7 +33,7 @@ export default function DenseTable({data1, data2}) {
                 <TableCell align="right">USA '23</TableCell>
                 <TableCell align="right">BRA '23</TableCell>
               </TableRow>
-              {/*))}*/}
+            ))}
           </TableHead>
           <TableBody>
             {data2.map((row, i) => (
