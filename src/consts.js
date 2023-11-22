@@ -45,6 +45,18 @@ const powerCircuits = {
   ],
 };
 
+const QATAR = {
+  raceName: "Qatar Grand Prix", raceHeader: "QAT"
+};
+
+const USA = {
+  raceName: "United States Grand Prix", raceHeader: "USA"
+};
+
+export const circuitTags = [
+  QATAR, USA
+];
+
 export const circuitTypes = [
   highDownforceCircuits,
   balancedCircuits,

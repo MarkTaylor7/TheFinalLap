@@ -8,7 +8,7 @@ import {
   fetchPreviousSeasonRaceResults,
 } from "./utilities";
 
-import { circuitTypes } from "./consts";
+import { circuitTypes, circuitTags } from "./consts";
 
 export default function App() {
   const [names, setNames] = useState([]);
@@ -130,6 +130,7 @@ export default function App() {
   }, [currentSeasonCircuitTypeMatches]); 
   
   useEffect(() => {
+    //add if (lastFiveRaceResults !=0)?
     const raceNames = [];
     
     async function mapRaceNamesToHeadings() {
@@ -142,13 +143,17 @@ export default function App() {
         nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
       };
 
-      for (let z = 0; z < lastFiveRaceResults.length; z++) {
-        if (
-          lastFiveRaceResults[z].raceName === 'Qatar Grand Prix'
-        ) {
-          tableHeading.lastFiveRaces[z] = 'QAT'
+      
+
+      for (let i = 0; i < tableHeading.lastFiveRaces.length; i++) {
+        tableHeading.lastFiveRaces[i] = lastFiveRaceResults[i].raceName;
+        for (let z = 0; z < circuitTags.length; z++) {
+          
+            if (tableHeading.lastFiveRaces[i] = circuitTags[z].raceName) {
+             tableHeading.lastFiveRaces[i] = circuitTags[z].raceHeader
+            }
         }
-      }
+      }  
       raceNames.push(tableHeading);
       setTableHeadingsContent(raceNames);
     }
