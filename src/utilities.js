@@ -111,27 +111,25 @@ export async function fetchEventList() {
      */
 export async function fetchNextTrackData(nextRace) {
   let url;
-  if (nextRace == "monaco") {
-    url = "https://ergast.com/api/f1/circuits/monaco/results.json?limit=1000&offset=1000"
-  } else if (nextRace == "silverstone") {
-    url = "https://ergast.com/api/f1/circuits/silverstone/results.json?limit=1000&offset=1000"
-  } else if (nextRace == "spa") {
-    url = "https://ergast.com/api/f1/circuits/spa/results.json?limit=1000&offset=1000"
-  } else if (nextRace == "monza") {
-    url = "https://ergast.com/api/f1/circuits/monza/results.json?limit=1000&offset=1000"
-  } else if (nextRace == "villeneuve") {
-    url = "https://ergast.com/api/f1/circuits/villeneuve/results.json?limit=1000&offset=600"
-  } else if (nextRace == "interlagos") {
-    url = "https://ergast.com/api/f1/circuits/interlagos/results.json?limit=1000&offset=600"
-  } else if (nextRace == "hungaroring") {
-    url = "https://ergast.com/api/f1/circuits/hungaroring/results.json?limit=1000&offset=600"
-  } else if (nextRace == "red_bull_ring") {
-    url = "https://ergast.com/api/f1/circuits/red_bull_ring/results.json?limit=1000&offset=600"
-  } else {
-    url = `https://ergast.com/api/f1/circuits/${nextRace}/results.json?limit=1000`
+  switch (nextRace) {
+    case "monaco":
+    case "monza":
+    case "silverstone": 
+    case "spa":
+      url = `https://ergast.com/api/f1/circuits/${nextRace}/results.json?limit=1000&offset=1000`;
+      break;
+    case "hungaroring":
+    case "interlagos":
+    case "red_bull_ring":
+    case "villeneuve":
+      url = `https://ergast.com/api/f1/circuits/${nextRace}/results.json?limit=1000&offset=600`;
+      break;
+    default:
+      url = `https://ergast.com/api/f1/circuits/${nextRace}/results.json?limit=1000`;
   };
 
   try {
+    console.log(url)
     const response = await fetch(url);
     const json = await response.json();
     const nextRaceAllEvents = json.MRData.RaceTable.Races;
