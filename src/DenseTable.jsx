@@ -19,9 +19,9 @@ export default function DenseTable({data1, data2}) {
                 <TableCell>Driver</TableCell>
                 <TableCell align="right">{row.fiveRacesAgo}</TableCell>
                 <TableCell align="right">{row.fourRacesAgo}</TableCell>
-                <TableCell align="right">MEX '23</TableCell>
-                <TableCell align="right">BRA '23</TableCell>
-                <TableCell align="right">LVG '23</TableCell>
+                <TableCell align="right">{row.threeRacesAgo}</TableCell>
+                <TableCell align="right">{row.twoRacesAgo}</TableCell>
+                <TableCell align="right">{row.oneRaceAgo}</TableCell>
                 <TableCell align="right">ABD '18</TableCell>
                 <TableCell align="right">ABD '19</TableCell>
                 <TableCell align="right">ABD '20</TableCell>

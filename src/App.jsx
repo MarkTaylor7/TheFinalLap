@@ -8,7 +8,7 @@ import {
   fetchPreviousSeasonRaceResults,
 } from "./utilities";
 
-import { circuitTypes, circuitTags } from "./consts";
+import { circuitTypes, raceTitles } from "./consts";
 
 export default function App() {
   const [names, setNames] = useState([]);
@@ -147,14 +147,14 @@ export default function App() {
 
       for (let i = 0; i < tableHeading.lastFiveRaces.length; i++) {
         tableHeading.lastFiveRaces[i] = lastFiveRaceResults[i].raceName;
-        for (let z = 0; z < circuitTags.length; z++) {
-          
-            if (tableHeading.lastFiveRaces[i] = circuitTags[z].raceName) {
-             tableHeading.lastFiveRaces[i] = circuitTags[z].raceHeader
-            }
+        for (let z = 0; z < raceTitles.length; z++) {
+          if (tableHeading.lastFiveRaces[i] == raceTitles[z].raceName) {
+            tableHeading.lastFiveRaces[i] = raceTitles[z].raceHeader
+          }
         }
       }  
       raceNames.push(tableHeading);
+      console.log(tableHeading);
       setTableHeadingsContent(raceNames);
     }
     
