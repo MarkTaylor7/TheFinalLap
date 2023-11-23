@@ -27,7 +27,8 @@ const balancedCircuits = {
     "americas",
     "interlagos",
     "yas_marina",
-    "shanghai"
+    "shanghai",
+    "imola"
   ],
 };
 
