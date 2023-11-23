@@ -130,36 +130,53 @@ export default function App() {
   }, [currentSeasonCircuitTypeMatches]); 
   
   useEffect(() => {
-    //add if (lastFiveRaceResults !=0)?
-    const raceNames = [];
-    
-    async function mapRaceNamesToHeadings() {
-
-      const tableHeading = {
-        name: "Driver",
-        
-        lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-        nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-        nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-      };
-
+    if (lastFiveRaceResults != 0 && nextRaceHistory !=0 && nextRaceTypeHistory !=0) {
+      const raceNames = [];
       
+      async function mapRaceNamesToHeadings() {
 
-      for (let i = 0; i < tableHeading.lastFiveRaces.length; i++) {
-        tableHeading.lastFiveRaces[i] = lastFiveRaceResults[i].raceName;
-        for (let z = 0; z < raceTitles.length; z++) {
-          if (tableHeading.lastFiveRaces[i] == raceTitles[z].raceName) {
-            tableHeading.lastFiveRaces[i] = raceTitles[z].raceHeader
+        const tableHeading = {
+          name: "Driver",
+          
+          lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+          nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+          nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+        };
+
+        for (let i = 0; i < tableHeading.lastFiveRaces.length; i++) {
+          tableHeading.lastFiveRaces[i] = lastFiveRaceResults[i].raceName;
+          for (let z = 0; z < raceTitles.length; z++) {
+            if (tableHeading.lastFiveRaces[i] == raceTitles[z].raceName) {
+              tableHeading.lastFiveRaces[i] = raceTitles[z].raceHeader
+            }
           }
         }
-      }  
-      raceNames.push(tableHeading);
-      console.log(tableHeading);
-      setTableHeadingsContent(raceNames);
-    }
-    
-    mapRaceNamesToHeadings();
 
+        for (let i = 0; i < tableHeading.nextRaceResults.length; i++) {
+          tableHeading.nextRaceResults[i] = nextRaceHistory[i].raceName;
+          for (let z = 0; z < raceTitles.length; z++) {
+            if (tableHeading.nextRaceResults[i] == raceTitles[z].raceName) {
+              tableHeading.nextRaceResults[i] = raceTitles[z].raceHeader
+            }
+          }
+        }
+
+        for (let i = 0; i < tableHeading.nextRaceTypeResults.length; i++) {
+          tableHeading.nextRaceTypeResults[i] = nextRaceTypeHistory[i].raceName;
+          for (let z = 0; z < raceTitles.length; z++) {
+            if (tableHeading.nextRaceTypeResults[i] == raceTitles[z].raceName) {
+              tableHeading.nextRaceTypeResults[i] = raceTitles[z].raceHeader
+            }
+          }
+        }
+
+        raceNames.push(tableHeading);
+        console.log(tableHeading);
+        setTableHeadingsContent(raceNames);
+      }
+      
+      mapRaceNamesToHeadings();
+    };
   }, [lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
 
   useEffect(() => {

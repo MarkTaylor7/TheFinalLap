@@ -26,7 +26,8 @@ const balancedCircuits = {
     "silverstone",
     "americas",
     "interlagos",
-    "yas_marina"
+    "yas_marina",
+    "shanghai"
   ],
 };
 

@@ -22,16 +22,16 @@ export default function DenseTable({data1, data2}) {
                 <TableCell align="right">{row.threeRacesAgo}</TableCell>
                 <TableCell align="right">{row.twoRacesAgo}</TableCell>
                 <TableCell align="right">{row.oneRaceAgo}</TableCell>
-                <TableCell align="right">ABD '18</TableCell>
-                <TableCell align="right">ABD '19</TableCell>
-                <TableCell align="right">ABD '20</TableCell>
-                <TableCell align="right">ABD '21</TableCell>
-                <TableCell align="right">ABD '22</TableCell>
-                <TableCell align="right">MIA '23</TableCell>
-                <TableCell align="right">AUT '23</TableCell>
-                <TableCell align="right">GBR '23</TableCell>
-                <TableCell align="right">USA '23</TableCell>
-                <TableCell align="right">BRA '23</TableCell>
+                <TableCell align="right">{row.nextRace1}</TableCell>
+                <TableCell align="right">{row.nextRace2}</TableCell>
+                <TableCell align="right">{row.nextRace3}</TableCell>
+                <TableCell align="right">{row.nextRace4}</TableCell>
+                <TableCell align="right">{row.nextRace5}</TableCell>
+                <TableCell align="right">{row.nextRaceType1}</TableCell>
+                <TableCell align="right">{row.nextRaceType2}</TableCell>
+                <TableCell align="right">{row.nextRaceType3}</TableCell>
+                <TableCell align="right">{row.nextRaceType4}</TableCell>
+                <TableCell align="right">{row.nextRaceType5}</TableCell>
               </TableRow>
             ))}
           </TableHead>
