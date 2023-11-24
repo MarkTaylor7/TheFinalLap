@@ -15,6 +15,7 @@ export default function App() {
   const [previousSeasonRaceResults, setPreviousSeasonRaceResults] = useState([]);
   const [currentSeasonRaceResults, setCurrentSeasonRaceResults] = useState([]);
   const [lastFiveRaceResults, setLastFiveRaceResults] = useState([]);
+  const [flagHeadingsContent, setFlagHeadingsContent] = useState([]);
   const [tableHeadingsContent, setTableHeadingsContent] = useState([]);
   const [driverTableData, setDriverTableData] = useState([]);
   const [eventList, setEventList] = useState([]);
@@ -23,6 +24,7 @@ export default function App() {
   const [nextRaceType, setNextRaceType] = useState("");
   const [currentSeasonCircuitTypeMatches, setCurrentSeasonCircuitTypeMatches] = useState([]);
   const [nextRaceTypeHistory, setNextRaceTypeHistory] = useState([]);
+  const [flagHeadings, setFlagHeadings] = useState([]);
   const [tableHeadings, setTableHeadings] = useState([]);
   const [racerData, setRacerData] = useState([]);
 
@@ -51,7 +53,7 @@ export default function App() {
   // Set next race data
   useEffect(() => {
     if (lastFiveRaceResults.length === 5) {
-      let nextCircuitId = "spa";
+      let nextCircuitId = "yas_marina";
       let nextCircuitType;
       /*let lastRound = Number(lastFiveRaceResults[4]?.round);
       let nextRound = (lastRound += 1);
@@ -131,6 +133,85 @@ export default function App() {
   
   useEffect(() => {
     if (lastFiveRaceResults != 0 && nextRaceHistory !=0 && nextRaceTypeHistory !=0) {
+      const raceFlags = [];
+      
+      async function mapFlagsToHeadings() {
+
+        const flagHeading = {
+          name: "Driver",
+          lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+          nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+          nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+        };
+
+        const flags  = [
+          {raceName: "70th Anniversary Grand Prix", flagImage: <img id="greatBritainFlag" src="https://flagsapi.com/GB/flat/32.png" alt="British flag"></img>},
+          {raceName: "Abu Dhabi Grand Prix", flagImage: <img id="UAEFlag" src="https://flagsapi.com/AE/flat/32.png" alt="United Arab Emirates flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Belgian Grand Prix", flagImage: <img id="belgianFlag" src="https://flagsapi.com/BE/flat/32.png" alt="Belgian flag"></img>},
+          {raceName: "Italian Grand Prix", flagImage: <img id="italianFlag" src="https://flagsapi.com/IT/flat/32.png" alt="Italian flag"></img>}
+        ];
+
+        for (let i = 0; i < flagHeading.lastFiveRaces.length; i++) {
+          flagHeading.lastFiveRaces[i] = lastFiveRaceResults[i].raceName;
+          for (let z = 0; z < flags.length; z++) {
+            if (flagHeading.lastFiveRaces[i] == flags[z].raceName) {
+              flagHeading.lastFiveRaces[i] = flags[z].flagImage
+            }
+          }
+        }
+
+        for (let i = 0; i < flagHeading.nextRaceResults.length; i++) {
+          flagHeading.nextRaceResults[i] = nextRaceHistory[i].raceName;
+          for (let z = 0; z < flags.length; z++) {
+            if (flagHeading.nextRaceResults[i] == flags[z].raceName) {
+              flagHeading.nextRaceResults[i] = flags[z].flagImage
+            }
+          }
+        }
+
+        for (let i = 0; i < flagHeading.nextRaceTypeResults.length; i++) {
+          flagHeading.nextRaceTypeResults[i] = nextRaceTypeHistory[i].raceName;
+          for (let z = 0; z < flags.length; z++) {
+            if (flagHeading.nextRaceTypeResults[i] == flags[z].raceName) {
+              flagHeading.nextRaceTypeResults[i] = flags[z].flagImage
+            }
+          }
+        }
+
+        raceFlags.push(flagHeading);
+        console.log(flagHeading);
+        setFlagHeadingsContent(raceFlags);
+      }
+      
+      mapFlagsToHeadings();
+    };
+  }, [lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
+
+  useEffect(() => {
+    if (lastFiveRaceResults != 0 && nextRaceHistory !=0 && nextRaceTypeHistory !=0) {
       const raceNames = [];
       
       async function mapRaceNamesToHeadings() {
@@ -156,10 +237,10 @@ export default function App() {
           tableHeading.nextRaceResults[i] = nextRaceHistory[i].raceName;
           for (let z = 0; z < raceTitles.length; z++) {
             if (tableHeading.nextRaceResults[i] == raceTitles[z].raceName) {
-              tableHeading.nextRaceResults[i] = raceTitles[z].flag
+              tableHeading.nextRaceResults[i] = raceTitles[z].raceHeader
             }
           }
-          //tableHeading.nextRaceResults[i] = tableHeading.nextRaceResults[i].concat(" ", nextRaceHistory[i].season)
+          tableHeading.nextRaceResults[i] = tableHeading.nextRaceResults[i].concat(" ", nextRaceHistory[i].season)
         }
 
         for (let i = 0; i < tableHeading.nextRaceTypeResults.length; i++) {
@@ -294,6 +375,31 @@ export default function App() {
   }
 
   useEffect(() => {
+    setFlagHeadings(
+      flagHeadingsContent.map((flagHeading) =>
+        formatRow(
+          flagHeading.name,
+          flagHeading.lastFiveRaces[0],
+          flagHeading.lastFiveRaces[1],
+          flagHeading.lastFiveRaces[2],
+          flagHeading.lastFiveRaces[3],
+          flagHeading.lastFiveRaces[4],
+          flagHeading.nextRaceResults[0],
+          flagHeading.nextRaceResults[1],
+          flagHeading.nextRaceResults[2],
+          flagHeading.nextRaceResults[3],
+          flagHeading.nextRaceResults[4],
+          flagHeading.nextRaceTypeResults[0],
+          flagHeading.nextRaceTypeResults[1],
+          flagHeading.nextRaceTypeResults[2],
+          flagHeading.nextRaceTypeResults[3],
+          flagHeading.nextRaceTypeResults[4]
+        )
+      )
+    );
+  }, [flagHeadingsContent]);
+
+  useEffect(() => {
     setTableHeadings(
       tableHeadingsContent.map((tableHeading) =>
         formatRow(
@@ -345,7 +451,7 @@ export default function App() {
 
   return (
     <>
-      <DenseTable data1={tableHeadings} data2={racerData}/>
+      <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData}/>
     </>
   );
 }
