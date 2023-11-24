@@ -129,7 +129,6 @@ export async function fetchNextTrackData(nextRace) {
   };
 
   try {
-    console.log(url)
     const response = await fetch(url);
     const json = await response.json();
     const nextRaceAllEvents = json.MRData.RaceTable.Races;

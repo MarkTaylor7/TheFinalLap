@@ -51,15 +51,15 @@ export default function App() {
   // Set next race data
   useEffect(() => {
     if (lastFiveRaceResults.length === 5) {
-      let nextCircuitId;
+      let nextCircuitId = "spa";
       let nextCircuitType;
-      let lastRound = Number(lastFiveRaceResults[4]?.round);
+      /*let lastRound = Number(lastFiveRaceResults[4]?.round);
       let nextRound = (lastRound += 1);
       for (let i = 0; i < eventList.length; i++) {
         if (Number(eventList[i].round) === nextRound) {
           nextCircuitId = eventList[i].Circuit.circuitId;
         }
-      }
+      }*/
       for (let i = 0; i < circuitTypes.length; i++) {
         if (circuitTypes[i].circuitIds.includes(nextCircuitId)) {
           nextCircuitType = circuitTypes[i].circuitType;
@@ -156,10 +156,10 @@ export default function App() {
           tableHeading.nextRaceResults[i] = nextRaceHistory[i].raceName;
           for (let z = 0; z < raceTitles.length; z++) {
             if (tableHeading.nextRaceResults[i] == raceTitles[z].raceName) {
-              tableHeading.nextRaceResults[i] = raceTitles[z].raceHeader
+              tableHeading.nextRaceResults[i] = raceTitles[z].flag
             }
           }
-          tableHeading.nextRaceResults[i] = tableHeading.nextRaceResults[i].concat(" ", nextRaceHistory[i].season)
+          //tableHeading.nextRaceResults[i] = tableHeading.nextRaceResults[i].concat(" ", nextRaceHistory[i].season)
         }
 
         for (let i = 0; i < tableHeading.nextRaceTypeResults.length; i++) {

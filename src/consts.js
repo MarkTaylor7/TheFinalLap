@@ -53,6 +53,8 @@ export const circuitTypes = [
   powerCircuits,
 ];
 
+const x = document.getElementById("belgianFlag");
+
 export const raceTitles = [
 {raceName: "70th Anniversary Grand Prix", raceHeader: "70A"},
 {raceName: "Abu Dhabi Grand Prix", raceHeader: "ABU"},
@@ -60,12 +62,13 @@ export const raceTitles = [
 {raceName: "Austrian Grand Prix", raceHeader: "AUT"},
 {raceName: "Azerbaijan Grand Prix", raceHeader: "AZE"},
 {raceName: "Bahrain Grand Prix", raceHeader: "BAH"},
-{raceName: "Belgian Grand Prix", raceHeader: "BEL"},
+{raceName: "Belgian Grand Prix", raceHeader: "BEL", flag: x},
 {raceName: "São Paulo Grand Prix" || "Brazilian Grand Prix", raceHeader: "BRA"},
 {raceName: "Canadian Grand Prix", raceHeader: "CAN"},
 {raceName: "Chinese Grand Prix", raceHeader: "CHN"},
 {raceName: "Emilia Romagna Grand Prix", raceHeader: "EMI"},
 {raceName: "European Grand Prix", raceHeader: "EUR"},
+//flags api doesn't have EU flag. May need to look elsewhere if this header is needed
 {raceName: "British Grand Prix", raceHeader: "GBR"},
 {raceName: "Hungarian Grand Prix", raceHeader: "HUN"},
 {raceName: "Italian Grand Prix", raceHeader: "ITA"},
@@ -73,8 +76,8 @@ export const raceTitles = [
 {raceName: "Las Vegas Grand Prix", raceHeader: "LVG"},
 {raceName: "Mexico City Grand Prix" || "Mexican Grand Prix", raceHeader: "MEX"},
 {raceName: "Miami Grand Prix", raceHeader: "MIA"},
-{raceName: "Dutch Grand Prix", raceHeader: "NED"},
 {raceName: "Monaco Grand Prix", raceHeader: "MON"},
+{raceName: "Dutch Grand Prix", raceHeader: "NED"},
 {raceName: "Qatar Grand Prix", raceHeader: "QAT"},
 {raceName: "Sakhir Grand Prix", raceHeader: "SKH"},
 {raceName: "San Marino Grand Prix", raceHeader: "SMR"},
@@ -82,5 +85,6 @@ export const raceTitles = [
 {raceName: "Singapore Grand Prix", raceHeader: "SIN"},
 {raceName: "Spanish Grand Prix", raceHeader: "ESP"},
 {raceName: "Styrian Grand Prix", raceHeader: "STY"},
+//flags api doesn't have EU flag. May need to look elsewhere or use Austrian flag.
 {raceName: "United States Grand Prix", raceHeader: "USA"}
 ];
