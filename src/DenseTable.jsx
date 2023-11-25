@@ -16,7 +16,7 @@ export default function DenseTable({data1, data2, data3}) {
               <TableRow
               key={i}
               >
-                <TableCell>""</TableCell>
+                <TableCell></TableCell>
                 <TableCell align="right">{row.fiveRacesAgo}</TableCell>
                 <TableCell align="right">{row.fourRacesAgo}</TableCell>
                 <TableCell align="right">{row.threeRacesAgo}</TableCell>

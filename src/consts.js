@@ -67,7 +67,6 @@ export const raceTitles = [
 {raceName: "Emilia Romagna Grand Prix", raceHeader: "EMI"},
 {raceName: "Spanish Grand Prix", raceHeader: "ESP"},
 {raceName: "European Grand Prix", raceHeader: "EUR"},
-//flags api doesn't have EU flag. May need to look elsewhere if EUR header is needed
 {raceName: "British Grand Prix", raceHeader: "GBR"},
 {raceName: "Hungarian Grand Prix", raceHeader: "HUN"},
 {raceName: "Italian Grand Prix", raceHeader: "ITA"},
@@ -85,6 +84,5 @@ export const raceTitles = [
 {raceName: "San Marino Grand Prix", raceHeader: "SMR"},
 {raceName: "São Paulo Grand Prix", raceHeader: "BRA"},
 {raceName: "Styrian Grand Prix", raceHeader: "STY"},
-//flags api doesn't have Styria flag. May need to look elsewhere or use Austrian flag.
 {raceName: "United States Grand Prix", raceHeader: "USA"}
 ];
