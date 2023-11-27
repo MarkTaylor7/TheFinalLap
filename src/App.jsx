@@ -52,9 +52,14 @@ export default function App() {
 
   // Set next race data
   useEffect(() => {
+    /*May need to add an if statement to handle situations when lastFiveRaceResults.length <5. See state setter
+    function for nextRaceTypeHistory*/
     if (lastFiveRaceResults.length === 5) {
-      let nextCircuitId;
+      let nextCircuitId = "bahrain";
       let nextCircuitType;
+      /*Code below is temporarily commented out until the API updates its current season as "2024". Once update
+       occurs, enable code below and remove "= "bahrain"" from let nextCircuitId. This will re-activate automated 
+       selection of nextCircuitId.
       let lastRound = Number(lastFiveRaceResults[4]?.round);
       let nextRound = (lastRound += 1);
       for (let i = 0; i < eventList.length; i++) {
@@ -62,6 +67,7 @@ export default function App() {
           nextCircuitId = eventList[i].Circuit.circuitId;
         }
       }
+      */
       for (let i = 0; i < circuitTypes.length; i++) {
         if (circuitTypes[i].circuitIds.includes(nextCircuitId)) {
           nextCircuitType = circuitTypes[i].circuitType;
