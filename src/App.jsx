@@ -27,6 +27,9 @@ export default function App() {
   const [flagHeadings, setFlagHeadings] = useState([]);
   const [tableHeadings, setTableHeadings] = useState([]);
   const [racerData, setRacerData] = useState([]);
+  const [lastFiveRacesDataFetched, setLastFiveRacesDataFetched] = useState(false);
+  const [nextRaceDataFetched, setNextRaceDataFetched] = useState(false);
+  const [nextRaceTypeDataFetched, setNextRaceTypeDataFetched] = useState(false);
 
   // Getting driver names, current season results and events list
   useEffect(() => {
@@ -48,6 +51,7 @@ export default function App() {
       .slice(0, 5)
       .reverse();
     setLastFiveRaceResults(lastFiveRaceResults);
+    setLastFiveRacesDataFetched(true);
   }, [currentSeasonRaceResults]);
 
   // Set next race data
@@ -75,6 +79,7 @@ export default function App() {
       }
       setNextRace(nextCircuitId);
       setNextRaceType(nextCircuitType);
+      setNextRaceDataFetched(true);
     }
   }, [eventList, lastFiveRaceResults]);
 
@@ -134,6 +139,7 @@ export default function App() {
             );
           const results = bothSeasonsCircuitTypeMatchesMostRecent.slice(-5);
           setNextRaceTypeHistory(results);
+          setNextRaceTypeDataFetched(true);
     }
   }, [currentSeasonCircuitTypeMatches]); 
   
@@ -464,7 +470,8 @@ export default function App() {
 
   return (
     <>
-      <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData}/>
+      <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData}
+      boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched}/>
     </>
   );
 }
