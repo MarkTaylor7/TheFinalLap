@@ -6,10 +6,11 @@ import {
   fetchEventList,
   fetchNextTrackData,
   fetchPreviousSeasonRaceResults,
+  getDriverAverages
 } from "./utilities";
 
 import { circuitTypes, raceTitles } from "./consts";
-import { flags } from "./flags";
+import { flags } from "./Flags";
 
 export default function App() {
   const [names, setNames] = useState([]);
@@ -31,6 +32,8 @@ export default function App() {
   const [lastFiveRacesDataFetched, setLastFiveRacesDataFetched] = useState(false);
   const [nextRaceDataFetched, setNextRaceDataFetched] = useState(false);
   const [nextRaceTypeDataFetched, setNextRaceTypeDataFetched] = useState(false);
+
+  getDriverAverages();
 
   // Getting driver names, current season results and events list
   useEffect(() => {

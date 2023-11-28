@@ -1,3 +1,36 @@
+import data from "./data.json" assert { type: 'json' };
+
+export function getDriverAverages() {
+  let results2019 = {
+    season: 2019,
+    raceResults: [],
+  };
+  const careerResults = data.MRData.RaceTable.Races;
+  for (let i = 0; i < careerResults.length; i++) {
+    if (careerResults[i].season == results2019.season) {
+      results2019.raceResults.push(careerResults[i].Results[0].positionText);
+    }
+  }
+  const raceFinishes = results2019.raceResults.filter(Number);
+  console.log(raceFinishes);
+  
+  let nums = raceFinishes.map(function(str) {
+    return parseInt(str);
+  });
+
+  function calculateAverage(array) {
+    let total = 0;
+    let count = 0;
+    array.forEach(function(item, index) {
+      total += item;
+      count++;
+
+    });
+    return total/count;
+  }
+  console.log(calculateAverage(nums))
+}
+
 export async function getDriverData(driverName) {
   const url = `http://ergast.com/api/f1/2023/drivers/${driverName}.json`;
 
