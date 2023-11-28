@@ -86,3 +86,4 @@ export const raceTitles = [
 {raceName: "Styrian Grand Prix", raceHeader: "STY"},
 {raceName: "United States Grand Prix", raceHeader: "USA"}
 ];
+

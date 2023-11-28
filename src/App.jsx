@@ -78,14 +78,14 @@ export default function App() {
         }
       }
       setNextRace(nextCircuitId);
-      setNextRaceType(nextCircuitType);
-      setNextRaceDataFetched(true);
+      setNextRaceType(nextCircuitType); 
     }
   }, [eventList, lastFiveRaceResults]);
 
   // Update next race history
   useEffect(() => {
     fetchNextTrackData(nextRace).then((results) => setNextRaceHistory(results));
+    setNextRaceDataFetched(true);
   }, [nextRace]);
 
   useEffect(() => {
@@ -145,6 +145,8 @@ export default function App() {
   
   useEffect(() => {
     if (lastFiveRaceResults != 0 && nextRaceHistory !=0 && nextRaceTypeHistory !=0) {
+      
+      
       const raceFlags = [];
       
       async function mapFlagsToHeadings() {
@@ -172,7 +174,6 @@ export default function App() {
           
           //flags api doesn't have EU flag. Using AZE flag for now, but need to look elsewhere if EUR header is needed
           {raceName: "European Grand Prix", flagImage: <img id="azerbaijanFlag" src="https://flagsapi.com/AZ/flat/32.png" alt="Azerbaijan flag"></img>},
-          
           {raceName: "British Grand Prix", flagImage: <img id="greatBritainFlag" src="https://flagsapi.com/GB/flat/32.png" alt="British flag"></img>},
           {raceName: "Hungarian Grand Prix", flagImage: <img id="hungarianFlag" src="https://flagsapi.com/HU/flat/32.png" alt="Hungarian flag"></img>},
           {raceName: "Italian Grand Prix", flagImage: <img id="italianFlag" src="https://flagsapi.com/IT/flat/32.png" alt="Italian flag"></img>},
@@ -231,6 +232,8 @@ export default function App() {
 
   useEffect(() => {
     if (lastFiveRaceResults != 0 && nextRaceHistory !=0 && nextRaceTypeHistory !=0) {
+      
+
       const raceNames = [];
       
       async function mapRaceNamesToHeadings() {
@@ -288,71 +291,75 @@ export default function App() {
   }, [lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory])
 
   useEffect(() => {
-    const driverData = [];
-    /**
-     * This function creates a variable called driver - each driver has props that are updated based on three metrics:
-     * 1. Results from the last five races.
-     * 2. Results from the next five races held at the next circuit.
-     * 3. Results from the last five races held circuits that have the same circuit type as the next circuit.
-     * If a driver didn't participate in a particular race, "N/A" will populate.
-     * The lastName prop is used to match individual race finishing positions with each driver. (I.e. The driver who
-     * finished 3rd in the last race has the last name "Hamilton", so Lewis Hamilton finished 3rd in the last race.)
-     * After each driver's props are fully updated, the driver object is pushed to an empty array called "driverData".
-     * The driverData array is used to set the state of driverTableData.
-     */
-    async function mapNamesAndResultsToDrivers() {
-      names.forEach((name, i) => {
-        const driver = {
-          name: names[i],
-          lastName: names[i].substring(names[i].indexOf(" ") + 1),
-          lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-          nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-          nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-        };
+    if (lastFiveRaceResults != 0 && nextRaceHistory !=0 && nextRaceTypeHistory !=0) {
+     
+      const driverData = [];
+      /**
+       * This function creates a variable called driver - each driver has props that are updated based on three metrics:
+       * 1. Results from the last five races.
+       * 2. Results from the next five races held at the next circuit.
+       * 3. Results from the last five races held circuits that have the same circuit type as the next circuit.
+       * If a driver didn't participate in a particular race, "N/A" will populate.
+       * The lastName prop is used to match individual race finishing positions with each driver. (I.e. The driver who
+       * finished 3rd in the last race has the last name "Hamilton", so Lewis Hamilton finished 3rd in the last race.)
+       * After each driver's props are fully updated, the driver object is pushed to an empty array called "driverData".
+       * The driverData array is used to set the state of driverTableData.
+       */
+      async function mapNamesAndResultsToDrivers() {
+        names.forEach((name, i) => {
+          const driver = {
+            name: names[i],
+            lastName: names[i].substring(names[i].indexOf(" ") + 1),
+            lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+            nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+            nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+          };
 
-        for (let z = 0; z < lastFiveRaceResults.length; z++) {
-          for (let i = 0; i < lastFiveRaceResults[0].Results.length; i++) {
-            if (
-              lastFiveRaceResults[z].Results[i].Driver.familyName ===
-              driver.lastName
-            ) {
-              driver.lastFiveRaces[z] =
-                lastFiveRaceResults[z].Results[i].positionText;
+          for (let z = 0; z < lastFiveRaceResults.length; z++) {
+            for (let i = 0; i < lastFiveRaceResults[0].Results.length; i++) {
+              if (
+                lastFiveRaceResults[z].Results[i].Driver.familyName ===
+                driver.lastName
+              ) {
+                driver.lastFiveRaces[z] =
+                  lastFiveRaceResults[z].Results[i].positionText;
+              }
             }
           }
-        }
 
-        for (let z = 0; z < nextRaceHistory.length; z++) {
-          for (let i = 0; i < nextRaceHistory[0].Results.length; i++) {
-            if (
-              nextRaceHistory[z].Results[i]?.Driver.familyName ===
-              driver.lastName
-            ) {
-              driver.nextRaceResults[z] =
-                nextRaceHistory[z].Results[i].positionText;
+          for (let z = 0; z < nextRaceHistory.length; z++) {
+            for (let i = 0; i < nextRaceHistory[0].Results.length; i++) {
+              if (
+                nextRaceHistory[z].Results[i]?.Driver.familyName ===
+                driver.lastName
+              ) {
+                driver.nextRaceResults[z] =
+                  nextRaceHistory[z].Results[i].positionText;
+              }
             }
           }
-        }
 
-        for (let z = 0; z < nextRaceTypeHistory?.length; z++) {
-          for (let i = 0; i < nextRaceTypeHistory[0].Results.length; i++) {
-            if (
-              nextRaceTypeHistory[z].Results[i].Driver.familyName ===
-              driver.lastName
-            ) {
-              driver.nextRaceTypeResults[z] =
-                nextRaceTypeHistory[z].Results[i].positionText;
+          for (let z = 0; z < nextRaceTypeHistory?.length; z++) {
+            for (let i = 0; i < nextRaceTypeHistory[0].Results.length; i++) {
+              if (
+                nextRaceTypeHistory[z].Results[i].Driver.familyName ===
+                driver.lastName
+              ) {
+                driver.nextRaceTypeResults[z] =
+                  nextRaceTypeHistory[z].Results[i].positionText;
+              }
             }
           }
-        }
 
-        driverData.push(driver);
-      });
+          driverData.push(driver);
+        });
 
-      setDriverTableData(driverData);
-    }
+        setDriverTableData(driverData);
+      }
+      mapNamesAndResultsToDrivers();
+    };
 
-    mapNamesAndResultsToDrivers();
+    
   }, [lastFiveRaceResults, names, nextRaceHistory, nextRaceTypeHistory]);
 
   function formatRow(
@@ -444,6 +451,7 @@ export default function App() {
   }, [tableHeadingsContent]);
 
   useEffect(() => {
+    
     setRacerData(
       driverTableData.map((driver) =>
         formatRow(
@@ -466,6 +474,7 @@ export default function App() {
         )
       )
     );
+    
   }, [driverTableData]);
 
   return (
