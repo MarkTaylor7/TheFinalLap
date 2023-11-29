@@ -1,17 +1,17 @@
 import data from "./data.json" assert { type: 'json' };
+import { results } from "./consts";
 
 export function getDriverAverages() {
-  let results2019 = {
-    season: 2019,
-    raceResults: [],
-  };
   const careerResults = data.MRData.RaceTable.Races;
   for (let i = 0; i < careerResults.length; i++) {
-    if (careerResults[i].season == results2019.season) {
-      results2019.raceResults.push(careerResults[i].Results[0].positionText);
-    }
-  }
-  const raceFinishes = results2019.raceResults.filter(Number);
+    for (let z = 0; z < results.length; z++) {
+      if (careerResults[i].season == results[z].season) {
+        results[z].raceResults.push(careerResults[i].Results[0].positionText);
+      };
+    };
+  };
+  console.log(results);
+  const raceFinishes = results[0].raceResults.filter(Number);
   console.log(raceFinishes);
   
   let nums = raceFinishes.map(function(str) {

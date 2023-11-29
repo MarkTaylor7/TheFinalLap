@@ -87,3 +87,39 @@ export const raceTitles = [
 {raceName: "United States Grand Prix", raceHeader: "USA"}
 ];
 
+export let results = [
+  {season: 2005,
+    raceResults: []
+  },
+  {season: 2006,
+    raceResults: []
+  },
+  {season: 2015,
+    raceResults: []
+  },
+  {season: 2016,
+    raceResults: []
+  },
+  {season: 2017,
+    raceResults: []
+  },
+  {season: 2018,
+    raceResults: []
+  },
+  {season: 2019,
+    raceResults: []
+  },
+  {season: 2020,
+    raceResults: []
+  },
+  {season: 2021,
+    raceResults: []
+  },
+  {season: 2022,
+    raceResults: []
+  },
+  {season: 2023,
+    raceResults: []
+  }
+];
+
