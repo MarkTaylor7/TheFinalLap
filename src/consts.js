@@ -1,3 +1,7 @@
+import data from "./data.json" assert { type: 'json' };
+
+export const allCareerData = data;
+
 //Every race has a unique circuitId, which is sorted into one of three circuitTypes based its characteristics:
 //High downforce circuits feature demanding corners and usually don't feature long straights, so high aerodynamic
 //grip (downforce) is required.
@@ -86,62 +90,3 @@ export const raceTitles = [
 {raceName: "Styrian Grand Prix", raceHeader: "STY"},
 {raceName: "United States Grand Prix", raceHeader: "USA"}
 ];
-
-export let careerRaceResults = [
-  {season: 2005,
-    raceResults: [],
-    raceFinishes: [],
-    meanRaceFinish: ""
-  },
-  {season: 2006,
-    raceResults: [],
-    raceFinishes: [],
-    meanRaceFinish: ""
-  },
-  {season: 2015,
-    raceResults: [],
-    raceFinishes: [],
-    meanRaceFinish: ""
-  },
-  {season: 2016,
-    raceResults: [],
-    raceFinishes: [],
-    meanRaceFinish: ""
-  },
-  {season: 2017,
-    raceResults: [],
-    raceFinishes: [],
-    meanRaceFinish: ""
-  },
-  {season: 2018,
-    raceResults: [],
-    raceFinishes: [],
-    meanRaceFinish: ""
-  },
-  {season: 2019,
-    raceResults: [],
-    raceFinishes: [],
-    meanRaceFinish: ""
-  },
-  {season: 2020,
-    raceResults: [],
-    raceFinishes: [],
-    meanRaceFinish: ""
-  },
-  {season: 2021,
-    raceResults: [],
-    raceFinishes: [],
-    meanRaceFinish: ""
-  },
-  {season: 2022,
-    raceResults: [],
-    raceFinishes: [],
-    meanRaceFinish: ""
-  },
-  {season: 2023,
-    raceResults: [],
-    raceFinishes: [],
-    meanRaceFinish: ""
-  }
-];
-

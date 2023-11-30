@@ -6,14 +6,16 @@ import {
   fetchEventList,
   fetchNextTrackData,
   fetchPreviousSeasonRaceResults,
-  getDriverAverages
 } from "./utilities";
 
-import { circuitTypes, raceTitles, careerRaceResults } from "./consts";
+import { circuitTypes, raceTitles, allCareerData } from "./consts";
 import { flags } from "./Flags";
 
+
 export default function App() {
+  const [standings, setStandings] = useState([]);
   const [names, setNames] = useState([]);
+  const [driverIds, setDriverIds] = useState([]);
   const [previousSeasonRaceResults, setPreviousSeasonRaceResults] = useState([]);
   const [currentSeasonRaceResults, setCurrentSeasonRaceResults] = useState([]);
   const [lastFiveRaceResults, setLastFiveRaceResults] = useState([]);
@@ -33,17 +35,11 @@ export default function App() {
   const [nextRaceDataFetched, setNextRaceDataFetched] = useState(false);
   const [nextRaceTypeDataFetched, setNextRaceTypeDataFetched] = useState(false);
 
+
   
-  useEffect(() => {
-    getDriverAverages();
-    console.log(careerRaceResults);
-  }, []);
-
-  console.log(careerRaceResults);
-
   // Getting driver names, current season results and events list
   useEffect(() => {
-    fetchCurrentStandings().then((results) => setNames(results));
+    fetchCurrentStandings().then((results) => setStandings(results));
 
     fetchCurrentSeasonRaceResults().then((results) =>
       setCurrentSeasonRaceResults(results)
@@ -51,6 +47,18 @@ export default function App() {
 
     fetchEventList().then((results) => setEventList(results));
   }, []);
+
+  useEffect (() => {
+    const fullNames = standings.map(function (element) {
+      return `${element.Driver.givenName} ${element.Driver.familyName}`;
+    });
+    setNames(fullNames);
+
+    const driverIds = standings.map(function (element) {
+      return `${element.Driver.driverId}`;
+    });
+    setDriverIds(driverIds);
+  }, [standings]);
 
   // Update last five race results
   useEffect(() => {
@@ -195,7 +203,6 @@ export default function App() {
         }
 
         raceFlags.push(flagHeading);
-        console.log(flagHeading);
         setFlagHeadingsContent(raceFlags);
       }
       
@@ -247,21 +254,13 @@ export default function App() {
           }
           tableHeading.nextRaceTypeResults[i] = tableHeading.nextRaceTypeResults[i].concat(" ", nextRaceTypeHistory[i].season)
         }
-
         raceNames.push(tableHeading);
-        console.log(tableHeading);
         setTableHeadingsContent(raceNames);
       }
       
       mapRaceNamesToHeadings();
     };
   }, [lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
-
-  useEffect(() => {
-    console.log(lastFiveRaceResults);
-    console.log(nextRaceHistory);
-    console.log(nextRaceTypeHistory);
-  }, [lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory])
 
   useEffect(() => {
     if (lastFiveRaceResults != 0 && nextRaceHistory !=0 && nextRaceTypeHistory !=0) {
@@ -282,17 +281,78 @@ export default function App() {
         names.forEach((name, i) => {
           const driver = {
             name: names[i],
-            lastName: names[i].substring(names[i].indexOf(" ") + 1),
+            driverId: driverIds[i],
             lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
             nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
             nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+            allRaceResults: [],
+            averageRaceFinishes: [],
+            careerData: {
+              allRaceResults: [
+                {season: 2005,
+                  raceResults: [],
+                  raceFinishes: [],
+                  meanRaceFinish: ""
+                },
+                {season: 2006,
+                  raceResults: [],
+                  raceFinishes: [],
+                  meanRaceFinish: ""
+                },
+                {season: 2015,
+                  raceResults: [],
+                  raceFinishes: [],
+                  meanRaceFinish: ""
+                },
+                {season: 2016,
+                  raceResults: [],
+                  raceFinishes: [],
+                  meanRaceFinish: ""
+                },
+                {season: 2017,
+                  raceResults: [],
+                  raceFinishes: [],
+                  meanRaceFinish: ""
+                },
+                {season: 2018,
+                  raceResults: [],
+                  raceFinishes: [],
+                  meanRaceFinish: ""
+                },
+                {season: 2019,
+                  raceResults: [],
+                  raceFinishes: [],
+                  meanRaceFinish: ""
+                },
+                {season: 2020,
+                  raceResults: [],
+                  raceFinishes: [],
+                  meanRaceFinish: ""
+                },
+                {season: 2021,
+                  raceResults: [],
+                  raceFinishes: [],
+                  meanRaceFinish: ""
+                },
+                {season: 2022,
+                  raceResults: [],
+                  raceFinishes: [],
+                  meanRaceFinish: ""
+                },
+                {season: 2023,
+                  raceResults: [],
+                  raceFinishes: [],
+                  meanRaceFinish: ""
+                }
+              ]
+            }
           };
 
           for (let z = 0; z < lastFiveRaceResults.length; z++) {
             for (let i = 0; i < lastFiveRaceResults[0].Results.length; i++) {
               if (
-                lastFiveRaceResults[z].Results[i].Driver.familyName ===
-                driver.lastName
+                lastFiveRaceResults[z].Results[i].Driver.driverId ===
+                driver.driverId
               ) {
                 driver.lastFiveRaces[z] =
                   lastFiveRaceResults[z].Results[i].positionText;
@@ -303,8 +363,8 @@ export default function App() {
           for (let z = 0; z < nextRaceHistory.length; z++) {
             for (let i = 0; i < nextRaceHistory[0].Results.length; i++) {
               if (
-                nextRaceHistory[z].Results[i]?.Driver.familyName ===
-                driver.lastName
+                nextRaceHistory[z].Results[i]?.Driver.driverId ===
+                driver.driverId
               ) {
                 driver.nextRaceResults[z] =
                   nextRaceHistory[z].Results[i].positionText;
@@ -315,15 +375,14 @@ export default function App() {
           for (let z = 0; z < nextRaceTypeHistory?.length; z++) {
             for (let i = 0; i < nextRaceTypeHistory[0].Results.length; i++) {
               if (
-                nextRaceTypeHistory[z].Results[i].Driver.familyName ===
-                driver.lastName
+                nextRaceTypeHistory[z].Results[i].Driver.driverId ===
+                driver.driverId
               ) {
                 driver.nextRaceTypeResults[z] =
                   nextRaceTypeHistory[z].Results[i].positionText;
               }
             }
           }
-
           driverData.push(driver);
         });
 
@@ -334,6 +393,47 @@ export default function App() {
 
     
   }, [lastFiveRaceResults, names, nextRaceHistory, nextRaceTypeHistory]);
+
+  function getDriverAverages() {
+    for (let n = 0; n < driverTableData.length; n++) {
+      for (let y = 0; y < allCareerData.length; y++) {
+        if (driverTableData[n].driverId == allCareerData[y].MRData.RaceTable.driverId) {
+          driverTableData[n].allRaceResults = allCareerData[y].MRData.RaceTable.Races;
+            for (let i = 0; i < driverTableData[n].allRaceResults.length; i++) {
+              for (let z = 0; z < driverTableData[n].careerData.allRaceResults.length; z++) {
+                if (driverTableData[n].allRaceResults[i].season == driverTableData[n].careerData.allRaceResults[z].season) {
+                  driverTableData[n].careerData.allRaceResults[z].raceResults.push(driverTableData[n].allRaceResults[i].Results[0].positionText);
+                  driverTableData[n].careerData.allRaceResults[z].raceFinishes = driverTableData[n].careerData.allRaceResults[z].raceResults.filter(Number);
+                    let nums = driverTableData[n].careerData.allRaceResults[z].raceFinishes.map(function(str) {
+                      return parseInt(str)
+                    });
+                
+                    function calculateAverage(array) {
+                    let total = 0;
+                    let count = 0;
+                    array.forEach(function(item, index) {
+                      total += item;
+                      count++;
+                
+                    });
+                    return total/count;
+                    }
+                    driverTableData[n].careerData.allRaceResults[z].meanRaceFinish = calculateAverage(nums);
+              
+                };
+              };  
+            };
+        
+        };
+      }; 
+    };
+  };
+    
+  useEffect (() => {
+    getDriverAverages();
+  }, [driverTableData]);
+
+  console.log(driverTableData);
 
   function formatRow(
     name,

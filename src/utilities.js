@@ -1,36 +1,3 @@
-import data from "./data.json" assert { type: 'json' };
-import { careerRaceResults } from "./consts";
-
-export function getDriverAverages() {
-  const allCareerData = data;
-  for (let y = 0; y < allCareerData.length; y++) {
-    let driverCareerData = allCareerData[y].MRData.RaceTable.Races;
-    for (let i = 0; i < driverCareerData.length; i++) {
-      for (let z = 0; z < careerRaceResults.length; z++) {
-        if (driverCareerData[i].season == careerRaceResults[z].season) {
-          careerRaceResults[z].raceResults.push(driverCareerData[i].Results[0].positionText);
-          careerRaceResults[z].raceFinishes = careerRaceResults[z].raceResults.filter(Number);
-          let nums = careerRaceResults[z].raceFinishes.map(function(str) {
-            return parseInt(str);
-          });
-          
-          function calculateAverage(array) {
-            let total = 0;
-            let count = 0;
-            array.forEach(function(item, index) {
-              total += item;
-              count++;
-        
-            });
-            return total/count;
-          }
-          careerRaceResults[z].meanRaceFinish = calculateAverage(nums);
-        };
-      };
-    };
-  };
-};
-
 export async function getDriverData(driverName) {
   const url = `http://ergast.com/api/f1/2023/drivers/${driverName}.json`;
 
@@ -66,11 +33,7 @@ export async function fetchCurrentStandings() {
   try {
     const response = await fetch(url);
     const json = await response.json();
-    const standings =
-      json.MRData.StandingsTable.StandingsLists[0].DriverStandings;
-    const results = standings.map(function (element) {
-      return `${element.Driver.givenName} ${element.Driver.familyName}`;
-    });
+    const results = json.MRData.StandingsTable.StandingsLists[0].DriverStandings;
     return results;
   } catch (error) {
     console.log("error", error);
