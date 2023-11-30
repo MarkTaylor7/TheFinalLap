@@ -1,35 +1,35 @@
 import data from "./data.json" assert { type: 'json' };
-import { results } from "./consts";
+import { careerRaceResults } from "./consts";
 
 export function getDriverAverages() {
-  const careerResults = data.MRData.RaceTable.Races;
-  for (let i = 0; i < careerResults.length; i++) {
-    for (let z = 0; z < results.length; z++) {
-      if (careerResults[i].season == results[z].season) {
-        results[z].raceResults.push(careerResults[i].Results[0].positionText);
+  const allCareerData = data;
+  for (let y = 0; y < allCareerData.length; y++) {
+    let driverCareerData = allCareerData[y].MRData.RaceTable.Races;
+    for (let i = 0; i < driverCareerData.length; i++) {
+      for (let z = 0; z < careerRaceResults.length; z++) {
+        if (driverCareerData[i].season == careerRaceResults[z].season) {
+          careerRaceResults[z].raceResults.push(driverCareerData[i].Results[0].positionText);
+          careerRaceResults[z].raceFinishes = careerRaceResults[z].raceResults.filter(Number);
+          let nums = careerRaceResults[z].raceFinishes.map(function(str) {
+            return parseInt(str);
+          });
+          
+          function calculateAverage(array) {
+            let total = 0;
+            let count = 0;
+            array.forEach(function(item, index) {
+              total += item;
+              count++;
+        
+            });
+            return total/count;
+          }
+          careerRaceResults[z].meanRaceFinish = calculateAverage(nums);
+        };
       };
     };
   };
-  console.log(results);
-  const raceFinishes = results[0].raceResults.filter(Number);
-  console.log(raceFinishes);
-  
-  let nums = raceFinishes.map(function(str) {
-    return parseInt(str);
-  });
-
-  function calculateAverage(array) {
-    let total = 0;
-    let count = 0;
-    array.forEach(function(item, index) {
-      total += item;
-      count++;
-
-    });
-    return total/count;
-  }
-  console.log(calculateAverage(nums))
-}
+};
 
 export async function getDriverData(driverName) {
   const url = `http://ergast.com/api/f1/2023/drivers/${driverName}.json`;

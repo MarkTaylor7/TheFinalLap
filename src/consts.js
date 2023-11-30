@@ -87,39 +87,61 @@ export const raceTitles = [
 {raceName: "United States Grand Prix", raceHeader: "USA"}
 ];
 
-export let results = [
+export let careerRaceResults = [
   {season: 2005,
-    raceResults: []
+    raceResults: [],
+    raceFinishes: [],
+    meanRaceFinish: ""
   },
   {season: 2006,
-    raceResults: []
+    raceResults: [],
+    raceFinishes: [],
+    meanRaceFinish: ""
   },
   {season: 2015,
-    raceResults: []
+    raceResults: [],
+    raceFinishes: [],
+    meanRaceFinish: ""
   },
   {season: 2016,
-    raceResults: []
+    raceResults: [],
+    raceFinishes: [],
+    meanRaceFinish: ""
   },
   {season: 2017,
-    raceResults: []
+    raceResults: [],
+    raceFinishes: [],
+    meanRaceFinish: ""
   },
   {season: 2018,
-    raceResults: []
+    raceResults: [],
+    raceFinishes: [],
+    meanRaceFinish: ""
   },
   {season: 2019,
-    raceResults: []
+    raceResults: [],
+    raceFinishes: [],
+    meanRaceFinish: ""
   },
   {season: 2020,
-    raceResults: []
+    raceResults: [],
+    raceFinishes: [],
+    meanRaceFinish: ""
   },
   {season: 2021,
-    raceResults: []
+    raceResults: [],
+    raceFinishes: [],
+    meanRaceFinish: ""
   },
   {season: 2022,
-    raceResults: []
+    raceResults: [],
+    raceFinishes: [],
+    meanRaceFinish: ""
   },
   {season: 2023,
-    raceResults: []
+    raceResults: [],
+    raceFinishes: [],
+    meanRaceFinish: ""
   }
 ];
 

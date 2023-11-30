@@ -9,7 +9,7 @@ import {
   getDriverAverages
 } from "./utilities";
 
-import { circuitTypes, raceTitles, results } from "./consts";
+import { circuitTypes, raceTitles, careerRaceResults } from "./consts";
 import { flags } from "./Flags";
 
 export default function App() {
@@ -33,9 +33,13 @@ export default function App() {
   const [nextRaceDataFetched, setNextRaceDataFetched] = useState(false);
   const [nextRaceTypeDataFetched, setNextRaceTypeDataFetched] = useState(false);
 
-  getDriverAverages();
+  
+  useEffect(() => {
+    getDriverAverages();
+    console.log(careerRaceResults);
+  }, []);
 
-  console.log(results);
+  console.log(careerRaceResults);
 
   // Getting driver names, current season results and events list
   useEffect(() => {
