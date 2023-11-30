@@ -286,7 +286,6 @@ export default function App() {
             nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
             nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
             allRaceResults: [],
-            averageRaceFinishes: [],
             careerData: {
               allRaceResults: [
                 {season: 2005,
