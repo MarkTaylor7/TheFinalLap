@@ -34,8 +34,6 @@ export default function App() {
   const [lastFiveRacesDataFetched, setLastFiveRacesDataFetched] = useState(false);
   const [nextRaceDataFetched, setNextRaceDataFetched] = useState(false);
   const [nextRaceTypeDataFetched, setNextRaceTypeDataFetched] = useState(false);
-
-
   
   // Getting driver names, current season results and events list
   useEffect(() => {
@@ -71,6 +69,10 @@ export default function App() {
     setLastFiveRaceResults(lastFiveRaceResults);
     setLastFiveRacesDataFetched(true);
   }, [currentSeasonRaceResults]);
+
+  useEffect(() => {
+    console.log(lastFiveRaceResults)
+  }, [lastFiveRaceResults]);
 
   // Set next race data
   useEffect(() => {
@@ -283,11 +285,12 @@ export default function App() {
             name: names[i],
             driverId: driverIds[i],
             lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+            lastFiveAverages: ["N/A", "N/A", "N/A", "N/A", "N/A"],
             nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
             nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
             allRaceResults: [],
             careerData: {
-              allRaceResults: [
+              raceResultsBySeason: [
                 {season: 2005,
                   raceResults: [],
                   raceFinishes: [],
@@ -354,7 +357,7 @@ export default function App() {
                 driver.driverId
               ) {
                 driver.lastFiveRaces[z] =
-                  lastFiveRaceResults[z].Results[i].positionText;
+                  lastFiveRaceResults[z].Results[i];
               }
             }
           }
@@ -393,46 +396,64 @@ export default function App() {
     
   }, [lastFiveRaceResults, names, nextRaceHistory, nextRaceTypeHistory]);
 
-  function getDriverAverages() {
-    for (let n = 0; n < driverTableData.length; n++) {
-      for (let y = 0; y < allCareerData.length; y++) {
-        if (driverTableData[n].driverId == allCareerData[y].MRData.RaceTable.driverId) {
-          driverTableData[n].allRaceResults = allCareerData[y].MRData.RaceTable.Races;
-            for (let i = 0; i < driverTableData[n].allRaceResults.length; i++) {
-              for (let z = 0; z < driverTableData[n].careerData.allRaceResults.length; z++) {
-                if (driverTableData[n].allRaceResults[i].season == driverTableData[n].careerData.allRaceResults[z].season) {
-                  driverTableData[n].careerData.allRaceResults[z].raceResults.push(driverTableData[n].allRaceResults[i].Results[0].positionText);
-                  driverTableData[n].careerData.allRaceResults[z].raceFinishes = driverTableData[n].careerData.allRaceResults[z].raceResults.filter(Number);
-                    let nums = driverTableData[n].careerData.allRaceResults[z].raceFinishes.map(function(str) {
-                      return parseInt(str)
-                    });
-                
-                    function calculateAverage(array) {
-                    let total = 0;
-                    let count = 0;
-                    array.forEach(function(item, index) {
-                      total += item;
-                      count++;
-                
-                    });
-                    return total/count;
-                    }
-                    driverTableData[n].careerData.allRaceResults[z].meanRaceFinish = calculateAverage(nums);
-              
-                };
-              };  
-            };
-        
-        };
-      }; 
-    };
-  };
-    
   useEffect (() => {
-    getDriverAverages();
+    function getDriverAverages() {
+      for (let n = 0; n < driverTableData.length; n++) {
+        for (let y = 0; y < allCareerData.length; y++) {
+          if (driverTableData[n].driverId == allCareerData[y].MRData.RaceTable.driverId) {
+            driverTableData[n].allRaceResults = allCareerData[y].MRData.RaceTable.Races;
+              for (let i = 0; i < driverTableData[n].allRaceResults.length; i++) {
+                for (let z = 0; z < driverTableData[n].careerData.raceResultsBySeason.length; z++) {
+                  if (driverTableData[n].allRaceResults[i].season == driverTableData[n].careerData.raceResultsBySeason[z].season) {
+                    driverTableData[n].careerData.raceResultsBySeason[z].raceResults.push(driverTableData[n].allRaceResults[i].Results[0].positionText);
+                    driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes = driverTableData[n].careerData.raceResultsBySeason[z].raceResults.filter(Number);
+                      let nums = driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes.map(function(str) {
+                        return parseInt(str)
+                      });
+                  
+                      function calculateAverage(array) {
+                      let total = 0;
+                      let count = 0;
+                      array.forEach(function(item, index) {
+                        total += item;
+                        count++;
+                  
+                      });
+                      return total/count;
+                      }
+                      driverTableData[n].careerData.raceResultsBySeason[z].meanRaceFinish = calculateAverage(nums);
+                
+                  };
+                };  
+              };
+          
+          };
+        }; 
+      };
+    };
+    getDriverAverages()
   }, [driverTableData]);
 
-  console.log(driverTableData);
+  
+    
+  useEffect (() => {
+    function matchAveragesWithTableResults() {
+      for (let x = 0; x < driverTableData.length; x++) {
+        for (let y = 0; y < driverTableData[x].careerData.raceResultsBySeason.length; y++) {
+          for (let z = 0; z < lastFiveRaceResults.length; z++) {
+            if (driverTableData[x].careerData.raceResultsBySeason[y].season == lastFiveRaceResults[z].season) {
+              driverTableData[x].lastFiveAverages[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
+            };
+          };
+        };
+      };
+    };
+    matchAveragesWithTableResults();
+  }, [driverTableData]);
+
+  useEffect (() => {
+    console.log(driverTableData);
+  }, [driverTableData])
 
   function formatRow(
     name,
@@ -528,11 +549,11 @@ export default function App() {
       driverTableData.map((driver) =>
         formatRow(
           driver.name,
-          driver.lastFiveRaces[0],
-          driver.lastFiveRaces[1],
-          driver.lastFiveRaces[2],
-          driver.lastFiveRaces[3],
-          driver.lastFiveRaces[4],
+          driver.lastFiveRaces[0].positionText,
+          driver.lastFiveRaces[1].positionText,
+          driver.lastFiveRaces[2].positionText,
+          driver.lastFiveRaces[3].positionText,
+          driver.lastFiveRaces[4].positionText,
           driver.nextRaceResults[0],
           driver.nextRaceResults[1],
           driver.nextRaceResults[2],
