@@ -285,7 +285,11 @@ export default function App() {
             name: names[i],
             driverId: driverIds[i],
             lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-            lastFiveAverages: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+            tableAverages: {
+              lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+              nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"], 
+              nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"]
+            },
             nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
             nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
             allRaceResults: [],
@@ -442,13 +446,56 @@ export default function App() {
         for (let y = 0; y < driverTableData[x].careerData.raceResultsBySeason.length; y++) {
           for (let z = 0; z < lastFiveRaceResults.length; z++) {
             if (driverTableData[x].careerData.raceResultsBySeason[y].season == lastFiveRaceResults[z].season) {
-              driverTableData[x].lastFiveAverages[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
+              driverTableData[x].tableAverages.lastFiveRaces[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
+            };
+          };
+        };
+      };
+
+      for (let x = 0; x < driverTableData.length; x++) {
+        for (let y = 0; y < driverTableData[x].careerData.raceResultsBySeason.length; y++) {
+          for (let z = 0; z < nextRaceHistory.length; z++) {
+            if (driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceHistory[z].season) {
+              driverTableData[x].tableAverages.nextRaceResults[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
+            };
+          };
+        };
+      };
+
+      for (let x = 0; x < driverTableData.length; x++) {
+        for (let y = 0; y < driverTableData[x].careerData.raceResultsBySeason.length; y++) {
+          for (let z = 0; z < nextRaceTypeHistory.length; z++) {
+            if (driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceTypeHistory[z].season) {
+              driverTableData[x].tableAverages.nextRaceTypeResults[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
             };
           };
         };
       };
     };
     matchAveragesWithTableResults();
+  }, [driverTableData]);
+
+  useEffect (() => {
+    function rateTableResults() {
+      for (let x = 0; x < driverTableData.length; x++) {
+        for (let y = 0; y < driverTableData[x].lastFiveRaces.length; y++) {
+          if (driverTableData[x].lastFiveRaces[y].positionText <= driverTableData[x].tableAverages.lastFiveRaces[y] - 2.5) {
+            driverTableData[x].tableAverages.lastFiveRaces[y] = "great";
+          } else if (driverTableData[x].lastFiveRaces[y].positionText <= driverTableData[x].tableAverages.lastFiveRaces[y] - 1.5 > 2.5) {
+              driverTableData[x].tableAverages.lastFiveRaces[y] = "above-avg";
+            } else if (driverTableData[x].lastFiveRaces[y].positionText >= driverTableData[x].tableAverages.lastFiveRaces[y] + 1.5 > 2.5) {
+                driverTableData[x].tableAverages.lastFiveRaces[y] = "below-avg";
+              } else if (driverTableData[x].lastFiveRaces[y].positionText >= driverTableData[x].tableAverages.lastFiveRaces[y] + 2.5) {
+                  driverTableData[x].tableAverages.lastFiveRaces[y] = "bad";
+                } else if (driverTableData[x].lastFiveRaces[y].positionText == "1") {
+                    driverTableData[x].tableAverages.lastFiveRaces[y] = "win";
+                  } else if (driverTableData[x].lastFiveRaces[y].status != "Finished") {
+                    driverTableData[x].tableAverages.lastFiveRaces[y] = "no finish";
+                    };
+        }
+      }
+    }
+    rateTableResults();
   }, [driverTableData]);
 
   useEffect (() => {
