@@ -410,9 +410,11 @@ export default function App() {
       for (let x = 0; x < driverTableData.length; x++) {
         for (let y = 0; y < driverTableData[x].careerData.raceResultsBySeason.length; y++) {
           for (let z = 0; z < lastFiveRaceResults.length; z++) {
-            if (driverTableData[x].careerData.raceResultsBySeason[y].season == lastFiveRaceResults[z].season) {
-              driverTableData[x].tableAverages.lastFiveRaces[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
-            };
+            if (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length > 4 ) {
+              if (driverTableData[x].careerData.raceResultsBySeason[y].season == lastFiveRaceResults[z].season) {
+                driverTableData[x].tableAverages.lastFiveRaces[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
+              };
+            }
           };
         };
       };
@@ -420,8 +422,10 @@ export default function App() {
       for (let x = 0; x < driverTableData.length; x++) {
         for (let y = 0; y < driverTableData[x].careerData.raceResultsBySeason.length; y++) {
           for (let z = 0; z < nextRaceHistory.length; z++) {
-            if (driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceHistory[z].season) {
-              driverTableData[x].tableAverages.nextRaceResults[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
+            if (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length > 4) {
+              if (driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceHistory[z].season) {
+                  driverTableData[x].tableAverages.nextRaceResults[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
+              };
             };
           };
         };
@@ -430,8 +434,10 @@ export default function App() {
       for (let x = 0; x < driverTableData.length; x++) {
         for (let y = 0; y < driverTableData[x].careerData.raceResultsBySeason.length; y++) {
           for (let z = 0; z < nextRaceTypeHistory.length; z++) {
-            if (driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceTypeHistory[z].season) {
-              driverTableData[x].tableAverages.nextRaceTypeResults[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
+            while (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length > 4) {
+              if (driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceTypeHistory[z].season) {
+                driverTableData[x].tableAverages.nextRaceTypeResults[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
+              };
             };
           };
         };
