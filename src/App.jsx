@@ -284,14 +284,14 @@ export default function App() {
           const driver = {
             name: names[i],
             driverId: driverIds[i],
-            lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+            lastFiveRaces: [{positionText: "N/A"}, {positionText: "N/A"}, {positionText: "N/A"}, {positionText: "N/A"}, {positionText: "N/A"}],
+            nextRaceResults: [{positionText: "N/A"}, {positionText: "N/A"}, {positionText: "N/A"}, {positionText: "N/A"}, {positionText: "N/A"}],
+            nextRaceTypeResults: [{positionText: "N/A"}, {positionText: "N/A"}, {positionText: "N/A"}, {positionText: "N/A"}, {positionText: "N/A"}],
             tableAverages: {
               lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
               nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"], 
               nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"]
             },
-            nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
-            nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
             allRaceResults: [],
             careerData: {
               raceResultsBySeason: [
@@ -373,7 +373,7 @@ export default function App() {
                 driver.driverId
               ) {
                 driver.nextRaceResults[z] =
-                  nextRaceHistory[z].Results[i].positionText;
+                  nextRaceHistory[z].Results[i];
               }
             }
           }
@@ -385,7 +385,7 @@ export default function App() {
                 driver.driverId
               ) {
                 driver.nextRaceTypeResults[z] =
-                  nextRaceTypeHistory[z].Results[i].positionText;
+                  nextRaceTypeHistory[z].Results[i];
               }
             }
           }
@@ -479,30 +479,112 @@ export default function App() {
     function rateTableResults() {
       for (let x = 0; x < driverTableData.length; x++) {
         for (let y = 0; y < driverTableData[x].lastFiveRaces.length; y++) {
-
+          
+          let excellentResult = driverTableData[x].tableAverages.lastFiveRaces[y] - 5;
           let greatResult = driverTableData[x].tableAverages.lastFiveRaces[y] - 2.5;
           let aboveAverageResult = driverTableData[x].tableAverages.lastFiveRaces[y] - 1.5;
           let belowAverageResult = driverTableData[x].tableAverages.lastFiveRaces[y] + 1.5;
           let badResult = driverTableData[x].tableAverages.lastFiveRaces[y] + 2.5;
+          let veryBadResult = driverTableData[x].tableAverages.lastFiveRaces[y] + 5;
 
 
-          if (driverTableData[x].lastFiveRaces[y].positionText <= greatResult) {
-            driverTableData[x].tableAverages.lastFiveRaces[y] = "great";
-          } else if (driverTableData[x].lastFiveRaces[y].positionText <= aboveAverageResult) {
-              driverTableData[x].tableAverages.lastFiveRaces[y] = "above-avg";
-            } else if (driverTableData[x].lastFiveRaces[y].positionText >= badResult) {
-              driverTableData[x].tableAverages.lastFiveRaces[y] = "bad";
-              } else if (driverTableData[x].lastFiveRaces[y].positionText >= belowAverageResult) {
-                  driverTableData[x].tableAverages.lastFiveRaces[y] = "below-avg";
-                  
-                  } /*else if (driverTableData[x].lastFiveRaces[y].positionText == "1") {
-                      driverTableData[x].tableAverages.lastFiveRaces[y] = "win";
-                    }; /*else if (Number.isNaN(driverTableData[x].lastFiveRaces[y].positionText) == false) {
-                      driverTableData[x].tableAverages.lastFiveRaces[y] = "no finish";
-                      };*/
-          }
-      }
-    }
+          if (driverTableData[x].lastFiveRaces[y].positionText == "D" ||
+              driverTableData[x].lastFiveRaces[y].positionText == "R" ||
+              driverTableData[x].lastFiveRaces[y].positionText == "W") {
+                driverTableData[x].tableAverages.lastFiveRaces[y] = "no finish";
+              } else if (driverTableData[x].lastFiveRaces[y].positionText == "N/A") {
+                driverTableData[x].tableAverages.lastFiveRaces[y] = "N/A";
+                } else if (driverTableData[x].lastFiveRaces[y].positionText == "1") {
+                  driverTableData[x].tableAverages.lastFiveRaces[y] = "win";
+                  } else if (driverTableData[x].lastFiveRaces[y].positionText <= excellentResult) {
+                      driverTableData[x].tableAverages.lastFiveRaces[y] = "excellent";
+                    } else if (driverTableData[x].lastFiveRaces[y].positionText <= greatResult) {
+                        driverTableData[x].tableAverages.lastFiveRaces[y] = "great";
+                      } else if (driverTableData[x].lastFiveRaces[y].positionText <= aboveAverageResult) {
+                          driverTableData[x].tableAverages.lastFiveRaces[y] = "above-avg";
+                        } else if (driverTableData[x].lastFiveRaces[y].positionText >= veryBadResult) {
+                            driverTableData[x].tableAverages.lastFiveRaces[y] = "very bad";
+                          } else if (driverTableData[x].lastFiveRaces[y].positionText >= badResult) {
+                              driverTableData[x].tableAverages.lastFiveRaces[y] = "bad";
+                            } else if (driverTableData[x].lastFiveRaces[y].positionText >= belowAverageResult) {
+                              driverTableData[x].tableAverages.lastFiveRaces[y] = "below-avg";
+                              } else if (driverTableData[x].lastFiveRaces[y].positionText != "N/A") {
+                                driverTableData[x].tableAverages.lastFiveRaces[y] = "average";
+                                };
+          };
+      };
+
+      for (let x = 0; x < driverTableData.length; x++) {
+        for (let y = 0; y < driverTableData[x].nextRaceResults.length; y++) {
+          
+          let excellentResult = driverTableData[x].tableAverages.nextRaceResults[y] - 5;
+          let greatResult = driverTableData[x].tableAverages.nextRaceResults[y] - 2.5;
+          let aboveAverageResult = driverTableData[x].tableAverages.nextRaceResults[y] - 1.5;
+          let belowAverageResult = driverTableData[x].tableAverages.nextRaceResults[y] + 1.5;
+          let badResult = driverTableData[x].tableAverages.nextRaceResults[y] + 2.5;
+          let veryBadResult = driverTableData[x].tableAverages.nextRaceResults[y] + 5;
+
+
+          if (driverTableData[x].nextRaceResults[y].positionText == "D" ||
+              driverTableData[x].nextRaceResults[y].positionText == "R" ||
+              driverTableData[x].nextRaceResults[y].positionText == "W") {
+                driverTableData[x].tableAverages.nextRaceResults[y] = "no finish";
+              } else if (driverTableData[x].nextRaceResults[y].positionText == "N/A") {
+                  driverTableData[x].tableAverages.nextRaceResults[y] = "N/A";
+                } else if (driverTableData[x].nextRaceResults[y].positionText <= excellentResult) {
+                    driverTableData[x].tableAverages.nextRaceResults[y] = "excellent";
+                  } else if (driverTableData[x].nextRaceResults[y].positionText <= greatResult) {
+                        driverTableData[x].tableAverages.nextRaceResults[y] = "great";
+                      } else if (driverTableData[x].nextRaceResults[y].positionText <= aboveAverageResult) {
+                          driverTableData[x].tableAverages.nextRaceResults[y] = "above-avg";
+                        } else if (driverTableData[x].nextRaceResults[y].positionText >= veryBadResult) {
+                            driverTableData[x].tableAverages.nextRaceResults[y] = "very bad";
+                          } else if (driverTableData[x].nextRaceResults[y].positionText >= badResult) {
+                              driverTableData[x].tableAverages.nextRaceResults[y] = "bad";
+                            } else if (driverTableData[x].nextRaceResults[y].positionText >= belowAverageResult) {
+                              driverTableData[x].tableAverages.nextRaceResults[y] = "below-avg";
+                              } else if (driverTableData[x].nextRaceResults[y].positionText != "N/A") {
+                                driverTableData[x].tableAverages.nextRaceResults[y] = "average";
+                                };
+                                
+          };
+      };
+      for (let x = 0; x < driverTableData.length; x++) {
+        for (let y = 0; y < driverTableData[x].nextRaceTypeResults.length; y++) {
+          
+          let excellentResult = driverTableData[x].tableAverages.nextRaceTypeResults[y] - 5;
+          let greatResult = driverTableData[x].tableAverages.nextRaceTypeResults[y] - 2.5;
+          let aboveAverageResult = driverTableData[x].tableAverages.nextRaceTypeResults[y] - 1.5;
+          let belowAverageResult = driverTableData[x].tableAverages.nextRaceTypeResults[y] + 1.5;
+          let badResult = driverTableData[x].tableAverages.nextRaceTypeResults[y] + 2.5;
+          let veryBadResult = driverTableData[x].tableAverages.nextRaceTypeResults[y] + 5;
+
+
+          if (driverTableData[x].nextRaceTypeResults[y].positionText == "D" ||
+              driverTableData[x].nextRaceTypeResults[y].positionText == "R" ||
+              driverTableData[x].nextRaceTypeResults[y].positionText == "W") {
+                driverTableData[x].tableAverages.nextRaceTypeResults[y] = "no finish";
+              } else if (driverTableData[x].nextRaceTypeResults[y].positionText == "1") {
+                  driverTableData[x].tableAverages.nextRaceTypeResults[y] = "win";
+                } else if (driverTableData[x].nextRaceTypeResults[y].positionText <= excellentResult) {
+                    driverTableData[x].tableAverages.nextRaceTypeResults[y] = "excellent";
+                  } else if (driverTableData[x].nextRaceTypeResults[y].positionText <= greatResult) {
+                      driverTableData[x].tableAverages.nextRaceTypeResults[y] = "great";
+                    } else if (driverTableData[x].nextRaceTypeResults[y].positionText <= aboveAverageResult) {
+                        driverTableData[x].tableAverages.nextRaceTypeResults[y] = "above-avg";
+                      } else if (driverTableData[x].nextRaceTypeResults[y].positionText >= veryBadResult) {
+                          driverTableData[x].tableAverages.nextRaceTypeResults[y] = "very bad";
+                        } else if (driverTableData[x].nextRaceTypeResults[y].positionText >= badResult) {
+                            driverTableData[x].tableAverages.nextRaceTypeResults[y] = "bad";
+                          } else if (driverTableData[x].nextRaceTypeResults[y].positionText >= belowAverageResult) {
+                            driverTableData[x].tableAverages.nextRaceTypeResults[y] = "below-avg";
+                            } else if (driverTableData[x].nextRaceTypeResults[y].positionText != "N/A") {
+                              driverTableData[x].tableAverages.nextRaceTypeResults[y] = "average";
+                              } else {driverTableData[x].tableAverages.nextRaceTypeResults[y] = "N/A";
+                                };
+          };
+      };
+    };
     rateTableResults();
   }, [driverTableData]);
 
@@ -609,16 +691,16 @@ export default function App() {
           driver.lastFiveRaces[2].positionText,
           driver.lastFiveRaces[3].positionText,
           driver.lastFiveRaces[4].positionText,
-          driver.nextRaceResults[0],
-          driver.nextRaceResults[1],
-          driver.nextRaceResults[2],
-          driver.nextRaceResults[3],
-          driver.nextRaceResults[4],
-          driver.nextRaceTypeResults[0],
-          driver.nextRaceTypeResults[1],
-          driver.nextRaceTypeResults[2],
-          driver.nextRaceTypeResults[3],
-          driver.nextRaceTypeResults[4]
+          driver.nextRaceResults[0].positionText,
+          driver.nextRaceResults[1].positionText,
+          driver.nextRaceResults[2].positionText,
+          driver.nextRaceResults[3].positionText,
+          driver.nextRaceResults[4].positionText,
+          driver.nextRaceTypeResults[0].positionText,
+          driver.nextRaceTypeResults[1].positionText,
+          driver.nextRaceTypeResults[2].positionText,
+          driver.nextRaceTypeResults[3].positionText,
+          driver.nextRaceTypeResults[4].positionText,
         )
       )
     );
