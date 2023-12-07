@@ -434,7 +434,7 @@ export default function App() {
       for (let x = 0; x < driverTableData.length; x++) {
         for (let y = 0; y < driverTableData[x].careerData.raceResultsBySeason.length; y++) {
           for (let z = 0; z < nextRaceTypeHistory.length; z++) {
-            while (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length > 4) {
+            if (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length > 4) {
               if (driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceTypeHistory[z].season) {
                 driverTableData[x].tableAverages.nextRaceTypeResults[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
               };
