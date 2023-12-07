@@ -1,5 +1,5 @@
 export async function getDriverData(driverName) {
-  const url = `http://ergast.com/api/f1/2023/drivers/${driverName}.json`;
+  const url = `https://ergast.com/api/f1/2023/drivers/${driverName}.json`;
 
   try {
     const response = await fetch(url);
@@ -12,7 +12,7 @@ export async function getDriverData(driverName) {
 }
 
 export async function fetchAllDriverNames() {
-  const url = "http://ergast.com/api/f1/2023/drivers.json";
+  const url = "https://ergast.com/api/f1/2023/drivers.json";
   try {
     const response = await fetch(url);
     const json = await response.json();
@@ -29,7 +29,7 @@ export async function fetchAllDriverNames() {
 }
 
 export async function fetchCurrentStandings() {
-  const url = "http://ergast.com/api/f1/current/driverStandings.json";
+  const url = "https://ergast.com/api/f1/current/driverStandings.json";
   try {
     const response = await fetch(url);
     const json = await response.json();
@@ -43,7 +43,7 @@ export async function fetchCurrentStandings() {
 }
 
 export async function fetchLastRaceResults() {
-  const url = "http://ergast.com/api/f1/current/last/results.json";
+  const url = "https://ergast.com/api/f1/current/last/results.json";
   try {
     const response = await fetch(url);
     const json = await response.json();
