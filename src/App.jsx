@@ -6,6 +6,7 @@ import {
   fetchEventList,
   fetchNextTrackData,
   fetchPreviousSeasonRaceResults,
+  getDriverAverages
 } from "./utilities";
 
 import { circuitTypes, raceTitles, allCareerData } from "./consts";
@@ -401,45 +402,9 @@ export default function App() {
   }, [lastFiveRaceResults, names, nextRaceHistory, nextRaceTypeHistory]);
 
   useEffect (() => {
-    function getDriverAverages() {
-      for (let n = 0; n < driverTableData.length; n++) {
-        for (let y = 0; y < allCareerData.length; y++) {
-          if (driverTableData[n].driverId == allCareerData[y].MRData.RaceTable.driverId) {
-            driverTableData[n].allRaceResults = allCareerData[y].MRData.RaceTable.Races;
-              for (let i = 0; i < driverTableData[n].allRaceResults.length; i++) {
-                for (let z = 0; z < driverTableData[n].careerData.raceResultsBySeason.length; z++) {
-                  if (driverTableData[n].allRaceResults[i].season == driverTableData[n].careerData.raceResultsBySeason[z].season) {
-                    driverTableData[n].careerData.raceResultsBySeason[z].raceResults.push(driverTableData[n].allRaceResults[i].Results[0].positionText);
-                    driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes = driverTableData[n].careerData.raceResultsBySeason[z].raceResults.filter(Number);
-                      let nums = driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes.map(function(str) {
-                        return parseInt(str)
-                      });
-                  
-                      function calculateAverage(array) {
-                      let total = 0;
-                      let count = 0;
-                      array.forEach(function(item, index) {
-                        total += item;
-                        count++;
-                  
-                      });
-                      return total/count;
-                      }
-                      driverTableData[n].careerData.raceResultsBySeason[z].meanRaceFinish = calculateAverage(nums);
-                
-                  };
-                };  
-              };
-          
-          };
-        }; 
-      };
-    };
-    getDriverAverages()
+    getDriverAverages(driverTableData, allCareerData)
   }, [driverTableData]);
 
-  
-    
   useEffect (() => {
     function matchAveragesWithTableResults() {
       for (let x = 0; x < driverTableData.length; x++) {
@@ -480,12 +445,12 @@ export default function App() {
       for (let x = 0; x < driverTableData.length; x++) {
         for (let y = 0; y < driverTableData[x].lastFiveRaces.length; y++) {
           
-          let excellentResult = driverTableData[x].tableAverages.lastFiveRaces[y] - 5;
-          let greatResult = driverTableData[x].tableAverages.lastFiveRaces[y] - 2.5;
-          let aboveAverageResult = driverTableData[x].tableAverages.lastFiveRaces[y] - 1.5;
-          let belowAverageResult = driverTableData[x].tableAverages.lastFiveRaces[y] + 1.5;
-          let badResult = driverTableData[x].tableAverages.lastFiveRaces[y] + 2.5;
-          let veryBadResult = driverTableData[x].tableAverages.lastFiveRaces[y] + 5;
+          const excellentResult = driverTableData[x].tableAverages.lastFiveRaces[y] - 5;
+          const greatResult = driverTableData[x].tableAverages.lastFiveRaces[y] - 2.5;
+          const aboveAverageResult = driverTableData[x].tableAverages.lastFiveRaces[y] - 1.5;
+          const belowAverageResult = driverTableData[x].tableAverages.lastFiveRaces[y] + 1.5;
+          const badResult = driverTableData[x].tableAverages.lastFiveRaces[y] + 2.5;
+          const veryBadResult = driverTableData[x].tableAverages.lastFiveRaces[y] + 5;
 
 
           if (driverTableData[x].lastFiveRaces[y].positionText == "D" ||
