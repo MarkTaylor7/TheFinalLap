@@ -2,7 +2,7 @@ import data from "./data.json" assert { type: 'json' };
 
 export const allCareerData = data;
 
-export const allSeasons = [
+export const allSeasonsArray = [
   2005,
   2006,
   2015,
@@ -16,6 +16,8 @@ export const allSeasons = [
   2023,
   2024
 ];
+
+
 
 //Every race has a unique circuitId, which is sorted into one of three circuitTypes based its characteristics:
 //High downforce circuits feature demanding corners and usually don't feature long straights, so high aerodynamic

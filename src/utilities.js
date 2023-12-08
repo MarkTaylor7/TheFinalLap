@@ -1,3 +1,5 @@
+import { allSeasonsArray } from "./consts";
+
 export async function getDriverData(driverName) {
   const url = `https://ergast.com/api/f1/2023/drivers/${driverName}.json`;
 
@@ -170,4 +172,154 @@ export function getDriverAverages(driverTableData, allCareerData) {
       };
     }; 
   };
+};
+
+export function matchAveragesWithTableResults(driverTableData, lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory) {
+  for (let x = 0; x < driverTableData.length; x++) {
+    for (let y = 0; y < driverTableData[x].careerData.raceResultsBySeason.length; y++) {
+      for (let z = 0; z < lastFiveRaceResults.length; z++) {
+        if ((driverTableData[x].careerData.raceResultsBySeason[y].season == lastFiveRaceResults[z].season) && (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length > 4)) {
+          driverTableData[x].tableAverages.lastFiveRaces[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
+        };
+      };
+    };
+  };
+
+  for (let x = 0; x < driverTableData.length; x++) {
+    for (let y = 0; y < driverTableData[x].careerData.raceResultsBySeason.length; y++) {
+      for (let z = 0; z < nextRaceHistory.length; z++) {
+        if ((driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceHistory[z].season) && (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length > 4)) {
+          driverTableData[x].tableAverages.nextRaceResults[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
+        };
+      };
+    }
+  };
+  
+  for (let x = 0; x < driverTableData.length; x++) {
+    for (let y = 0; y < driverTableData[x].careerData.raceResultsBySeason.length; y++) {
+      for (let z = 0; z < nextRaceTypeHistory.length; z++) {
+        if ((driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceTypeHistory[z].season) && (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length > 4)) {
+          driverTableData[x].tableAverages.nextRaceTypeResults[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
+        };
+      }
+    }
+  };
+};
+
+export function rateTableResults(driverTableData) {
+  for (let x = 0; x < driverTableData.length; x++) {
+    for (let y = 0; y < driverTableData[x].lastFiveRaces.length; y++) {
+      
+      const excellentResult = driverTableData[x].tableAverages.lastFiveRaces[y] - 5;
+      const greatResult = driverTableData[x].tableAverages.lastFiveRaces[y] - 2.5;
+      const aboveAverageResult = driverTableData[x].tableAverages.lastFiveRaces[y] - 1.5;
+      const belowAverageResult = driverTableData[x].tableAverages.lastFiveRaces[y] + 1.5;
+      const badResult = driverTableData[x].tableAverages.lastFiveRaces[y] + 2.5;
+      const veryBadResult = driverTableData[x].tableAverages.lastFiveRaces[y] + 5;
+
+      if (driverTableData[x].lastFiveRaces[y].positionText == "D" ||
+          driverTableData[x].lastFiveRaces[y].positionText == "R" ||
+          driverTableData[x].lastFiveRaces[y].positionText == "W") {
+            driverTableData[x].tableAverages.lastFiveRaces[y] = "no finish";
+          } else if (driverTableData[x].lastFiveRaces[y].positionText == "N/A") {
+              driverTableData[x].tableAverages.lastFiveRaces[y] = "N/A";
+            } else if (driverTableData[x].lastFiveRaces[y].positionText <= excellentResult) {
+                driverTableData[x].tableAverages.lastFiveRaces[y] = "excellent";
+              } else if (driverTableData[x].lastFiveRaces[y].positionText <= greatResult) {
+                    driverTableData[x].tableAverages.lastFiveRaces[y] = "great";
+                  } else if (driverTableData[x].lastFiveRaces[y].positionText <= aboveAverageResult) {
+                      driverTableData[x].tableAverages.lastFiveRaces[y] = "above-avg";
+                    } else if (driverTableData[x].lastFiveRaces[y].positionText >= veryBadResult) {
+                        driverTableData[x].tableAverages.lastFiveRaces[y] = "very bad";
+                      } else if (driverTableData[x].lastFiveRaces[y].positionText >= badResult) {
+                          driverTableData[x].tableAverages.lastFiveRaces[y] = "bad";
+                        } else if (driverTableData[x].lastFiveRaces[y].positionText >= belowAverageResult) {
+                          driverTableData[x].tableAverages.lastFiveRaces[y] = "below-avg";
+                          } else if (driverTableData[x].lastFiveRaces[y].positionText != "N/A" && driverTableData[x].tableAverages.lastFiveRaces[y] != "N/A") {
+                            driverTableData[x].tableAverages.lastFiveRaces[y] = "average";
+                            };
+      };
+  };
+
+  for (let x = 0; x < driverTableData.length; x++) {
+    for (let y = 0; y < driverTableData[x].nextRaceResults.length; y++) {
+      
+      const excellentResult = driverTableData[x].tableAverages.nextRaceResults[y] - 5;
+      const greatResult = driverTableData[x].tableAverages.nextRaceResults[y] - 2.5;
+      const aboveAverageResult = driverTableData[x].tableAverages.nextRaceResults[y] - 1.5;
+      const belowAverageResult = driverTableData[x].tableAverages.nextRaceResults[y] + 1.5;
+      const badResult = driverTableData[x].tableAverages.nextRaceResults[y] + 2.5;
+      const veryBadResult = driverTableData[x].tableAverages.nextRaceResults[y] + 5;
+
+      if (driverTableData[x].nextRaceResults[y].positionText == "D" ||
+          driverTableData[x].nextRaceResults[y].positionText == "R" ||
+          driverTableData[x].nextRaceResults[y].positionText == "W") {
+            driverTableData[x].tableAverages.nextRaceResults[y] = "no finish";
+          } else if (driverTableData[x].nextRaceResults[y].positionText == "N/A") {
+              driverTableData[x].tableAverages.nextRaceResults[y] = "N/A";
+            } else if (driverTableData[x].nextRaceResults[y].positionText <= excellentResult) {
+                driverTableData[x].tableAverages.nextRaceResults[y] = "excellent";
+              } else if (driverTableData[x].nextRaceResults[y].positionText <= greatResult) {
+                    driverTableData[x].tableAverages.nextRaceResults[y] = "great";
+                  } else if (driverTableData[x].nextRaceResults[y].positionText <= aboveAverageResult) {
+                      driverTableData[x].tableAverages.nextRaceResults[y] = "above-avg";
+                    } else if (driverTableData[x].nextRaceResults[y].positionText >= veryBadResult) {
+                        driverTableData[x].tableAverages.nextRaceResults[y] = "very bad";
+                      } else if (driverTableData[x].nextRaceResults[y].positionText >= badResult) {
+                          driverTableData[x].tableAverages.nextRaceResults[y] = "bad";
+                        } else if (driverTableData[x].nextRaceResults[y].positionText >= belowAverageResult) {
+                          driverTableData[x].tableAverages.nextRaceResults[y] = "below-avg";
+                          } else if (driverTableData[x].nextRaceResults[y].positionText != "N/A" && driverTableData[x].tableAverages.nextRaceResults[y] != "N/A") {
+                            driverTableData[x].tableAverages.nextRaceResults[y] = "average";
+                            };
+                            
+      };
+  };
+  for (let x = 0; x < driverTableData.length; x++) {
+    for (let y = 0; y < driverTableData[x].nextRaceTypeResults.length; y++) {
+      
+      const excellentResult = driverTableData[x].tableAverages.nextRaceTypeResults[y] - 5;
+      const greatResult = driverTableData[x].tableAverages.nextRaceTypeResults[y] - 2.5;
+      const aboveAverageResult = driverTableData[x].tableAverages.nextRaceTypeResults[y] - 1.5;
+      const belowAverageResult = driverTableData[x].tableAverages.nextRaceTypeResults[y] + 1.5;
+      const badResult = driverTableData[x].tableAverages.nextRaceTypeResults[y] + 2.5;
+      const veryBadResult = driverTableData[x].tableAverages.nextRaceTypeResults[y] + 5;
+
+      if (driverTableData[x].nextRaceTypeResults[y].positionText == "D" ||
+          driverTableData[x].nextRaceTypeResults[y].positionText == "R" ||
+          driverTableData[x].nextRaceTypeResults[y].positionText == "W") {
+            driverTableData[x].tableAverages.nextRaceTypeResults[y] = "no finish";
+          } else if (driverTableData[x].nextRaceTypeResults[y].positionText == "N/A") {
+              driverTableData[x].tableAverages.nextRaceTypeResults[y] = "N/A";
+            } else if (driverTableData[x].nextRaceTypeResults[y].positionText <= excellentResult) {
+                driverTableData[x].tableAverages.nextRaceTypeResults[y] = "excellent";
+              } else if (driverTableData[x].nextRaceTypeResults[y].positionText <= greatResult) {
+                    driverTableData[x].tableAverages.nextRaceTypeResults[y] = "great";
+                  } else if (driverTableData[x].nextRaceTypeResults[y].positionText <= aboveAverageResult) {
+                      driverTableData[x].tableAverages.nextRaceTypeResults[y] = "above-avg";
+                    } else if (driverTableData[x].nextRaceTypeResults[y].positionText >= veryBadResult) {
+                        driverTableData[x].tableAverages.nextRaceTypeResults[y] = "very bad";
+                      } else if (driverTableData[x].nextRaceTypeResults[y].positionText >= badResult) {
+                          driverTableData[x].tableAverages.nextRaceTypeResults[y] = "bad";
+                        } else if (driverTableData[x].nextRaceTypeResults[y].positionText >= belowAverageResult) {
+                          driverTableData[x].tableAverages.nextRaceTypeResults[y] = "below-avg";
+                          } else if (driverTableData[x].nextRaceTypeResults[y].positionText != "N/A" && driverTableData[x].tableAverages.nextRaceTypeResults[y] != "N/A") {
+                            driverTableData[x].tableAverages.nextRaceTypeResults[y] = "average";
+                            };
+      };
+  };
+};
+
+export async function createSeasonResultsProps() {
+  const array = [];
+  for (let x = 0; x < allSeasonsArray.length; x++) {
+    let newSeason = {
+      season: allSeasonsArray[x],
+      raceResults: [],
+      raceFinishes: [],
+      meanRaceFinish: ""
+    }
+    array.push(newSeason);
+  }
+  return array;
 };
