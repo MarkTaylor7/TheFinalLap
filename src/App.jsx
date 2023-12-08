@@ -9,7 +9,7 @@ import {
   getDriverAverages
 } from "./utilities";
 
-import { circuitTypes, raceTitles, allCareerData } from "./consts";
+import { circuitTypes, raceTitles, allCareerData, allSeasons } from "./consts";
 import { flags } from "./Flags";
 
 
@@ -216,7 +216,6 @@ export default function App() {
   useEffect(() => {
     if (lastFiveRaceResults != 0 && nextRaceHistory !=0 && nextRaceTypeHistory !=0) {
       
-
       const raceNames = [];
       
       async function mapRaceNamesToHeadings() {
@@ -439,6 +438,8 @@ export default function App() {
     };
     matchAveragesWithTableResults();
   }, [driverTableData]);
+
+
 
   useEffect (() => {
     function rateTableResults() {
