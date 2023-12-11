@@ -5,7 +5,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+
 import { Oval } from "react-loader-spinner";
+
 
 const cellLoading = <Oval
   height={40}
@@ -20,12 +22,16 @@ const cellLoading = <Oval
   strokeWidthSecondary={2}
 />
 
-const getBackgroundColor = () => {
-  // Example condition: Change background color if value is greater than 10
-  return value > 10 ? '#ff9999' : 'inherit'; // Change color as needed
-};
 
-export default function DenseTable({data1, data2, data3, boolean1, boolean2, boolean3}) {
+export default function DenseTable({data1, data2, data3, data4, boolean1, boolean2, boolean3}) {
+  
+  const getBackgroundColor = () => {
+    for (let i = 0; i < data4.length; i++) {
+      const value = data4[i].tableAverages.lastFiveRaces[0];
+      return value == "win" ? '#ff9999' : 'inherit';
+    };
+  }
+    
     return (
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -84,7 +90,7 @@ export default function DenseTable({data1, data2, data3, boolean1, boolean2, boo
                 <TableCell component="th" scope="row">
                   {row.name}
                 </TableCell>
-                <TableCell sx = {{ bgcolor: "green" }} align="center">{boolean1 == true ? row.fiveRacesAgo : cellLoading}</TableCell>
+                <TableCell sx = {{ bgcolor: getBackgroundColor() }} align="center">{boolean1 == true ? row.fiveRacesAgo : cellLoading}</TableCell>
                 <TableCell align="center">{boolean1 == true ? row.fourRacesAgo : cellLoading}</TableCell>
                 <TableCell align="center">{boolean1 == true ? row.threeRacesAgo : cellLoading}</TableCell>
                 <TableCell align="center">{boolean1 == true ? row.twoRacesAgo : cellLoading}</TableCell>
@@ -105,4 +111,4 @@ export default function DenseTable({data1, data2, data3, boolean1, boolean2, boo
         </Table>
       </TableContainer>
     );
-  }
+};

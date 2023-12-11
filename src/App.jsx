@@ -532,7 +532,7 @@ export default function App() {
 
   return (
     <>
-      <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData}
+      <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={driverTableData}
       boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched}/>
     </>
   );
