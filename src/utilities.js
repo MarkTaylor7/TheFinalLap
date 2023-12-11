@@ -180,7 +180,9 @@ export function matchAveragesWithTableResults(driverTableData, lastFiveRaceResul
       for (let z = 0; z < lastFiveRaceResults.length; z++) {
         if ((driverTableData[x].careerData.raceResultsBySeason[y].season == lastFiveRaceResults[z].season) && (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length > 4)) {
           driverTableData[x].tableAverages.lastFiveRaces[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
-        };
+        } else if ((driverTableData[x].careerData.raceResultsBySeason[y].season == lastFiveRaceResults[z].season) && (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length <= 4)) {
+          driverTableData[x].tableAverages.lastFiveRaces[z] = "average"
+        }
       };
     };
   };
@@ -190,7 +192,9 @@ export function matchAveragesWithTableResults(driverTableData, lastFiveRaceResul
       for (let z = 0; z < nextRaceHistory.length; z++) {
         if ((driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceHistory[z].season) && (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length > 4)) {
           driverTableData[x].tableAverages.nextRaceResults[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
-        };
+        } else if ((driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceHistory[z].season) && (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length <= 4)) {
+          driverTableData[x].tableAverages.nextRaceResults[z] = "average"
+        }
       };
     }
   };
@@ -200,7 +204,9 @@ export function matchAveragesWithTableResults(driverTableData, lastFiveRaceResul
       for (let z = 0; z < nextRaceTypeHistory.length; z++) {
         if ((driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceTypeHistory[z].season) && (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length > 4)) {
           driverTableData[x].tableAverages.nextRaceTypeResults[z] = driverTableData[x].careerData.raceResultsBySeason[y].meanRaceFinish
-        };
+        } else if ((driverTableData[x].careerData.raceResultsBySeason[y].season == nextRaceTypeHistory[z].season) && (driverTableData[x].careerData.raceResultsBySeason[y].raceFinishes.length <= 4)) {
+          driverTableData[x].tableAverages.nextRaceTypeResults[z] = "average"
+        }
       }
     }
   };
