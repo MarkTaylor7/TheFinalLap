@@ -35,6 +35,7 @@ export default function App() {
   const [flagHeadings, setFlagHeadings] = useState([]);
   const [tableHeadings, setTableHeadings] = useState([]);
   const [racerData, setRacerData] = useState([]);
+  const [raceRatings, setRaceRatings] = useState([]);
   const [lastFiveRacesDataFetched, setLastFiveRacesDataFetched] = useState(false);
   const [nextRaceDataFetched, setNextRaceDataFetched] = useState(false);
   const [nextRaceTypeDataFetched, setNextRaceTypeDataFetched] = useState(false);
@@ -503,11 +504,78 @@ export default function App() {
     );
   }, [tableHeadingsContent]);
 
+  function formatRowAvg(
+    name,
+    fiveRacesAgo,
+    fourRacesAgo,
+    threeRacesAgo,
+    twoRacesAgo,
+    oneRaceAgo,
+    nextRace1,
+    nextRace2,
+    nextRace3,
+    nextRace4,
+    nextRace5,
+    nextRaceType1,
+    nextRaceType2,
+    nextRaceType3,
+    nextRaceType4,
+    nextRaceType5,
+    fiveRacesAgoRating,
+    fourRacesAgoRating,
+    threeRacesAgoRating,
+    twoRacesAgoRating,
+    oneRaceAgoRating,
+    nextRace1Rating,
+    nextRace2Rating,
+    nextRace3Rating,
+    nextRace4Rating,
+    nextRace5Rating,
+    nextRaceType1Rating,
+    nextRaceType2Rating,
+    nextRaceType3Rating,
+    nextRaceType4Rating,
+    nextRaceType5Rating
+  ) {
+    return {
+      name,
+      fiveRacesAgo,
+      fourRacesAgo,
+      threeRacesAgo,
+      twoRacesAgo,
+      oneRaceAgo,
+      nextRace1,
+      nextRace2,
+      nextRace3,
+      nextRace4,
+      nextRace5,
+      nextRaceType1,
+      nextRaceType2,
+      nextRaceType3,
+      nextRaceType4,
+      nextRaceType5,
+      fiveRacesAgoRating,
+      fourRacesAgoRating,
+      threeRacesAgoRating,
+      twoRacesAgoRating,
+      oneRaceAgoRating,
+      nextRace1Rating,
+      nextRace2Rating,
+      nextRace3Rating,
+      nextRace4Rating,
+      nextRace5Rating,
+      nextRaceType1Rating,
+      nextRaceType2Rating,
+      nextRaceType3Rating,
+      nextRaceType4Rating,
+      nextRaceType5Rating,
+    };
+  }
+
   useEffect(() => {
-    
     setRacerData(
       driverTableData.map((driver) =>
-        formatRow(
+        formatRowAvg(
           driver.name,
           driver.lastFiveRaces[0].positionText,
           driver.lastFiveRaces[1].positionText,
@@ -524,15 +592,34 @@ export default function App() {
           driver.nextRaceTypeResults[2].positionText,
           driver.nextRaceTypeResults[3].positionText,
           driver.nextRaceTypeResults[4].positionText,
+          driver.tableAverages.lastFiveRaces[0],
+          driver.tableAverages.lastFiveRaces[1],
+          driver.tableAverages.lastFiveRaces[2],
+          driver.tableAverages.lastFiveRaces[3],
+          driver.tableAverages.lastFiveRaces[4],
+          driver.tableAverages.nextRaceResults[0],
+          driver.tableAverages.nextRaceResults[1],
+          driver.tableAverages.nextRaceResults[2],
+          driver.tableAverages.nextRaceResults[3],
+          driver.tableAverages.nextRaceResults[4],
+          driver.tableAverages.nextRaceTypeResults[0],
+          driver.tableAverages.nextRaceTypeResults[1],
+          driver.tableAverages.nextRaceTypeResults[2],
+          driver.tableAverages.nextRaceTypeResults[3],
+          driver.tableAverages.nextRaceTypeResults[4]
         )
-      )
+      ),
     );
     
   }, [driverTableData]);
 
+  useEffect(() => {
+    console.log(racerData)
+  }, [racerData])
+
   return (
     <>
-      <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={driverTableData}
+      <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData}
       boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched}/>
     </>
   );
