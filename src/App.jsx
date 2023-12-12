@@ -504,7 +504,7 @@ export default function App() {
     );
   }, [tableHeadingsContent]);
 
-  function formatRowAvg(
+  function formatDataRow(
     name,
     fiveRacesAgo,
     fourRacesAgo,
@@ -575,7 +575,7 @@ export default function App() {
   useEffect(() => {
     setRacerData(
       driverTableData.map((driver) =>
-        formatRowAvg(
+        formatDataRow(
           driver.name,
           driver.lastFiveRaces[0].positionText,
           driver.lastFiveRaces[1].positionText,

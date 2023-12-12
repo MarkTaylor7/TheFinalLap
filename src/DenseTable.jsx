@@ -8,6 +8,7 @@ import Paper from '@mui/material/Paper';
 
 import { Oval } from "react-loader-spinner";
 
+import { getBackgroundColor, getColor } from "./utilities";
 
 const cellLoading = <Oval
   height={40}
@@ -22,111 +23,11 @@ const cellLoading = <Oval
   strokeWidthSecondary={2}
 />
 
-
-
-export default function DenseTable({data1, data2, data3, data4, boolean1, boolean2, boolean3}) {
+export default function DenseTable({data1, data2, data3, boolean1, boolean2, boolean3}) {
   
-  function getBackgroundColor(data3) {
-    let color;
-    switch (data3) {
-      case "win":
-        color = "#ffeb3b";
-        break;
-      case "excellent":
-        color = "#4caf50";
-        break;
-      case "great":
-        color = "#81c784";
-        break;
-      case "above-avg":
-        color = "#c8e6c9";
-        break;
-      case "below-avg":
-        color = "#ffcdd2";
-        break;
-      case "bad":
-        color = "#e57373";
-        break;
-      case "very bad":
-        color = "#f44336";
-        break;
-      case "no finish":
-        color = "#212121";
-        break;
-      case "N/A":
-        color = "#bdbdbd";
-        break;
-      case "Max Verstappen":
-      case "Sergio Pérez":
-        color = "#3671C6";
-        break;
-      case "Lewis Hamilton":
-      case "George Russell":
-        color = "#6CD3BF";
-        break;
-      case "Charles Leclerc":
-      case "Carlos Sainz":
-        color = "#F91536";
-        break;
-      case "Lando Norris":
-      case "Oscar Piastri":
-        color = "#F58020";
-        break;
-      case "Fernando Alonso":
-      case "Lance Stroll":
-        color = "#358C75";
-        break;
-      case "Pierre Gasly":
-      case "Esteban Ocon":
-        color = "#2293D1";
-        break;
-      case "Alexander Albon":
-      case "Logan Sargeant":
-        color = "#37BEDD";
-        break;
-      case "Yuki Tsunoda":
-      case "Daniel Ricciardo":
-      case "Liam Lawson":
-      case "Nyck de Vries":
-        color = "#5E8FAA";
-        break; 
-      case "Valtteri Bottas":
-      case "Guanyu Zhou":
-        color = "#C92D4B";
-        break;
-      case "Nico Hülkenberg":
-      case "Kevin Magnussen":
-        color = "#B6BABD";
-        break;
-      default:
-        color = "ffffff";
-    };
+  getBackgroundColor(data3);
+  getColor(data3);
 
-    return color        
-  };
-  
-  function getColor(data3) {
-    let color;
-    switch (data3) {
-      case "no finish":
-      case "Max Verstappen":
-      case "Sergio Pérez":
-      case "Charles Leclerc":
-      case "Carlos Sainz":
-      case "Fernando Alonso":
-      case "Lance Stroll":
-      case "Valtteri Bottas":
-      case "Guanyu Zhou":
-        color = "#ffffff";
-        break;
-      default:
-        color = "#212121";
-    };
-
-    return color
-  };
-
-  
     return (
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
