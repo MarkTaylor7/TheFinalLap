@@ -404,6 +404,8 @@ export function getBackgroundColor(data3) {
 export function getColor(data3) {
   let color;
   switch (data3) {
+    case "excellent":
+    case "very bad":
     case "no finish":
     case "Max Verstappen":
     case "Sergio Pérez":
