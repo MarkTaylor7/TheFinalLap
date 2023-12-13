@@ -35,9 +35,9 @@ export default function DenseTable({data1, data2, data3, boolean1, boolean2, boo
           <TableHead>
             <TableRow>
               <TableCell align="center" colSpan={1} sx={{ bgcolor: "#f5f5f5" }}></TableCell>
-              <TableCell align="center" colSpan={5} >"Recent Form - The Last 5 Races"</TableCell>
-              <TableCell align="center" colSpan={5} sx={{ bgcolor: "#f5f5f5" }}>"Circuit History - Recent Races at the Next Circuit"</TableCell>
-              <TableCell align="center" colSpan={5}>"Circuit Type: Power - Recent Races Similar to the Next Circuit"</TableCell>
+              <TableCell align="center" colSpan={5} >Recent Form - The Last 5 Races</TableCell>
+              <TableCell align="center" colSpan={5} sx={{ bgcolor: "#f5f5f5" }}>Circuit History - Recent Races at the Next Circuit</TableCell>
+              <TableCell align="center" colSpan={5}>Circuit Type: Power - Recent Races Similar to the Next Circuit</TableCell>
 
             </TableRow>
                     {data1.map((row, i) => (
