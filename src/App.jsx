@@ -436,6 +436,9 @@ export default function App() {
 
   useEffect (() => {
     rateTableResults(driverTableData)
+    setTimeout(() => {
+      setAllTableDataPopulated(true)
+    }, "3000");
   }, [driverTableData]);
 
   function formatRow(
@@ -678,12 +681,6 @@ export default function App() {
       ),
     );
   }, [driverTableData]);
-
-  useEffect(() => {
-    setTimeout(() => {
-        setAllTableDataPopulated(true)
-      }, "3000");
-  }, [racerData])
 
   return (
     <>
