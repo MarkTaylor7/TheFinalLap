@@ -682,7 +682,7 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => {
         setAllTableDataPopulated(true)
-      }, "2000");
+      }, "3000");
   }, [racerData])
 
   return (
