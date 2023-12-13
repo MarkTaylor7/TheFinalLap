@@ -165,6 +165,12 @@ export default function App() {
   }, [currentSeasonCircuitTypeMatches]); 
   
   useEffect(() => {
+    console.log(lastFiveRaceResults), 
+    console.log(nextRaceHistory),
+    console.log(nextRaceTypeHistory)
+  }, [lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
+
+  useEffect(() => {
     if (lastFiveRaceResults != 0 && nextRaceHistory !=0 && nextRaceTypeHistory !=0) {
       
       const raceFlags = [];
@@ -225,6 +231,9 @@ export default function App() {
           lastFiveRaces: ["N/A", "N/A", "N/A", "N/A", "N/A"],
           nextRaceResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
           nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+          lastFiveRacesReports: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+          nextRaceResultsReports: ["N/A", "N/A", "N/A", "N/A", "N/A"],
+          nextRaceTypeResultsReports: ["N/A", "N/A", "N/A", "N/A", "N/A"],
         };
 
         for (let i = 0; i < tableHeading.lastFiveRaces.length; i++) {
@@ -256,6 +265,30 @@ export default function App() {
           }
           tableHeading.nextRaceTypeResults[i] = tableHeading.nextRaceTypeResults[i].concat(" ", nextRaceTypeHistory[i].season)
         }
+
+        for (let i = 0; i < tableHeading.lastFiveRacesReports.length; i++) {
+          const season = lastFiveRaceResults[i].season;
+          const rawRaceName = lastFiveRaceResults[i].raceName;
+          const raceName = rawRaceName.replace(/ /g, "_");
+          tableHeading.lastFiveRacesReports[i] = `https://en.wikipedia.org/wiki/${season}_${raceName}#Race_report`;
+        };
+
+        for (let i = 0; i < tableHeading.nextRaceResultsReports.length; i++) {
+          const season = nextRaceHistory[i].season;
+          const rawRaceName = nextRaceHistory[i].raceName;
+          const raceName = rawRaceName.replace(/ /g, "_");
+          tableHeading.nextRaceResultsReports[i] = `https://en.wikipedia.org/wiki/${season}_${raceName}#Race_report`;
+        };
+
+        for (let i = 0; i < tableHeading.nextRaceTypeResultsReports.length; i++) {
+          const season = nextRaceTypeHistory[i].season;
+          const rawRaceName = nextRaceTypeHistory[i].raceName;
+          const raceName = rawRaceName.replace(/ /g, "_");
+          tableHeading.nextRaceTypeResultsReports[i] = `https://en.wikipedia.org/wiki/${season}_${raceName}#Race_report`;
+        };
+
+
+        console.log(tableHeading.lastFiveRacesReports)
         raceNames.push(tableHeading);
         setTableHeadingsContent(raceNames);
       }
@@ -432,7 +465,22 @@ export default function App() {
     nextRaceType2,
     nextRaceType3,
     nextRaceType4,
-    nextRaceType5
+    nextRaceType5,
+    fiveRacesAgoReport,
+    fourRacesAgoReport,
+    threeRacesAgoReport,
+    twoRacesAgoReport,
+    oneRaceAgoReport,
+    nextRace1Report,
+    nextRace2Report,
+    nextRace3Report,
+    nextRace4Report,
+    nextRace5Report,
+    nextRaceType1Report,
+    nextRaceType2Report,
+    nextRaceType3Report,
+    nextRaceType4Report,
+    nextRaceType5Report
   ) {
     return {
       name,
@@ -451,6 +499,21 @@ export default function App() {
       nextRaceType3,
       nextRaceType4,
       nextRaceType5,
+      fiveRacesAgoReport,
+      fourRacesAgoReport,
+      threeRacesAgoReport,
+      twoRacesAgoReport,
+      oneRaceAgoReport,
+      nextRace1Report,
+      nextRace2Report,
+      nextRace3Report,
+      nextRace4Report,
+      nextRace5Report,
+      nextRaceType1Report,
+      nextRaceType2Report,
+      nextRaceType3Report,
+      nextRaceType4Report,
+      nextRaceType5Report
     };
   }
 
@@ -498,7 +561,22 @@ export default function App() {
           tableHeading.nextRaceTypeResults[1],
           tableHeading.nextRaceTypeResults[2],
           tableHeading.nextRaceTypeResults[3],
-          tableHeading.nextRaceTypeResults[4]
+          tableHeading.nextRaceTypeResults[4],
+          tableHeading.lastFiveRacesReports[0],
+          tableHeading.lastFiveRacesReports[1],
+          tableHeading.lastFiveRacesReports[2],
+          tableHeading.lastFiveRacesReports[3],
+          tableHeading.lastFiveRacesReports[4],
+          tableHeading.nextRaceResultsReports[0],
+          tableHeading.nextRaceResultsReports[1],
+          tableHeading.nextRaceResultsReports[2],
+          tableHeading.nextRaceResultsReports[3],
+          tableHeading.nextRaceResultsReports[4],
+          tableHeading.nextRaceTypeResultsReports[0],
+          tableHeading.nextRaceTypeResultsReports[1],
+          tableHeading.nextRaceTypeResultsReports[2],
+          tableHeading.nextRaceTypeResultsReports[3],
+          tableHeading.nextRaceTypeResultsReports[4]
         )
       )
     );
@@ -619,7 +697,7 @@ export default function App() {
 
   return (
     <>
-      <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData}
+      <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={[lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]}
       boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched}/>
     </>
   );

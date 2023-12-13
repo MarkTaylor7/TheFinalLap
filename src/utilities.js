@@ -1,3 +1,5 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { allSeasonsArray } from "./consts";
 
 export async function getDriverData(driverName) {
@@ -423,6 +425,10 @@ export function getColor(data3) {
 
   return color
 };
+
+
+
+
 
 export async function createSeasonResultsProps() {
   const array = [];

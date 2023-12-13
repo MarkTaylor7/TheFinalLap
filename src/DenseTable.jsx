@@ -5,6 +5,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import { Oval } from "react-loader-spinner";
 
@@ -66,21 +67,21 @@ export default function DenseTable({data1, data2, data3, boolean1, boolean2, boo
                       key={i} sx = {{ bgcolor: "#f5f5f5" }} 
                       >
                         <TableCell>Driver</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}>{row.fiveRacesAgo}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}>{row.fourRacesAgo}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}>{row.threeRacesAgo}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}>{row.twoRacesAgo}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}>{row.oneRaceAgo}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#f5f5f5" }}>{row.nextRace1}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#f5f5f5" }}>{row.nextRace2}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#f5f5f5" }}>{row.nextRace3}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#f5f5f5" }}>{row.nextRace4}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#f5f5f5" }}>{row.nextRace5}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}>{row.nextRaceType1}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}>{row.nextRaceType2}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}>{row.nextRaceType3}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}>{row.nextRaceType4}</TableCell>
-                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}>{row.nextRaceType5}</TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}><a href={row.fiveRacesAgoReport} target="_blank" rel="noopener noreferrer">{row.fiveRacesAgo}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}><a href={row.fourRacesAgoReport} target="_blank" rel="noopener noreferrer">{row.fourRacesAgo}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}><a href={row.threeRacesAgoReport} target="_blank" rel="noopener noreferrer">{row.threeRacesAgo}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}><a href={row.twoRacesAgoReport} target="_blank" rel="noopener noreferrer">{row.twoRacesAgo}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}><a href={row.oneRaceAgoReport} target="_blank" rel="noopener noreferrer">{row.oneRaceAgo}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#f5f5f5" }}><a href={row.nextRace1Report} target="_blank" rel="noopener noreferrer">{row.nextRace1}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#f5f5f5" }}><a href={row.nextRace2Report} target="_blank" rel="noopener noreferrer">{row.nextRace2}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#f5f5f5" }}><a href={row.nextRace3Report} target="_blank" rel="noopener noreferrer">{row.nextRace3}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#f5f5f5" }}><a href={row.nextRace4Report} target="_blank" rel="noopener noreferrer">{row.nextRace4}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#f5f5f5" }}><a href={row.nextRace5Report} target="_blank" rel="noopener noreferrer">{row.nextRace5}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}><a href={row.nextRaceType1Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType1}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}><a href={row.nextRaceType2Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType2}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}><a href={row.nextRaceType3Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType3}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}><a href={row.nextRaceType4Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType4}</a></TableCell>
+                        <TableCell align="center" sx={{ bgcolor: "#ffffff" }}><a href={row.nextRaceType5Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType5}</a></TableCell>
                       </TableRow>
                     ))}
                   </TableHead>
