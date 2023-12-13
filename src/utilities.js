@@ -287,6 +287,7 @@ export function rateTableResults(driverTableData) {
                             
       };
   };
+  
   for (let x = 0; x < driverTableData.length; x++) {
     for (let y = 0; y < driverTableData[x].nextRaceTypeResults.length; y++) {
       

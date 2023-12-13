@@ -35,10 +35,11 @@ export default function App() {
   const [flagHeadings, setFlagHeadings] = useState([]);
   const [tableHeadings, setTableHeadings] = useState([]);
   const [racerData, setRacerData] = useState([]);
-  const [raceRatings, setRaceRatings] = useState([]);
   const [lastFiveRacesDataFetched, setLastFiveRacesDataFetched] = useState(false);
   const [nextRaceDataFetched, setNextRaceDataFetched] = useState(false);
   const [nextRaceTypeDataFetched, setNextRaceTypeDataFetched] = useState(false);
+  const [allTableDataPopulated, setAllTableDataPopulated] = useState(false);
+  
   
   // Getting driver names, current season results and events list
   useEffect(() => {
@@ -162,13 +163,7 @@ export default function App() {
           setNextRaceTypeHistory(results);
           setNextRaceTypeDataFetched(true);
     }
-  }, [currentSeasonCircuitTypeMatches]); 
-  
-  useEffect(() => {
-    console.log(lastFiveRaceResults), 
-    console.log(nextRaceHistory),
-    console.log(nextRaceTypeHistory)
-  }, [lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
+  }, [currentSeasonCircuitTypeMatches]);
 
   useEffect(() => {
     if (lastFiveRaceResults != 0 && nextRaceHistory !=0 && nextRaceTypeHistory !=0) {
@@ -287,12 +282,10 @@ export default function App() {
           tableHeading.nextRaceTypeResultsReports[i] = `https://en.wikipedia.org/wiki/${season}_${raceName}#Race_report`;
         };
 
-
-        console.log(tableHeading.lastFiveRacesReports)
         raceNames.push(tableHeading);
         setTableHeadingsContent(raceNames);
+        
       }
-      
       mapRaceNamesToHeadings();
     };
   }, [lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
@@ -444,10 +437,6 @@ export default function App() {
   useEffect (() => {
     rateTableResults(driverTableData)
   }, [driverTableData]);
-
-  useEffect (() => {
-    console.log(driverTableData);
-  }, [driverTableData])
 
   function formatRow(
     name,
@@ -688,17 +677,18 @@ export default function App() {
         )
       ),
     );
-    
   }, [driverTableData]);
 
   useEffect(() => {
-    console.log(racerData)
+    setTimeout(() => {
+        setAllTableDataPopulated(true)
+      }, "800");
   }, [racerData])
 
   return (
     <>
       <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={[lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]}
-      boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched}/>
+      boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}/>
     </>
   );
 }
