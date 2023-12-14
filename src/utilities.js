@@ -353,7 +353,7 @@ export function getBackgroundColor(data3) {
       color = "#212121";
       break;
     case "N/A":
-      color = "#bdbdbd";
+      color = "#757575";
       break;
     case "Max Verstappen":
     case "Sergio Pérez":
@@ -410,6 +410,7 @@ export function getColor(data3) {
     case "excellent":
     case "very bad":
     case "no finish":
+    case "N/A":
     case "Max Verstappen":
     case "Sergio Pérez":
     case "Charles Leclerc":

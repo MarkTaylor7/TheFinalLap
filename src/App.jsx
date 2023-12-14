@@ -15,7 +15,6 @@ import {
 import { circuitTypes, raceTitles, allCareerData, allSeasonsArray } from "./consts";
 import { flags } from "./Flags";
 
-
 export default function App() {
   const [standings, setStandings] = useState([]);
   const [names, setNames] = useState([]);
