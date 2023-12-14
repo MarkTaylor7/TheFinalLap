@@ -37,6 +37,7 @@ export default function App() {
   const [lastFiveRacesDataFetched, setLastFiveRacesDataFetched] = useState(false);
   const [nextRaceDataFetched, setNextRaceDataFetched] = useState(false);
   const [nextRaceTypeDataFetched, setNextRaceTypeDataFetched] = useState(false);
+  const [tableDataPopulated, setTableDataPopulated] = useState(false);
   const [allTableDataPopulated, setAllTableDataPopulated] = useState(false);
   
   
@@ -161,6 +162,8 @@ export default function App() {
           const results = bothSeasonsCircuitTypeMatchesMostRecent.slice(-5);
           setNextRaceTypeHistory(results);
           setNextRaceTypeDataFetched(true);
+          setTableDataPopulated(true)
+
     }
   }, [currentSeasonCircuitTypeMatches]);
 
@@ -324,6 +327,7 @@ export default function App() {
                   raceResults: [],
                   raceFinishes: [],
                   meanRaceFinish: ""
+                  //function: function goes here
                 },
                 {season: 2006,
                   raceResults: [],
@@ -430,16 +434,24 @@ export default function App() {
   }, [driverTableData]);
 
   useEffect (() => {
-    matchAveragesWithTableResults(driverTableData, lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory)
+    matchAveragesWithTableResults(driverTableData, lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory);
   }, [driverTableData, lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
 
   useEffect (() => {
     rateTableResults(driverTableData)
-    setTimeout(() => {
-      setAllTableDataPopulated(true)
-    }, "3000");
   }, [driverTableData]);
 
+
+  function test() {
+    if (tableDataPopulated == true) {
+      setAllTableDataPopulated(true)
+    }
+  };
+
+  useEffect (() => {
+    test()
+  }, [tableDataPopulated]);
+  
   function formatRow(
     name,
     fiveRacesAgo,
@@ -680,6 +692,10 @@ export default function App() {
       ),
     );
   }, [driverTableData]);
+
+  useEffect(() => {
+    console.log(racerData)
+  }, [racerData]);
 
   return (
     <>
