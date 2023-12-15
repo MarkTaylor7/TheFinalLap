@@ -1,4 +1,5 @@
 export const flags = [
+    {raceName: "N/A"},
     {raceName: "70th Anniversary Grand Prix", flagImage: <img id="greatBritainFlag" src="https://flagsapi.com/GB/flat/32.png" alt="British flag"></img>},
     {raceName: "Abu Dhabi Grand Prix", flagImage: <img id="UAEFlag" src="https://flagsapi.com/AE/flat/32.png" alt="United Arab Emirates flag"></img>},
     {raceName: "Australian Grand Prix", flagImage: <img id="australianFlag" src="https://flagsapi.com/AU/flat/32.png" alt="Australian flag"></img>},

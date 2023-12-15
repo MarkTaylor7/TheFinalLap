@@ -2,6 +2,178 @@ import data from "./data.json" assert { type: 'json' };
 
 export const allCareerData = data;
 
+export const emptyRaceObject = {
+  Circuit: {
+    circuitId: "N/A",
+    circuitName: "N/A"
+  },
+  Results: [
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    },
+    {Driver: {
+      driverId: "N/A",
+      familyName: "N/A",
+      givenName: "N/A"
+      },
+      positionText: "N/A",
+      status: "N/A"
+    }
+  ],
+  raceName: "N/A",
+  round: "N/A",
+  season: ""
+}
+
 export const allSeasonsArray = [
   2005,
   2006,
@@ -35,6 +207,17 @@ const highDownforceCircuits = {
     "losail",
     "rodriguez",
   ],
+  circuitNames: [
+    "Albert Park",
+    "Monaco",
+    "Barcelona",
+    "Hungaroring",
+    "Zandvoort",
+    "Marina Bay",
+    "Suzuka",
+    "Losail",
+    "Mexico City"
+  ]
 };
 
 //Balanced Circuits are all-around tests of car/driver performance, where both power and downforce are in roughly
@@ -51,6 +234,16 @@ const balancedCircuits = {
     "shanghai",
     "imola"
   ],
+  circuitNames: [
+    "Miami",
+    "Red Bull Ring",
+    "Silverstone",
+    "Circuit of the Americas",
+    "Interlagos",
+    "Yas Marina",
+    "Shanghai",
+    "Imola"
+  ]
 };
 
 //Power Circuits feature long straights that reward cars with powerful engines and low drag. Cornering ability
@@ -66,6 +259,15 @@ const powerCircuits = {
     "monza",
     "vegas",
   ],
+  circuitNames: [
+    "Sakhir",
+    "Jeddah",
+    "Baku",
+    "Montreal",
+    "Spa-Francorchamps",
+    "Monza",
+    "Las Vegas"
+  ]
 };
 
 export const circuitTypes = [
@@ -75,6 +277,7 @@ export const circuitTypes = [
 ];
 
 export const raceTitles = [
+{raceName: "N/A", raceHeader: ""},
 {raceName: "70th Anniversary Grand Prix", raceHeader: "70A"},
 {raceName: "Abu Dhabi Grand Prix", raceHeader: "ABU"},
 {raceName: "Australian Grand Prix", raceHeader: "AUS"},

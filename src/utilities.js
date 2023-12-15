@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { allSeasonsArray } from "./consts";
+import { allSeasonsArray, emptyRaceObject } from "./consts";
 
 export async function getDriverData(driverName) {
   const url = `https://ergast.com/api/f1/2023/drivers/${driverName}.json`;
@@ -111,6 +111,7 @@ export async function fetchEventList() {
      */
 export async function fetchNextTrackData(nextRace) {
   let url;
+  
   switch (nextRace) {
     case "monaco":
     case "monza":
@@ -132,13 +133,30 @@ export async function fetchNextTrackData(nextRace) {
     const response = await fetch(url);
     const json = await response.json();
     const nextRaceAllEvents = json.MRData.RaceTable.Races;
-    const reverseNextRaceAllEvents = nextRaceAllEvents.reverse();
-    const nextRaceLastFiveEventsReverse = reverseNextRaceAllEvents.slice(0, 5);
-    const nextRaceLastFiveEvents = nextRaceLastFiveEventsReverse.reverse();
-    return nextRaceLastFiveEvents;
-  } catch (error) {
-    console.log("error", error);
-  }
+    if (nextRaceAllEvents.length > 4) {
+      const reverseNextRaceAllEvents = nextRaceAllEvents.reverse();
+      const nextRaceLastFiveEventsReverse = reverseNextRaceAllEvents.slice(0, 5);
+      const nextRaceLastFiveEvents = nextRaceLastFiveEventsReverse.reverse();
+      return nextRaceLastFiveEvents;
+      } else {
+        const reverseNextRaceAllEvents = nextRaceAllEvents.reverse();
+        if (reverseNextRaceAllEvents.length < 5) {
+        reverseNextRaceAllEvents.push(emptyRaceObject, emptyRaceObject, emptyRaceObject, emptyRaceObject);
+          if (reverseNextRaceAllEvents.length > 5) {
+            reverseNextRaceAllEvents.length = 5;
+            const completeNextRaceAllEvents = reverseNextRaceAllEvents.reverse();
+            const nextRaceLastFiveEvents = completeNextRaceAllEvents;
+            return nextRaceLastFiveEvents;
+              } else {
+                const completeNextRaceAllEvents = reverseNextRaceAllEvents.reverse();
+                const nextRaceLastFiveEvents = completeNextRaceAllEvents;
+                return nextRaceLastFiveEvents;
+              }
+        }
+
+    }} catch (error) {
+      console.log("error", error);
+    }
 }
 
 export function getDriverAverages(driverTableData, allCareerData) {

@@ -12,7 +12,7 @@ import {
   createSeasonResultsProps
 } from "./utilities";
 
-import { circuitTypes, raceTitles, allCareerData, allSeasonsArray } from "./consts";
+import { circuitTypes, raceTitles, allCareerData } from "./consts";
 import { flags } from "./Flags";
 
 export default function App() {
@@ -27,8 +27,10 @@ export default function App() {
   const [driverTableData, setDriverTableData] = useState([]);
   const [eventList, setEventList] = useState([]);
   const [nextRace, setNextRace] = useState("");
+  const [nextCircuitProperName, setNextCircuitProperName] = useState("");
   const [nextRaceHistory, setNextRaceHistory] = useState([]);
   const [nextRaceType, setNextRaceType] = useState("");
+  const [nextCircuitTypeProperName, setNextCircuitTypeProperName] = useState("");
   const [currentSeasonCircuitTypeMatches, setCurrentSeasonCircuitTypeMatches] = useState([]);
   const [nextRaceTypeHistory, setNextRaceTypeHistory] = useState([]);
   const [flagHeadings, setFlagHeadings] = useState([]);
@@ -82,7 +84,7 @@ export default function App() {
     function for nextRaceTypeHistory*/
     if (lastFiveRaceResults.length === 5) {
       let nextCircuitId = "bahrain";
-      let nextCircuitType;
+      let nextCircuitType = "Power";
       /*Code below is temporarily commented out until the API updates its current season as "2024". Once update
        occurs, enable code below and remove "= "bahrain"" from let nextCircuitId. This will re-activate automated 
        selection of nextCircuitId.
@@ -93,21 +95,42 @@ export default function App() {
           nextCircuitId = eventList[i].Circuit.circuitId;
         }
       }
-      */
+      
       for (let i = 0; i < circuitTypes.length; i++) {
         if (circuitTypes[i].circuitIds.includes(nextCircuitId)) {
           nextCircuitType = circuitTypes[i].circuitType;
         }
       }
+      */
       setNextRace(nextCircuitId);
       setNextRaceType(nextCircuitType); 
     }
   }, [eventList, lastFiveRaceResults]);
 
+  function getNextCircuitProperName (nextRace, nextRaceType) {
+    let nextCircuitName;
+    let nextCircuitTypeName;
+    for (let i = 0; i < circuitTypes.length; i++) {
+      for (let x = 0; x < circuitTypes[i].circuitIds.length; x++)
+        if (nextRaceType == circuitTypes[i].circuitType &&
+          nextRace == circuitTypes[i].circuitIds[x]) {
+            nextCircuitName = circuitTypes[i].circuitNames[x].toUpperCase();
+            nextCircuitTypeName = circuitTypes[i].circuitType.toUpperCase(); 
+        }
+        setNextCircuitProperName(nextCircuitName);
+        setNextCircuitTypeProperName(nextCircuitTypeName);
+    }
+  } 
+
+  useEffect(() => {
+    getNextCircuitProperName (nextRace, nextRaceType)
+  }, [nextRace, nextRaceType]);
+
   // Update next race history
   useEffect(() => {
     fetchNextTrackData(nextRace).then((results) => setNextRaceHistory(results));
     setNextRaceDataFetched(true);
+    setTableDataPopulated(true);
   }, [nextRace]);
 
   useEffect(() => {
@@ -162,7 +185,6 @@ export default function App() {
           const results = bothSeasonsCircuitTypeMatchesMostRecent.slice(-5);
           setNextRaceTypeHistory(results);
           setNextRaceTypeDataFetched(true);
-          setTableDataPopulated(true)
 
     }
   }, [currentSeasonCircuitTypeMatches]);
@@ -699,7 +721,7 @@ export default function App() {
 
   return (
     <>
-      <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={[lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]}
+      <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
       boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}/>
     </>
   );

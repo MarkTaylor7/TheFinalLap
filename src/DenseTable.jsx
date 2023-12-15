@@ -24,7 +24,7 @@ const cellLoading = <Oval
   strokeWidthSecondary={2}
 />
 
-export default function DenseTable({data1, data2, data3, boolean1, boolean2, boolean3, boolean4}) {
+export default function DenseTable({data1, data2, data3, data4, data5, boolean1, boolean2, boolean3, boolean4}) {
   
   getBackgroundColor(data3);
   getColor(data3);
@@ -36,8 +36,8 @@ export default function DenseTable({data1, data2, data3, boolean1, boolean2, boo
             <TableRow>
               <TableCell align="center" colSpan={1} sx={{ bgcolor: "#eeeeee", borderRight: '1px solid #212121'}}></TableCell>
               <TableCell align="center" colSpan={5} sx={{ borderRight: '1px solid #212121' }}>RECENT FORM - THE LAST 5 RACES</TableCell>
-              <TableCell align="center" colSpan={5} sx={{ bgcolor: "#eeeeee", borderRight: '1px solid #212121' }}>CIRCUIT HISTORY - RECENT RACES AT SAKHIR</TableCell>
-              <TableCell align="center" colSpan={5} sx={{ borderRight: '1px solid #212121' }}>CIRCUIT TYPE: POWER - CIRCUITS SIMILAR TO SAKHIR</TableCell>
+              <TableCell align="center" colSpan={5} sx={{ bgcolor: "#eeeeee", borderRight: '1px solid #212121' }}>CIRCUIT HISTORY - RECENT RACES AT {data4}</TableCell>
+              <TableCell align="center" colSpan={5} sx={{ borderRight: '1px solid #212121' }}>CIRCUIT TYPE: {data5} - CIRCUITS SIMILAR TO {data4}</TableCell>
 
             </TableRow>
               {data1.map((row, i) => (
