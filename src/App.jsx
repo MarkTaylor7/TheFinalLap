@@ -14,6 +14,7 @@ import {
 
 import { circuitTypes, raceTitles, allCareerData } from "./consts";
 import { flags } from "./Flags";
+import siteLogo from "./assets/siteLogo.svg";
 
 export default function App() {
   const [standings, setStandings] = useState([]);
@@ -722,6 +723,8 @@ export default function App() {
 
   return (
     <>
+      <img src={siteLogo} className="siteLogo" alt="site logo" />
+      
       <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
       boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}/>
     </>

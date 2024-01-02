@@ -13,7 +13,8 @@ export const flags = [
     {raceName: "Emilia Romagna Grand Prix", flagImage: <img id="italianFlag" src="https://flagsapi.com/IT/flat/32.png" alt="Italian flag"></img>},
     {raceName: "Spanish Grand Prix", flagImage: <img id="spanishFlag" src="https://flagsapi.com/ES/flat/32.png" alt="Spanish flag"></img>},
     
-    //flags api doesn't have EU flag. Using AZE flag for now, but need to look elsewhere if EUR header is needed
+    //flags api doesn't have EU flag, so will need to look elsewhere if EUR header is needed in future.
+    //Azerbaijan flag used as placeholder as most recent European GP was in Azerbaijan (2016).
     {raceName: "European Grand Prix", flagImage: <img id="azerbaijanFlag" src="https://flagsapi.com/AZ/flat/32.png" alt="Azerbaijan flag"></img>},
     {raceName: "British Grand Prix", flagImage: <img id="greatBritainFlag" src="https://flagsapi.com/GB/flat/32.png" alt="British flag"></img>},
     {raceName: "Hungarian Grand Prix", flagImage: <img id="hungarianFlag" src="https://flagsapi.com/HU/flat/32.png" alt="Hungarian flag"></img>},
