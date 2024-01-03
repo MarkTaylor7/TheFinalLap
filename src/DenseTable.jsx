@@ -62,13 +62,13 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
 
     return (
       boolean4 == false ? cellLoading :
-        <div>
-          <Button onClick={toggleCluster1}>{showCluster2 == false && showCluster3 == false ? '(selected)' : 'Recent Form'}</Button>
-          <Button onClick={toggleCluster2}>{showCluster1 == false && showCluster3 == false ? '(selected)' : 'Circuit History'}</Button>
-          <Button onClick={toggleCluster3}>{showCluster1 == false && showCluster2 == false ? '(selected)' : 'Circuit Type'}</Button>
+        <div id="tableContainer">
+          <Button sx={{ maxWidth: 20/100 }} onClick={toggleCluster1}>{showCluster2 == false && showCluster3 == false ? '(selected)' : 'Recent Form'}</Button>
+          <Button sx={{ maxWidth: 20/100 }} onClick={toggleCluster2}>{showCluster1 == false && showCluster3 == false ? '(selected)' : 'Circuit History'}</Button>
+          <Button sx={{ maxWidth: 20/100 }} onClick={toggleCluster3}>{showCluster1 == false && showCluster2 == false ? '(selected)' : 'Circuit Type'}</Button>
 
           <TableContainer component={Paper}>
-            <Table sx={{ maxWidth: 90/100, border: '1px solid #212121', mx: 1 }} size="small" aria-label="a dense table" display="flex" >
+            <Table sx={{ maxWidth: 100/100, border: '1px solid #212121'}} size="small" aria-label="a dense table" display="flex" >
               <TableHead>
                 <TableRow>
                   <TableCell align="center" colSpan={1} sx={{ bgcolor: "#eeeeee", borderRight: '1px solid #212121'}}></TableCell>

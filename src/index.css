@@ -30,10 +30,11 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 100vw;
   min-height: 100vh;
   background-color: #000000;
   border: 2px solid red;
+  justify-content: center;
 }
 
 h1 {
@@ -44,12 +45,21 @@ h1 {
 .siteLogo {
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 5vw;
-  border: 2px solid red;
+  border: 2px solid green;
+  margin-left: 2vw;
 }
 
-.dataTable {
-  width: 10px;
+#heroBannerContainer {
+  background: rgba(0, 0, 0, 0.22);
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+  border: 2px solid orange;
+}
+
+#tableContainer {
+  width: 95vw;
+  border: 2px solid yellow;
 }
 
 button {
