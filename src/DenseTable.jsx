@@ -68,7 +68,7 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
           <Button onClick={toggleCluster3}>{showCluster1 == false && showCluster2 == false ? '(selected)' : 'Circuit Type'}</Button>
 
           <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650, border: '1px solid #212121' }} size="small" aria-label="a dense table" >
+            <Table sx={{ maxWidth: 90/100, border: '1px solid #212121', mx: 1 }} size="small" aria-label="a dense table" display="flex" >
               <TableHead>
                 <TableRow>
                   <TableCell align="center" colSpan={1} sx={{ bgcolor: "#eeeeee", borderRight: '1px solid #212121'}}></TableCell>
