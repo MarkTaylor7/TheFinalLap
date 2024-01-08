@@ -724,15 +724,85 @@ export default function App() {
 
   return (
     <>
+      <div className="iphone">
+        <div className="div">
+          <div className="overlap">
+            <div className="overlap-group">
+              <img className="heroBanner" src={heroBanner} alt="an image of a Williams F1 car in Monaco" />
+              <div className="rectangle" />
+              <div className="rectangle-2" />
+              <div className="menuTextWrapper">Menu</div>
+              <div className="group">
+                <div className="overlap-2">
+                  <p className="p">Live F1 form guide and driver data lets you predict results with confidence.</p>
+                  <div className="text-wrapper-2">The Final Lap</div>
+                  <div className="text-wrapper-3">Home</div>
+                  <div className="text-wrapper-4">Lorem</div>
+                  <img className="line" alt="Line" src="line-27.svg" />
+                  <img className="img" alt="Line" src="line-28.svg" />
+                </div>
+              </div>
+            </div>
+            <img className="siteLogo" alt="site logo: stylized initials 'FL'" src={siteLogo} />
+          </div>
+          <div className="overlap-3">
+            <div className="rectangle-3" />
+            <img className="group-3" alt="Group" src="group-23.png" />
+            <p className="text-wrapper-5">© 2023 The Final Lap</p>
+            <div className="flexcontainer">
+              <p className="text">
+                <span className="span">
+                  Drivers
+                  <br />
+              </span>
+            </p>
+            <p className="text">
+              <span className="span">Schedule</span>
+            </p>
+          </div>
+          <div className="flexcontainer-2">
+            <p className="text">
+              <span className="span">
+                <br />
+              </span>
+            </p>
+            <p className="text">
+              <span className="span">
+                Features
+                <br />
+              </span>
+            </p>
+            <p className="text">
+              <span className="span">
+                About
+                <br />
+              </span>
+            </p>
+            <p className="text">
+              <span className="span">{""}</span>
+            </p>
+          </div>
+          <img className="vector" alt="Vector" src="vector.svg" />
+          <img className="vector-2" alt="Vector" src="image.svg" />
+          <img className="line-2" alt="Line" src="line-36.svg" />
+        </div>
+              
+              
+            
+          
+              
+      
+            
 
-      <img src={siteLogo} className="siteLogo" alt="site logo: stylized initials 'FL'" />
 
-      <div id="heroBannerContainer">
-        <img src={heroBanner} className="heroBanner" alt="an image of a Williams F1 car in Monaco" />
+          
+        </div>
       </div>
 
       <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
-        boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}/>
+        boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}
+      />
+      
     </>
   );
 }
