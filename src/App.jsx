@@ -15,7 +15,11 @@ import {
 import { circuitTypes, raceTitles, allCareerData } from "./consts";
 import { flags } from "./Flags";
 import siteLogo from "./assets/siteLogo.svg";
+import footerSiteLogo from "./assets/footerSiteLogo.svg";
+import github from "./assets/github.svg";
+import linkedIn from "./assets/linkedIn.svg";
 import heroBanner from "./assets/images/heroBanner.png";
+import rightArrow from "./assets/rightArrow.svg";
 
 export default function App() {
   const [standings, setStandings] = useState([]);
@@ -747,8 +751,8 @@ export default function App() {
           </div>
           <div className="overlap-3">
             <div className="rectangle-3" />
-            <img className="group-3" alt="Group" src="group-23.png" />
-            <p className="text-wrapper-5">© 2023 The Final Lap</p>
+            <img className="siteLogoFooter" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} />
+            <p className="text-wrapper-5">© 2024 The Final Lap</p>
             <div className="flexcontainer">
               <p className="text">
                 <span className="span">
@@ -782,20 +786,32 @@ export default function App() {
               <span className="span">{""}</span>
             </p>
           </div>
-          <img className="vector" alt="Vector" src="vector.svg" />
-          <img className="vector-2" alt="Vector" src="image.svg" />
-          <img className="line-2" alt="Line" src="line-36.svg" />
+          <img className="github" alt="Github logo" src={github} />
+          <img className="linkedIn" alt="LinkedIn logo" src={linkedIn} />
+          <img className="line-2" alt="a thin grey line" />
         </div>
-              
-              
-            
-          
-              
-      
-            
-
-
-          
+        <div className="text-wrapper-6">Final Lap Features</div>
+        <div className="overlap-4">
+          <div className="rectangle-4" />
+          <div className="rectangle-5" alt="Rectangle" src="rectangle-34.svg" />
+          <img className="rightArrow" alt="Vector" src={rightArrow} />
+        </div>   
+        <div className="overlap-5">
+          <div className="text-wrapper-7">Get the Full Story</div>
+          <p className="text-wrapper-8">
+            See an unusual race result and need more info? Click on the race for a detailed report.
+          </p>
+        </div>
+        <div className="overlap-6">
+          <div className="text-wrapper-9">News</div>
+          <div className="overlap-group-wrapper">
+            <div className="overlap-group-2">
+              <img className="line-3" alt="Line" src="line-17.svg" />
+              <img className="line-4" alt="Line" src="line-18.svg" />
+            </div>
+          </div>
+        </div>
+    
         </div>
       </div>
 

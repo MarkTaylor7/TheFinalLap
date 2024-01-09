@@ -85,7 +85,7 @@ a:hover {
 
 .menuTextWrapper {
   color: #ffffff;
-  font-family: "Roboto-Medium", Helvetica;
+  font-family: "Roboto", Helvetica;
   font-size: 16px;
   font-weight: 500;
   height: 86px;
@@ -114,7 +114,7 @@ a:hover {
 
 .iphone .p {
   color: #ffffff;
-  font-family: "Roboto-Regular", Helvetica;
+  font-family: "Roboto", Helvetica;
   font-size: 14px;
   font-weight: 400;
   height: 86px;
@@ -127,7 +127,7 @@ a:hover {
 }
 .iphone .text-wrapper-2 {
   color: #ffffff;
-  font-family: "Bai Jamjuree-Bold", Helvetica;
+  font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
   font-weight: 700;
   height: 38px;
@@ -142,7 +142,7 @@ a:hover {
 
 .iphone .text-wrapper-3 {
   color: #ffffff;
-  font-family: "Roboto-Italic", Helvetica;
+  font-family: "Roboto", Helvetica;
   font-size: 10px;
   font-style: italic;
   font-weight: 400;
@@ -157,7 +157,7 @@ a:hover {
 
 .iphone .text-wrapper-4 {
   color: #ffffff;
-  font-family: "Roboto-Italic", Helvetica;
+  font-family: "Roboto", Helvetica;
   font-size: 10px;
   font-style: italic;
   font-weight: 400;
@@ -211,7 +211,7 @@ a:hover {
   width: 391px;
 }
 
-.iphone .group-3 {
+.iphone .siteLogoFooter {
   height: 46px;
   left: 14px;
   position: absolute;
@@ -221,7 +221,7 @@ a:hover {
 
 .iphone .text-wrapper-5 {
   color: #ffffff;
-  font-family: "Roboto-Regular", Helvetica;
+  font-family: "Roboto", Helvetica;
   font-size: 8px;
   font-weight: 400;
   height: 49px;
@@ -248,7 +248,7 @@ a:hover {
 .iphone .text {
   align-self: stretch;
   color: #ffffff;
-  font-family: "Roboto-Regular", Helvetica;
+  font-family: "Roboto", Helvetica;
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.48px;
@@ -258,7 +258,7 @@ a:hover {
 
 .iphone .span {
   color: #ffffff;
-  font-family: "Roboto-Regular", Helvetica;
+  font-family: "Roboto", Helvetica;
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.48px;
@@ -277,7 +277,7 @@ a:hover {
   width: 200px;
 }
 
-.iphone .vector {
+.iphone .github {
   height: 22px;
   left: 310px;
   position: absolute;
@@ -285,7 +285,7 @@ a:hover {
   width: 22px;
 }
 
-.iphone .vector-2 {
+.iphone .linkedIn {
   height: 22px;
   left: 345px;
   position: absolute;
@@ -302,12 +302,142 @@ a:hover {
   width: 359px;
 }
 
+.iphone .text-wrapper-6 {
+  color: #ffffff;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 26px;
+  font-weight: 700;
+  height: 83px;
+  left: 56px;
+  letter-spacing: 1.04px;
+  line-height: normal;
+  position: absolute;
+  top: 1317px;
+  width: 276px;
+}
 
+.iphone .overlap-4 {
+  height: 374px;
+  left: 38px;
+  position: absolute;
+  top: 1403px;
+  width: 326px;
+}
 
+.iphone .rectangle-4 {
+  background-color: #d9d9d91c;
+  border-radius: 5px;
+  height: 374px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 312px;
+}
 
+.iphone .rectangle-5 {
+  height: 374px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 310px;
+}
 
+.iphone .rightArrow {
+  height: 43px;
+  left: 308px;
+  position: absolute;
+  top: 166px;
+  width: 19px;
+}
 
+.iphone .overlap-5 {
+  height: 131px;
+  left: 36px;
+  position: absolute;
+  top: 1831px;
+  width: 312px;
+}
 
+.iphone .text-wrapper-7 {
+  color: #ffffff;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 22px;
+  font-weight: 700;
+  height: 45px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 286px;
+}
+
+.iphone .text-wrapper-8 {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  height: 99px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 23.1px;
+  position: absolute;
+  top: 31px;
+  width: 312px;
+}
+
+.iphone .overlap-6 {
+  height: 45px;
+  left: 38px;
+  position: absolute;
+  top: 1780px;
+  width: 312px;
+}
+
+.iphone .text-wrapper-9 {
+  color: #86c65f;
+  font-family: "Roboto", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  height: 45px;
+  left: 13px;
+  letter-spacing: 0.48px;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 286px;
+}
+
+.iphone .overlap-group-wrapper {
+  height: 35px;
+  left: 0;
+  position: absolute;
+  top: 8px;
+  width: 312px;
+}
+
+.iphone .overlap-group-2 {
+  height: 35px;
+  left: -1px;
+  position: relative;
+  width: 313px;
+}
+
+.iphone .line-3 {
+  height: 2px;
+  left: 1px;
+  position: absolute;
+  top: 33px;
+  width: 312px;
+}
+
+.iphone .line-4 {
+  height: 35px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
 
 
 
