@@ -295,7 +295,7 @@ a:hover {
 
 .iphone .line-2 {
   height: 1px;
-  left: 17px;
+  left: 8px;
   object-fit: cover;
   position: absolute;
   top: 102px;
@@ -423,21 +423,6 @@ a:hover {
   width: 313px;
 }
 
-.iphone .line-3 {
-  height: 2px;
-  left: 1px;
-  position: absolute;
-  top: 33px;
-  width: 312px;
-}
-
-.iphone .line-4 {
-  height: 35px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 2px;
-}
 
 
 

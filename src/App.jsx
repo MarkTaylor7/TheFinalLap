@@ -788,7 +788,7 @@ export default function App() {
           </div>
           <img className="github" alt="Github logo" src={github} />
           <img className="linkedIn" alt="LinkedIn logo" src={linkedIn} />
-          <img className="line-2" alt="a thin grey line" />
+          <div className="line-2" style={{width: 358.62, height: 0, border: '1px #606367 solid'}}></div>
         </div>
         <div className="text-wrapper-6">Final Lap Features</div>
         <div className="overlap-4">
@@ -806,8 +806,9 @@ export default function App() {
           <div className="text-wrapper-9">News</div>
           <div className="overlap-group-wrapper">
             <div className="overlap-group-2">
-              <img className="line-3" alt="Line" src="line-17.svg" />
-              <img className="line-4" alt="Line" src="line-18.svg" />
+              <div className="line-3" style={{width: 311.70, height: 0, border: '2px #87C75F solid'}}></div>
+              <div className="line-4" style={{width: 34.90, height: 0, transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '2px #87C75F solid'}}></div>
+              
             </div>
           </div>
         </div>
