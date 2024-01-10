@@ -423,8 +423,111 @@ a:hover {
   width: 313px;
 }
 
+.iphone .overlap-7 {
+  height: 142px;
+  left: 15px;
+  position: absolute;
+  top: 527px;
+  width: 365px;
+}
 
+.iphone .text-wrapper-10 {
+  color: #ffffff;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 26px;
+  font-weight: 700;
+  height: 81px;
+  left: 81px;
+  letter-spacing: 1.04px;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 192px;
+}
 
+.iphone .rectangle-6 {
+  background-color: #ffffff1c;
+  border-radius: 4px;
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 91px;
+  width: 365px;
+}
+
+.iphone .toggleButton {
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 91px;
+  width: 365px;
+}
+
+.iphone .text-wrapper-11 {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  height: 65px;
+  left: 20px;
+  letter-spacing: 0.54px;
+  line-height: 25.6px;
+  position: absolute;
+  top: 97px;
+  width: 207px;
+}
+
+.iphone .line-5 {
+  height: 2px;
+  left: 19px;
+  position: absolute;
+  top: 124px;
+  width: 113px;
+}
+
+.iphone .toggleDropArrow {
+  height: 10px;
+  left: 326px;
+  position: absolute;
+  top: 109px;
+  width: 22px;
+}
+
+.iphone .text-wrapper-12 {
+  color: #ffffff;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 22px;
+  font-weight: 700;
+  height: 45px;
+  left: 423px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 1831px;
+  width: 286px;
+}
+
+.iphone .overlap-8 {
+  height: 131px;
+  left: 764px;
+  position: absolute;
+  top: 1831px;
+  width: 312px;
+}
+
+.iphone .all-race-results-are {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 4px;
+  font-weight: 400;
+  height: 99px;
+  left: 423px;
+  letter-spacing: 0;
+  line-height: 23.1px;
+  position: absolute;
+  top: 1886px;
+  width: 312px;
+}
 
 #tableContainer {
   width: 95vw;
