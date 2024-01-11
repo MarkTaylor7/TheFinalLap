@@ -760,117 +760,112 @@ export default function App() {
                 <span className="span">
                   Drivers
                   <br />
-              </span>
-            </p>
-            <p className="text">
-              <span className="span">Schedule</span>
+                </span>
+              </p>
+              <p className="text">
+                <span className="span">Schedule</span>
+              </p>
+            </div>
+            <div className="flexcontainer-2">
+              <p className="text">
+                <span className="span">
+                  Features
+                  <br />
+                </span>
+              </p>
+              <p className="text">
+                <span className="span">
+                  About
+                  <br />
+                </span>
+              </p>
+              <p className="text">
+                <span className="span">{""}</span>
+              </p>
+            </div>
+            <img className="github" alt="Github logo" src={github} />
+            <img className="linkedIn" alt="LinkedIn logo" src={linkedIn} />
+            <div className="line-2" style={{width: 358.62, height: 0, border: '1px #606367 solid'}}></div>
+          </div>
+          <div className="text-wrapper-6">Final Lap Features</div>
+          <div className="overlap-4">
+            <div className="rectangle-4" />
+            <div className="rectangle-5" alt="Rectangle" src="rectangle-34.svg" />
+            <img className="rightArrow" alt="Vector" src={rightArrow} />
+          </div>   
+          <div className="overlap-5">
+            <div className="text-wrapper-7">Get the Full Story</div>
+            <p className="text-wrapper-8">
+              See an unusual race result and need more info? Click on the race for a detailed report.
             </p>
           </div>
-          <div className="flexcontainer-2">
-            <p className="text">
-              <span className="span">
-                <br />
-              </span>
-            </p>
-            <p className="text">
-              <span className="span">
-                Features
-                <br />
-              </span>
-            </p>
-            <p className="text">
-              <span className="span">
-                About
-                <br />
-              </span>
-            </p>
-            <p className="text">
-              <span className="span">{""}</span>
+          <div className="overlap-6">
+            <div className="text-wrapper-9">Feature</div>
+            <div className="overlap-group-wrapper">
+              <div className="overlap-group-2">
+                <div className="line-3" style={{width: 311.70, height: 0, border: '2px #87C75F solid'}}></div>
+                <div className="line-4" style={{width: 34.90, height: 0, transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '2px #87C75F solid'}}></div>
+              </div>
+            </div>
+          </div>
+          <div className="overlap-7">
+            <div className="text-wrapper-10">Race Outlook</div>
+            <div className="rectangle-6" />
+            <img className="toggleButton" alt="Rectangle" src={toggleButton} />
+            <div className="text-wrapper-11">Recent Form</div>
+            <div className="line-5" style={{width: 113.20, height: 0, border: '1.50px #87C75F solid'}}></div>
+            <img className="toggleDropArrow" alt="Arrow pointed down" src={toggleDropArrow} />
+          </div>
+          <div className="text-wrapper-12">Context is King</div>
+          <div className="overlap-8">
+            <div className="text-wrapper-7">Track the Trends</div>
+            <p className="text-wrapper-8">
+              Tracks are grouped into one of three circuit types, so you can see how drivers and teams
+              perform on different layouts.
             </p>
           </div>
-          <img className="github" alt="Github logo" src={github} />
-          <img className="linkedIn" alt="LinkedIn logo" src={linkedIn} />
-          <div className="line-2" style={{width: 358.62, height: 0, border: '1px #606367 solid'}}></div>
-        </div>
-        <div className="text-wrapper-6">Final Lap Features</div>
-        <div className="overlap-4">
-          <div className="rectangle-4" />
-          <div className="rectangle-5" alt="Rectangle" src="rectangle-34.svg" />
-          <img className="rightArrow" alt="Vector" src={rightArrow} />
-        </div>   
-        <div className="overlap-5">
-          <div className="text-wrapper-7">Get the Full Story</div>
-          <p className="text-wrapper-8">
-            See an unusual race result and need more info? Click on the race for a detailed report.
+          <p className="all-race-results-are">
+            All race results are measured against that driver's in season averages so that you <br />
+            can spot the stand-out performances. &nbsp;&nbsp;
+            <br />
+            Good and bad.
           </p>
-        </div>
-        <div className="overlap-6">
-          <div className="text-wrapper-9">News</div>
-          <div className="overlap-group-wrapper">
-            <div className="overlap-group-2">
-              <div className="line-3" style={{width: 311.70, height: 0, border: '2px #87C75F solid'}}></div>
-              <div className="line-4" style={{width: 34.90, height: 0, transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '2px #87C75F solid'}}></div>
+          <div className="overlap-9">
+            <div className="text-wrapper-9">Feature</div>
+            <div className="overlap-group-wrapper">
+              <div className="line-wrapper">
+                <img className="line-6" alt="Line" src="line-18-2.svg" />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="overlap-7">
-          <div className="text-wrapper-10">Race Outlook</div>
-          <div className="rectangle-6" />
-          <img className="toggleButton" alt="Rectangle" src={toggleButton} />
-          <div className="text-wrapper-11">Recent Form</div>
-          <div className="line-5" style={{width: 113.20, height: 0, border: '1.50px #87C75F solid'}}></div>
-          <img className="toggleDropArrow" alt="Arrow pointed down" src={toggleDropArrow} />
-        </div>
-        <div className="text-wrapper-12">Context is King</div>
-        <div className="overlap-8">
-          <div className="text-wrapper-7">Track the Trends</div>
-          <p className="text-wrapper-8">
-            Tracks are grouped into one of three circuit types, so you can see how drivers and teams
-            perform on different layouts.
-          </p>
-        </div>
-        <p className="all-race-results-are">
-          All race results are measured against that driver's in season averages so that you <br />
-          can spot the stand-out performances. &nbsp;&nbsp;
-          <br />
-          Good and bad.
-        </p>
-        <div className="overlap-9">
-          <div className="text-wrapper-9">Feature</div>
-          <div className="overlap-group-wrapper">
-            <div className="line-wrapper">
-              <img className="line-6" alt="Line" src="line-18-2.svg" />
+          <div className="overlap-10">
+            <div className="text-wrapper-9">Feature</div>
+            <div className="overlap-group-wrapper">
+              <div className="img-wrapper">
+                <img className="line-6" alt="Line" src="line-18-3.svg" />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="overlap-10">
-          <div className="text-wrapper-9">News</div>
-          <div className="overlap-group-wrapper">
-            <div className="img-wrapper">
-              <img className="line-6" alt="Line" src="line-18-3.svg" />
-            </div>
+          <div className="rectangle-8" />
+          <div className="rectangle-9" />
+          <img className="rectangle-10" alt="Rectangle" src="rectangle-36.svg" />
+          <img className="rectangle-11" alt="Rectangle" src="rectangle-38.svg" />
+          <div className="overlap-11">
+            <div className="rectangle-12" />
+            <img className="toggleButton2" alt="Rectangle" src={toggleButton} />
+            <div className="text-wrapper-13">Circuit History</div>
+            <div className="line-7" style={{width: 126.696, height: 0, border: '1.50px #87C75F solid'}}></div>
+            <img className="toggleDropArrow-2" alt="Arrow pointed down" src={toggleDropArrow} />
           </div>
-        </div>
-        <div className="rectangle-8" />
-        <div className="rectangle-9" />
-        <img className="rectangle-10" alt="Rectangle" src="rectangle-36.svg" />
-        <img className="rectangle-11" alt="Rectangle" src="rectangle-38.svg" />
-        <div className="overlap-11">
-          <div className="rectangle-12" />
-          <img className="toggleButton2" alt="Rectangle" src={toggleButton} />
-          <div className="text-wrapper-13">Circuit History</div>
-          <div className="line-7" style={{width: 126.696, height: 0, border: '1.50px #87C75F solid'}}></div>
-          <img className="toggleDropArrow-2" alt="Arrow pointed down" src={toggleDropArrow} />
-        </div>
-        <div className="overlap-12">
-          <div className="rectangle-14" />
-          <img className="toggleButton3" alt="Rectangle" src={toggleButton} />
-          <div className="text-wrapper-13">Circuit Type</div>
-          <div className="line-8" style={{width: 105.92, height: 0, border: '1.50px #87C75F solid'}}></div>
-          <img className="toggleDropArrow-3" alt="Arrow pointed down" src={toggleDropArrow} />
+          <div className="overlap-12">
+            <div className="rectangle-14" />
+            <img className="toggleButton3" alt="Rectangle" src={toggleButton} />
+            <div className="text-wrapper-13">Circuit Type</div>
+            <div className="line-8" style={{width: 105.92, height: 0, border: '1.50px #87C75F solid'}}></div>
+            <img className="toggleDropArrow-3" alt="Arrow pointed down" src={toggleDropArrow} />
+          </div>
         </div>
       </div>
-    </div>
   
 
 
