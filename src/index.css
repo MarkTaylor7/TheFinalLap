@@ -41,7 +41,7 @@ body {
   background-color: #000000;
   height: 2178px;
   /*overflow hides or reveals the extra feature cards*/
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   width: 390px;
 }
