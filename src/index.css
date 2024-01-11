@@ -529,6 +529,200 @@ a:hover {
   width: 312px;
 }
 
+.iphone .overlap-9 {
+  height: 45px;
+  left: 425px;
+  position: absolute;
+  top: 1780px;
+  width: 312px;
+  border: 2x solid red;
+}
+
+.iphone .line-wrapper {
+  background-image: url(./line-17-2.svg);
+  background-size: 100% 100%;
+  height: 1px;
+  left: -4770px;
+  position: relative;
+  top: 517px;
+}
+
+.iphone .line-6 {
+  height: 1px;
+  left: 1px;
+  position: absolute;
+  top: 0;
+  width: 35px;
+}
+
+.iphone .overlap-10 {
+  height: 45px;
+  left: 767px;
+  position: absolute;
+  top: 1780px;
+  width: 312px;
+}
+
+.iphone .img-wrapper {
+  background-image: url(./line-17-3.svg);
+  background-size: 100% 100%;
+  height: 1px;
+  left: -4770px;
+  position: relative;
+  top: 517px;
+}
+
+.iphone .rectangle-8 {
+  background-color: #d9d9d91c;
+  border-radius: 5px;
+  height: 374px;
+  left: 423px;
+  position: absolute;
+  top: 1403px;
+  width: 312px;
+}
+
+.iphone .rectangle-9 {
+  background-color: #d9d9d91c;
+  border-radius: 5px;
+  height: 374px;
+  left: 767px;
+  position: absolute;
+  top: 1403px;
+  width: 312px;
+}
+
+.iphone .rectangle-10 {
+  height: 374px;
+  left: -4003px;
+  position: absolute;
+  top: 1885px;
+  width: 312px;
+}
+
+.iphone .rectangle-11 {
+  height: 374px;
+  left: -4346px;
+  position: absolute;
+  top: 1885px;
+  width: 310px;
+}
+
+.iphone .overlap-11 {
+  height: 65px;
+  left: 15px;
+  position: absolute;
+  top: 672px;
+  width: 365px;
+}
+
+.iphone .rectangle-12 {
+  background-color: #ffffff1c;
+  border-radius: 4px;
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 13px;
+  width: 365px;
+}
+
+.iphone .toggleButton2 {
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 13px;
+  width: 365px;
+}
+
+.iphone .rectangle-13 {
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 14px;
+  width: 365px;
+}
+
+.iphone .text-wrapper-13 {
+  color: #ffffff;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  height: 65px;
+  left: 20px;
+  letter-spacing: 0.54px;
+  line-height: 25.6px;
+  position: absolute;
+  top: 20px;
+  width: 207px;
+}
+
+
+.iphone .line-7 {
+  height: 2px;
+  left: 19px;
+  position: absolute;
+  top: 47px;
+  width: 127px;
+}
+
+.iphone .toggleDropArrow-2 {
+  height: 10px;
+  left: 326px;
+  position: absolute;
+  top: 34px;
+  width: 22px;
+}
+
+.iphone .vector-5 {
+  height: 10px;
+  left: 326px;
+  position: absolute;
+  top: 31px;
+  width: 22px;
+}
+
+.iphone .overlap-12 {
+  height: 65px;
+  left: 15px;
+  position: absolute;
+  top: 740px;
+  width: 365px;
+}
+
+.iphone .rectangle-14 {
+  background-color: #ffffff1c;
+  border-radius: 4px;
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 14px;
+  width: 365px;
+}
+
+.iphone .toggleButton3 {
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 15px;
+  width: 365px;
+}
+
+.iphone .line-8 {
+  height: 2px;
+  left: 17px;
+  position: absolute;
+  top: 47px;
+  width: 106px;
+}
+
+.iphone .toggleDropArrow-3 {
+  height: 10px;
+  left: 326px;
+  position: absolute;
+  top: 34px;
+  width: 22px;
+}
+
 #tableContainer {
   width: 95vw;
   border: 2px solid yellow;

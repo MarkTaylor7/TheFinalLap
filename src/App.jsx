@@ -835,8 +835,44 @@ export default function App() {
           <br />
           Good and bad.
         </p>
+        <div className="overlap-9">
+          <div className="text-wrapper-9">Feature</div>
+          <div className="overlap-group-wrapper">
+            <div className="line-wrapper">
+              <img className="line-6" alt="Line" src="line-18-2.svg" />
+            </div>
+          </div>
+        </div>
+        <div className="overlap-10">
+          <div className="text-wrapper-9">News</div>
+          <div className="overlap-group-wrapper">
+            <div className="img-wrapper">
+              <img className="line-6" alt="Line" src="line-18-3.svg" />
+            </div>
+          </div>
+        </div>
+        <div className="rectangle-8" />
+        <div className="rectangle-9" />
+        <img className="rectangle-10" alt="Rectangle" src="rectangle-36.svg" />
+        <img className="rectangle-11" alt="Rectangle" src="rectangle-38.svg" />
+        <div className="overlap-11">
+          <div className="rectangle-12" />
+          <img className="toggleButton2" alt="Rectangle" src={toggleButton} />
+          <div className="text-wrapper-13">Circuit History</div>
+          <div className="line-7" style={{width: 126.696, height: 0, border: '1.50px #87C75F solid'}}></div>
+          <img className="toggleDropArrow-2" alt="Arrow pointed down" src={toggleDropArrow} />
+        </div>
+        <div className="overlap-12">
+          <div className="rectangle-14" />
+          <img className="toggleButton3" alt="Rectangle" src={toggleButton} />
+          <div className="text-wrapper-13">Circuit Type</div>
+          <div className="line-8" style={{width: 105.92, height: 0, border: '1.50px #87C75F solid'}}></div>
+          <img className="toggleDropArrow-3" alt="Arrow pointed down" src={toggleDropArrow} />
+        </div>
       </div>
-      </div>
+    </div>
+  
+
 
       <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
         boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}
