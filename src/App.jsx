@@ -21,6 +21,7 @@ import linkedIn from "./assets/linkedIn.svg";
 import heroBanner from "./assets/images/heroBanner.png";
 import toggleButton from "./assets/toggleButton.svg";
 import toggleDropArrow from "./assets/toggleDropArrow.svg";
+import leftArrow from "./assets/leftArrow.svg";
 import rightArrow from "./assets/rightArrow.svg";
 
 export default function App() {
@@ -791,7 +792,8 @@ export default function App() {
           <div className="overlap-4">
             <div className="rectangle-4" />
             <div className="rectangle-5" alt="Rectangle" src="rectangle-34.svg" />
-            <img className="rightArrow" alt="Vector" src={rightArrow} />
+            <img className="rightArrow" alt="Arrow pointing right" src={rightArrow} />
+            <img className="leftArrow" alt="Arrow pointing left" src={leftArrow} />
           </div>   
           <div className="overlap-5">
             <div className="text-wrapper-7">Get the Full Story</div>
@@ -832,7 +834,6 @@ export default function App() {
               perform on different layouts.
             </p>
           </div>
-          
           <div className="overlap-9">
             <div className="text-wrapper-9">Feature</div>
             <div className="overlap-group-wrapper">
@@ -840,8 +841,6 @@ export default function App() {
                 <div className="line-3" style={{width: 311.70, height: 0, border: '2px #87C75F solid'}}></div>
                 <div className="line-4" style={{width: 34.90, height: 0, transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '2px #87C75F solid'}}></div>
               </div>
-              
-              
             </div>
           </div>
           <div className="overlap-10">

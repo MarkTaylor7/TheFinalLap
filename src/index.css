@@ -355,6 +355,14 @@ body {
   width: 19px;
 }
 
+.iphone .leftArrow {
+  height: 43px;
+  left: -13px;
+  position: absolute;
+  top: 166px;
+  width: 19px;
+}
+
 .iphone .overlap-5 {
   height: 131px;
   left: 36px;
