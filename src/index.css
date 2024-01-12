@@ -427,6 +427,7 @@ body {
   left: -1px;
   position: relative;
   width: 313px;
+  
 }
 
 .iphone .line-3 {
@@ -441,8 +442,24 @@ body {
   height: 35px;
   left: 0;
   position: absolute;
-  top: 37px;
+  top: 36px;
   width: 2px;
+}
+
+.iphone .overlap-group-3 {
+  height: 35px;
+  left: -1px;
+  position: relative;
+  width: 313px;
+  
+}
+
+.iphone .overlap-group-4 {
+  height: 35px;
+  left: -1px;
+  position: relative;
+  width: 313px;
+  
 }
 
 .iphone .overlap-7 {
@@ -740,6 +757,14 @@ body {
   position: absolute;
   top: 34px;
   width: 22px;
+}
+
+.iphone .overlap-13 {
+  height: 131px;
+  left: 425px;
+  position: absolute;
+  top: 1831px;
+  width: 312px;
 }
 
 #tableContainer {

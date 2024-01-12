@@ -816,7 +816,15 @@ export default function App() {
             <div className="line-5" style={{width: 113.20, height: 0, border: '1.50px #87C75F solid'}}></div>
             <img className="toggleDropArrow" alt="Arrow pointed down" src={toggleDropArrow} />
           </div>
-          <div className="text-wrapper-12">Context is King</div>
+          <div className="overlap-13">
+            <div className="text-wrapper-7">Context is King</div>
+            <p className="text-wrapper-8">
+              All race results are measured against that driver's in season averages so that you <br />
+              can spot the stand-out performances. &nbsp;&nbsp;
+              <br />
+              Good and bad.
+            </p>
+          </div>
           <div className="overlap-8">
             <div className="text-wrapper-7">Track the Trends</div>
             <p className="text-wrapper-8">
@@ -824,25 +832,25 @@ export default function App() {
               perform on different layouts.
             </p>
           </div>
-          <p className="all-race-results-are">
-            All race results are measured against that driver's in season averages so that you <br />
-            can spot the stand-out performances. &nbsp;&nbsp;
-            <br />
-            Good and bad.
-          </p>
+          
           <div className="overlap-9">
             <div className="text-wrapper-9">Feature</div>
             <div className="overlap-group-wrapper">
-              <div className="line-wrapper">
-                <img className="line-6" alt="Line" src="line-18-2.svg" />
+              <div className="overlap-group-3">
+                <div className="line-3" style={{width: 311.70, height: 0, border: '2px #87C75F solid'}}></div>
+                <div className="line-4" style={{width: 34.90, height: 0, transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '2px #87C75F solid'}}></div>
               </div>
+              
+              
             </div>
           </div>
           <div className="overlap-10">
             <div className="text-wrapper-9">Feature</div>
             <div className="overlap-group-wrapper">
-              <div className="img-wrapper">
-                <img className="line-6" alt="Line" src="line-18-3.svg" />
+              <div className="overlap-group-4">
+                <div className="line-3" style={{width: 311.70, height: 0, border: '2px #87C75F solid'}}></div>
+                <div className="line-4" style={{width: 34.90, height: 0, transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '2px #87C75F solid'}}></div>
+                
               </div>
             </div>
           </div>
