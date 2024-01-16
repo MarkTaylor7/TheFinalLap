@@ -34,24 +34,33 @@ body {
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  border: 2px solid red;
 }
 
 .iphone .div {
   background-color: #000000;
-  height: 2178px;
+  min-height: 2178px;
   /*overflow hides or reveals the extra feature cards*/
   overflow: hidden;
   position: relative;
-  width: 390px;
+  min-width: 320px;
+  width: 100%;
+  max-width: 1440px;
+  border: 2px solid red;
 }
+
+@media screen and (min-width: 1440px) {
+  .iphone .div {
+    width: 1440px;
+  }
+}
+
 
 .iphone .overlap {
   height: 473px;
   left: 0;
   position: absolute;
   top: -1px;
-  width: 590px;
+  width: 100%;
 }
 
 .iphone .overlap-group {
@@ -59,15 +68,15 @@ body {
   left: 0;
   position: absolute;
   top: 0;
-  width: 590px;
+  width: 100%;
 }
 
-.heroBanner {
-  height: 221px;
+.heroBannerMobile {
+  height: auto;
   left: 0;
   position: absolute;
   top: 84px;
-  width: 390px;
+  width: 100%;
 }
 
 .iphone .rectangle {
@@ -76,7 +85,7 @@ body {
   left: 0;
   position: absolute;
   top: 84px;
-  width: 388px;
+  width: 100%;
 }
 
 .iphone .rectangle-2 {
@@ -85,7 +94,7 @@ body {
   left: 0;
   position: absolute;
   top: 195px;
-  width: 391px;
+  width: 100%;
 }
 
 .menuTextWrapper {
@@ -317,6 +326,7 @@ body {
   letter-spacing: 1.04px;
   line-height: normal;
   position: absolute;
+  text-align: center;
   top: 1317px;
   width: 276px;
 }
@@ -347,6 +357,14 @@ body {
   width: 310px;
 }
 
+.iphone .leftArrow {
+  height: 43px;
+  left: -13px;
+  position: absolute;
+  top: 166px;
+  width: 19px;
+}
+
 .iphone .rightArrow {
   height: 43px;
   left: 308px;
@@ -355,12 +373,11 @@ body {
   width: 19px;
 }
 
-.iphone .leftArrow {
-  height: 43px;
-  left: -13px;
-  position: absolute;
-  top: 166px;
-  width: 19px;
+@media screen and (min-width: 480px) {
+  .iphone .leftArrow,
+  .iphone .rightArrow {
+    visibility: hidden;
+  }
 }
 
 .iphone .overlap-5 {

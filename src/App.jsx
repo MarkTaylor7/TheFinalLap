@@ -18,7 +18,8 @@ import siteLogo from "./assets/siteLogo.svg";
 import footerSiteLogo from "./assets/footerSiteLogo.svg";
 import github from "./assets/github.svg";
 import linkedIn from "./assets/linkedIn.svg";
-import heroBanner from "./assets/images/heroBanner.png";
+import heroBannerDesktop from "./assets/images/heroBannerDesktop.png";
+import heroBannerMobile from "./assets/images/heroBannerMobile.png";
 import toggleButton from "./assets/toggleButton.svg";
 import toggleDropArrow from "./assets/toggleDropArrow.svg";
 import leftArrow from "./assets/leftArrow.svg";
@@ -735,7 +736,7 @@ export default function App() {
         <div className="div">
           <div className="overlap">
             <div className="overlap-group">
-              <img className="heroBanner" src={heroBanner} alt="an image of a Williams F1 car in Monaco" />
+              <img className="heroBannerMobile" src={heroBannerMobile} alt="an image of a Williams F1 car in Monaco" />
               <div className="rectangle" />
               <div className="rectangle-2" />
               <div className="menuTextWrapper">Menu</div>
@@ -821,10 +822,8 @@ export default function App() {
           <div className="overlap-13">
             <div className="text-wrapper-7">Context is King</div>
             <p className="text-wrapper-8">
-              All race results are measured against that driver's in season averages so that you <br />
-              can spot the stand-out performances. &nbsp;&nbsp;
-              <br />
-              Good and bad.
+              All race results are measured against that driver's in season averages so that you
+              can spot the stand-out performances; good and bad.
             </p>
           </div>
           <div className="overlap-8">
