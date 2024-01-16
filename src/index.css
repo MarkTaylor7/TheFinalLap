@@ -45,7 +45,7 @@ body {
   min-width: 320px;
   width: 100%;
   max-width: 1440px;
-  border: 2px solid red;
+  
 }
 
 @media screen and (min-width: 1440px) {
@@ -103,7 +103,7 @@ body {
   font-size: 16px;
   font-weight: 500;
   height: 86px;
-  left: 323px;
+  left: 82.8%;
   letter-spacing: 0.48px;
   line-height: 22.7px;
   position: absolute;
@@ -112,19 +112,21 @@ body {
 }
 
 .iphone .group {
-  height: 189px;
-  left: 71px;
+  height: auto;
+  left: 18.2%;
   position: absolute;
   top: 283px;
-  width: 320px;
+  width: 82%;
+  
 }
 
 .iphone .overlap-2 {
   background-color: #60636754;
   height: 189px;
   position: relative;
-  width: 312px;
+  width: 97.5%;
 }
+
 
 .iphone .p {
   color: #ffffff;
@@ -132,12 +134,12 @@ body {
   font-size: 14px;
   font-weight: 400;
   height: 86px;
-  left: 26px;
+  left: 8.33%;
   letter-spacing: 0.42px;
   line-height: 19.9px;
   position: absolute;
   top: 57px;
-  width: 267px;
+  width: 85.57%;
 }
 .iphone .text-wrapper-2 {
   color: #ffffff;
@@ -145,7 +147,7 @@ body {
   font-size: 32px;
   font-weight: 700;
   height: 38px;
-  left: 22px;
+  left: 7%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -202,7 +204,7 @@ body {
 
 .iphone .siteLogo {
   height: 37px;
-  left: 20px;
+  left: 5%;
   position: absolute;
   top: 26px;
   width: 32px;
@@ -213,7 +215,7 @@ body {
   left: 0;
   position: absolute;
   top: 1986px;
-  width: 650px;
+  width: 100%;
 }
 
 .iphone .rectangle-3 {
@@ -222,12 +224,12 @@ body {
   left: 0;
   position: absolute;
   top: 1px;
-  width: 391px;
+  width: 100%;
 }
 
 .iphone .siteLogoFooter {
   height: 46px;
-  left: 14px;
+  left: 3.6%;
   position: absolute;
   top: 132px;
   width: 40px;
@@ -239,7 +241,7 @@ body {
   font-size: 8px;
   font-weight: 400;
   height: 49px;
-  left: 301px;
+  left: 77%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -293,7 +295,7 @@ body {
 
 .iphone .github {
   height: 22px;
-  left: 310px;
+  left: 79.5%;
   position: absolute;
   top: 23px;
   width: 22px;
@@ -301,19 +303,19 @@ body {
 
 .iphone .linkedIn {
   height: 22px;
-  left: 345px;
+  left: 88.5%;
   position: absolute;
   top: 23px;
   width: 22px;
 }
 
 .iphone .line-2 {
-  height: 1px;
-  left: 8px;
+  left: 3.8%;
   object-fit: cover;
   position: absolute;
   top: 102px;
-  width: 359px;
+  width: 92%;
+  border: 1px #606367 solid;
 }
 
 .iphone .text-wrapper-6 {

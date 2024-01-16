@@ -787,7 +787,7 @@ export default function App() {
             </div>
             <img className="github" alt="Github logo" src={github} />
             <img className="linkedIn" alt="LinkedIn logo" src={linkedIn} />
-            <div className="line-2" style={{width: 358.62, height: 0, border: '1px #606367 solid'}}></div>
+            <div className="line-2"></div>
           </div>
           <div className="text-wrapper-6">Final Lap Features</div>
           <div className="overlap-4">
