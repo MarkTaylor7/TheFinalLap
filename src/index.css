@@ -310,6 +310,7 @@ body {
 }
 
 .iphone .line-2 {
+  height: 0px;
   left: 3.8%;
   object-fit: cover;
   position: absolute;
@@ -338,7 +339,7 @@ body {
   left: 38px;
   position: absolute;
   top: 1403px;
-  width: 326px;
+  width: 83.6%;
 }
 
 .iphone .rectangle-4 {
@@ -348,7 +349,7 @@ body {
   left: 0;
   position: absolute;
   top: 0;
-  width: 312px;
+  width: 95.7%;
 }
 
 .iphone .rectangle-5 {
@@ -356,7 +357,7 @@ body {
   left: 0;
   position: absolute;
   top: 0;
-  width: 310px;
+  width: 95.7%;
 }
 
 .iphone .leftArrow {
@@ -369,7 +370,7 @@ body {
 
 .iphone .rightArrow {
   height: 43px;
-  left: 308px;
+  right: 1px;
   position: absolute;
   top: 166px;
   width: 19px;
@@ -387,7 +388,7 @@ body {
   left: 36px;
   position: absolute;
   top: 1831px;
-  width: 312px;
+  width: 80%;
 }
 
 .iphone .text-wrapper-7 {
@@ -415,7 +416,7 @@ body {
   line-height: 23.1px;
   position: absolute;
   top: 31px;
-  width: 312px;
+  width: 100%;
 }
 
 .iphone .overlap-6 {
@@ -423,7 +424,8 @@ body {
   left: 38px;
   position: absolute;
   top: 1780px;
-  width: 312px;
+  width: 80%;
+  
 }
 
 .iphone .text-wrapper-9 {
@@ -437,7 +439,7 @@ body {
   line-height: normal;
   position: absolute;
   top: 12px;
-  width: 286px;
+  width: 91.6%;
 }
 
 .iphone .overlap-group-wrapper {
@@ -445,7 +447,7 @@ body {
   left: 0;
   position: relative;
   top: 8px;
-  width: 312px;
+  width: 100%;
   
 }
 
@@ -453,26 +455,31 @@ body {
   height: 35px;
   left: -1px;
   position: relative;
-  width: 313px;
+  width: 100%;
   
 }
 
 .iphone .line-3 {
-  height: 2px;
+  height: 0px;
   left: 1px;
   position: absolute;
   top: 33px;
-  width: 312px;
+  width: 100%;
+  border: 1px solid #87C75F;
 }
 
 .iphone .line-4 {
   height: 35px;
-  left: 0;
+  left: 1px;
   position: absolute;
-  top: 36px;
-  width: 2px;
+  top: 35px;
+  width: 0px;
+  border: 1px solid #87C75F;
+  transform: rotate(-180deg);
+  transform-origin: 0 0;
 }
 
+/*style={{width: 34.90, height: 0, transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '1px #87C75F solid'}*/
 .iphone .overlap-group-3 {
   height: 35px;
   left: -1px;
