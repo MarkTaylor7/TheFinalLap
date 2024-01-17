@@ -859,7 +859,7 @@ export default function App() {
           <div className="overlap-11">
             <div className="rectangle-12" />
             <img className="toggleButton2" alt="Rectangle" src={toggleButton} />
-            <div className="text-wrapper-13">Circuit History</div>
+            <div className="text-wrapper-12">Circuit History</div>
             <div className="line-7" style={{width: 126.696, height: 0, border: '1.50px #87C75F solid'}}></div>
             <img className="toggleDropArrow-2" alt="Arrow pointed down" src={toggleDropArrow} />
           </div>

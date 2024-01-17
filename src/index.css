@@ -325,13 +325,13 @@ body {
   font-size: 26px;
   font-weight: 700;
   height: 83px;
-  left: 56px;
+  left: 14.4%;
   letter-spacing: 1.04px;
   line-height: normal;
   position: absolute;
   text-align: center;
   top: 1317px;
-  width: 276px;
+  width: 70.8%;
 }
 
 .iphone .overlap-4 {
@@ -479,7 +479,6 @@ body {
   transform-origin: 0 0;
 }
 
-/*style={{width: 34.90, height: 0, transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '1px #87C75F solid'}*/
 .iphone .overlap-group-3 {
   height: 35px;
   left: -1px;
@@ -498,10 +497,12 @@ body {
 
 .iphone .overlap-7 {
   height: 142px;
-  left: 15px;
+  left: 3.8%;
   position: absolute;
   top: 527px;
-  width: 365px;
+  width: 93.6%;
+  display: flex;
+  justify-content: center;
 }
 
 .iphone .text-wrapper-10 {
@@ -510,12 +511,13 @@ body {
   font-size: 26px;
   font-weight: 700;
   height: 81px;
-  left: 81px;
+
   letter-spacing: 1.04px;
   line-height: normal;
   position: absolute;
   top: 0;
   width: 192px;
+  
 }
 
 .iphone .rectangle-6 {
@@ -525,14 +527,14 @@ body {
   left: 0;
   position: absolute;
   top: 91px;
-  width: 365px;
+  width: 100%;
 }
 
 .iphone .toggleButton {
   left: 0;
   position: absolute;
   top: 91px;
-  width: 365px;
+  width: 100%;
 }
 
 .iphone .text-wrapper-11 {
@@ -559,7 +561,7 @@ body {
 
 .iphone .toggleDropArrow {
   height: 10px;
-  left: 326px;
+  left: 89.3%;
   position: absolute;
   top: 109px;
   width: 22px;
@@ -567,16 +569,16 @@ body {
 
 .iphone .text-wrapper-12 {
   color: #ffffff;
-  font-family: "Bai Jamjuree", Helvetica;
-  font-size: 22px;
-  font-weight: 700;
-  height: 45px;
-  left: 423px;
-  letter-spacing: 0;
-  line-height: normal;
+  font-family: "Roboto", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  height: 65px;
+  left: 20px;
+  letter-spacing: 0.54px;
+  line-height: 25.6px;
   position: absolute;
-  top: 1831px;
-  width: 286px;
+  top: 20px;
+  width: 207px;
 }
 
 .iphone .overlap-8 {
@@ -682,11 +684,13 @@ body {
 
 .iphone .overlap-11 {
   height: 65px;
-  left: 15px;
+  left: 3.8%;
   position: absolute;
   top: 672px;
-  width: 365px;
+  width: 93.6%;
 }
+
+
 
 .iphone .rectangle-12 {
   background-color: #ffffff1c;
@@ -695,14 +699,14 @@ body {
   left: 0;
   position: absolute;
   top: 13px;
-  width: 365px;
+  width: 100%;
 }
 
 .iphone .toggleButton2 {
   left: 0;
   position: absolute;
   top: 13px;
-  width: 365px;
+  width: 100%;
 }
 
 .iphone .rectangle-13 {
@@ -715,7 +719,7 @@ body {
 
 .iphone .text-wrapper-13 {
   color: #ffffff;
-  font-family: "Roboto-Regular", Helvetica;
+  font-family: "Roboto", Helvetica;
   font-size: 18px;
   font-weight: 400;
   height: 65px;
@@ -738,7 +742,7 @@ body {
 
 .iphone .toggleDropArrow-2 {
   height: 10px;
-  left: 326px;
+  left: 89.3%;
   position: absolute;
   top: 34px;
   width: 22px;
@@ -754,10 +758,10 @@ body {
 
 .iphone .overlap-12 {
   height: 65px;
-  left: 15px;
+  left: 3.8%;
   position: absolute;
   top: 740px;
-  width: 365px;
+  width: 93.6%;
 }
 
 .iphone .rectangle-14 {
@@ -767,14 +771,14 @@ body {
   left: 0;
   position: absolute;
   top: 14px;
-  width: 365px;
+  width: 100%;
 }
 
 .iphone .toggleButton3 {
   left: 0;
   position: absolute;
   top: 15px;
-  width: 365px;
+  width: 100%;
 }
 
 .iphone .line-8 {
@@ -787,7 +791,7 @@ body {
 
 .iphone .toggleDropArrow-3 {
   height: 10px;
-  left: 326px;
+  left: 89.3%;
   position: absolute;
   top: 34px;
   width: 22px;
@@ -799,6 +803,15 @@ body {
   position: absolute;
   top: 1831px;
   width: 312px;
+}
+
+@media screen and (max-width: 480px) {
+  .iphone .overlap-8,
+  .iphone .overlap-9,
+  .iphone .overlap-10,
+  .iphone .overlap-13 {
+    visibility: hidden;
+  }
 }
 
 #tableContainer {
