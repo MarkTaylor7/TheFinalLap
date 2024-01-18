@@ -612,6 +612,131 @@ body {
   width: 69px;
 }
 
+.iphone .overlap-A {
+  background-color: #ffffff1c;
+  height: 892px;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 17.4%;
+  border: 2px solid pink;
+}
+
+@media screen and (max-width: 480px) {
+  .iphone .overlap-A {
+    visibility: hidden;
+  }
+}
+
+.iphone .text-wrapper-18 {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 26px;
+  font-weight: 400;
+  height: 64px;
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 23.4px;
+  position: absolute;
+  top: 317px;
+  width: 184px;
+}
+
+.iphone .text-wrapper-19 {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 26px;
+  font-weight: 400;
+  height: 64px;
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 23.4px;
+  position: absolute;
+  top: 478px;
+  width: 184px;
+}
+
+.iphone .text-wrapper-20 {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 26px;
+  font-weight: 400;
+  height: 64px;
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 23.4px;
+  position: absolute;
+  top: 785px;
+  width: 184px;
+}
+
+.iphone .text-wrapper-21 {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 26px;
+  font-weight: 400;
+  height: 64px;
+  left: 23px;
+  letter-spacing: 0;
+  line-height: 23.4px;
+  position: absolute;
+  top: 627px;
+  width: 184px;
+}
+
+.iphone .line-3 {
+  height: 1px;
+  left: 21px;
+  object-fit: cover;
+  position: absolute;
+  top: 427px;
+  width: 211px;
+}
+
+.iphone .line-4 {
+  height: 1px;
+  left: 16px;
+  object-fit: cover;
+  position: absolute;
+  top: 272px;
+  width: 211px;
+}
+
+.iphone .line-5 {
+  height: 1px;
+  left: 21px;
+  object-fit: cover;
+  position: absolute;
+  top: 582px;
+  width: 211px;
+}
+
+.iphone .line-6 {
+  height: 1px;
+  left: 21px;
+  object-fit: cover;
+  position: absolute;
+  top: 737px;
+  width: 211px;
+}
+
+.iphone .line-7 {
+  height: 1px;
+  left: 21px;
+  object-fit: cover;
+  position: absolute;
+  top: 891px;
+  width: 211px;
+}
+
+.iphone .group-3 {
+  height: 186px;
+  left: 48px;
+  position: absolute;
+  top: 53px;
+  width: 161px;
+}
+
 .iphone .text-wrapper-6 {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
@@ -796,6 +921,14 @@ body {
   width: 93.6%;
   display: flex;
   justify-content: center;
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .overlap-7,
+  .iphone .overlap-11,
+  .iphone .overlap-12 {
+    visibility: hidden;
+  }
 }
 
 .iphone .text-wrapper-10 {

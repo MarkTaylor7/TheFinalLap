@@ -15,6 +15,7 @@ import {
 import { circuitTypes, raceTitles, allCareerData } from "./consts";
 import { flags } from "./Flags";
 import siteLogo from "./assets/siteLogo.svg";
+import siteLogoDesktop from "./assets/siteLogoDesktop.svg";
 import footerSiteLogo from "./assets/footerSiteLogo.svg";
 import gitHubMobile from "./assets/gitHubMobile.svg";
 import gitHubDesktop from "./assets/gitHubDesktop.svg";
@@ -809,6 +810,19 @@ export default function App() {
             <img className="siteLogoFooterDesktop" alt="Group" src="group-17.png" />
             <img className="gitHubDesktop" alt="Vector" src={gitHubDesktop} />
             <img className="linkedInDesktop" alt="Vector" src={linkedInDesktop} />
+          </div>
+
+          <div className="overlap-A">
+            <div className="text-wrapper-18">Drivers</div>
+            <div className="text-wrapper-19">Schedule</div>
+            <div className="text-wrapper-20">About</div>
+            <div className="text-wrapper-21">Features</div>
+            <img className="line-3" alt="Line" src="line-1.svg" />
+            <img className="line-4" alt="Line" src="line-18-4.svg" />
+            <img className="line-5" alt="Line" src="line-2.svg" />
+            <img className="line-6" alt="Line" src="line-3.svg" />
+            <img className="line-7" alt="Line" src="line-4.svg" />
+            <img className="group-3" alt="Group" src={siteLogoDesktop} />
           </div>
           <div className="text-wrapper-6">Final Lap Features</div>
           <div className="overlap-4">
