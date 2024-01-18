@@ -24,6 +24,7 @@ import toggleButton from "./assets/toggleButton.svg";
 import toggleDropArrow from "./assets/toggleDropArrow.svg";
 import leftArrow from "./assets/leftArrow.svg";
 import rightArrow from "./assets/rightArrow.svg";
+import nextRaceBox from "./assets/nextRaceBox.svg";
 
 export default function App() {
   const [standings, setStandings] = useState([]);
@@ -736,7 +737,15 @@ export default function App() {
         <div className="div">
           <div className="overlap">
             <div className="overlap-group">
+              <img className="nextRaceBox" alt="Rectangle" src={nextRaceBox} />
+              <div className="text-wrapperA">Next Race</div>
+              <div className="text-wrapperB">Date</div>
+              <div className="text-wrapperC">Country</div>
+              <div className="text-wrapperD">Italian GP (Monza)</div>
+              <div className="text-wrapperE">09.03.2023</div>
+              <div className="text-wrapperF">Italy</div>
               <img className="heroBannerMobile" src={heroBannerMobile} alt="an image of a Williams F1 car in Monaco" />
+              <img className="heroBannerDesktop" src={heroBannerDesktop} alt="an image of a Williams F1 car in Monaco" />
               <div className="rectangle" />
               <div className="rectangle-2" />
               <div className="menuTextWrapper">Menu</div>

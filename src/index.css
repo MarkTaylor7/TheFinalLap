@@ -45,7 +45,7 @@ body {
   min-width: 320px;
   width: 100%;
   max-width: 1440px;
-  
+  border: 2px solid orange;
 }
 
 @media screen and (min-width: 1440px) {
@@ -54,13 +54,21 @@ body {
   }
 }
 
-
 .iphone .overlap {
   height: 473px;
   left: 0;
   position: absolute;
   top: -1px;
   width: 100%;
+  border: 2px solid red;
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .overlap {
+    width: 83.9%;
+    left: 18.1%;
+    height: 930px;
+  }
 }
 
 .iphone .overlap-group {
@@ -71,12 +79,35 @@ body {
   width: 100%;
 }
 
+
+
 .heroBannerMobile {
   height: auto;
   left: 0;
   position: absolute;
   top: 84px;
   width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .heroBannerMobile {
+    visibility: hidden;
+  }
+}
+
+.heroBannerDesktop {
+  height: auto;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 100%;
+  visibility: hidden;
+}
+
+@media screen and (min-width: 480px) {
+  .heroBannerDesktop {
+    visibility: visible;
+  }
 }
 
 .iphone .rectangle {
@@ -88,6 +119,14 @@ body {
   width: 100%;
 }
 
+@media screen and (min-width: 480px) {
+  .iphone .rectangle {
+    height: 720px;
+    top: 3px;
+    
+  }
+}
+
 .iphone .rectangle-2 {
   background: linear-gradient(360deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
   height: 132px;
@@ -95,6 +134,13 @@ body {
   position: absolute;
   top: 195px;
   width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .rectangle-2 {
+    height: 392px;
+    top: 330px;
+  }
 }
 
 .menuTextWrapper {
@@ -109,6 +155,104 @@ body {
   position: absolute;
   top: 33px;
   width: 267px;
+}
+
+@media screen and (min-width: 480px) {
+  .menuTextWrapper {
+    visibility: hidden;
+  }
+}
+
+.iphone .nextRaceBox {
+  height: auto;
+  position: absolute;
+  top: 708px;
+  width: 100%;
+  border: 2px solid purple;
+}
+
+.iphone .text-wrapperA {
+  color: #606367;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 32px;
+  font-weight: 500;
+  height: 76px;
+  left: 33px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 733px;
+  width: 290px;
+}
+
+.iphone .text-wrapperB {
+  color: #606367;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 32px;
+  font-weight: 500;
+  height: 76px;
+  left: 395px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 735px;
+  width: 290px;
+}
+
+.iphone .text-wrapperC {
+  color: #606367;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 32px;
+  font-weight: 500;
+  height: 76px;
+  left: 647px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 733px;
+  width: 290px;
+}
+
+.iphone .text-wrapperD {
+  color: #ffffff;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 32px;
+  font-weight: 700;
+  height: 76px;
+  left: 33px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 783px;
+  width: 302px;
+}
+
+.iphone .text-wrapperE {
+  color: #ffffff;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 32px;
+  font-weight: 700;
+  height: 76px;
+  left: 395px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 785px;
+  width: 302px;
+}
+
+.iphone .text-wrapperF {
+  color: #ffffff;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 32px;
+  font-weight: 700;
+  height: 76px;
+  left: 649px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 783px;
+  width: 302px;
 }
 
 .iphone .group {
