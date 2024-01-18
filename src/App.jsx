@@ -16,10 +16,12 @@ import { circuitTypes, raceTitles, allCareerData } from "./consts";
 import { flags } from "./Flags";
 import siteLogo from "./assets/siteLogo.svg";
 import footerSiteLogo from "./assets/footerSiteLogo.svg";
-import github from "./assets/github.svg";
-import linkedIn from "./assets/linkedIn.svg";
-import heroBannerDesktop from "./assets/images/heroBannerDesktop.png";
+import gitHubMobile from "./assets/gitHubMobile.svg";
+import gitHubDesktop from "./assets/gitHubDesktop.svg";
+import linkedInMobile from "./assets/linkedInMobile.svg";
+import linkedInDesktop from "./assets/linkedInDesktop.svg";
 import heroBannerMobile from "./assets/images/heroBannerMobile.png";
+import heroBannerDesktop from "./assets/images/heroBannerDesktop.png";
 import toggleButton from "./assets/toggleButton.svg";
 import toggleDropArrow from "./assets/toggleDropArrow.svg";
 import leftArrow from "./assets/leftArrow.svg";
@@ -748,55 +750,65 @@ export default function App() {
               <img className="heroBannerDesktop" src={heroBannerDesktop} alt="an image of a Williams F1 car in Monaco" />
               <div className="rectangle" />
               <div className="rectangle-2" />
+              <p className="pDesktop">Live F1 form guide and driver data lets you predict results with confidence.</p>
+              <div className="text-wrapper-Desktop">The Final Lap</div>
               <div className="menuTextWrapper">Menu</div>
-              <div className="group">
+              <div className="groupMobile">
                 <div className="overlap-2">
                   <p className="p">Live F1 form guide and driver data lets you predict results with confidence.</p>
                   <div className="text-wrapper-2">The Final Lap</div>
-                  <div className="text-wrapper-3">Home</div>
-                  <div className="text-wrapper-4">Lorem</div>
-                  <img className="line" alt="Line" src="line-27.svg" />
-                  <img className="img" alt="Line" src="line-28.svg" />
                 </div>
               </div>
             </div>
             <img className="siteLogo" alt="site logo: stylized initials 'FL'" src={siteLogo} />
           </div>
-          <div className="overlap-3">
-            <div className="rectangle-3" />
-            <img className="siteLogoFooter" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} />
-            <p className="text-wrapper-5">© 2024 The Final Lap</p>
-            <div className="flexcontainer">
-              <p className="text">
-                <span className="span">
+          <div className="footerBoxMobile">
+            <div className="footerBoxBackgroundMobile" />
+            <img className="siteLogoFooterMobile" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} />
+            <p className="copyrightMobile">© 2024 The Final Lap</p>
+            <div className="flexcontainerMobile">
+              <p className="textMobile">
+                <span className="spanMobile">
                   Drivers
                   <br />
                 </span>
               </p>
-              <p className="text">
+              <p className="textMobile">
                 <span className="span">Schedule</span>
               </p>
             </div>
-            <div className="flexcontainer-2">
-              <p className="text">
-                <span className="span">
+            <div className="flexcontainer-2-Mobile">
+              <p className="textMobile">
+                <span className="spanMobile">
                   Features
                   <br />
                 </span>
               </p>
-              <p className="text">
-                <span className="span">
+              <p className="textMobile">
+                <span className="spanMobile">
                   About
                   <br />
                 </span>
               </p>
-              <p className="text">
-                <span className="span">{""}</span>
+              <p className="textMobile">
+                <span className="spanMobile">{""}</span>
               </p>
             </div>
-            <img className="github" alt="Github logo" src={github} />
-            <img className="linkedIn" alt="LinkedIn logo" src={linkedIn} />
+            <img className="gitHubMobile" alt="Github logo" src={gitHubMobile} />
+            <img className="linkedInMobile" alt="LinkedIn logo" src={linkedInMobile} />
             <div className="line-2"></div>
+          </div>
+          <div className="footerBoxDesktop">
+            <div className="footerBoxBackgroundDesktop" />
+            <p className="copyrightDesktop">© 2024 The Final Lap</p>
+            <div className="footer-text-wrapper-1">Schedule</div>
+            <div className="footer-text-wrapper-2">Drivers</div>
+            <div className="footer-text-wrapper-3">Features</div>
+            <div className="footer-text-wrapper-4">About</div>
+            <div className="footer-text-wrapper-5">The Final Lap</div>
+            <img className="siteLogoFooterDesktop" alt="Group" src="group-17.png" />
+            <img className="gitHubDesktop" alt="Vector" src={gitHubDesktop} />
+            <img className="linkedInDesktop" alt="Vector" src={linkedInDesktop} />
           </div>
           <div className="text-wrapper-6">Final Lap Features</div>
           <div className="overlap-4">
@@ -882,7 +894,6 @@ export default function App() {
         </div>
       </div>
   
-
 
       <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
         boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}
