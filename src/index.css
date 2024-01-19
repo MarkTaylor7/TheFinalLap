@@ -584,15 +584,15 @@ body {
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 193px;
+  top: 62%;
   width: 558px;
 }
 
-.iphone .group-2 {
+.iphone .siteLogoFooterDesktop {
   height: 64px;
   left: 33px;
   position: absolute;
-  top: 226px;
+  top: 70.2%;
   width: 55px;
 }
 
@@ -612,14 +612,53 @@ body {
   width: 69px;
 }
 
-.iphone .overlap-A {
-  background-color: #ffffff1c;
-  height: 892px;
+.iphone .overlap-3 {
+  background-color: #d9d9d91c;
+  background-image: url(./rectangle-34.svg);
+  background-size: 100% 100%;
+  border-radius: 5px;
+  height: 422px;
+  left: 253px;
+  position: absolute;
+  top: 2698px;
+  width: 358px;
+}
+
+.iphone .overlap-4 {
+  height: 422px;
+  left: 654px;
+  position: absolute;
+  top: 2698px;
+  width: 359px;
+}
+
+.iphone .rectangle-X {
+  background-color: #d9d9d91c;
+  border-radius: 5px;
+  height: 422px;
+  left: 1px;
+  position: absolute;
+  top: 0;
+  width: 358px;
+}
+
+.iphone .rectangle-Y {
+  height: 422px;
   left: 0;
   position: absolute;
+  top: 0;
+  width: 358px;
+}
+
+.iphone .overlap-A {
+  background-color: #ffffff1c;
+  height: 99vh;
+  left: 0;
+  position: fixed;
   top: 3px;
+  bottom: px;
   width: 17.4%;
-  border: 2px solid pink;
+  border: 1px solid pink;
 }
 
 @media screen and (max-width: 480px) {

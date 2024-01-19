@@ -16,6 +16,7 @@ import { circuitTypes, raceTitles, allCareerData } from "./consts";
 import { flags } from "./Flags";
 import siteLogo from "./assets/siteLogo.svg";
 import siteLogoDesktop from "./assets/siteLogoDesktop.svg";
+import siteLogoFooterDesktop from "./assets/siteLogoFooterDesktop.svg";
 import footerSiteLogo from "./assets/footerSiteLogo.svg";
 import gitHubMobile from "./assets/gitHubMobile.svg";
 import gitHubDesktop from "./assets/gitHubDesktop.svg";
@@ -807,11 +808,15 @@ export default function App() {
             <div className="footer-text-wrapper-3">Features</div>
             <div className="footer-text-wrapper-4">About</div>
             <div className="footer-text-wrapper-5">The Final Lap</div>
-            <img className="siteLogoFooterDesktop" alt="Group" src="group-17.png" />
+            <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} />
             <img className="gitHubDesktop" alt="Vector" src={gitHubDesktop} />
             <img className="linkedInDesktop" alt="Vector" src={linkedInDesktop} />
           </div>
-
+          <div className="overlap-3" />
+          <div className="overlap-4">
+            <div className="rectangle-X" />
+            <img className="rectangle-Y" alt="Rectangle" src="rectangle-33.svg" />
+          </div>
           <div className="overlap-A">
             <div className="text-wrapper-18">Drivers</div>
             <div className="text-wrapper-19">Schedule</div>
@@ -849,7 +854,7 @@ export default function App() {
           <div className="overlap-7">
             <div className="text-wrapper-10">Race Outlook</div>
             <div className="rectangle-6" />
-            <img className="toggleButton" alt="Rectangle" src={toggleButton} />
+            <img className="toggleButton" alt="Rectangle" src={toggleButton}/>
             <div className="text-wrapper-11">Recent Form</div>
             <div className="line-5" style={{width: 113.20, height: 0, border: '1.50px #87C75F solid'}}></div>
             <img className="toggleDropArrow" alt="Arrow pointed down" src={toggleDropArrow} />
