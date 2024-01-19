@@ -16,7 +16,7 @@
 
 a {
   font-weight: 500;
-  color: #000000;
+  color: #ffffff;
   text-decoration: inherit;
 }
 
@@ -491,7 +491,7 @@ body {
   height: 322px;
   left: 0;
   position: absolute;
-  top: 2000px;
+  top: 2400px;
   width: 100%;
 }
 
@@ -624,7 +624,7 @@ body {
   width: 358px;
 }
 
-.iphone .overlap-4 {
+.iphone .overlap-Z {
   height: 422px;
   left: 654px;
   position: absolute;
@@ -650,15 +650,41 @@ body {
   width: 358px;
 }
 
+.iphone .overlap-W {
+  height: 422px;
+  left: 1055px;
+  position: absolute;
+  top: 2698px;
+  width: 359px;
+}
+
+.iphone .rectangle-7 {
+  background-color: #d9d9d91c;
+  border-radius: 5px;
+  height: 422px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 358px;
+}
+
+.iphone .rectangle-L {
+  height: 422px;
+  left: 1px;
+  position: absolute;
+  top: 0;
+  width: 358px;
+}
+
 .iphone .overlap-A {
   background-color: #ffffff1c;
-  height: 99vh;
+  height: 90vh;
   left: 0;
   position: fixed;
   top: 3px;
   bottom: px;
   width: 17.4%;
-  border: 1px solid pink;
+  
 }
 
 @media screen and (max-width: 480px) {
@@ -677,7 +703,7 @@ body {
   letter-spacing: 0;
   line-height: 23.4px;
   position: absolute;
-  top: 317px;
+  top: 38.03%;
   width: 184px;
 }
 
@@ -691,7 +717,7 @@ body {
   letter-spacing: 0;
   line-height: 23.4px;
   position: absolute;
-  top: 478px;
+  top: 56.09%;
   width: 184px;
 }
 
@@ -705,7 +731,7 @@ body {
   letter-spacing: 0;
   line-height: 23.4px;
   position: absolute;
-  top: 785px;
+  top: 90.5%;
   width: 184px;
 }
 
@@ -719,62 +745,98 @@ body {
   letter-spacing: 0;
   line-height: 23.4px;
   position: absolute;
-  top: 627px;
+  top: 72.79%;
   width: 184px;
 }
 
-.iphone .line-3 {
-  height: 1px;
+.iphone .desktopMenuLine1 {
+  height: 0px;
   left: 21px;
   object-fit: cover;
   position: absolute;
-  top: 427px;
-  width: 211px;
+  top: 47.9%;
+  width: 84.4%;
+  border: 1px solid rgba(217, 217, 217, 0.41);
+  
 }
 
-.iphone .line-4 {
-  height: 1px;
-  left: 16px;
-  object-fit: cover;
-  position: absolute;
-  top: 272px;
-  width: 211px;
-}
-
-.iphone .line-5 {
-  height: 1px;
+.iphone .desktopMenuLine2 {
+  height: 0px;
   left: 21px;
   object-fit: cover;
   position: absolute;
-  top: 582px;
-  width: 211px;
+  top: 30.5%;
+  width: 84.4%;
+  border: 1px solid rgba(217, 217, 217, 0.41);
 }
 
-.iphone .line-6 {
-  height: 1px;
+.iphone .desktopMenuLine3 {
+  height: 0px;
   left: 21px;
   object-fit: cover;
   position: absolute;
-  top: 737px;
-  width: 211px;
+  top: 65.25%;
+  width: 84.4%;
+  border: 1px solid rgba(217, 217, 217, 0.41);
 }
 
-.iphone .line-7 {
-  height: 1px;
+.iphone .desktopMenuLine4 {
+  height: 0px;
   left: 21px;
   object-fit: cover;
   position: absolute;
-  top: 891px;
-  width: 211px;
+  top: 82.6%;
+  width: 84.4%;
+  border: 1px solid rgba(217, 217, 217, 0.41);
+}
+
+.iphone .desktopMenuLine5 {
+  height: 0px;
+  left: 21px;
+  object-fit: cover;
+  position: absolute;
+  top: 99.5%;
+  width: 84.4%;
+  border: 1px solid rgba(217, 217, 217, 0.41);
 }
 
 .iphone .group-3 {
-  height: 186px;
+  height: 20.85%;
   left: 48px;
   position: absolute;
-  top: 53px;
-  width: 161px;
+  top: 5.94%;
+  width: 64.4%;
 }
+
+.iphone .overlap-table {
+  height: 1335px;
+  left: 17.22%;
+  position: absolute;
+  top: 990px;
+  width: 81.74%;
+  border: 2ps solid green;
+}
+
+#tableContainer {
+  left: 5px;
+  border-radius: 6px;
+  position: absolute;
+  top: 169px;
+  width: 100%;
+  
+}
+
+/*To be used as a guide for placing tableContainer
+.iphone .rectangle-T {
+  border-radius: 6px;
+  height: 1089px;
+  left: 5px;
+  position: absolute;
+  top: 169px;
+  width: 100%;
+}
+*/
+
 
 .iphone .text-wrapper-6 {
   color: #ffffff;
@@ -787,7 +849,7 @@ body {
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 1317px;
+  top: 1617px;
   width: 70.8%;
 }
 
@@ -795,7 +857,7 @@ body {
   height: 374px;
   left: 38px;
   position: absolute;
-  top: 1403px;
+  top: 1703px;
   width: 83.6%;
 }
 
@@ -844,7 +906,7 @@ body {
   height: 131px;
   left: 36px;
   position: absolute;
-  top: 1831px;
+  top: 2131px;
   width: 80%;
 }
 
@@ -880,7 +942,7 @@ body {
   height: 45px;
   left: 38px;
   position: absolute;
-  top: 1780px;
+  top: 2080px;
   width: 80%;
   
 }
@@ -1050,7 +1112,7 @@ body {
   height: 131px;
   left: 764px;
   position: absolute;
-  top: 1831px;
+  top: 2131px;
   width: 312px;
 }
 
@@ -1072,7 +1134,7 @@ body {
   height: 45px;
   left: 425px;
   position: absolute;
-  top: 1780px;
+  top: 2080px;
   width: 312px;
   border: 2x solid red;
 }
@@ -1098,7 +1160,7 @@ body {
   height: 45px;
   left: 767px;
   position: absolute;
-  top: 1780px;
+  top: 2080px;
   width: 312px;
 }
 
@@ -1117,7 +1179,7 @@ body {
   height: 374px;
   left: 423px;
   position: absolute;
-  top: 1403px;
+  top: 1703px;
   width: 312px;
 }
 
@@ -1127,7 +1189,7 @@ body {
   height: 374px;
   left: 767px;
   position: absolute;
-  top: 1403px;
+  top: 1703px;
   width: 312px;
 }
 
@@ -1135,7 +1197,7 @@ body {
   height: 374px;
   left: -4003px;
   position: absolute;
-  top: 1885px;
+  top: 2185px;
   width: 312px;
 }
 
@@ -1143,7 +1205,7 @@ body {
   height: 374px;
   left: -4346px;
   position: absolute;
-  top: 1885px;
+  top: 2185px;
   width: 310px;
 }
 
@@ -1266,7 +1328,7 @@ body {
   height: 131px;
   left: 425px;
   position: absolute;
-  top: 1831px;
+  top: 2131px;
   width: 312px;
 }
 
@@ -1279,11 +1341,7 @@ body {
   }
 }
 
-#tableContainer {
-  width: 95vw;
-  border: 2px solid yellow;
-  
-}
+
 
 button {
   border-radius: 8px;
