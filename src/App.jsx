@@ -822,6 +822,16 @@ export default function App() {
             <img className="rectangle-L" alt="Rectangle" src="rectangle-32.svg" />
           </div>
           
+          <div className="overlap-3" />
+          <div className="overlap-Z">
+            <div className="rectangle-X" />
+            <img className="rectangle-Y" alt="Rectangle" src="rectangle-33.svg" />
+          </div>
+          <div className="overlap-W">
+            <div className="rectangle-7" />
+            <img className="rectangle-L" alt="Rectangle" src="rectangle-32.svg" />
+          </div>
+          
           <div className="overlap-A">
             <div className="text-wrapper-18">Drivers</div>
             <div className="text-wrapper-19">Schedule</div>
@@ -838,8 +848,8 @@ export default function App() {
           <div className="overlap-table">
             <div className="rectangle-T" />
             <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
-            boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}
-            />
+        boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}
+      />
           </div>
 
           {/*<div className="text-wrapper-6">Final Lap Features</div>
