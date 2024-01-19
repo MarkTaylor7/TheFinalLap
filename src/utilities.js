@@ -371,7 +371,7 @@ export function getBackgroundColor(data3) {
       color = "#212121";
       break;
     case "N/A":
-      color = "#757575";
+      color = "#ffffff";
       break;
     case "Max Verstappen":
     case "Sergio Pérez":

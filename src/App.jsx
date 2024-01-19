@@ -16,6 +16,7 @@ import { circuitTypes, raceTitles, allCareerData } from "./consts";
 import { flags } from "./Flags";
 import siteLogo from "./assets/siteLogo.svg";
 import siteLogoDesktop from "./assets/siteLogoDesktop.svg";
+import siteLogoFooterDesktop from "./assets/siteLogoFooterDesktop.svg";
 import footerSiteLogo from "./assets/footerSiteLogo.svg";
 import gitHubMobile from "./assets/gitHubMobile.svg";
 import gitHubDesktop from "./assets/gitHubDesktop.svg";
@@ -807,24 +808,41 @@ export default function App() {
             <div className="footer-text-wrapper-3">Features</div>
             <div className="footer-text-wrapper-4">About</div>
             <div className="footer-text-wrapper-5">The Final Lap</div>
-            <img className="siteLogoFooterDesktop" alt="Group" src="group-17.png" />
+            <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} />
             <img className="gitHubDesktop" alt="Vector" src={gitHubDesktop} />
             <img className="linkedInDesktop" alt="Vector" src={linkedInDesktop} />
           </div>
-
+          <div className="overlap-3" />
+          <div className="overlap-Z">
+            <div className="rectangle-X" />
+            <img className="rectangle-Y" alt="Rectangle" src="rectangle-33.svg" />
+          </div>
+          <div className="overlap-W">
+            <div className="rectangle-7" />
+            <img className="rectangle-L" alt="Rectangle" src="rectangle-32.svg" />
+          </div>
+          
           <div className="overlap-A">
             <div className="text-wrapper-18">Drivers</div>
             <div className="text-wrapper-19">Schedule</div>
             <div className="text-wrapper-20">About</div>
             <div className="text-wrapper-21">Features</div>
-            <img className="line-3" alt="Line" src="line-1.svg" />
-            <img className="line-4" alt="Line" src="line-18-4.svg" />
-            <img className="line-5" alt="Line" src="line-2.svg" />
-            <img className="line-6" alt="Line" src="line-3.svg" />
-            <img className="line-7" alt="Line" src="line-4.svg" />
+            <div className="desktopMenuLine1" />
+            <div className="desktopMenuLine2" />
+            <div className="desktopMenuLine3" />
+            <div className="desktopMenuLine4" />
+            <div className="desktopMenuLine5" />
             <img className="group-3" alt="Group" src={siteLogoDesktop} />
           </div>
-          <div className="text-wrapper-6">Final Lap Features</div>
+
+          <div className="overlap-table">
+            <div className="rectangle-T" />
+            <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
+            boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}
+            />
+          </div>
+
+          {/*<div className="text-wrapper-6">Final Lap Features</div>
           <div className="overlap-4">
             <div className="rectangle-4" />
             <div className="rectangle-5" alt="Rectangle" src="rectangle-34.svg" />
@@ -849,7 +867,7 @@ export default function App() {
           <div className="overlap-7">
             <div className="text-wrapper-10">Race Outlook</div>
             <div className="rectangle-6" />
-            <img className="toggleButton" alt="Rectangle" src={toggleButton} />
+            <img className="toggleButton" alt="Rectangle" src={toggleButton}/>
             <div className="text-wrapper-11">Recent Form</div>
             <div className="line-5" style={{width: 113.20, height: 0, border: '1.50px #87C75F solid'}}></div>
             <img className="toggleDropArrow" alt="Arrow pointed down" src={toggleDropArrow} />
@@ -904,14 +922,12 @@ export default function App() {
             <div className="text-wrapper-13">Circuit Type</div>
             <div className="line-8" style={{width: 105.92, height: 0, border: '1.50px #87C75F solid'}}></div>
             <img className="toggleDropArrow-3" alt="Arrow pointed down" src={toggleDropArrow} />
-          </div>
+          </div>*/}
         </div>
       </div>
   
 
-      <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
-        boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}
-      />
+      
       
     </>
   );
