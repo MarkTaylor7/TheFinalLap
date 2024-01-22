@@ -74,6 +74,7 @@ export default function App() {
       return `${element.Driver.givenName} ${element.Driver.familyName}`;
     });
     setNames(fullNames);
+    console.log(names);
 
     const driverIds = standings.map(function (element) {
       return `${element.Driver.driverId}`;
@@ -339,9 +340,6 @@ export default function App() {
        * 1. Results from the last five races.
        * 2. Results from the next five races held at the next circuit.
        * 3. Results from the last five races held circuits that have the same circuit type as the next circuit.
-       * If a driver didn't participate in a particular race, "N/A" will populate.
-       * The lastName prop is used to match individual race finishing positions with each driver. (I.e. The driver who
-       * finished 3rd in the last race has the last name "Hamilton", so Lewis Hamilton finished 3rd in the last race.)
        * After each driver's props are fully updated, the driver object is pushed to an empty array called "driverData".
        * The driverData array is used to set the state of driverTableData.
        */
