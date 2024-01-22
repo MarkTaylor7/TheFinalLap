@@ -73,6 +73,8 @@ export default function App() {
     const fullNames = standings.map(function (element) {
       return `${element.Driver.givenName} ${element.Driver.familyName}`;
     });
+    //Remove the line below after 2024 season starts to ensure no limit on number of drivers reported in table
+    fullNames.length = 21;
     setNames(fullNames);
     console.log(names);
 
@@ -846,11 +848,11 @@ export default function App() {
           <div className="overlap-table">
             <div className="rectangle-T" />
             <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
-        boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}
-      />
+            boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}
+            />
           </div>
 
-          {/*<div className="text-wrapper-6">Final Lap Features</div>
+          <div className="text-wrapper-6">Final Lap Features</div>
           <div className="overlap-4">
             <div className="rectangle-4" />
             <div className="rectangle-5" alt="Rectangle" src="rectangle-34.svg" />
@@ -930,7 +932,7 @@ export default function App() {
             <div className="text-wrapper-13">Circuit Type</div>
             <div className="line-8" style={{width: 105.92, height: 0, border: '1.50px #87C75F solid'}}></div>
             <img className="toggleDropArrow-3" alt="Arrow pointed down" src={toggleDropArrow} />
-          </div>*/}
+          </div>
         </div>
       </div>
   

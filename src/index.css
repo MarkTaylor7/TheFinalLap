@@ -817,14 +817,29 @@ body {
   border: 2ps solid green;
 }
 
-#tableContainer {
-  left: 5px;
-  border-radius: 6px;
+@media screen and (max-width: 480px) {
+  .iphone .overlap-table {
+    left: 1%;
+    width: 98%;
+    top: 900px;
+    position: absolute;
+  }
+}
+
+.iphone .overlap-7 {
+  height: 142px;
+  left: 3.8%;
   position: absolute;
+  top: 527px;
+  width: 93.6%;
+  display: flex;
+  justify-content: center;
+}
+
+#tableContainer {
+  border-radius: 6px;
   top: 169px;
   width: 100%;
-  
-  border: 2px solid yellow;
 }
 
 /*To be used as a guide for placing tableContainer

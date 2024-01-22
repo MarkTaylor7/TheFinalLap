@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import useMediaQuery from '@mui/material/useMediaQuery';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -60,15 +61,17 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
     setShowCluster2(false);
   };
 
+  const isSmallScreen = useMediaQuery('(max-width:480px)');
+
     return (
       boolean4 == false ? cellLoading :
         <div id="tableContainer">
-          <Button sx={{ maxWidth: 20/100 }} onClick={toggleCluster1}>{showCluster2 == false && showCluster3 == false ? '(selected)' : 'Recent Form'}</Button>
-          <Button sx={{ maxWidth: 20/100 }} onClick={toggleCluster2}>{showCluster1 == false && showCluster3 == false ? '(selected)' : 'Circuit History'}</Button>
-          <Button sx={{ maxWidth: 20/100 }} onClick={toggleCluster3}>{showCluster1 == false && showCluster2 == false ? '(selected)' : 'Circuit Type'}</Button>
+          <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={toggleCluster1}>{showCluster2 == false && showCluster3 == false ? '(selected)' : 'Recent Form'}</Button>
+          <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={toggleCluster2}>{showCluster1 == false && showCluster3 == false ? '(selected)' : 'Circuit History'}</Button>
+          <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={toggleCluster3}>{showCluster1 == false && showCluster2 == false ? '(selected)' : 'Circuit Type'}</Button>
 
           <TableContainer component={Paper}>
-            <Table sx={{ maxWidth: 100/100, border: '1px solid #606367', borderRadius: 1.5}} size="small" aria-label="a dense table" display="flex" >
+            <Table sx={{ overflow: 'auto', maxWidth: 100/100, border: '1px solid #606367', borderRadius: 1.5}} size="small" aria-label="a dense table" display="flex" >
               <TableHead>
                 <TableRow>
                   <TableCell align="center" colSpan={1} sx={{ bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367'}}></TableCell>
@@ -79,7 +82,7 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
                 </TableRow>
                   {data1.map((row, i) => (
                     <TableRow
-                    key={i}  
+                    key={i} sx = {{ overflow: 'auto' }}
                     >
                       <TableCell sx = {{ bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367' }}></TableCell>
                       {showCluster1 && <TableCell align="center" sx={{ px: 1.5, bgcolor: "#17181a", borderBottom: 0}}>{row.fiveRacesAgo}</TableCell>}
@@ -101,7 +104,7 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
                   ))}
                   {data2.map((row, i) => (
                     <TableRow
-                    key={i} sx = {{ bgcolor: "#17181a" }} 
+                    key={i} sx = {{ overflow: 'auto', bgcolor: "#17181a" }} 
                     >
                       <TableCell sx = {{ color: "#ffffff", borderBottom: '1px solid #606367', borderRight: '1px solid #606367' }}>Driver</TableCell>
                       {showCluster1 && <TableCell align="center" sx={{ px: 0.75, borderBottom: '1px solid #606367' }}><a href={row.fiveRacesAgoReport}  target="_blank" rel="noopener noreferrer">{row.fiveRacesAgo}</a></TableCell>}
@@ -126,10 +129,10 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
                   {data3.map((row, i) => (
                     <TableRow
                       key={i}
-                      sx={{ '&:last-child td, &:last-child th': { border: 0 }, height: 50 }}
+                      sx={{ height: 50, overflow: 'auto' }}
                     >
-                      <TableCell component="th" scope="row" align="left" sx = {{ whiteSpace: 'nowrap', height: '100%', minWidth: 0, bgcolor: getBackgroundColor(row.name), color: getColor(row.name), borderBottom: '1px solid #606367', borderRight: '1px solid #606367' }} >
-                        <div>{row.name.split(' ')[0]}</div>
+                      <TableCell component="th" scope="row" align="left" variant={isSmallScreen ? 'body2' : 'body1'} sx = {{px: isSmallScreen ? 0.5 : 1, fontSize: isSmallScreen ? '11px' : '14px', whiteSpace: 'nowrap', height: '100%', minWidth: 0, bgcolor: getBackgroundColor(row.name), color: getColor(row.name), borderBottom: '1px solid #606367', borderRight: '1px solid #606367' }} >
+                        <div style={{ fontFamily: 'Roboto' }}>{row.name.split(' ')[0]}</div>
                         <div>{row.name.split(' ')[1]}</div>
                       </TableCell>
                       {showCluster1 && <TableCell sx = {{ height: 1, bgcolor: getBackgroundColor(row.fiveRacesAgoRating), color: getColor(row.fiveRacesAgoRating), border: '1px solid #606367' }} align="center">{boolean1 == true ? row.fiveRacesAgo : cellLoading}</TableCell>}
