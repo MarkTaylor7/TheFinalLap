@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Table from '@mui/material/Table';
@@ -36,6 +36,50 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
   const [showCluster1, setShowCluster1] = useState(true);
   const [showCluster2, setShowCluster2] = useState(true);
   const [showCluster3, setShowCluster3] = useState(true);
+  
+  useEffect(() => {
+    const handleNarrowerThan480 = () => {
+      setShowCluster1(true);
+      setShowCluster2(true);
+      setShowCluster3(true);
+      setShowCluster2(false);
+      setShowCluster3(false);
+    };
+
+    const handleResizeUp = () => {
+      if (window.innerWidth < 480) {
+        handleNarrowerThan480();
+      }
+    };
+
+    handleResizeUp();
+    window.addEventListener('resize', handleResizeUp);
+
+    return () => {
+      window.removeEventListener('resize', handleResizeUp);
+    };
+  }, []); 
+
+  useEffect(() => {
+    const handleWiderThan480 = () => {
+      setShowCluster1(true);
+      setShowCluster2(true);
+      setShowCluster3(true);
+    };  
+  
+    const handleResizeDown = () => {
+      if (window.innerWidth > 480) {
+        handleWiderThan480();
+      }
+    };
+
+    handleResizeDown();
+    window.addEventListener('resize', handleResizeDown);
+
+    return () => {
+      window.removeEventListener('resize', handleResizeDown);
+    };
+  }, []);
 
   const toggleCluster1 = () => {
     setShowCluster1(true);
