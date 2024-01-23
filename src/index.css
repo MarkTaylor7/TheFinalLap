@@ -826,16 +826,6 @@ body {
   }
 }
 
-.iphone .overlap-7 {
-  height: 142px;
-  left: 3.8%;
-  position: absolute;
-  top: 527px;
-  width: 93.6%;
-  display: flex;
-  justify-content: center;
-}
-
 #tableContainer {
   border-radius: 6px;
   top: 169px;
