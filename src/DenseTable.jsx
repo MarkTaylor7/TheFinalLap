@@ -70,14 +70,14 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
           <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={toggleCluster2}>{showCluster1 == false && showCluster3 == false ? '(selected)' : 'Circuit History'}</Button>
           <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={toggleCluster3}>{showCluster1 == false && showCluster2 == false ? '(selected)' : 'Circuit Type'}</Button>
 
-          <TableContainer className="mainTable" component={Paper} style={{ maxHeight: 700 }}>
-            <Table sx={{ overflow: 'auto', maxWidth: 100/100,  }} size="small" stickyHeader aria-label="sticky table">
+          <TableContainer className="mainTable" component={Paper} style={{ maxHeight: 700, borderRadius: 0 }}>
+            <Table sx={{ overflow: 'auto', maxWidth: 100/100 }} size="small" stickyHeader aria-label="sticky table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="center" colSpan={1} sx={{ bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367'}}></TableCell>
-                  {showCluster1 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367' }}>{"RECENT FORM - THE LAST 5 RACES"}</TableCell>}
-                  {showCluster2 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367' }}>{`CIRCUIT HISTORY - RECENT RACES AT ${data4}`}</TableCell>}
-                  {showCluster3 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderBottom: 0 }}>{`CIRCUIT TYPE: ${data5} - CIRCUITS SIMILAR TO ${data4}`}</TableCell>}
+                  <TableCell align="center" colSpan={1} sx={{ bgcolor: "#17181a", borderBottom: 0, borderTop: '1px solid #606367', borderRight: '1px solid #606367' }}></TableCell>
+                  {showCluster1 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', borderBottom: 0, borderRight: '1px solid #606367', whiteSpace: 'pre-wrap' }}>{"RECENT FORM\nTHE LAST 5 RACES"}</TableCell>}
+                  {showCluster2 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', borderBottom: 0, borderRight: '1px solid #606367', whiteSpace: 'pre-wrap' }}>{`CIRCUIT HISTORY\nRECENT RACES AT ${data4}`}</TableCell>}
+                  {showCluster3 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', borderBottom: 0, whiteSpace: 'pre-wrap' }}>{`CIRCUIT TYPE: ${data5}\nCIRCUITS SIMILAR TO ${data4}`}</TableCell>}
 
                 </TableRow>
                   {data1.map((row, i) => (
