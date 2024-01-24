@@ -88,6 +88,7 @@ export default function App() {
     setShowCluster2(false);
   };
   
+  
   // Getting driver names, current season results and events list
   useEffect(() => {
     fetchCurrentStandings().then((results) => setStandings(results));
