@@ -1,5 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import DenseTable from "./DenseTable";
+
+import { MyContext } from './MyContext';
+
 import {
   fetchCurrentSeasonRaceResults,
   fetchCurrentStandings,
@@ -57,6 +60,33 @@ export default function App() {
   const [tableDataPopulated, setTableDataPopulated] = useState(false);
   const [allTableDataPopulated, setAllTableDataPopulated] = useState(false);
   
+  const { showCluster1, setShowCluster1,
+          showCluster2, setShowCluster2,
+          showCluster3, setShowCluster3 } = useContext(MyContext);
+
+  const showOnlyCluster1 = () => {
+    setShowCluster1(true);
+    setShowCluster2(true);
+    setShowCluster3(true);
+    setShowCluster2(false);
+    setShowCluster3(false);
+  };
+
+  const showOnlyCluster2 = () => {
+    setShowCluster1(true);
+    setShowCluster2(true);
+    setShowCluster3(true);
+    setShowCluster1(false);
+    setShowCluster3(false);
+  };
+
+  const showOnlyCluster3 = () => {
+    setShowCluster1(true);
+    setShowCluster2(true);
+    setShowCluster3(true);
+    setShowCluster1(false);
+    setShowCluster2(false);
+  };
   
   // Getting driver names, current season results and events list
   useEffect(() => {
@@ -876,8 +906,8 @@ export default function App() {
           </div>
           <div className="overlap-7">
             <div className="text-wrapper-10">Race Outlook</div>
-            <div className="rectangle-6" />
-            <img className="toggleButton" alt="Rectangle" src={toggleButton} />
+            <div className="rectangle-6"  />
+            <img className="toggleButton" alt="Rectangle" src={toggleButton} onClick={showOnlyCluster1} />
             <div className="text-wrapper-11">Recent Form</div>
             <div className="line-5" style={{width: 113.20, height: 0, border: '1.50px #87C75F solid'}}></div>
             <img className="toggleDropArrow" alt="Arrow pointed down" src={toggleDropArrow} />

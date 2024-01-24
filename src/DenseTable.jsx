@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { MyContext } from './MyContext';
+
+import ChildComponent from './childComponent';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Table from '@mui/material/Table';
@@ -33,9 +36,35 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
   getBackgroundColor(data3);
   getColor(data3);
 
-  const [showCluster1, setShowCluster1] = useState(true);
-  const [showCluster2, setShowCluster2] = useState(true);
-  const [showCluster3, setShowCluster3] = useState(true);
+  const { showCluster1, setShowCluster1,
+          showCluster2, setShowCluster2,
+          showCluster3, setShowCluster3 } = useContext(MyContext);
+
+  const showOnlyCluster1 = () => {
+    setShowCluster1(true);
+    setShowCluster2(true);
+    setShowCluster3(true);
+    setShowCluster2(false);
+    setShowCluster3(false);
+  };
+
+  const showOnlyCluster2 = () => {
+    setShowCluster1(true);
+    setShowCluster2(true);
+    setShowCluster3(true);
+    setShowCluster1(false);
+    setShowCluster3(false);
+  };
+
+  const showOnlyCluster3 = () => {
+    setShowCluster1(true);
+    setShowCluster2(true);
+    setShowCluster3(true);
+    setShowCluster1(false);
+    setShowCluster2(false);
+  };
+
+  
   
   useEffect(() => {
     const handleNarrowerThan480 = () => {
@@ -81,38 +110,17 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
     };
   }, []);
 
-  const toggleCluster1 = () => {
-    setShowCluster1(true);
-    setShowCluster2(true);
-    setShowCluster3(true);
-    setShowCluster2(false);
-    setShowCluster3(false);
-  };
-
-  const toggleCluster2 = () => {
-    setShowCluster1(true);
-    setShowCluster2(true);
-    setShowCluster3(true);
-    setShowCluster1(false);
-    setShowCluster3(false);
-  };
-
-  const toggleCluster3 = () => {
-    setShowCluster1(true);
-    setShowCluster2(true);
-    setShowCluster3(true);
-    setShowCluster1(false);
-    setShowCluster2(false);
-  };
+  
 
   const isSmallScreen = useMediaQuery('(max-width:480px)');
 
     return (
       boolean4 == false ? cellLoading :
         <div id="tableContainer">
-          <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={toggleCluster1}>{showCluster2 == false && showCluster3 == false ? '(selected)' : 'Recent Form'}</Button>
-          <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={toggleCluster2}>{showCluster1 == false && showCluster3 == false ? '(selected)' : 'Circuit History'}</Button>
-          <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={toggleCluster3}>{showCluster1 == false && showCluster2 == false ? '(selected)' : 'Circuit Type'}</Button>
+          {/*<ChildComponent count={showCluster1} onIncrement={toggleCluster1} />*/}
+          <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={showOnlyCluster1}>{showCluster2 == false && showCluster3 == false ? '(selected)' : 'Recent Form'}</Button>
+          <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={showOnlyCluster2}>{showCluster1 == false && showCluster3 == false ? '(selected)' : 'Circuit History'}</Button>
+          <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={showOnlyCluster3}>{showCluster1 == false && showCluster2 == false ? '(selected)' : 'Circuit Type'}</Button>
 
           <TableContainer className="mainTable" component={Paper} style={{ maxHeight: 700, borderRadius: 0 }}>
             <Table sx={{ overflow: 'auto', maxWidth: 100/100 }} size="small" stickyHeader aria-label="sticky table">
