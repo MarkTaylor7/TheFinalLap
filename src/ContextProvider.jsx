@@ -7,7 +7,6 @@ const ContextProvider = () => {
   return (
     <MyContextProvider>
       <App />
-      <DenseTable />
     </MyContextProvider>
   );
 };
