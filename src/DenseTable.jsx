@@ -115,9 +115,12 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
     return (
       boolean4 == false ? cellLoading :
         <div id="tableContainer">
+
+          {/*
           <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={showOnlyCluster1}>{showCluster2 == false && showCluster3 == false ? '(selected)' : 'Recent Form'}</Button>
           <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={showOnlyCluster2}>{showCluster1 == false && showCluster3 == false ? '(selected)' : 'Circuit History'}</Button>
           <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={showOnlyCluster3}>{showCluster1 == false && showCluster2 == false ? '(selected)' : 'Circuit Type'}</Button>
+          */}
 
           <TableContainer className="mainTable" component={Paper} style={{ maxHeight: 700, borderRadius: 0 }}>
             <Table sx={{ overflow: 'auto', maxWidth: 100/100 }} size="small" stickyHeader aria-label="sticky table">
