@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { MyContext } from './MyContext';
 
-import ChildComponent from './childComponent';
-
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -117,7 +115,6 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
     return (
       boolean4 == false ? cellLoading :
         <div id="tableContainer">
-          {/*<ChildComponent count={showCluster1} onIncrement={toggleCluster1} />*/}
           <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={showOnlyCluster1}>{showCluster2 == false && showCluster3 == false ? '(selected)' : 'Recent Form'}</Button>
           <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={showOnlyCluster2}>{showCluster1 == false && showCluster3 == false ? '(selected)' : 'Circuit History'}</Button>
           <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={showOnlyCluster3}>{showCluster1 == false && showCluster2 == false ? '(selected)' : 'Circuit Type'}</Button>
