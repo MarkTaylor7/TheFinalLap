@@ -984,11 +984,12 @@ export default function App() {
           </div>
           <div className="overlap-7">
             <div className="text-wrapper-10">Race Outlook</div>
-            <div className="rectangle-6"  />
-            <img className="toggleButton" alt="Rectangle" src={toggleButton} onClick={showOnlyCluster1} />
-            <div className="text-wrapper-11">Recent Form</div>
-            <div className="line-5" style={line5Style}></div>
-            <img className="toggleDropArrow" alt="Arrow pointed down" src={toggleDropArrow} />
+            <div className="rectangle-6" onClick={showOnlyCluster1}>
+              <img className="toggleButton" alt="Rectangle" src={toggleButton} />
+              <div className="text-wrapper-11">Recent Form</div>
+              <div className="line-5" style={line5Style}></div>
+              <img className="toggleDropArrow" alt="Arrow pointed down" src={toggleDropArrow} />
+            </div>
           </div>
           <div className="overlap-13">
             <div className="text-wrapper-7">Context is King</div>
@@ -1028,18 +1029,20 @@ export default function App() {
           <img className="rectangle-10" alt="Rectangle" src="rectangle-36.svg" />
           <img className="rectangle-11" alt="Rectangle" src="rectangle-38.svg" />
           <div className="overlap-11">
-            <div className="rectangle-12" />
-            <img className="toggleButton2" alt="Rectangle" src={toggleButton} onClick={showOnlyCluster2} />
-            <div className="text-wrapper-12">Circuit History</div>
-            <div className="line-7" style={line7Style}></div>
-            <img className="toggleDropArrow-2" alt="Arrow pointed down" src={toggleDropArrow} />
+            <div className="rectangle-12" onClick={showOnlyCluster2}>
+              <img className="toggleButton2" alt="Rectangle" src={toggleButton} />
+              <div className="text-wrapper-12">Circuit History</div>
+              <div className="line-7" style={line7Style}></div>
+              <img className="toggleDropArrow-2" alt="Arrow pointed down" src={toggleDropArrow} />
+            </div>
           </div>
           <div className="overlap-12">
-            <div className="rectangle-14" />
-            <img className="toggleButton3" alt="Rectangle" src={toggleButton} onClick={showOnlyCluster3} />
-            <div className="text-wrapper-13">Circuit Type</div>
-            <div className="line-8" style={line8Style}></div>
-            <img className="toggleDropArrow-3" alt="Arrow pointed down" src={toggleDropArrow} />
+            <div className="rectangle-14" onClick={showOnlyCluster3}>
+              <img className="toggleButton3" alt="Rectangle" src={toggleButton} />
+              <div className="text-wrapper-13">Circuit Type</div>
+              <div className="line-8" style={line8Style}></div>
+              <img className="toggleDropArrow-3" alt="Arrow pointed down" src={toggleDropArrow} />
+            </div>
           </div>
         </div>
       </div>
