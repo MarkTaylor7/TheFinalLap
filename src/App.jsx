@@ -82,6 +82,54 @@ export default function App() {
           showCluster2, setShowCluster2,
           showCluster3, setShowCluster3 } = useContext(MyContext);
 
+  useEffect(() => {
+    const handleNarrowerThan480 = () => {
+      setShowCluster1(true);
+      setShowCluster2(true);
+      setShowCluster3(true);
+      setShowCluster2(false);
+      setShowCluster3(false);
+
+      setLine5Style({height: 0, border: '1.50px #87C75F solid'});
+      setLine7Style({height: 0, border: '1.50px #405E2C solid'});
+      setLine8Style({height: 0, border: '1.50px #405E2C solid'});
+    };
+
+    const handleResizeUp = () => {
+      if (window.innerWidth < 480) {
+        handleNarrowerThan480();
+      }
+    };
+
+    handleResizeUp();
+    window.addEventListener('resize', handleResizeUp);
+
+    return () => {
+      window.removeEventListener('resize', handleResizeUp);
+    };
+  }, []); 
+
+  useEffect(() => {
+    const handleWiderThan480 = () => {
+      setShowCluster1(true);
+      setShowCluster2(true);
+      setShowCluster3(true);
+    };  
+  
+    const handleResizeDown = () => {
+      if (window.innerWidth > 480) {
+        handleWiderThan480();
+      }
+    };
+
+    handleResizeDown();
+    window.addEventListener('resize', handleResizeDown);
+
+    return () => {
+      window.removeEventListener('resize', handleResizeDown);
+    };
+  }, []);
+
   const showOnlyCluster1 = () => {
     setShowCluster1(true);
     setShowCluster2(true);
@@ -117,7 +165,6 @@ export default function App() {
     setLine7Style({height: 0, border: '1.50px #405E2C solid'});
     setLine8Style({height: 0, border: '1.50px #87C75F solid'});
   };
-  
   
   // Getting driver names, current season results and events list
   useEffect(() => {
