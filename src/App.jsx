@@ -878,13 +878,17 @@ export default function App() {
             <p className="copyrightMobile">© 2024 The Final Lap</p>
             <div className="flexcontainerMobile">
               <p className="textMobile">
-                <span className="spanMobile">
-                  Drivers
-                  <br />
-                </span>
+                <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
+                  <span className="spanMobile">
+                    Drivers
+                    <br />
+                  </span>
+                </a>
               </p>
               <p className="textMobile">
-                <span className="span">Schedule</span>
+                <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
+                  <span className="span">Schedule</span>
+                </a>
               </p>
             </div>
             <div className="flexcontainer-2-Mobile">
@@ -904,21 +908,33 @@ export default function App() {
                 <span className="spanMobile">{""}</span>
               </p>
             </div>
-            <img className="gitHubMobile" alt="Github logo" src={gitHubMobile} />
-            <img className="linkedInMobile" alt="LinkedIn logo" src={linkedInMobile} />
+            <a href="https://github.com/MarkTaylor7" target="_blank" rel="noreferrer">
+              <img className="gitHubMobile" alt="Github logo" src={gitHubMobile} />
+            </a>
+            <a href="https://www.linkedin.com/in/marktaylor27" target="_blank" rel="noreferrer">
+              <img className="linkedInMobile" alt="LinkedIn logo" src={linkedInMobile} />
+            </a>
             <div className="line-2"></div>
           </div>
           <div className="footerBoxDesktop">
             <div className="footerBoxBackgroundDesktop" />
             <p className="copyrightDesktop">© 2024 The Final Lap</p>
-            <div className="footer-text-wrapper-1">Schedule</div>
-            <div className="footer-text-wrapper-2">Drivers</div>
+            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
+              <div className="footer-text-wrapper-1">Schedule</div>
+            </a>
+            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
+              <div className="footer-text-wrapper-2">Drivers</div>
+            </a>
             <div className="footer-text-wrapper-3">Features</div>
             <div className="footer-text-wrapper-4">About</div>
             <div className="footer-text-wrapper-5">The Final Lap</div>
             <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} />
-            <img className="gitHubDesktop" alt="Vector" src={gitHubDesktop} />
-            <img className="linkedInDesktop" alt="Vector" src={linkedInDesktop} />
+            <a href="https://github.com/MarkTaylor7" target="_blank" rel="noreferrer">
+              <img className="gitHubDesktop" alt="Vector" src={gitHubDesktop} />
+            </a>
+            <a href="https://www.linkedin.com/in/marktaylor27" target="_blank" rel="noreferrer">
+              <img className="linkedInDesktop" alt="Vector" src={linkedInDesktop} />
+            </a>
           </div>
           <div className="overlap-3" />
           <div className="overlap-Z">
@@ -939,12 +955,16 @@ export default function App() {
             <div className="rectangle-7" />
             <img className="rectangle-L" alt="Rectangle" src="rectangle-32.svg" />
           </div>
-          
+
           <div className="overlap-A">
-            <div className="text-wrapper-18">Drivers</div>
-            <div className="text-wrapper-19">Schedule</div>
-            <div className="text-wrapper-20">About</div>
+            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
+              <div className="text-wrapper-18">Drivers</div>
+            </a>
+            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
+              <div className="text-wrapper-19">Schedule</div>
+            </a>
             <div className="text-wrapper-21">Features</div>
+            <div className="text-wrapper-20">About</div>
             <div className="desktopMenuLine1" />
             <div className="desktopMenuLine2" />
             <div className="desktopMenuLine3" />

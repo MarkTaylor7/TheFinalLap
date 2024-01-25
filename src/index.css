@@ -43,7 +43,7 @@ body {
 
 .iphone .div {
   background-color: #000000;
-  min-height: 2178px;
+  min-height: 2478px;
   /*overflow hides or reveals the extra feature cards*/
   overflow: hidden;
   position: relative;
@@ -369,7 +369,7 @@ body {
   height: 195px;
   left: 0;
   position: absolute;
-  top: 1986px;
+  top: 2286px;
   width: 100%;
 }
 
@@ -579,6 +579,14 @@ body {
   width: 184px;
 }
 
+.iphone .footer-text-wrapper-1:hover,
+.iphone .footer-text-wrapper-2:hover,
+.iphone .footer-text-wrapper-3:hover,
+.iphone .footer-text-wrapper-4:hover {
+  color: #87C75F;
+}
+
+
 .iphone .footer-text-wrapper-5 {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
@@ -712,6 +720,10 @@ body {
   width: 184px;
 }
 
+.iphone .text-wrapper-18:hover {
+  color:#87C75F;
+}
+
 .iphone .text-wrapper-19 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
@@ -724,6 +736,10 @@ body {
   position: absolute;
   top: 56.09%;
   width: 184px;
+}
+
+.iphone .text-wrapper-19:hover {
+  color:#87C75F;
 }
 
 .iphone .text-wrapper-20 {
@@ -740,6 +756,10 @@ body {
   width: 184px;
 }
 
+.iphone .text-wrapper-20:hover {
+  color:#87C75F;
+}
+
 .iphone .text-wrapper-21 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
@@ -752,6 +772,10 @@ body {
   position: absolute;
   top: 72.79%;
   width: 184px;
+}
+
+.iphone .text-wrapper-21:hover {
+  color:#87C75F;
 }
 
 .iphone .desktopMenuLine1 {
