@@ -96,8 +96,11 @@ export default function App() {
     };
 
     const handleResizeUp = () => {
-      if (window.innerWidth < 480) {
+      if (window.innerWidth < 480 && showCluster1 == true
+          && showCluster2 == true
+          && showCluster3 == true) {
         handleNarrowerThan480();
+        console.log("it works");
       }
     };
 
