@@ -99,7 +99,7 @@ export default function App() {
 
     const handleResizeUp = () => {
       let currentWidth = window.innerWidth;
-        if (recordedWidth!==currentWidth) {
+        if (recordedWidth !== currentWidth) {
           if (window.innerWidth < 480) {
             handleNarrowerThan480();
           }
