@@ -1187,10 +1187,9 @@ export default function App() {
             </div>
           </div>
           <div className="dropdown-container">
-            
             {/*<div className="text-wrapper-14">Select a circuit:</div>*/}
             <select id="dropdown" value={selectedRace} onChange={handleDropdownChange}>
-              <option value="">Select a Circuit</option>
+              <option value="">Select Circuit</option>
               {dropdownOptions.map((option) => (
                 <option key={option.value} value={option.value}>
                   {option.label}
@@ -1202,7 +1201,6 @@ export default function App() {
             <div>
               <p>Selected Option: {selectedRace}</p>
             </div>
-            
           </div>
         </div>
       </div>

@@ -847,8 +847,8 @@ body {
 
 @media screen and (max-width: 480px) {
   .iphone .overlap-table {
-    left: 1%;
-    width: 98%;
+    left: 2%;
+    width: 96%;
     top: 900px;
     position: absolute;
   }
@@ -1437,11 +1437,20 @@ body {
 
 
 .dropdown-container {
-  left: 3.8%;
+  left: 2%;
   position: relative;
-  top: 800px;
-  width: 93.6%;
+  top: 815px;
+  width: 96%;
   height: 100px;
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .dropdown-container {
+    left: 17.22%;
+    width: 21.74%;
+    top: 900px;
+    position: relative;
+  }
 }
 
 select {
@@ -1456,13 +1465,20 @@ select {
   font-weight: 400;
   letter-spacing: 0.54px;
   line-height: 25.6px;
-  padding: 0.675em 6em 0.675em 1em;
-  background-color: #ffffff1c;
-  border: 1.5px solid #87C75F;
-  border-radius: 4px;
+  padding: 0.2em 2em 0.2em 1em;
+  background-color: #17181a;
+  border: 1.5px solid #606367;
+  
   color: #ffffff;
   cursor: pointer;
   top: -25px;
+  z-index: 1;
+}
+
+.dropdown-container select:focus {
+  border-style: inset;
+   outline-color: #87C75F;
+  
 }
 
 .dropdown-container::before,
@@ -1478,17 +1494,23 @@ select {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
   border-bottom: var(--size) solid white;
-  top: 37%;
+  top: 38%;
 }
 
 .dropdown-container::after {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
   border-top: var(--size) solid white;
-  top: 52%;
+  top: 53%;
 }
 
-
+.iphone .toggleButton4 {
+  left: 0;
+  position: absolute;
+  top: 24px;
+  width: 100%;
+  z-index: 0;
+}
 
 label {
   display: block;
