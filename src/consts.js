@@ -238,7 +238,7 @@ const balancedCircuits = {
     "Miami",
     "Red Bull Ring",
     "Silverstone",
-    "Circuit of the Americas",
+    "COTA",
     "Interlagos",
     "Yas Marina",
     "Shanghai",
@@ -274,6 +274,33 @@ export const circuitTypes = [
   highDownforceCircuits,
   balancedCircuits,
   powerCircuits,
+];
+
+export const dropdownOptions = [
+  { value: 'bahrain', label: 'Sakhir (Bahrain)' },
+  { value: 'jeddah', label: 'Jeddah (Saudi Arabia)' },
+  { value: 'albert_park', label: 'Albert Park (Australia)' },
+  { value: 'suzuka', label: 'Suzuka (Japan)' },
+  { value: 'shanghai', label: 'Shanghai (China)' },
+  { value: 'miami', label: 'Miami (USA)' },
+  { value: 'imola', label: 'Imola (Italy)' },
+  { value: 'monaco', label: 'Monaco' },
+  { value: 'villeneuve', label: 'Montreal (Canada)' },
+  { value: 'catalunya', label: 'Barcelona (Spain)' },
+  { value: 'red_bull_ring', label: 'Red Bull Ring (Austria)' },
+  { value: 'silverstone', label: 'Silverstone (Great Britain)' },
+  { value: 'hungaroring', label: 'Hungaroring (Hungary)' },
+  { value: 'spa', label: 'Spa-Francorchamps (Belgium)' },
+  { value: 'zandvoort', label: 'Zandvoort (Netherlands)' },
+  { value: 'monza', label: 'Monza (Italy)' },
+  { value: 'baku', label: 'Baku (Azerbaijan)' },
+  { value: 'marina_bay', label: 'Marina Bay (Singapore)' },
+  { value: 'americas', label: 'Circuit of the Americas (USA)' },
+  { value: 'rodriguez', label: 'Mexico City (Mexico)' },
+  { value: 'interlagos', label: 'Interlagos (Brazil)' },
+  { value: 'vegas', label: 'Las Vegas (USA)' },
+  { value: 'losail', label: 'Losail (Qatar)' },
+  { value: 'yas_marina', label: 'Yas Marina (UAE)' },
 ];
 
 export const raceTitles = [

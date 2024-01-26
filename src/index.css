@@ -1434,6 +1434,69 @@ body {
   width: 312px;
 }
 
+
+
+.dropdown-container {
+  left: 3.8%;
+  position: relative;
+  top: 800px;
+  width: 93.6%;
+  height: 100px;
+}
+
+select {
+  appearance: none;
+  /* safari */
+  -webkit-appearance: none;
+  /* other styles for aesthetics */
+  width: 100%;
+  height: 45px;
+  font-family: "Roboto", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.54px;
+  line-height: 25.6px;
+  padding: 0.675em 6em 0.675em 1em;
+  background-color: #ffffff1c;
+  border: 1.5px solid #87C75F;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  top: -25px;
+}
+
+.dropdown-container::before,
+.dropdown-container::after {
+  --size: 0.3rem;
+  position: absolute;
+  content: "";
+  right: 1rem;
+  pointer-events: none;
+}
+
+.dropdown-container::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid white;
+  top: 37%;
+}
+
+.dropdown-container::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid white;
+  top: 52%;
+}
+
+
+
+label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 8px;
+  border: 2px solid red;
+}
+
 @media screen and (max-width: 480px) {
   .iphone .overlap-8,
   .iphone .overlap-9,

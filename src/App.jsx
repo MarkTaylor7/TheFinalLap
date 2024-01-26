@@ -15,7 +15,7 @@ import {
   createSeasonResultsProps
 } from "./utilities";
 
-import { circuitTypes, raceTitles, allCareerData } from "./consts";
+import { circuitTypes, raceTitles, allCareerData, dropdownOptions } from "./consts";
 import { flags } from "./Flags";
 import siteLogo from "./assets/siteLogo.svg";
 import siteLogoDesktop from "./assets/siteLogoDesktop.svg";
@@ -59,6 +59,115 @@ export default function App() {
   const [nextRaceTypeDataFetched, setNextRaceTypeDataFetched] = useState(false);
   const [tableDataPopulated, setTableDataPopulated] = useState(false);
   const [allTableDataPopulated, setAllTableDataPopulated] = useState(false);
+  const [selectedRace, setselectedRace] = useState('');
+
+  // Event handler for dropdown change
+  const handleDropdownChange = (event) => {
+    const selectedValue = event.target.value;
+    setselectedRace(selectedValue);
+
+    switch (selectedValue) {
+      case 'bahrain':
+        setNextRace('bahrain');
+        setNextRaceType('Power');
+        break;
+      case 'jeddah':
+        setNextRace('jeddah');
+        setNextRaceType('Power');
+        break;
+      case 'albert_park':
+        setNextRace('albert_park');
+        setNextRaceType('High Downforce');
+        break;
+      case 'suzuka':
+        setNextRace('suzuka');
+        setNextRaceType('High Downforce');
+        break;
+      case 'shanghai':
+        setNextRace('shanghai');
+        setNextRaceType('Balanced');
+        break;
+      case 'miami':
+        setNextRace('miami');
+        setNextRaceType('Balanced');
+        break;
+      case 'imola':
+        setNextRace('imola');
+        setNextRaceType('Balanced');
+        break;
+      case 'monaco':
+        setNextRace('monaco');
+        setNextRaceType('High Downforce');
+        break;
+      case 'villeneuve':
+        setNextRace('villeneuve');
+        setNextRaceType('Power');
+        break;
+      case 'catalunya':
+        setNextRace('catalunya');
+        setNextRaceType('High Downforce');
+        break;
+      case 'red_bull_ring':
+        setNextRace('red_bull_ring');
+        setNextRaceType('Balanced');
+        break;
+      case 'silverstone':
+        setNextRace('silverstone');
+        setNextRaceType('Balanced');
+        break;
+      case 'hungaroring':
+        setNextRace('hungaroring');
+        setNextRaceType('High Downforce');
+        break;
+      case 'spa':
+        setNextRace('spa');
+        setNextRaceType('Power');
+        break;
+      case 'zandvoort':
+        setNextRace('zandvoort');
+        setNextRaceType('High Downforce');
+        break;
+      case 'monza':
+        setNextRace('monza');
+        setNextRaceType('Power');
+        break;
+      case 'baku':
+        setNextRace('baku');
+        setNextRaceType('Power');
+        break;
+      case 'marina_bay':
+        setNextRace('marina_bay');
+        setNextRaceType('High Downforce');
+        break;
+      case 'americas':
+        setNextRace('americas');
+        setNextRaceType('Balanced');
+        break;
+      case 'rodriguez':
+        setNextRace('rodriguez');
+        setNextRaceType('High Downforce');
+        break;
+      case 'interlagos':
+        setNextRace('interlagos');
+        setNextRaceType('Balanced');
+        break;
+      case 'vegas':
+        setNextRace('vegas');
+        setNextRaceType('Power');
+        break;
+      case 'losail':
+        setNextRace('losail');
+        setNextRaceType('High Downforce');
+        break;
+      case 'yas_marina':
+        setNextRace('yas_marina');
+        setNextRaceType('Balanced');
+        break;
+      default:
+        break;
+    }
+  };
+  
 
   const [line5Style, setLine5Style] = useState({
     width: 113.20,
@@ -97,8 +206,6 @@ export default function App() {
       setLine8Style({height: 0, border: '1.50px #405E2C solid'});
     };
 
-
-    {/****Got to do something with this to get auto detect on page load working again*/}
     const handleInitialScreenWidth = () => {
       if (window.innerWidth < 480) {
         handleNarrowerThan480();
@@ -1078,6 +1185,24 @@ export default function App() {
               <div className="line-8" style={line8Style}></div>
               <img className="toggleDropArrow-3" alt="Arrow pointed down" src={toggleDropArrow} />
             </div>
+          </div>
+          <div className="dropdown-container">
+            
+            {/*<div className="text-wrapper-14">Select a circuit:</div>*/}
+            <select id="dropdown" value={selectedRace} onChange={handleDropdownChange}>
+              <option value="">Select a Circuit</option>
+              {dropdownOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+
+            {/* Display selected option and states */}
+            <div>
+              <p>Selected Option: {selectedRace}</p>
+            </div>
+            
           </div>
         </div>
       </div>
