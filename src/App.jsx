@@ -82,6 +82,8 @@ export default function App() {
           showCluster2, setShowCluster2,
           showCluster3, setShowCluster3 } = useContext(MyContext);
 
+  let recordedWidth = window.innerWidth;
+          
   useEffect(() => {
     const handleNarrowerThan480 = () => {
       setShowCluster1(true);
@@ -96,12 +98,12 @@ export default function App() {
     };
 
     const handleResizeUp = () => {
-      if (window.innerWidth < 480 && showCluster1 == true
-          && showCluster2 == true
-          && showCluster3 == true) {
-        handleNarrowerThan480();
-        console.log("it works");
-      }
+      let currentWidth = window.innerWidth;
+        if (recordedWidth!==currentWidth) {
+          if (window.innerWidth < 480) {
+            handleNarrowerThan480();
+          }
+        }
     };
 
     handleResizeUp();
