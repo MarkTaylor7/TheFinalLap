@@ -97,6 +97,16 @@ export default function App() {
       setLine8Style({height: 0, border: '1.50px #405E2C solid'});
     };
 
+
+    {/****Got to do something with this to get auto detect on page load working again*/}
+    const handleInitialScreenWidth = () => {
+      if (window.innerWidth < 480) {
+        handleNarrowerThan480();
+      }
+    };
+
+    handleInitialScreenWidth();
+
     const handleResizeUp = () => {
       let currentWidth = window.innerWidth;
         if (recordedWidth !== currentWidth) {
