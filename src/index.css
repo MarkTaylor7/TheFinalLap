@@ -1528,6 +1528,127 @@ label {
   }
 }
 
+.box {
+  height: 368px;
+  position: relative;
+  width: 250px;
+  top: 84px;
+  right: 0;
+}
+
+.box .iphone-menu {
+  height: 368px;
+  right: 0;
+  position: fixed;
+  
+  width: 249px;
+ 
+}
+
+.box .overlap-group {
+  background-color: #1c1c1c;
+  height: 368px;
+  right: 0;
+  position: absolute;
+  top: 0;
+  width: 249px;
+  border: 1px solid #D9D9D9
+}
+
+.box .text-wrapper {
+  color: #ffffff;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 22px;
+  font-weight: 400;
+  height: 41px;
+  left: 53px;
+  letter-spacing: 0.88px;
+  line-height: 19.8px;
+  position: absolute;
+  top: 25px;
+  width: 199px;
+}
+
+.box .divX {
+  color: #ffffff;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 22px;
+  font-weight: 400;
+  height: 41px;
+  left: 53px;
+  letter-spacing: 0.88px;
+  line-height: 19.8px;
+  position: absolute;
+  top: 117px;
+  width: 199px;
+}
+
+.box .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 22px;
+  font-weight: 400;
+  height: 41px;
+  left: 53px;
+  letter-spacing: 0.88px;
+  line-height: 19.8px;
+  position: absolute;
+  top: 301px;
+  width: 199px;
+}
+
+.box .text-wrapper-3 {
+  color: #ffffff;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 22px;
+  font-weight: 400;
+  height: 41px;
+  left: 53px;
+  letter-spacing: 0.88px;
+  line-height: 19.8px;
+  position: absolute;
+  top: 209px;
+  width: 199px;
+}
+
+.box .mobileMenuLine1 {
+  height: 0px;
+  left: 6.4%;
+  object-fit: cover;
+  position: absolute;
+  top: 90px;
+  width: 89%;
+  border: 1px solid rgba(217, 217, 217, 0.41);
+}
+  
+.box .mobileMenuLine2 {
+  height: 0px;
+  left: 6.4%;
+  object-fit: cover;
+  position: absolute;
+  top: 183px;
+  width: 89%;
+  border: 1px solid rgba(217, 217, 217, 0.41);
+}
+
+.box .mobileMenuLine3 {
+  height: 0px;
+  left: 6.4%;
+  object-fit: cover;
+  position: absolute;
+  top: 274px;
+  width: 89%;
+  border: 1px solid rgba(217, 217, 217, 0.41);
+}
+
+.box .line-3 {
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: -2px;
+  width: 389px;
+}
+
 
 
 button {

@@ -61,6 +61,8 @@ export default function App() {
   const [allTableDataPopulated, setAllTableDataPopulated] = useState(false);
   const [selectedRace, setselectedRace] = useState('');
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   // Event handler for dropdown change
   const handleDropdownChange = (event) => {
     const selectedValue = event.target.value;
@@ -964,6 +966,15 @@ export default function App() {
   useEffect(() => {
     console.log(racerData)
   }, [racerData]);
+  
+  
+  
+  
+  
+  // Function to toggle the menu's visibility
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <>
@@ -984,7 +995,28 @@ export default function App() {
               <div className="rectangle-2" />
               <p className="pDesktop">Live F1 form guide and driver data lets you predict results with confidence.</p>
               <div className="text-wrapper-Desktop">The Final Lap</div>
-              <div className="menuTextWrapper">Menu</div>
+              <div className="menuTextWrapper" onClick={toggleMenu}>Menu</div>
+
+              <div className="box"> 
+                <div className="iphone-menu">
+                  {isMenuOpen && (
+                    <div className="overlap-group">
+                    <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
+                      <div className="text-wrapper">Drivers</div>
+                    </a>
+                    <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
+                      <div className="divX">Schedule</div>
+                    </a>
+                    <div className="text-wrapper-2">About</div>
+                    <div className="text-wrapper-3">Features</div>
+                    <div className="mobileMenuLine1" />
+                    <div className="mobileMenuLine2" />
+                    <div className="mobileMenuLine3" />
+                  </div>
+                  )}
+                </div>
+              </div>
+
               <div className="groupMobile">
                 <div className="overlap-2">
                   <p className="p">Live F1 form guide and driver data lets you predict results with confidence.</p>
