@@ -996,8 +996,8 @@ export default function App() {
               <div className="rectangle-2" />
               <p className="pDesktop">Live F1 form guide and driver data lets you predict results with confidence.</p>
               <div className="text-wrapper-Desktop">The Final Lap</div>
-              <div className="menuTextWrapper" onClick={toggleMenu}>Menu</div>
-
+              <div className="menuTextWrapper" onClick={toggleMenu} input type="checkbox">Menu</div>
+              <input type="checkbox" className="openSidebarMenu" id="openSidebarMenu"></input>
               <div className="box"> 
                 <div className="iphone-menu">
                   {isMenuOpen && (

@@ -1540,18 +1540,29 @@ label {
   height: 368px;
   right: 0;
   position: fixed;
-  
-  width: 249px;
- 
+  width: 250px;
+  z-index: 1;
+  transform: translateX(0px);
+    transition: transform 250ms ease-in-out;
+}
+
+input[type="checkbox"]:checked ~ .box .iphone-menu {
+  transform: translateX(0);
+}
+
+input[type=checkbox] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
 }
 
 .box .overlap-group {
   background-color: #1c1c1c;
-  height: 368px;
+  height: 388px;
   right: 0;
   position: absolute;
   top: 0;
-  width: 249px;
+  width: 250px;
   border: 1px solid #D9D9D9
 }
 
@@ -1561,11 +1572,11 @@ label {
   font-size: 22px;
   font-weight: 400;
   height: 41px;
-  left: 53px;
+  left: 15%;
   letter-spacing: 0.88px;
   line-height: 19.8px;
   position: absolute;
-  top: 25px;
+  top: 10%;
   width: 199px;
 }
 
@@ -1575,11 +1586,11 @@ label {
   font-size: 22px;
   font-weight: 400;
   height: 41px;
-  left: 53px;
+  left: 15%;
   letter-spacing: 0.88px;
   line-height: 19.8px;
   position: absolute;
-  top: 117px;
+  top: 36%;
   width: 199px;
 }
 
@@ -1589,11 +1600,11 @@ label {
   font-size: 22px;
   font-weight: 400;
   height: 41px;
-  left: 53px;
+  left: 15%;
   letter-spacing: 0.88px;
   line-height: 19.8px;
   position: absolute;
-  top: 301px;
+  top: 85%;
   width: 199px;
 }
 
@@ -1603,11 +1614,11 @@ label {
   font-size: 22px;
   font-weight: 400;
   height: 41px;
-  left: 53px;
+  left: 15%;
   letter-spacing: 0.88px;
   line-height: 19.8px;
   position: absolute;
-  top: 209px;
+  top: 60%;
   width: 199px;
 }
 
@@ -1616,7 +1627,7 @@ label {
   left: 6.4%;
   object-fit: cover;
   position: absolute;
-  top: 90px;
+  top: 25%;
   width: 89%;
   border: 1px solid rgba(217, 217, 217, 0.41);
 }
@@ -1626,7 +1637,7 @@ label {
   left: 6.4%;
   object-fit: cover;
   position: absolute;
-  top: 183px;
+  top: 50%;
   width: 89%;
   border: 1px solid rgba(217, 217, 217, 0.41);
 }
@@ -1636,7 +1647,7 @@ label {
   left: 6.4%;
   object-fit: cover;
   position: absolute;
-  top: 274px;
+  top: 75%;
   width: 89%;
   border: 1px solid rgba(217, 217, 217, 0.41);
 }
