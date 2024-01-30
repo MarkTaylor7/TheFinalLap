@@ -513,7 +513,7 @@ export default function App() {
               tableHeading.lastFiveRaces[i] = raceTitles[z].raceHeader
             }
           }
-          tableHeading.lastFiveRaces[i] = tableHeading.lastFiveRaces[i].concat(" ", lastFiveRaceResults[i].season)
+          tableHeading.lastFiveRaces[i] = tableHeading.lastFiveRaces[i].concat("\n", lastFiveRaceResults[i].season)
         }
 
         for (let i = 0; i < tableHeading.nextRaceResults.length; i++) {
@@ -523,7 +523,8 @@ export default function App() {
               tableHeading.nextRaceResults[i] = raceTitles[z].raceHeader
             }
           }
-          tableHeading.nextRaceResults[i] = tableHeading.nextRaceResults[i].concat(" ", nextRaceHistory[i].season)
+          tableHeading.nextRaceResults[i] = tableHeading.nextRaceResults[i].concat("\n", nextRaceHistory[i].season)
+          console.log(tableHeading.nextRaceResults[i]);
         }
 
         for (let i = 0; i < tableHeading.nextRaceTypeResults.length; i++) {
@@ -533,7 +534,7 @@ export default function App() {
               tableHeading.nextRaceTypeResults[i] = raceTitles[z].raceHeader
             }
           }
-          tableHeading.nextRaceTypeResults[i] = tableHeading.nextRaceTypeResults[i].concat(" ", nextRaceTypeHistory[i].season)
+          tableHeading.nextRaceTypeResults[i] = tableHeading.nextRaceTypeResults[i].concat("\n", nextRaceTypeHistory[i].season)
         }
 
         for (let i = 0; i < tableHeading.lastFiveRacesReports.length; i++) {
