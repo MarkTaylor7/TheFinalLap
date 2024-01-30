@@ -39,6 +39,7 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
           showCluster3, setShowCluster3 } = useContext(MyContext);
 
   const isSmallScreen = useMediaQuery('(max-width:480px)');
+  const isVerySmallScreen = useMediaQuery('(max-width:410px)');
 
     return (
       boolean4 == false ? cellLoading :
@@ -65,43 +66,43 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
                     key={i} sx = {{ overflow: 'auto' }}
                     >
                       <TableCell sx = {{ bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367', borderLeft: '1px solid #606367', top: "60px" }}></TableCell>
-                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60 }}>{row.fiveRacesAgo}</TableCell>}
-                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60  }}>{row.fourRacesAgo}</TableCell>}
-                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60  }}>{row.threeRacesAgo}</TableCell>}
-                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60  }}>{row.twoRacesAgo}</TableCell>}
-                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367', top: "60px", minWidth: isSmallScreen ? 1/5 : 60 }}>{row.oneRaceAgo}</TableCell>}
-                      {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60 }}>{row.nextRace1}</TableCell>}
-                      {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60  }}>{row.nextRace2}</TableCell>}
-                      {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60  }}>{row.nextRace3}</TableCell>}
-                      {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60  }}>{row.nextRace4}</TableCell>}
-                      {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367', top: "60px", minWidth: isSmallScreen ? 1/5 : 60 }}>{showCluster2 && row.nextRace5}</TableCell>}
-                      {showCluster3 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60  }}>{row.nextRaceType1}</TableCell>}
-                      {showCluster3 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60  }}>{row.nextRaceType2}</TableCell>}
-                      {showCluster3 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60  }}>{row.nextRaceType3}</TableCell>}
-                      {showCluster3 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60  }}>{row.nextRaceType4}</TableCell>}
-                      {showCluster3 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", minWidth: isSmallScreen ? 1/5 : 60  }}>{row.nextRaceType5}</TableCell>}
+                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65 }}>{row.fiveRacesAgo}</TableCell>}
+                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65  }}>{row.fourRacesAgo}</TableCell>}
+                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65  }}>{row.threeRacesAgo}</TableCell>}
+                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65  }}>{row.twoRacesAgo}</TableCell>}
+                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367', top: "60px", width: isVerySmallScreen ? 1/5 : 65 }}>{row.oneRaceAgo}</TableCell>}
+                      {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65 }}>{row.nextRace1}</TableCell>}
+                      {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65  }}>{row.nextRace2}</TableCell>}
+                      {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65  }}>{row.nextRace3}</TableCell>}
+                      {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65  }}>{row.nextRace4}</TableCell>}
+                      {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367', top: "60px", width: isVerySmallScreen ? 1/5 : 65 }}>{showCluster2 && row.nextRace5}</TableCell>}
+                      {showCluster3 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65  }}>{row.nextRaceType1}</TableCell>}
+                      {showCluster3 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65  }}>{row.nextRaceType2}</TableCell>}
+                      {showCluster3 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65  }}>{row.nextRaceType3}</TableCell>}
+                      {showCluster3 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65  }}>{row.nextRaceType4}</TableCell>}
+                      {showCluster3 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "60px", width: isVerySmallScreen ? 1/5 : 65  }}>{row.nextRaceType5}</TableCell>}
                     </TableRow>
                   ))}
                 {data2.map((row, i) => (
                 <TableRow
                 key={i} sx = {{ overflow: 'auto', bgcolor: "#17181a" }} 
                 >
-                  <TableCell align="left" sx = {{ color: "#ffffff", bgcolor: "#17181a", borderBottom: '1px solid #606367', borderRight: '1px solid #606367', borderLeft: '1px solid #606367', top: "112px", px: isSmallScreen ? 0.5 : 1, fontSize: isSmallScreen ? '11px' : '14px'}}>Driver</TableCell>
-                  {showCluster1 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.fiveRacesAgoReport}  target="_blank" rel="noopener noreferrer">{row.fiveRacesAgo}</a></TableCell>}
-                  {showCluster1 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.fourRacesAgoReport} target="_blank" rel="noopener noreferrer">{row.fourRacesAgo}</a></TableCell>}
-                  {showCluster1 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.threeRacesAgoReport} target="_blank" rel="noopener noreferrer">{row.threeRacesAgo}</a></TableCell>}
-                  {showCluster1 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.twoRacesAgoReport} target="_blank" rel="noopener noreferrer">{row.twoRacesAgo}</a></TableCell>}
-                  {showCluster1 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', borderRight: '1px solid #606367', top: "112px" }}><a href={row.oneRaceAgoReport} target="_blank" rel="noopener noreferrer">{row.oneRaceAgo}</a></TableCell>}
-                  {showCluster2 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRace1Report} target="_blank" rel="noopener noreferrer">{row.nextRace1}</a></TableCell>}
-                  {showCluster2 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRace2Report} target="_blank" rel="noopener noreferrer">{row.nextRace2}</a></TableCell>}
-                  {showCluster2 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRace3Report} target="_blank" rel="noopener noreferrer">{row.nextRace3}</a></TableCell>}
-                  {showCluster2 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRace4Report} target="_blank" rel="noopener noreferrer">{row.nextRace4}</a></TableCell>}
-                  {showCluster2 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', borderRight: '1px solid #606367', top: "112px" }}><a href={row.nextRace5Report} target="_blank" rel="noopener noreferrer">{row.nextRace5}</a></TableCell>}
-                  {showCluster3 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRaceType1Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType1}</a></TableCell>}
-                  {showCluster3 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRaceType2Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType2}</a></TableCell>}
-                  {showCluster3 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRaceType3Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType3}</a></TableCell>}
-                  {showCluster3 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRaceType4Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType4}</a></TableCell>}
-                  {showCluster3 && <TableCell align="center" sx={{ px: 0.1, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRaceType5Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType5}</a></TableCell>}
+                  <TableCell align="left" sx = {{ color: "#ffffff", bgcolor: "#17181a", borderBottom: '1px solid #606367', borderRight: '1px solid #606367', borderLeft: '1px solid #606367', top: "112px", px: isSmallScreen ? 0.5 : 1, fontSize: isSmallScreen ? '14px' : '14px'}}>Driver</TableCell>
+                  {showCluster1 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.fiveRacesAgoReport}  target="_blank" rel="noopener noreferrer">{row.fiveRacesAgo}</a></TableCell>}
+                  {showCluster1 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.fourRacesAgoReport} target="_blank" rel="noopener noreferrer">{row.fourRacesAgo}</a></TableCell>}
+                  {showCluster1 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.threeRacesAgoReport} target="_blank" rel="noopener noreferrer">{row.threeRacesAgo}</a></TableCell>}
+                  {showCluster1 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.twoRacesAgoReport} target="_blank" rel="noopener noreferrer">{row.twoRacesAgo}</a></TableCell>}
+                  {showCluster1 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', borderRight: '1px solid #606367', top: "112px" }}><a href={row.oneRaceAgoReport} target="_blank" rel="noopener noreferrer">{row.oneRaceAgo}</a></TableCell>}
+                  {showCluster2 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRace1Report} target="_blank" rel="noopener noreferrer">{row.nextRace1}</a></TableCell>}
+                  {showCluster2 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRace2Report} target="_blank" rel="noopener noreferrer">{row.nextRace2}</a></TableCell>}
+                  {showCluster2 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRace3Report} target="_blank" rel="noopener noreferrer">{row.nextRace3}</a></TableCell>}
+                  {showCluster2 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRace4Report} target="_blank" rel="noopener noreferrer">{row.nextRace4}</a></TableCell>}
+                  {showCluster2 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', borderRight: '1px solid #606367', top: "112px" }}><a href={row.nextRace5Report} target="_blank" rel="noopener noreferrer">{row.nextRace5}</a></TableCell>}
+                  {showCluster3 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRaceType1Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType1}</a></TableCell>}
+                  {showCluster3 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRaceType2Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType2}</a></TableCell>}
+                  {showCluster3 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRaceType3Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType3}</a></TableCell>}
+                  {showCluster3 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRaceType4Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType4}</a></TableCell>}
+                  {showCluster3 && <TableCell align="center" sx={{ px: 0.5, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "112px" }}><a href={row.nextRaceType5Report} target="_blank" rel="noopener noreferrer">{row.nextRaceType5}</a></TableCell>}
                 </TableRow>
                 ))}
               </TableHead>
@@ -111,7 +112,7 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
                     key={i}
                     //sx={{ height: 50, overflow: 'auto' }}
                   >
-                    <TableCell component="th" scope="row" align="left" variant={isSmallScreen ? 'body2' : 'body1'} sx = {{px: isSmallScreen ? 0.5 : 1, fontSize: isSmallScreen ? '11px' : '14px', whiteSpace: 'nowrap', height: '100%', minWidth: 0, bgcolor: getBackgroundColor(row.name), color: getColor(row.name), borderBottom: '1px solid #606367', borderRight: '1px solid #606367', borderLeft: '1px solid #606367' }} >
+                    <TableCell component="th" scope="row" align="left" variant={isSmallScreen ? 'body2' : 'body1'} sx = {{px: isSmallScreen ? 0.5 : 1, fontSize: isSmallScreen ? '11px' : '14px', whiteSpace: 'nowrap', height: '100%', width: isSmallScreen ? 1/8 : 1/13, bgcolor: getBackgroundColor(row.name), color: getColor(row.name), borderBottom: '1px solid #606367', borderRight: '1px solid #606367', borderLeft: '1px solid #606367' }} >
                       <div style={{ fontFamily: 'Roboto' }}>{row.name.split(' ')[0]}</div>
                       <div>{row.name.split(' ')[1]}</div>
                     </TableCell>
