@@ -1536,25 +1536,21 @@ label {
   right: 0;
 }
 
-.box .iphone-menu {
+.iphone-menu {
   height: 368px;
-  right: 0;
+  right: -250px;
   position: fixed;
   width: 250px;
   z-index: 1;
-  transform: translateX(0px);
-    transition: transform 250ms ease-in-out;
+  transition: right 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-input[type="checkbox"]:checked ~ .box .iphone-menu {
-  transform: translateX(0);
+.iphone-menu.open {
+  right: 0;
+  transition: right 0.3s ease-in-out;
 }
 
-input[type=checkbox] {
-  transition: all 0.3s;
-  box-sizing: border-box;
-  display: none;
-}
 
 .box .overlap-group {
   background-color: #1c1c1c;

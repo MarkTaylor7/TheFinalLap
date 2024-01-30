@@ -61,7 +61,7 @@ export default function App() {
   const [allTableDataPopulated, setAllTableDataPopulated] = useState(false);
   const [selectedRace, setselectedRace] = useState('');
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   // Event handler for dropdown change
   const handleDropdownChange = (event) => {
@@ -974,7 +974,8 @@ export default function App() {
   
   // Function to toggle the menu's visibility
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setMenuOpen(!isMenuOpen);
+    console.log(isMenuOpen);
   };
 
   return (
@@ -996,10 +997,10 @@ export default function App() {
               <div className="rectangle-2" />
               <p className="pDesktop">Live F1 form guide and driver data lets you predict results with confidence.</p>
               <div className="text-wrapper-Desktop">The Final Lap</div>
-              <div className="menuTextWrapper" onClick={toggleMenu} input type="checkbox">Menu</div>
-              <input type="checkbox" className="openSidebarMenu" id="openSidebarMenu"></input>
+              <div className="menuTextWrapper" onClick={toggleMenu}>Menu</div>
+              
               <div className="box"> 
-                <div className="iphone-menu">
+                <div className={`iphone-menu ${isMenuOpen ? 'open' : ''}`}>
                   {isMenuOpen && (
                     <div className="overlap-group">
                     <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
