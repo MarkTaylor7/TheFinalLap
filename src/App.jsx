@@ -308,7 +308,6 @@ export default function App() {
     //Remove the line below after 2024 season starts to ensure no limit on number of drivers reported in table
     fullNames.length = 21;
     setNames(fullNames);
-    console.log(names);
 
     const driverIds = standings.map(function (element) {
       return `${element.Driver.driverId}`;
@@ -524,7 +523,6 @@ export default function App() {
             }
           }
           tableHeading.nextRaceResults[i] = tableHeading.nextRaceResults[i].concat("\n", nextRaceHistory[i].season)
-          console.log(tableHeading.nextRaceResults[i]);
         }
 
         for (let i = 0; i < tableHeading.nextRaceTypeResults.length; i++) {
@@ -974,8 +972,9 @@ export default function App() {
   
   // Function to toggle the menu's visibility
   const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-    console.log(isMenuOpen);
+    if (isMenuOpen) {
+      setMenuOpen(false)
+    } else {setMenuOpen(true)}
   };
 
   return (
@@ -997,12 +996,11 @@ export default function App() {
               <div className="rectangle-2" />
               <p className="pDesktop">Live F1 form guide and driver data lets you predict results with confidence.</p>
               <div className="text-wrapper-Desktop">The Final Lap</div>
-              <div className="menuTextWrapper" onClick={toggleMenu}>Menu</div>
+              <div className="menuTextWrapper" onClick={toggleMenu}>{isMenuOpen ? 'Close' : 'Menu'}</div>
               
               <div className="box"> 
-                <div className={`iphone-menu ${isMenuOpen ? 'open' : ''}`}>
-                  {isMenuOpen && (
-                    <div className="overlap-group">
+                <div className={`iphone-menu ${isMenuOpen ? 'open' : 'closed'}`}>
+                  (<div className="overlap-group">
                     <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
                       <div className="text-wrapper">Drivers</div>
                     </a>
@@ -1014,8 +1012,7 @@ export default function App() {
                     <div className="mobileMenuLine1" />
                     <div className="mobileMenuLine2" />
                     <div className="mobileMenuLine3" />
-                  </div>
-                  )}
+                  </div>)
                 </div>
               </div>
 

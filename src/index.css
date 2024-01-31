@@ -1531,19 +1531,30 @@ label {
 .box {
   height: 368px;
   position: relative;
-  width: 250px;
+  width: 50%;
   top: 84px;
   right: 0;
 }
 
+@media screen and (min-width: 480px) {
+  .iphone .box {
+    visibility: hidden;
+  }
+}
+
 .iphone-menu {
   height: 368px;
-  right: -250px;
+  right: -50%;
   position: fixed;
-  width: 250px;
+  width: 50%;
   z-index: 1;
   transition: right 0.3s ease-in-out;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.iphone-menu.closed {
+  right: -50%;
+  transition: right 0.3s ease-in-out;
 }
 
 .iphone-menu.open {
@@ -1551,14 +1562,13 @@ label {
   transition: right 0.3s ease-in-out;
 }
 
-
 .box .overlap-group {
   background-color: #1c1c1c;
   height: 388px;
   right: 0;
   position: absolute;
   top: 0;
-  width: 250px;
+  width: 100%;
   border: 1px solid #D9D9D9
 }
 
@@ -1620,31 +1630,31 @@ label {
 
 .box .mobileMenuLine1 {
   height: 0px;
-  left: 6.4%;
+  left: 6%;
   object-fit: cover;
   position: absolute;
   top: 25%;
-  width: 89%;
+  width: 88%;
   border: 1px solid rgba(217, 217, 217, 0.41);
 }
   
 .box .mobileMenuLine2 {
   height: 0px;
-  left: 6.4%;
+  left: 6%;
   object-fit: cover;
   position: absolute;
   top: 50%;
-  width: 89%;
+  width: 88%;
   border: 1px solid rgba(217, 217, 217, 0.41);
 }
 
 .box .mobileMenuLine3 {
   height: 0px;
-  left: 6.4%;
+  left: 6%;
   object-fit: cover;
   position: absolute;
   top: 75%;
-  width: 89%;
+  width: 88%;
   border: 1px solid rgba(217, 217, 217, 0.41);
 }
 
