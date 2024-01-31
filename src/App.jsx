@@ -15,7 +15,7 @@ import {
   createSeasonResultsProps
 } from "./utilities";
 
-import { circuitTypes, raceTitles, allCareerData, dropdownOptions } from "./consts";
+import { circuitTypes, raceTitles, allCareerData, dropdownOptions, nextRaceBanners } from "./consts";
 import { flags } from "./Flags";
 import siteLogo from "./assets/siteLogo.svg";
 import siteLogoDesktop from "./assets/siteLogoDesktop.svg";
@@ -45,6 +45,9 @@ export default function App() {
   const [driverTableData, setDriverTableData] = useState([]);
   const [eventList, setEventList] = useState([]);
   const [nextRace, setNextRace] = useState("");
+  const [nextEventName, setNextEventName] = useState("");
+  const [nextEventDate, setNextEventDate] = useState("");
+  const [nextEventCircuit, setNextEventCircuit] = useState("");
   const [nextCircuitProperName, setNextCircuitProperName] = useState("");
   const [nextRaceHistory, setNextRaceHistory] = useState([]);
   const [nextRaceType, setNextRaceType] = useState("");
@@ -328,11 +331,15 @@ export default function App() {
   }, [currentSeasonRaceResults]);
 
   // Set next race data
+
   useEffect(() => {
     /*May need to add an if statement to handle situations when lastFiveRaceResults.length <5. See state setter
     function for nextRaceTypeHistory*/
     if (lastFiveRaceResults.length === 5) {
       let nextCircuitId = "bahrain";
+      let nextCircuitEventName;
+      let nextCircuitEventDate = "03.02.2024";
+      let nextCircuitName;
       let nextCircuitType;
       /*Code below is temporarily commented out until the API updates its current season as "2024". Once update
        occurs, enable code below and remove "= "bahrain"" from let nextCircuitId. This will re-activate automated 
@@ -342,6 +349,7 @@ export default function App() {
       for (let i = 0; i < eventList.length; i++) {
         if (Number(eventList[i].round) === nextRound) {
           nextCircuitId = eventList[i].Circuit.circuitId;
+          nextCircuitEventDate = eventList[i].date;
         }
       }
       */
@@ -351,9 +359,19 @@ export default function App() {
           nextCircuitType = circuitTypes[i].circuitType;
         }
       }
-      
+
+      for (let i = 0; i < nextRaceBanners.length; i++) {
+        if (nextRaceBanners[i].circuitId == nextCircuitId) {
+          nextCircuitEventName = nextRaceBanners[i].raceName;
+          nextCircuitName = nextRaceBanners[i].circuit;
+        }
+      }
+
       setNextRace(nextCircuitId);
-      setNextRaceType(nextCircuitType); 
+      setNextEventName(nextCircuitEventName);
+      setNextEventDate(nextCircuitEventDate);
+      setNextEventCircuit(nextCircuitName);
+      setNextRaceType(nextCircuitType);
     }
   }, [eventList, lastFiveRaceResults]);
 
@@ -558,7 +576,6 @@ export default function App() {
 
         raceNames.push(tableHeading);
         setTableHeadingsContent(raceNames);
-        
       }
       mapRaceNamesToHeadings();
     };
@@ -964,9 +981,11 @@ export default function App() {
 
   useEffect(() => {
     console.log(racerData)
+    console.log(tableHeadingsContent)
   }, [racerData]);
   
-  
+  console.log(tableHeadingsContent)
+  console.log(eventList);
   
   
   
@@ -986,10 +1005,10 @@ export default function App() {
               <img className="nextRaceBox" alt="Rectangle" src={nextRaceBox} />
               <div className="text-wrapperA">Next Race</div>
               <div className="text-wrapperB">Date</div>
-              <div className="text-wrapperC">Country</div>
-              <div className="text-wrapperD">Italian GP (Monza)</div>
+              <div className="text-wrapperC">Circuit</div>
+              <div className="text-wrapperD">{nextCircuitTypeProperName}</div>
               <div className="text-wrapperE">09.03.2023</div>
-              <div className="text-wrapperF">Italy</div>
+              <div className="text-wrapperF">{nextRace}</div>
               <img className="heroBannerMobile" src={heroBannerMobile} alt="an image of a Williams F1 car in Monaco" />
               <img className="heroBannerDesktop" src={heroBannerDesktop} alt="an image of a Williams F1 car in Monaco" />
               <div className="rectangle" />
@@ -1020,6 +1039,14 @@ export default function App() {
                 <div className="overlap-2">
                   <p className="p">Live F1 form guide and driver data lets you predict results with confidence.</p>
                   <div className="text-wrapper-2">The Final Lap</div>
+                  <div className="nextRaceBoxMobile">
+                    <div className="text-wrapperAMobile">Next Race</div>
+                    <div className="text-wrapperBMobile">Date</div>
+                    <div className="text-wrapperCMobile">Circuit</div>
+                    <div className="text-wrapperDMobile">{nextEventName}</div>
+                    <div className="text-wrapperEMobile">{nextEventDate}</div>
+                    <div className="text-wrapperFMobile">{nextEventCircuit}</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1227,18 +1254,9 @@ export default function App() {
                 </option>
               ))}
             </select>
-
-            {/* Display selected option and states */}
-            <div>
-              <p>Selected Option: {selectedRace}</p>
-            </div>
           </div>
         </div>
       </div>
-  
-
-      
-      
     </>
   );
 }

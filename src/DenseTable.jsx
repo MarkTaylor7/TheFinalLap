@@ -57,8 +57,8 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
                 <TableRow>
                   <TableCell align="center" colSpan={1} sx={{ bgcolor: "#17181a", borderBottom: 0, borderTop: '1px solid #606367', borderRight: '1px solid #606367', borderLeft: '1px solid #606367' }}></TableCell>
                   {showCluster1 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', borderBottom: 0, borderRight: '1px solid #606367', whiteSpace: 'pre-wrap' }}>{"RECENT FORM\nTHE LAST 5 RACES"}</TableCell>}
-                  {showCluster2 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', borderBottom: 0, borderRight: '1px solid #606367', whiteSpace: 'pre-wrap' }}>{`CIRCUIT HISTORY\nRECENT RACES AT ${data4}`}</TableCell>}
-                  {showCluster3 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', borderBottom: 0, whiteSpace: 'pre-wrap' }}>{`CIRCUIT TYPE: ${data5}\nCIRCUITS SIMILAR TO ${data4}`}</TableCell>}
+                  {showCluster2 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', px: 0.5, borderBottom: 0, borderRight: '1px solid #606367', whiteSpace: 'pre-wrap' }}>{`CIRCUIT HISTORY\nRECENT RACES AT ${data4}`}</TableCell>}
+                  {showCluster3 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', px: 0.5, borderBottom: 0, whiteSpace: 'pre-wrap' }}>{`CIRCUIT TYPE: ${data5}\nCIRCUITS SIMILAR TO ${data4}`}</TableCell>}
 
                 </TableRow>
                   {data1.map((row, i) => (

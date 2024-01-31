@@ -182,6 +182,8 @@ body {
   border: 2px solid purple;
 }
 
+
+
 .iphone .text-wrapperA {
   color: #606367;
   font-family: "Bai Jamjuree", Helvetica;
@@ -322,13 +324,104 @@ body {
   width: 97.5%;
 }
 
+.iphone .nextRaceBoxMobile {
+  width: 100%;
+  top: 132px;
+  height: 57px;
+  position: absolute;
+  border: 1px solid green;
+}
+
+.iphone .text-wrapperAMobile {
+  color: #606367;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  height: 76px;
+  left: 5%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 15%;
+  width: 22%;
+}
+
+.iphone .text-wrapperBMobile {
+  color: #606367;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  height: 76px;
+  left: 40%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 15%;
+  width: 20%;
+}
+
+.iphone .text-wrapperCMobile {
+  color: #606367;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  height: 76px;
+  left: 70%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 15%;
+  width: 20%;
+}
+
+.iphone .text-wrapperDMobile {
+  color: #ffffff;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  height: 76px;
+  left: 5%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 60%;
+  width: 20%;
+}
+
+.iphone .text-wrapperEMobile {
+  color: #ffffff;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  height: 76px;
+  left: 40%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 60%;
+  width: 20%;
+}
+
+.iphone .text-wrapperFMobile {
+  color: #ffffff;
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  height: 76px;
+  left: 70%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 60%;
+  width: 20%;
+}
 
 .iphone .p {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 14px;
   font-weight: 400;
-  height: 86px;
+  height: 26px;
   left: 8.33%;
   letter-spacing: 0.42px;
   line-height: 19.9px;

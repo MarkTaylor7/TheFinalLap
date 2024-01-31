@@ -264,7 +264,7 @@ const powerCircuits = {
     "Jeddah",
     "Baku",
     "Montreal",
-    "Spa-Francorchamps",
+    "Spa",
     "Monza",
     "Las Vegas"
   ]
@@ -337,3 +337,30 @@ export const raceTitles = [
 {raceName: "Styrian Grand Prix", raceHeader: "STY"},
 {raceName: "United States Grand Prix", raceHeader: "USA"}
 ];
+
+export const nextRaceBanners = [
+  {circuitId: 'yas_marina',  raceName: 'Abu Dhabi GP', circuit: 'Yas Marina'},
+  {circuitId: 'albert_park', raceName: 'Australian GP', circuit: 'Albert Park'},
+  {circuitId: 'red_bull_ring', raceName: 'Austrian GP', circuit: 'Red Bull Ring'},
+  {circuitId: 'baku', raceName: 'Azerbaijan GP', circuit: 'Baku'},
+  {circuitId: 'bahrain', raceName: 'Bahrain GP', circuit: 'Sakhir'},
+  {circuitId: 'spa', raceName: 'Belgian GP', circuit: 'Spa-Francorchamps'},
+  {circuitId: 'villeneuve', raceName: 'Canadian GP', circuit: 'Montreal'},
+  {circuitId: 'shanghai', raceName: 'Chinese GP', circuit: 'Shanghai'},
+  {circuitId: 'imola', raceName: 'Emilia Romagna GP', circuit: 'Imola'},
+  {circuitId: 'catalunya', raceName: 'Spanish GP', circuit: 'Barcelona'},
+  {circuitId: 'silverstone', raceName: 'British GP', circuit: 'Silverstone'},
+  {circuitId: 'hungaroring', raceName: 'Hungarian GP', circuit: 'Hungaroring'},
+  {circuitId: 'monza', raceName: 'Italian GP', circuit: 'Monza'},
+  {circuitId: 'suzuka', raceName: 'Japanese GP', circuit: 'Suzuka'},
+  {circuitId: 'vegas', raceName: 'Las Vegas GP', circuit: 'Vegas'},
+  {circuitId: 'rodriguez', raceName: 'Mexico City GP', circuit: 'Mexico City'},
+  {circuitId: 'miami', raceName: 'Miami GP', circuit: 'Miami'},
+  {circuitId: 'monaco', raceName: 'Monaco GP', circuit: 'Monaco'},
+  {circuitId: 'zandvoort', raceName: 'Dutch GP', circuit: 'Zandvoort'},
+  {circuitId: 'losail', raceName: 'Qatar GP', circuit: 'Losail'},
+  {circuitId: 'jeddah', raceName: 'Saudi Arabian GP', circuit: 'Jeddah'},
+  {circuitId: 'marina_bay', raceName: 'Singapore GP', circuit: 'Marina Bay'},
+  {circuitId: 'interlagos', raceName: 'São Paulo GP', circuit: 'Interlagos'},
+  {circuitId: 'americas', raceName: 'United States GP', circuit: 'Circuit of the Americas'}
+]
