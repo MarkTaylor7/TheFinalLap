@@ -1544,21 +1544,21 @@ label {
 
 .iphone-menu {
   height: 368px;
-  right: -50%;
-  position: fixed;
-  width: 50%;
+  right: -200%;
+  position: absolute;
+  width: 100%;
   z-index: 1;
   transition: right 0.3s ease-in-out;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .iphone-menu.closed {
-  right: -50%;
+  right: -200%;
   transition: right 0.3s ease-in-out;
 }
 
 .iphone-menu.open {
-  right: 0;
+  right: -100%;
   transition: right 0.3s ease-in-out;
 }
 
