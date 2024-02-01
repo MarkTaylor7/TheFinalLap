@@ -114,7 +114,7 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
                   >
                     <TableCell component="th" scope="row" align="left" variant={isSmallScreen ? 'body2' : 'body1'} sx = {{px: isSmallScreen ? 0.5 : 1, fontSize: isSmallScreen ? '11px' : '14px', whiteSpace: 'nowrap', height: '100%', width: isSmallScreen ? 1/8 : 1/13, bgcolor: getBackgroundColor(row.name), color: getColor(row.name), borderBottom: '1px solid #606367', borderRight: '1px solid #606367', borderLeft: '1px solid #606367' }} >
                       <div style={{ fontFamily: 'Roboto' }}>{row.name.split(' ')[0]}</div>
-                      <div>{row.name.split(' ')[1]}</div>
+                      <div><b>{row.name.split(' ')[1]}</b></div>
                     </TableCell>
                     {showCluster1 && <TableCell sx = {{ px: 0.1, height: 1, bgcolor: getBackgroundColor(row.fiveRacesAgoRating), color: getColor(row.fiveRacesAgoRating), border: '1px solid #606367' }} align="center">{boolean1 == true ? row.fiveRacesAgo : cellLoading}</TableCell>}
                     {showCluster1 && <TableCell sx = {{ px: 0.1, height: 1, bgcolor: getBackgroundColor(row.fourRacesAgoRating), color: getColor(row.fourRacesAgoRating), border: '1px solid #606367' }} align="center">{boolean1 == true ? row.fourRacesAgo : cellLoading}</TableCell>}
