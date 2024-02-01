@@ -1,3 +1,4 @@
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -50,7 +51,6 @@ body {
   min-width: 320px;
   width: 100%;
   max-width: 1440px;
-  border: 2px solid orange;
 }
 
 @media screen and (min-width: 480px) {
@@ -71,12 +71,12 @@ body {
   position: absolute;
   top: -1px;
   width: 100%;
-  border: 2px solid red;
+  
 }
 
 @media screen and (min-width: 480px) {
   .iphone .overlap {
-    width: 83.9%;
+    width: 80.9%;
     left: 18.1%;
     height: 930px;
   }
@@ -175,11 +175,17 @@ body {
 }
 
 .iphone .nextRaceBox {
-  height: auto;
+  height: 222px;
   position: absolute;
-  top: 1008px;
+  top: 700px;
   width: 100%;
-  border: 2px solid purple;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .iphone .nextRaceBox {
+    visibility: hidden;
+  }
 }
 
 
@@ -272,13 +278,25 @@ body {
   height: auto;
   left: 18.2%;
   position: absolute;
-  top: 283px;
+  top: 58%;
   width: 82%;
+}
+
+@media screen and (max-width: 370px) {
+  .iphone .groupMobile {
+    top: 55%; 
+  }
+}
+
+@media screen and (min-width: 410px) {
+  .iphone .groupMobile {
+    top: 61%; 
+  }
 }
 
 @media screen and (min-width: 480px) {
   .iphone .groupMobile {
-    visibility: hidden;
+    visibility: hidden; 
   }
 }
 
@@ -322,6 +340,7 @@ body {
   height: 189px;
   position: relative;
   width: 97.5%;
+  top: 0px;
 }
 
 .iphone .nextRaceBoxMobile {
@@ -329,11 +348,16 @@ body {
   top: 132px;
   height: 57px;
   position: absolute;
-  border: 1px solid green;
+}
+
+.iphone .nextRaceBoxImageMobile {
+  position: absolute;
+  height: auto;
+  width: 100%;
 }
 
 .iphone .text-wrapperAMobile {
-  color: #606367;
+  color: #87C75F;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 12px;
   font-weight: 400;
@@ -343,16 +367,16 @@ body {
   line-height: normal;
   position: absolute;
   top: 15%;
-  width: 22%;
+  width: 24%;
 }
 
 .iphone .text-wrapperBMobile {
-  color: #606367;
+  color: #87C75F;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 12px;
   font-weight: 400;
   height: 76px;
-  left: 40%;
+  left: 42%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -361,12 +385,12 @@ body {
 }
 
 .iphone .text-wrapperCMobile {
-  color: #606367;
+  color: #87C75F;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 12px;
   font-weight: 400;
   height: 76px;
-  left: 70%;
+  left: 72%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -384,8 +408,8 @@ body {
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 60%;
-  width: 20%;
+  top: 52%;
+  width: 34%;
 }
 
 .iphone .text-wrapperEMobile {
@@ -394,11 +418,11 @@ body {
   font-size: 12px;
   font-weight: 400;
   height: 76px;
-  left: 40%;
+  left: 42%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 60%;
+  top: 52%;
   width: 20%;
 }
 
@@ -408,12 +432,12 @@ body {
   font-size: 12px;
   font-weight: 400;
   height: 76px;
-  left: 70%;
+  left: 72%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 60%;
-  width: 20%;
+  top: 52%;
+  width: 28%;
 }
 
 .iphone .p {
@@ -429,6 +453,13 @@ body {
   top: 57px;
   width: 85.57%;
 }
+
+@media screen and (max-width: 378px) {
+  .iphone .p {
+    font-size: 13px;
+  }
+}
+
 .iphone .text-wrapper-2 {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
@@ -932,10 +963,10 @@ body {
 
 .iphone .overlap-table {
   height: 800px;
-  left: 17.22%;
+  left: 18.1%;
   position: absolute;
   top: 990px;
-  width: 81.74%;
+  width: 80.9%;
 }
 
 @media screen and (max-width: 480px) {
@@ -1539,7 +1570,7 @@ body {
 
 @media screen and (min-width: 480px) {
   .iphone .dropdown-container {
-    left: 17.22%;
+    left: 18.1%;
     width: 21.74%;
     top: 900px;
     position: relative;

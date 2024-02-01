@@ -344,7 +344,7 @@ export const nextRaceBanners = [
   {circuitId: 'red_bull_ring', raceName: 'Austrian GP', circuit: 'Red Bull Ring'},
   {circuitId: 'baku', raceName: 'Azerbaijan GP', circuit: 'Baku'},
   {circuitId: 'bahrain', raceName: 'Bahrain GP', circuit: 'Sakhir'},
-  {circuitId: 'spa', raceName: 'Belgian GP', circuit: 'Spa-Francorchamps'},
+  {circuitId: 'spa', raceName: 'Belgian GP', circuit: 'Spa'},
   {circuitId: 'villeneuve', raceName: 'Canadian GP', circuit: 'Montreal'},
   {circuitId: 'shanghai', raceName: 'Chinese GP', circuit: 'Shanghai'},
   {circuitId: 'imola', raceName: 'Emilia Romagna GP', circuit: 'Imola'},
@@ -362,5 +362,5 @@ export const nextRaceBanners = [
   {circuitId: 'jeddah', raceName: 'Saudi Arabian GP', circuit: 'Jeddah'},
   {circuitId: 'marina_bay', raceName: 'Singapore GP', circuit: 'Marina Bay'},
   {circuitId: 'interlagos', raceName: 'São Paulo GP', circuit: 'Interlagos'},
-  {circuitId: 'americas', raceName: 'United States GP', circuit: 'Circuit of the Americas'}
+  {circuitId: 'americas', raceName: 'United States GP', circuit: 'COTA'}
 ]

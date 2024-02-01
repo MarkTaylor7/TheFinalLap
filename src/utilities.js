@@ -463,3 +463,13 @@ export async function createSeasonResultsProps() {
   }
   return array;
 };
+
+export function formatDate(inputDate) {
+  const dateArray = inputDate.split("-");
+  const year = dateArray[0];
+  const month = dateArray[1];
+  const day = dateArray[2];
+  const formattedDate = month + "." + day + "." + year;
+
+  return formattedDate;
+}

@@ -12,6 +12,7 @@ import {
   getDriverAverages,
   matchAveragesWithTableResults,
   rateTableResults,
+  formatDate,
   createSeasonResultsProps
 } from "./utilities";
 
@@ -177,19 +178,19 @@ export default function App() {
   const [line5Style, setLine5Style] = useState({
     width: 113.20,
     height: 0,
-    border: '1.50px #87C75F solid',
+    border: '1px #87C75F solid',
   });
 
   const [line7Style, setLine7Style] = useState({
     width: 126.696,
     height: 0,
-    border: '1.50px #405E2C solid',
+    border: '1px #405E2C solid',
   });
 
   const [line8Style, setLine8Style] = useState({
     width: 105.92,
     height: 0,
-    border: '1.50px #405E2C solid',
+    border: '1px #405E2C solid',
   });
   
   const { showCluster1, setShowCluster1,
@@ -338,21 +339,23 @@ export default function App() {
     if (lastFiveRaceResults.length === 5) {
       let nextCircuitId = "bahrain";
       let nextCircuitEventName;
-      let nextCircuitEventDate = "03.02.2024";
+      let rawNextCircuitEventDate = "2024-03-02";
       let nextCircuitName;
       let nextCircuitType;
       /*Code below is temporarily commented out until the API updates its current season as "2024". Once update
        occurs, enable code below and remove "= "bahrain"" from let nextCircuitId. This will re-activate automated 
-       selection of nextCircuitId.
+       selection of nextCircuitId. Also, remove "= "2024-03-02"" from let rawNextCircuitEventDate to automate date selection.
       let lastRound = Number(lastFiveRaceResults[4]?.round);
       let nextRound = (lastRound += 1);
       for (let i = 0; i < eventList.length; i++) {
         if (Number(eventList[i].round) === nextRound) {
           nextCircuitId = eventList[i].Circuit.circuitId;
-          nextCircuitEventDate = eventList[i].date;
+          rawNextCircuitEventDate = eventList[i].date;
         }
       }
       */
+      let nextCircuitEventDate = formatDate(rawNextCircuitEventDate)
+      
       
       for (let i = 0; i < circuitTypes.length; i++) {
         if (circuitTypes[i].circuitIds.includes(nextCircuitId)) {
@@ -1040,6 +1043,7 @@ export default function App() {
                   <p className="p">Live F1 form guide and driver data lets you predict results with confidence.</p>
                   <div className="text-wrapper-2">The Final Lap</div>
                   <div className="nextRaceBoxMobile">
+                  <img className="nextRaceBoxImageMobile" alt="Rectangle" src={nextRaceBox} />
                     <div className="text-wrapperAMobile">Next Race</div>
                     <div className="text-wrapperBMobile">Date</div>
                     <div className="text-wrapperCMobile">Circuit</div>
