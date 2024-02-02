@@ -1965,7 +1965,7 @@ label {
   position: absolute;
   top: 25%;
   width: 88%;
-  border: 1px solid rgba(217, 217, 217, 0.41);
+  border: 1px solid rgba(217, 217, 217, 0.3);
 }
   
 .box .mobileMenuLine2 {
@@ -1975,7 +1975,7 @@ label {
   position: absolute;
   top: 50%;
   width: 88%;
-  border: 1px solid rgba(217, 217, 217, 0.41);
+  border: 1px solid rgba(217, 217, 217, 0.3);
 }
 
 .box .mobileMenuLine3 {
@@ -1985,7 +1985,7 @@ label {
   position: absolute;
   top: 75%;
   width: 88%;
-  border: 1px solid rgba(217, 217, 217, 0.41);
+  border: 1px solid rgba(217, 217, 217, 0.3);
 }
 
 button {
