@@ -1147,30 +1147,42 @@ body {
 }
 
 .iphone .rectangle-4 {
-  background-color: #d9d9d91c;
   border-radius: 5px;
   height: 374px;
   left: 0;
   position: absolute;
   top: 0;
   width: 95.7%;
+  
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .rectangle-4 {
+    width: 100%;
+  }
 }
 
 .iphone .rectangle-5 {
+  background-color: #d9d9d91c;
   height: 374px;
   left: 0;
   position: absolute;
   top: 0;
   width: 95.7%;
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .rectangle-4,
   .iphone .rectangle-5 {
-    width: 100%;
+    width: 24.5%;
   }
 }
 
+.iphone .imageFeature1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
 
 .iphone .leftArrow {
   height: 43px;
@@ -1596,8 +1608,10 @@ body {
 
 @media screen and (min-width: 480px) {
   .iphone .rectangle-8 {
-    top: 1820px;
+    top: 1980px;
     left: 48.1%;
+    width: 20%;
+    border: 1px solid orange
   }
 }
 
@@ -1613,8 +1627,10 @@ body {
 
 @media screen and (min-width: 480px) {
   .iphone .rectangle-9 {
-    top: 1820px;
+    top: 1980px;
     left: 78.1%;
+    width: 20%;
+    border: 1px solid yellow
   }
 }
 

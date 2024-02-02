@@ -16,6 +16,8 @@ import {
   createSeasonResultsProps
 } from "./utilities";
 
+import feature1 from "./assets/images/feature1.png";
+
 import { circuitTypes, raceTitles, allCareerData, dropdownOptions, nextRaceBanners } from "./consts";
 import { flags } from "./Flags";
 import siteLogo from "./assets/siteLogo.svg";
@@ -1165,14 +1167,16 @@ export default function App() {
           <div className="text-wrapper-6">Final Lap Features</div>
           <div className="overlap-4">
             <div className="rectangle-4" />
-            <div className="rectangle-5" alt="Rectangle" src="rectangle-34.svg" />
+            <div className="rectangle-5">
+              <img className="imageFeature1" alt="Cursor highlighting table column header" src={feature1} />
+            </div>
             <img className="rightArrow" alt="Arrow pointing right" src={rightArrow} />
             <img className="leftArrow" alt="Arrow pointing left" src={leftArrow} />
           </div>   
           <div className="overlap-5">
             <div className="text-wrapper-7">Get the Full Story</div>
             <p className="text-wrapper-8">
-              See an unusual race result and need more info? Click on the race for a detailed report.
+              See an unusual race result and need more info? Click on the race header for a detailed report.
             </p>
           </div>
           <div className="overlap-6">
@@ -1195,7 +1199,7 @@ export default function App() {
           <div className="overlap-13">
             <div className="text-wrapper-7">Context is King</div>
             <p className="text-wrapper-8">
-              All race results are measured against that driver's in season averages so that you
+              Race results are measured against that driver's in-season averages so that you
               can spot the stand-out performances; good and bad.
             </p>
           </div>
