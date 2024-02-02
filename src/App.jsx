@@ -1179,7 +1179,7 @@ export default function App() {
             <div className="text-wrapper-9">Feature</div>
             <div className="overlap-group-wrapper">
               <div className="overlap-group-2">
-                <div className="line-3"></div>
+                <div className="line-3A"></div>
                 <div className="line-4"></div>
               </div>
             </div>
@@ -1210,8 +1210,8 @@ export default function App() {
             <div className="text-wrapper-9">Feature</div>
             <div className="overlap-group-wrapper">
               <div className="overlap-group-3">
-                <div className="line-3" style={{width: 311.70, height: 0, border: '2px #87C75F solid'}}></div>
-                <div className="line-4" style={{width: 34.90, height: 0, transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '2px #87C75F solid'}}></div>
+                <div className="line-3"></div>
+                <div className="line-4"></div>
               </div>
             </div>
           </div>
@@ -1219,9 +1219,8 @@ export default function App() {
             <div className="text-wrapper-9">Feature</div>
             <div className="overlap-group-wrapper">
               <div className="overlap-group-4">
-                <div className="line-3" style={{width: 311.70, height: 0, border: '2px #87C75F solid'}}></div>
-                <div className="line-4" style={{width: 34.90, height: 0, transform: 'rotate(-90deg)', transformOrigin: '0 0', border: '2px #87C75F solid'}}></div>
-                
+                <div className="line-3"></div>
+                <div className="line-4"></div>
               </div>
             </div>
           </div>

@@ -55,7 +55,7 @@ body {
 
 @media screen and (min-width: 480px) {
   .iphone .div {
-    min-height: 3794px;
+    min-height: 3294px;
   }
 }
 
@@ -192,6 +192,12 @@ body {
   width: 81%;
   left: 18%;
   top: 695px;
+}
+
+@media screen and (max-width: 480px) {
+  .iphone .nextRaceBoxImageDesktop {
+    visibility: hidden;
+  }
 }
 
 .iphone .nextRaceBoxMobile {
@@ -657,7 +663,7 @@ body {
   height: 322px;
   left: 0;
   position: absolute;
-  top: 2400px;
+  top: 2660px;
   width: 100%;
 }
 
@@ -1118,7 +1124,7 @@ body {
 
 @media screen and (min-width: 480px) {
   .iphone .text-wrapper-6 {
-    top: 1740px;
+    top: 1900px;
     font-size: 40px;
     left: 0;
   }
@@ -1136,7 +1142,7 @@ body {
   .iphone .overlap-4 {
     width: 80.9%;
     left: 18.1%;
-    top: 1820px;
+    top: 1980px;
   }
 }
 
@@ -1201,7 +1207,7 @@ body {
   .iphone .overlap-5 {
     width: 80.9%;
     left: 18.1%;
-    top: 2260px;
+    top: 2420px;
   }
 }
 
@@ -1251,7 +1257,7 @@ body {
   .iphone .overlap-6 {
     left: 18.1%;
     width: 80.9%;
-    top: 2200px;
+    top: 2360px;
   }
 }
 
@@ -1292,6 +1298,21 @@ body {
   }
 }
 
+.iphone .line-3A {
+  height: 0px;
+  left: 1px;
+  position: absolute;
+  top: 33px;
+  width: 100%;
+  border: 1px solid #87C75F;
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .line-3A {
+    width: 81%;
+  }
+}
+
 .iphone .line-3 {
   height: 0px;
   left: 1px;
@@ -1299,6 +1320,18 @@ body {
   top: 33px;
   width: 100%;
   border: 1px solid #87C75F;
+}
+
+@media screen and (min-width: 480px) and (max-width: 1280px) {
+  .iphone .line-3 {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  .iphone .line-3 {
+    width: 90%;
+  }
 }
 
 .iphone .line-4 {
@@ -1387,7 +1420,6 @@ body {
     top: 954px;
   }
 }
-
 
 .iphone .raceOutlookLine {
   height: 0px;
@@ -1478,7 +1510,7 @@ body {
   .iphone .overlap-8 {
     width: 80.9%;
     left: 78.1%;
-    top: 2260px;
+    top: 2420px;
   }
 }
 
@@ -1502,7 +1534,13 @@ body {
   position: absolute;
   top: 2080px;
   width: 312px;
-  border: 2x solid red;
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .overlap-9 {
+    left: 48.1%;
+    top: 2360px;
+  }
 }
 
 .iphone .line-wrapper {
@@ -1528,6 +1566,13 @@ body {
   position: absolute;
   top: 2080px;
   width: 312px;
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .overlap-10 {
+    left: 78.1%;
+    top: 2360px;
+  }
 }
 
 .iphone .img-wrapper {
@@ -1716,7 +1761,7 @@ body {
   .iphone .overlap-13 {
     width: 80.9%;
     left: 48.1%;
-    top: 2260px;
+    top: 2420px;
   }
 }
 
@@ -1942,16 +1987,6 @@ label {
   width: 88%;
   border: 1px solid rgba(217, 217, 217, 0.41);
 }
-
-.box .line-3 {
-  height: 2px;
-  left: 0;
-  position: absolute;
-  top: -2px;
-  width: 389px;
-}
-
-
 
 button {
   border-radius: 8px;
