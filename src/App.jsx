@@ -1005,13 +1005,7 @@ export default function App() {
         <div className="div">
           <div className="overlap">
             <div className="overlap-group">
-              <img className="nextRaceBox" alt="Rectangle" src={nextRaceBox} />
-              <div className="text-wrapperA">Next Race</div>
-              <div className="text-wrapperB">Date</div>
-              <div className="text-wrapperC">Circuit</div>
-              <div className="text-wrapperD">{nextCircuitTypeProperName}</div>
-              <div className="text-wrapperE">09.03.2023</div>
-              <div className="text-wrapperF">{nextRace}</div>
+              
               <img className="heroBannerMobile" src={heroBannerMobile} alt="an image of a Williams F1 car in Monaco" />
               <img className="heroBannerDesktop" src={heroBannerDesktop} alt="an image of a Williams F1 car in Monaco" />
               <div className="rectangle" />
@@ -1022,7 +1016,7 @@ export default function App() {
               
               <div className="box"> 
                 <div className={`iphone-menu ${isMenuOpen ? 'open' : 'closed'}`}>
-                  (<div className="overlap-group">
+                  <div className="overlap-group">
                     <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
                       <div className="text-wrapper">Drivers</div>
                     </a>
@@ -1034,7 +1028,7 @@ export default function App() {
                     <div className="mobileMenuLine1" />
                     <div className="mobileMenuLine2" />
                     <div className="mobileMenuLine3" />
-                  </div>)
+                  </div>
                 </div>
               </div>
 
@@ -1043,7 +1037,7 @@ export default function App() {
                   <p className="p">Live F1 form guide and driver data lets you predict results with confidence.</p>
                   <div className="text-wrapper-2">The Final Lap</div>
                   <div className="nextRaceBoxMobile">
-                  <img className="nextRaceBoxImageMobile" alt="Rectangle" src={nextRaceBox} />
+                    <img className="nextRaceBoxImageMobile" alt="Rectangle" src={nextRaceBox} />
                     <div className="text-wrapperAMobile">Next Race</div>
                     <div className="text-wrapperBMobile">Date</div>
                     <div className="text-wrapperCMobile">Circuit</div>
@@ -1056,6 +1050,15 @@ export default function App() {
             </div>
             <img className="siteLogo" alt="site logo: stylized initials 'FL'" src={siteLogo} />
           </div>
+          <div className="nextRaceBoxDesktop">
+            <div className="text-wrapperADesktop">Next Race</div>
+            <div className="text-wrapperBDesktop">Date</div>
+            <div className="text-wrapperCDesktop">Circuit</div>
+            <div className="text-wrapperDDesktop">{nextEventName}</div>
+            <div className="text-wrapperEDesktop">{nextEventDate}</div>
+            <div className="text-wrapperFDesktop">{nextEventCircuit}</div>
+          </div>
+          <img className="nextRaceBoxImageDesktop" alt="Rectangle" src={nextRaceBox} />
           <div className="footerBoxMobile">
             <div className="footerBoxBackgroundMobile" />
             <img className="siteLogoFooterMobile" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} />

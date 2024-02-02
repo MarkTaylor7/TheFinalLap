@@ -71,7 +71,6 @@ body {
   position: absolute;
   top: -1px;
   width: 100%;
-  
 }
 
 @media screen and (min-width: 480px) {
@@ -89,8 +88,6 @@ body {
   top: 0;
   width: 100%;
 }
-
-
 
 .heroBannerMobile {
   height: auto;
@@ -174,103 +171,123 @@ body {
   }
 }
 
-.iphone .nextRaceBox {
+.iphone .nextRaceBoxDesktop {
   height: 222px;
   position: absolute;
-  top: 700px;
-  width: 100%;
-  flex-shrink: 0;
+  height: 222px;
+  width: 81%;
+  left: 18%;
+  top: 695px;
 }
 
 @media screen and (max-width: 480px) {
-  .iphone .nextRaceBox {
+  .iphone .nextRaceBoxDesktop {
     visibility: hidden;
   }
 }
 
+.iphone .nextRaceBoxImageDesktop {
+  position: absolute;
+  height: 222px;
+  width: 81%;
+  left: 18%;
+  top: 695px;
+}
 
+.iphone .nextRaceBoxMobile {
+  width: 100%;
+  top: 132px;
+  height: 57px;
+  position: absolute;
+}
 
-.iphone .text-wrapperA {
+.iphone .nextRaceBoxImageMobile {
+  position: absolute;
+  height: auto;
+  width: 100%;
+}
+
+.iphone .text-wrapperADesktop {
   color: #606367;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
   font-weight: 500;
   height: 76px;
-  left: 33px;
+  left: 2.9%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 1033px;
+  top: 30%;
   width: 290px;
 }
 
-.iphone .text-wrapperB {
+.iphone .text-wrapperBDesktop {
   color: #606367;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
   font-weight: 500;
   height: 76px;
-  left: 395px;
+  left: 34.3%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 1035px;
+  top: 30%;
   width: 290px;
 }
 
-.iphone .text-wrapperC {
+.iphone .text-wrapperCDesktop {
   color: #606367;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
   font-weight: 500;
   height: 76px;
-  left: 647px;
+  left: 64%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 1033px;
+  top: 30%;
   width: 290px;
 }
 
-.iphone .text-wrapperD {
+.iphone .text-wrapperDDesktop {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
   font-weight: 700;
   height: 76px;
-  left: 33px;
+  left: 2.9%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 1083px;
+  top: 52%;
   width: 302px;
 }
 
-.iphone .text-wrapperE {
+.iphone .text-wrapperEDesktop {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
   font-weight: 700;
   height: 76px;
-  left: 395px;
+  left: 34.3%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 1085px;
+  top: 52%;
   width: 302px;
 }
 
-.iphone .text-wrapperF {
+.iphone .text-wrapperFDesktop {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
   font-weight: 700;
   height: 76px;
-  left: 649px;
+  left: 64%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 1083px;
+  top: 52%;
   width: 302px;
 }
 
@@ -306,12 +323,26 @@ body {
   font-size: 22px;
   font-weight: 500;
   height: 102px;
-  left: 49.4%;
+  left: 54%;
   letter-spacing: 0.66px;
   line-height: 30.3px;
   position: absolute;
   top: 528px;
-  width: 546px;
+  width: 506px;
+}
+
+@media screen and (max-width: 1300px) {
+  .iphone .pDesktop {
+    top: 510px;
+  }
+}
+
+@media screen and (max-width: 1390px) {
+  .iphone .pDesktop {
+    font-size: 20px;
+    left: 54%;
+    width: 450px;
+  }
 }
 
 .iphone .text-wrapper-Desktop {
@@ -326,6 +357,12 @@ body {
   position: absolute;
   top: 510px;
   width: 558px;
+}
+
+@media screen and (max-width: 1300px) {
+  .iphone .text-wrapper-Desktop {
+    font-size: 72px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -1079,12 +1116,28 @@ body {
   width: 70.8%;
 }
 
+@media screen and (min-width: 480px) {
+  .iphone .text-wrapper-6 {
+    top: 1740px;
+    font-size: 40px;
+    left: 0;
+  }
+}
+
 .iphone .overlap-4 {
   height: 374px;
   left: 38px;
   position: absolute;
   top: 1703px;
   width: 83.6%;
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .overlap-4 {
+    width: 80.9%;
+    left: 18.1%;
+    top: 1820px;
+  }
 }
 
 .iphone .rectangle-4 {
@@ -1104,6 +1157,14 @@ body {
   top: 0;
   width: 95.7%;
 }
+
+@media screen and (min-width: 480px) {
+  .iphone .rectangle-4,
+  .iphone .rectangle-5 {
+    width: 100%;
+  }
+}
+
 
 .iphone .leftArrow {
   height: 43px;
@@ -1136,6 +1197,14 @@ body {
   width: 80%;
 }
 
+@media screen and (min-width: 480px) {
+  .iphone .overlap-5 {
+    width: 80.9%;
+    left: 18.1%;
+    top: 2260px;
+  }
+}
+
 .iphone .text-wrapper-7 {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
@@ -1164,13 +1233,26 @@ body {
   width: 100%;
 }
 
+@media screen and (min-width: 480px) {
+  .iphone .text-wrapper-8 {
+    width: 25%;
+  }
+}
+
 .iphone .overlap-6 {
   height: 45px;
   left: 38px;
   position: absolute;
   top: 2080px;
   width: 80%;
-  
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .overlap-6 {
+    left: 18.1%;
+    width: 80.9%;
+    top: 2200px;
+  }
 }
 
 .iphone .text-wrapper-9 {
@@ -1201,7 +1283,13 @@ body {
   left: -1px;
   position: relative;
   width: 100%;
-  
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .overlap-group-2 {
+    width: 30%;
+    left: 0;
+  }
 }
 
 .iphone .line-3 {
@@ -1342,6 +1430,14 @@ body {
   width: 312px;
 }
 
+@media screen and (min-width: 480px) {
+  .iphone .overlap-8 {
+    width: 80.9%;
+    left: 78.1%;
+    top: 2260px;
+  }
+}
+
 .iphone .all-race-results-are {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
@@ -1409,6 +1505,13 @@ body {
   width: 312px;
 }
 
+@media screen and (min-width: 480px) {
+  .iphone .rectangle-8 {
+    top: 1820px;
+    left: 48.1%;
+  }
+}
+
 .iphone .rectangle-9 {
   background-color: #d9d9d91c;
   border-radius: 5px;
@@ -1417,6 +1520,13 @@ body {
   position: absolute;
   top: 1703px;
   width: 312px;
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .rectangle-9 {
+    top: 1820px;
+    left: 78.1%;
+  }
 }
 
 .iphone .rectangle-10 {
@@ -1558,6 +1668,13 @@ body {
   width: 312px;
 }
 
+@media screen and (min-width: 480px) {
+  .iphone .overlap-13 {
+    width: 80.9%;
+    left: 48.1%;
+    top: 2260px;
+  }
+}
 
 
 .dropdown-container {
@@ -1690,10 +1807,10 @@ label {
   background-color: #1c1c1c;
   height: 388px;
   right: 0;
-  position: absolute;
+  position: relative;
   top: 0;
   width: 100%;
-  border: 1px solid #D9D9D9
+  
 }
 
 .box .text-wrapper {
