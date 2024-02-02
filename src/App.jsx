@@ -984,13 +984,7 @@ export default function App() {
 
   useEffect(() => {
     console.log(racerData)
-    console.log(tableHeadingsContent)
   }, [racerData]);
-  
-  console.log(tableHeadingsContent)
-  console.log(eventList);
-  
-  
   
   // Function to toggle the menu's visibility
   const toggleMenu = () => {
@@ -1159,7 +1153,8 @@ export default function App() {
             <div className="desktopMenuLine5" />
             <img className="group-3" alt="Group" src={siteLogoDesktop} />
           </div>
-
+          <div className="text-wrapper-10">Race Outlook</div>
+          <div className="raceOutlookLine"></div>
           <div className="overlap-table">
             <div className="rectangle-T" />
             <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
@@ -1190,7 +1185,6 @@ export default function App() {
             </div>
           </div>
           <div className="overlap-7">
-            <div className="text-wrapper-10">Race Outlook</div>
             <div className="rectangle-6" onClick={showOnlyCluster1}>
               <img className="toggleButton" alt="Rectangle" src={toggleButton} />
               <div className="text-wrapper-11">Recent Form</div>

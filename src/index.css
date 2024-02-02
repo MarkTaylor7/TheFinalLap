@@ -1002,7 +1002,7 @@ body {
   height: 800px;
   left: 18.1%;
   position: absolute;
-  top: 990px;
+  top: 1120px;
   width: 80.9%;
 }
 
@@ -1352,13 +1352,57 @@ body {
   font-size: 26px;
   font-weight: 700;
   height: 81px;
-
   letter-spacing: 1.04px;
   line-height: normal;
   position: absolute;
-  top: 0;
-  width: 192px;
-  
+  top: 560px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+@media screen and (min-width: 481px) and (max-width: 1280px) {
+  .iphone .text-wrapper-10 {
+    font-size: 50px;
+    top: 954px;
+    position: absolute;
+    width: 30%;
+    left: 20%;
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  .iphone .text-wrapper-10 {
+    font-size: 56px;
+    top: 950px;
+    position: absolute;
+    width: 30%;
+    left: 20%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1279px) {
+  .iphone .text-wrapper-10 {
+    font-size: 50px;
+    top: 954px;
+  }
+}
+
+
+.iphone .raceOutlookLine {
+  height: 0px;
+  left: 50%;
+  position: absolute;
+  object-fit: cover;
+  top: 990px;
+  width: 49%;
+  border: 1px #87C75F solid;
+}
+
+@media screen and (max-width: 480px) {
+  .iphone .raceOutlookLine {
+    visibility: hidden;
+  }
 }
 
 .iphone .rectangle-6 {
@@ -1689,7 +1733,7 @@ body {
   .iphone .dropdown-container {
     left: 18.1%;
     width: 21.74%;
-    top: 900px;
+    top: 1030px;
     position: relative;
   }
 }
