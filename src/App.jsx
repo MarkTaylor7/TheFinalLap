@@ -1209,7 +1209,7 @@ export default function App() {
           <div className="overlap-8">
             <div className="text-wrapper-7">Track the Trends</div>
             <p className="text-wrapper-8">
-              Tracks are grouped into one of three circuit types, so you can see how drivers and teams
+              Circuits are grouped into one of three types, based on the demands they place on an F1 car. See how drivers and teams
               perform on different layouts.
             </p>
           </div>
