@@ -35,6 +35,9 @@ import toggleDropArrow from "./assets/toggleDropArrow.svg";
 import leftArrow from "./assets/leftArrow.svg";
 import rightArrow from "./assets/rightArrow.svg";
 import nextRaceBox from "./assets/nextRaceBox.svg";
+import circuitMonza from "./assets/circuitMonza.svg";
+import circuitShanghai from "./assets/circuitShanghai.svg";
+import circuitSuzuka from "./assets/circuitSuzuka.svg";
 
 export default function App() {
   const [standings, setStandings] = useState([]);
@@ -1257,7 +1260,30 @@ export default function App() {
               <div className="card-text">DNF - Did Not Finish</div>
             </div>
           </div>
-          <div className="rectangle-9" />
+          <div className="rectangle-9">
+            <div className="card-column">
+              <div className="card-column-child">
+                <div className="card-column-child-text">POWER</div>
+              </div>
+              <div className="card-column-child">
+                <div className="card-column-child-text">BALANCED</div>
+              </div>
+              <div className="card-column-child">
+                <div className="card-column-child-text">HIGH<br/>DOWNFORCE</div>
+              </div>
+            </div>
+            <div className="card-column">
+              <div className="card-column-child">
+                <img className="circuit-svg" src={circuitMonza} />
+              </div>
+              <div className="card-column-child">
+                <img className="circuit-svg" src={circuitShanghai} />
+              </div>
+              <div className="card-column-child">
+                <img className="circuit-svg" src={circuitSuzuka} />
+              </div>
+            </div>
+          </div>
           <img className="rectangle-10" alt="Rectangle" src="rectangle-36.svg" />
           <img className="rectangle-11" alt="Rectangle" src="rectangle-38.svg" />
           <div className="overlap-11">

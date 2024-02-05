@@ -1597,13 +1597,14 @@ body {
 }
 
 .iphone .rectangle-8 {
-  border: 1px solid #606367;
   border-radius: 5px;
   height: 374px;
   left: 423px;
   position: absolute;
   top: 1703px;
   width: 312px;
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (min-width: 480px) {
@@ -1611,8 +1612,6 @@ body {
     top: 1980px;
     left: 48.1%;
     width: 20%;
-    display: flex;
-    flex-direction: column;
   }
 }
 
@@ -1654,13 +1653,15 @@ body {
 
 
 .iphone .rectangle-9 {
-  background-color: #d9d9d91c;
+  
+  
   border-radius: 5px;
   height: 374px;
   left: 767px;
   position: absolute;
   top: 1703px;
   width: 312px;
+  display: flex;
 }
 
 @media screen and (min-width: 480px) {
@@ -1668,8 +1669,50 @@ body {
     top: 1980px;
     left: 78.1%;
     width: 20%;
-    border: 1px solid yellow
   }
+}
+
+.iphone .card-column {
+  flex: 1;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.card-column:nth-child(1) { background-color: #ffffff1c; }
+.card-column:nth-child(2) { background-color: #d9d9d9; border-top-left-radius: 0px; border-bottom-left-radius: 0px; }
+
+.iphone .card-column-child {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-right: 25px;
+}
+
+.card-column-child:nth-child(1) { border-top-left-radius: 10px; }
+.card-column-child:nth-child(2) { border-radius: 0px; }
+.card-column-child:nth-child(3) { border-bottom-left-radius: 10px; }
+.card-column-child:nth-child(4) { border-top-right-radius: 10px; }
+.card-column-child:nth-child(5) { border-radius: 0px; }
+.card-column-child:nth-child(6) { border: 1px solid red; border-bottom-right-radius: 10px; }
+
+
+
+.iphone .card-column-child-text {
+  font-family: "Bai Jamjuree", Helvetica;
+  font-size: 20px;
+  font-weight: 500px;
+}
+
+.card-column-child:nth-child(1) .card-column-child-text { color: red; font-size: 24px; }
+.card-column-child:nth-child(2) .card-column-child-text { color: orange; font-size: 22px; }
+.card-column-child:nth-child(3) .card-column-child-text { color: yellow; }
+
+.iphone .circuit-svg {
+  width: 100px;
+  height: 100px;
 }
 
 .iphone .rectangle-10 {
