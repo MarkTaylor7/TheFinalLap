@@ -409,7 +409,7 @@ export function getBackgroundColor(data3) {
       break; 
     case "Valtteri Bottas":
     case "Guanyu Zhou":
-      color = "#C92D4B";
+      color = "#53fc18";
       break;
     case "Nico Hülkenberg":
     case "Kevin Magnussen":
@@ -435,8 +435,6 @@ export function getColor(data3) {
     case "Carlos Sainz":
     case "Fernando Alonso":
     case "Lance Stroll":
-    case "Valtteri Bottas":
-    case "Guanyu Zhou":
       color = "#ffffff";
       break;
     default:

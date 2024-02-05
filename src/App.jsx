@@ -71,6 +71,24 @@ export default function App() {
   const [selectedRace, setselectedRace] = useState('');
 
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isSticky, setSticky] = useState(false);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const isStickyNow = scrollPosition >= 800;
+
+      setSticky(isStickyNow);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   // Event handler for dropdown change
   const handleDropdownChange = (event) => {
@@ -998,6 +1016,8 @@ export default function App() {
     } else {setMenuOpen(true)}
   };
 
+  
+
   return (
     <>
       <div className="iphone">
@@ -1122,27 +1142,8 @@ export default function App() {
               <img className="linkedInDesktop" alt="Vector" src={linkedInDesktop} />
             </a>
           </div>
-          <div className="overlap-3" />
-          <div className="overlap-Z">
-            <div className="rectangle-X" />
-            <img className="rectangle-Y" alt="Rectangle" src="rectangle-33.svg" />
-          </div>
-          <div className="overlap-W">
-            <div className="rectangle-7" />
-            <img className="rectangle-L" alt="Rectangle" src="rectangle-32.svg" />
-          </div>
           
-          <div className="overlap-3" />
-          <div className="overlap-Z">
-            <div className="rectangle-X" />
-            <img className="rectangle-Y" alt="Rectangle" src="rectangle-33.svg" />
-          </div>
-          <div className="overlap-W">
-            <div className="rectangle-7" />
-            <img className="rectangle-L" alt="Rectangle" src="rectangle-32.svg" />
-          </div>
-
-          <div className="overlap-A">
+          <div className={`desktop-sticky-menu ${isSticky ? 'sticky' : ''}`}>
             <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
               <div className="text-wrapper-18">Drivers</div>
             </a>
@@ -1158,8 +1159,9 @@ export default function App() {
             <div className="desktopMenuLine5" />
             <img className="group-3" alt="Group" src={siteLogoDesktop} />
           </div>
+
           <div className="text-wrapper-10">Race Outlook</div>
-          <div className="raceOutlookLine"></div>
+          <div className="raceOutlookLine" />
           <div className="overlap-table">
             <div className="rectangle-T" />
             <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
@@ -1168,6 +1170,7 @@ export default function App() {
           </div>
 
           <div className="text-wrapper-6">Final Lap Features</div>
+          <div className="featuresLine" />
           <div className="overlap-4">
             <div className="rectangle-4" />
             <div className="rectangle-5">
@@ -1284,8 +1287,7 @@ export default function App() {
               </div>
             </div>
           </div>
-          <img className="rectangle-10" alt="Rectangle" src="rectangle-36.svg" />
-          <img className="rectangle-11" alt="Rectangle" src="rectangle-38.svg" />
+          
           <div className="overlap-11">
             <div className="rectangle-12" onClick={showOnlyCluster2}>
               <img className="toggleButton2" alt="Rectangle" src={toggleButton} />
@@ -1303,7 +1305,6 @@ export default function App() {
             </div>
           </div>
           <div className="dropdown-container">
-            {/*<div className="text-wrapper-14">Select a circuit:</div>*/}
             <select id="dropdown" value={selectedRace} onChange={handleDropdownChange}>
               <option value="">Select Circuit</option>
               {dropdownOptions.map((option) => (

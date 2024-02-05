@@ -51,17 +51,12 @@ body {
   min-width: 320px;
   width: 100%;
   max-width: 1440px;
+  border: 1px solid red;
 }
 
 @media screen and (min-width: 480px) {
   .iphone .div {
     min-height: 3294px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .iphone .div {
-    width: 1440px;
   }
 }
 
@@ -792,83 +787,37 @@ body {
   width: 69px;
 }
 
-.iphone .overlap-3 {
-  background-color: #d9d9d91c;
-  background-image: url(./rectangle-34.svg);
-  background-size: 100% 100%;
-  border-radius: 5px;
-  height: 422px;
-  left: 253px;
-  position: absolute;
-  top: 2698px;
-  width: 358px;
-}
-
-.iphone .overlap-Z {
-  height: 422px;
-  left: 654px;
-  position: absolute;
-  top: 2698px;
-  width: 359px;
-}
-
-.iphone .rectangle-X {
-  background-color: #d9d9d91c;
-  border-radius: 5px;
-  height: 422px;
-  left: 1px;
-  position: absolute;
-  top: 0;
-  width: 358px;
-}
-
-.iphone .rectangle-Y {
-  height: 422px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 358px;
-}
-
-.iphone .overlap-W {
-  height: 422px;
-  left: 1055px;
-  position: absolute;
-  top: 2698px;
-  width: 359px;
-}
-
-.iphone .rectangle-7 {
-  background-color: #d9d9d91c;
-  border-radius: 5px;
-  height: 422px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 358px;
-}
-
-.iphone .rectangle-L {
-  height: 422px;
-  left: 1px;
-  position: absolute;
-  top: 0;
-  width: 358px;
-}
-
-.iphone .overlap-A {
+.iphone .desktop-sticky-menu {
   background-color: #ffffff1c;
   height: 90vh;
   left: 0;
   position: fixed;
   top: 3px;
-  bottom: px;
   width: 17.4%;
-  
+}
+
+.iphone .desktop-sticky-menu.sticky {
+  position: absolute;
+  top: 900px;
+  left: 0;
+}
+
+@media screen and (min-width: 1442px) {
+  .iphone .desktop-sticky-menu {
+    position: absolute;
+    top: 3px;
+  }
+}
+
+@media screen and (min-width: 1442px) {
+  .iphone .desktop-sticky-menu.sticky {
+    position: sticky;
+    top: 850px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-  .iphone .overlap-A {
+  .iphone .desktop-sticky-menu {
     visibility: hidden;
   }
 }
@@ -1130,6 +1079,41 @@ body {
   }
 }
 
+@media screen and (min-width: 1281px) {
+  .iphone .text-wrapper-6 {
+    font-size: 50px;
+    left: 3%;
+  }
+}
+
+.iphone .featuresLine {
+  height: 0px;
+  left: 51%;
+  position: absolute;
+  object-fit: cover;
+  top: 1930px;
+  width: 49%;
+  border: 1px #87C75F solid;
+}
+
+@media screen and (min-width: 1281px) {
+  .iphone .featuresLine {
+    height: 0px;
+    left: 56%;
+    position: absolute;
+    object-fit: cover;
+    top: 1938px;
+    width: 42%;
+    border: 1px #87C75F solid;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .iphone .featuresLine {
+    visibility: hidden;
+  }
+}
+
 .iphone .overlap-4 {
   height: 374px;
   left: 38px;
@@ -1142,7 +1126,7 @@ body {
   .iphone .overlap-4 {
     width: 80.9%;
     left: 18.1%;
-    top: 1980px;
+    top: 2010px;
   }
 }
 
@@ -1219,7 +1203,7 @@ body {
   .iphone .overlap-5 {
     width: 80.9%;
     left: 18.1%;
-    top: 2420px;
+    top: 2450px;
   }
 }
 
@@ -1269,7 +1253,7 @@ body {
   .iphone .overlap-6 {
     left: 18.1%;
     width: 80.9%;
-    top: 2360px;
+    top: 2390px;
   }
 }
 
@@ -1418,18 +1402,11 @@ body {
 
 @media screen and (min-width: 1281px) {
   .iphone .text-wrapper-10 {
-    font-size: 56px;
+    font-size: 50px;
     top: 950px;
     position: absolute;
     width: 30%;
-    left: 20%;
-  }
-}
-
-@media screen and (min-width: 481px) and (max-width: 1279px) {
-  .iphone .text-wrapper-10 {
-    font-size: 50px;
-    top: 954px;
+    left: 18%;
   }
 }
 
@@ -1441,6 +1418,18 @@ body {
   top: 990px;
   width: 49%;
   border: 1px #87C75F solid;
+}
+
+@media screen and (min-width: 1281px) {
+  .iphone .raceOutlookLine {
+    height: 0px;
+    left: 46%;
+    position: absolute;
+    object-fit: cover;
+    top: 985px;
+    width: 53%;
+    border: 1px #87C75F solid;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -1522,7 +1511,7 @@ body {
   .iphone .overlap-8 {
     width: 80.9%;
     left: 78.1%;
-    top: 2420px;
+    top: 2450px;
   }
 }
 
@@ -1551,7 +1540,7 @@ body {
 @media screen and (min-width: 480px) {
   .iphone .overlap-9 {
     left: 48.1%;
-    top: 2360px;
+    top: 2390px;
   }
 }
 
@@ -1583,7 +1572,7 @@ body {
 @media screen and (min-width: 480px) {
   .iphone .overlap-10 {
     left: 78.1%;
-    top: 2360px;
+    top: 2390px;
   }
 }
 
@@ -1609,7 +1598,7 @@ body {
 
 @media screen and (min-width: 480px) {
   .iphone .rectangle-8 {
-    top: 1980px;
+    top: 2010px;
     left: 48.1%;
     width: 20%;
   }
@@ -1653,8 +1642,6 @@ body {
 
 
 .iphone .rectangle-9 {
-  
-  
   border-radius: 5px;
   height: 374px;
   left: 767px;
@@ -1666,7 +1653,7 @@ body {
 
 @media screen and (min-width: 480px) {
   .iphone .rectangle-9 {
-    top: 1980px;
+    top: 2010px;
     left: 78.1%;
     width: 20%;
   }
@@ -1858,7 +1845,7 @@ body {
   .iphone .overlap-13 {
     width: 80.9%;
     left: 48.1%;
-    top: 2420px;
+    top: 2450px;
   }
 }
 
@@ -1876,7 +1863,7 @@ body {
     left: 18.1%;
     width: 21.74%;
     top: 1030px;
-    position: relative;
+    position: absolute;
   }
 }
 
