@@ -1597,7 +1597,7 @@ body {
 }
 
 .iphone .rectangle-8 {
-  background-color: #d9d9d91c;
+  border: 1px solid #606367;
   border-radius: 5px;
   height: 374px;
   left: 423px;
@@ -1611,9 +1611,47 @@ body {
     top: 1980px;
     left: 48.1%;
     width: 20%;
-    border: 1px solid orange
+    display: flex;
+    flex-direction: column;
   }
 }
+
+.iphone .card-section {
+  flex: 1;
+  border-bottom: 1px solid #606367;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-section:nth-child(1) { background-color: #ffeb3b; border-top-left-radius: 2.5px; border-top-right-radius: 2.5px;}
+.card-section:nth-child(2) { background-color: #4caf50; }
+.card-section:nth-child(3) { background-color: #81c784 }
+.card-section:nth-child(4) { background-color: #c8e6c9; }
+.card-section:nth-child(5) { background-color: #ffffff; }
+.card-section:nth-child(6) { background-color: #ffcdd2; }
+.card-section:nth-child(7) { background-color: #e57373; }
+.card-section:nth-child(8) { background-color: #f44336; }
+.card-section:nth-child(9) { background-color: #212121; border-bottom: none; border-bottom-left-radius: 2.5px; border-bottom-right-radius: 2.5px; }
+
+.iphone .card-text {
+  text-align: center;
+  font-family: "Roboto", Helvetica;
+  font-size: 18px;
+  font-weight: 500px;
+}
+
+.card-section:nth-child(1) .card-text { color: #000000; }
+.card-section:nth-child(2) .card-text { color: #ffffff; }
+.card-section:nth-child(3) .card-text { color: #000000; }
+.card-section:nth-child(4) .card-text { color: #000000; }
+.card-section:nth-child(5) .card-text { color: #000000; }
+.card-section:nth-child(6) .card-text { color: #000000; }
+.card-section:nth-child(7) .card-text { color: #000000; }
+.card-section:nth-child(8) .card-text { color: #ffffff; }
+.card-section:nth-child(9) .card-text { color: #ffffff; }
+
+
 
 .iphone .rectangle-9 {
   background-color: #d9d9d91c;

@@ -416,7 +416,7 @@ export function getBackgroundColor(data3) {
       color = "#B6BABD";
       break;
     default:
-      color = "ffffff";
+      color = "#ffffff";
   };
 
   return color        

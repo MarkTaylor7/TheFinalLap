@@ -1228,7 +1228,35 @@ export default function App() {
               </div>
             </div>
           </div>
-          <div className="rectangle-8" />
+          <div className="rectangle-8">
+            <div className="card-section">
+              <div className="card-text">Win</div>
+            </div>
+            <div className="card-section">
+              <div className="card-text">Way Above Avg</div>
+            </div>
+            <div className="card-section">
+              <div className="card-text">Above Avg</div>
+            </div>
+            <div className="card-section">
+              <div className="card-text">Slightly Above Avg</div>
+            </div>
+            <div className="card-section">
+              <div className="card-text">Average</div>
+            </div>
+            <div className="card-section">
+              <div className="card-text">Slightly Below Avg</div>
+            </div>
+            <div className="card-section">
+              <div className="card-text">Below Avg</div>
+            </div>
+            <div className="card-section">
+              <div className="card-text">Way Below Avg</div>
+            </div>
+            <div className="card-section">
+              <div className="card-text">DNF - Did Not Finish</div>
+            </div>
+          </div>
           <div className="rectangle-9" />
           <img className="rectangle-10" alt="Rectangle" src="rectangle-36.svg" />
           <img className="rectangle-11" alt="Rectangle" src="rectangle-38.svg" />
