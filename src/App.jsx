@@ -1134,6 +1134,7 @@ export default function App() {
             <div className="text-wrapperFDesktop">{nextEventCircuit}</div>
           </div>
           <img className="nextRaceBoxImageDesktop" alt="Rectangle" src={nextRaceBox} />
+          
           <div className="footerBoxMobile">
             <div className="footerBoxBackgroundMobile" />
             <img className="siteLogoFooterMobile" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} />
@@ -1178,6 +1179,7 @@ export default function App() {
             </a>
             <div className="line-2"></div>
           </div>
+
           <div className="footerBoxDesktop">
             <div className="footerBoxBackgroundDesktop" />
             <p className="copyrightDesktop">© 2024 The Final Lap</p>

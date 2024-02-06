@@ -51,12 +51,11 @@ body {
   min-width: 320px;
   width: 100%;
   max-width: 1440px;
-  border: 1px solid red;
 }
 
 @media screen and (min-width: 480px) {
   .iphone .div {
-    min-height: 3294px;
+    min-height: 2982px;
   }
 }
 
@@ -550,12 +549,6 @@ body {
   width: 100%;
 }
 
-@media screen and (max-width: 480px) {
-  .iphone .footerBoxDesktop {
-    visibility: hidden;
-  }
-}
-
 .iphone .siteLogoFooterMobile {
   height: 46px;
   left: 3.6%;
@@ -662,6 +655,12 @@ body {
   width: 100%;
 }
 
+@media screen and (max-width: 480px) {
+  .iphone .footerBoxDesktop {
+    visibility: hidden;
+  }
+}
+
 .iphone .footerBoxBackgroundDesktop {
   background-color: #1c1c1c;
   height: 322px;
@@ -676,13 +675,13 @@ body {
   font-family: "Roboto", Helvetica;
   font-size: 16px;
   font-weight: 400;
-  height: 45px;
-  left: 1244px;
+  height: 14%;
+  left: 86.4%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 254px;
-  width: 322px;
+  top: 78.9%;
+  width: 22.4%;
 }
 
 .iphone .footer-text-wrapper-1 {
@@ -691,11 +690,11 @@ body {
   font-size: 26px;
   font-weight: 400;
   height: 64px;
-  left: 200px;
+  left: 13.9%;
   letter-spacing: 0;
   line-height: 23.4px;
   position: absolute;
-  top: 62px;
+  top: 19.25%;
   width: 90px;
 }
 
@@ -705,11 +704,11 @@ body {
   font-size: 26px;
   font-weight: 400;
   height: 64px;
-  left: 42px;
+  left: 2.92%;
   letter-spacing: 0;
   line-height: 23.4px;
   position: absolute;
-  top: 62px;
+  top: 19.25%;
   width: 100px;
 }
 
@@ -719,11 +718,11 @@ body {
   font-size: 26px;
   font-weight: 400;
   height: 64px;
-  left: 386px;
+  left: 26.8%;
   letter-spacing: 0;
   line-height: 23.4px;
   position: absolute;
-  top: 62px;
+  top: 19.25%;
   width: 100px;
 }
 
@@ -733,11 +732,11 @@ body {
   font-size: 26px;
   font-weight: 400;
   height: 64px;
-  left: 569px;
+  left: 39.51%;
   letter-spacing: 0;
   line-height: 23.4px;
   position: absolute;
-  top: 62px;
+  top: 19.25%;
   width: 80px;
 }
 
@@ -755,7 +754,7 @@ body {
   font-size: 82px;
   font-weight: 700;
   height: 114px;
-  left: 107px;
+  left: 7.43%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -765,7 +764,7 @@ body {
 
 .iphone .siteLogoFooterDesktop {
   height: 64px;
-  left: 33px;
+  left: 2.29%;
   position: absolute;
   top: 70.2%;
   width: 55px;
@@ -773,7 +772,7 @@ body {
 
 .iphone .gitHubDesktop {
   height: 69px;
-  left: 1219px;
+  left: 84.65%;
   position: absolute;
   top: 55px;
   width: 69px;
@@ -781,10 +780,18 @@ body {
 
 .iphone .linkedInDesktop {
   height: 69px;
-  left: 1314px;
+  left: 91.25%;
   position: absolute;
   top: 55px;
   width: 69px;
+}
+
+@media screen and (max-width: 1281px) {
+  .iphone .gitHubDesktop,
+  .iphone .linkedInDesktop {
+    height: 58px;
+    width: 58px;
+  }
 }
 
 .iphone .desktop-sticky-menu {
@@ -1951,13 +1958,6 @@ select {
   top: 24px;
   width: 100%;
   z-index: 0;
-}
-
-label {
-  display: block;
-  font-size: 18px;
-  margin-bottom: 8px;
-  border: 2px solid red;
 }
 
 @media screen and (max-width: 480px) {
