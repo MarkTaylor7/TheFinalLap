@@ -16,7 +16,7 @@ import {
   createSeasonResultsProps
 } from "./utilities";
 
-import feature1 from "./assets/images/feature1.png";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { circuitTypes, raceTitles, allCareerData, dropdownOptions, nextRaceBanners } from "./consts";
 import { flags } from "./Flags";
@@ -30,6 +30,7 @@ import linkedInMobile from "./assets/linkedInMobile.svg";
 import linkedInDesktop from "./assets/linkedInDesktop.svg";
 import heroBannerMobile from "./assets/images/heroBannerMobile.png";
 import heroBannerDesktop from "./assets/images/heroBannerDesktop.png";
+import feature1 from "./assets/images/feature1.png";
 import toggleButton from "./assets/toggleButton.svg";
 import toggleDropArrow from "./assets/toggleDropArrow.svg";
 import leftArrow from "./assets/leftArrow.svg";
@@ -73,11 +74,27 @@ export default function App() {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
 
+  const screenWidth1280 = useMediaQuery('(max-width:1281px)');
+  const screenWidth1366 = useMediaQuery('(min-width:1282px) and (max-width:1367px)');
+  const screenWidth1440 = useMediaQuery('(min-width:1368px) and (max-width:1441px)');
+  const screenWidth1536 = useMediaQuery('(min-width:1442px) and (max-width: 1900px)');
+  const screenWidth1920Plus = useMediaQuery('(min-width:1901px)');
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const isStickyNow = scrollPosition >= 800;
+      let isStickyNow;
+      if (screenWidth1280) {
+        isStickyNow = scrollPosition >= 899;
+      } else if (screenWidth1366) {
+        isStickyNow = scrollPosition >= 1129;
+      } else if (screenWidth1440) {
+        isStickyNow = scrollPosition >= 1011;
+      } else if (screenWidth1536) {
+        isStickyNow = scrollPosition >= 1043;
+      }else if (screenWidth1920Plus) {
+        isStickyNow = scrollPosition >= 993;
+       } else {isStickyNow = scrollPosition >= 129};
 
       setSticky(isStickyNow);
     };

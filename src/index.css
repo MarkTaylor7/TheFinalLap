@@ -809,10 +809,39 @@ body {
   }
 }
 
-@media screen and (min-width: 1442px) {
+
+@media screen and (min-width: 1000px) and (max-width: 1281px) {
   .iphone .desktop-sticky-menu.sticky {
     position: sticky;
-    top: 850px;
+    top: 899px;
+  }
+}
+
+@media screen and (min-width: 1282px) and (max-width: 1367px) {
+  .iphone .desktop-sticky-menu.sticky {
+    position: sticky;
+    top: 1129px;
+  }
+}
+
+@media screen and (min-width: 1368px) and (max-width: 1441px) {
+  .iphone .desktop-sticky-menu.sticky {
+    position: sticky;
+    top: 1011px;
+  }
+}
+
+@media screen and (min-width: 1442px) and (max-width: 1900px) {
+  .iphone .desktop-sticky-menu.sticky {
+    position: sticky;
+    top: 1043px;
+  }
+}
+
+@media screen and (min-width: 1901px) {
+  .iphone .desktop-sticky-menu.sticky {
+    position: sticky;
+    top: 993px;
   }
 }
 
