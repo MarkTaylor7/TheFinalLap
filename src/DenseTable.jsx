@@ -34,43 +34,43 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
   getBackgroundColor(data3);
   getColor(data3);
 
+  const [hoveredSection, setHoveredSection] = useState(null);
+
+  const handleHover = (section) => {
+    setHoveredSection(section);
+  };
+
   const { showCluster1, setShowCluster1,
           showCluster2, setShowCluster2,
           showCluster3, setShowCluster3 } = useContext(MyContext);
 
   const isSmallScreen = useMediaQuery('(max-width:480px)');
   const isVerySmallScreen = useMediaQuery('(max-width:410px)');
-
+  
     return (
       boolean4 == false ? cellLoading :
         <div id="tableContainer">
-
-          {/*
-          <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={showOnlyCluster1}>{showCluster2 == false && showCluster3 == false ? '(selected)' : 'Recent Form'}</Button>
-          <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={showOnlyCluster2}>{showCluster1 == false && showCluster3 == false ? '(selected)' : 'Circuit History'}</Button>
-          <Button sx={{ fontSize: 8, maxWidth: 90/100 }} onClick={showOnlyCluster3}>{showCluster1 == false && showCluster2 == false ? '(selected)' : 'Circuit Type'}</Button>
-          */}
-
           <TableContainer className="mainTable" component={Paper} style={{ maxHeight: 700, borderRadius: 0 }}>
             <Table sx={{ overflow: 'auto', maxWidth: 100/100 }} size="small" stickyHeader aria-label="sticky table">
               <TableHead>
                 <TableRow>
                   <TableCell align="center" colSpan={1} sx={{ bgcolor: "#17181a", borderBottom: 0, borderTop: '1px solid #606367', borderRight: '1px solid #606367', borderLeft: '1px solid #606367' }}></TableCell>
-                  {showCluster1 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', borderBottom: 0, borderRight: '1px solid #606367', whiteSpace: 'pre-wrap' }}>{"RECENT FORM\nTHE LAST 5 RACES"}</TableCell>}
-                  {showCluster2 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', px: 0.5, borderBottom: 0, borderRight: '1px solid #606367', whiteSpace: 'pre-wrap' }}>{`CIRCUIT HISTORY\nRECENT RACES AT ${data4}`}</TableCell>}
-                  {showCluster3 && <TableCell align="center" colSpan={5} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', px: 0.5, borderBottom: 0, whiteSpace: 'pre-wrap' }}>{`CIRCUIT TYPE: ${data5}\nCIRCUITS SIMILAR TO ${data4}`}</TableCell>}
+                  {showCluster1 && <TableCell align="center" colSpan={5} onMouseEnter={() => handleHover(1)} onMouseLeave={() => handleHover(null)} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', borderBottom: 0, borderRight: '1px solid #606367', whiteSpace: 'pre-wrap', transition: 'opacity 0.3s ease-out', opacity: (hoveredSection !== 2 && hoveredSection !== 3) ? 1 : 0.7 }}>{"RECENT FORM\nTHE LAST 5 RACES"}</TableCell>}
+                  {showCluster2 && <TableCell align="center" colSpan={5} onMouseEnter={() => handleHover(2)} onMouseLeave={() => handleHover(null)} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', px: 0.5, borderBottom: 0, borderRight: '1px solid #606367', whiteSpace: 'pre-wrap', transition: 'opacity 0.3s ease-out', opacity: hoveredSection !== 1||3 ? 1 : 0.7 }}>{`CIRCUIT HISTORY\nRECENT RACES AT ${data4}`}</TableCell>}
+                  {showCluster3 && <TableCell align="center" colSpan={5} onMouseEnter={() => handleHover(3)} onMouseLeave={() => handleHover(null)} sx={{ color: "#ffffff", bgcolor: "#17181a", borderTop: '1px solid #606367', px: 0.5, borderBottom: 0, whiteSpace: 'pre-wrap', transition: 'opacity 0.3s ease-out', opacity: hoveredSection !== 1||2 ? 1 : 0.7 }}>{`CIRCUIT TYPE: ${data5}\nCIRCUITS SIMILAR TO ${data4}`}</TableCell>}
 
                 </TableRow>
                   {data1.map((row, i) => (
                     <TableRow
-                    key={i} sx = {{ overflow: 'auto' }}
+                    key={i}
+                    sx = {{ overflow: 'auto' }}
                     >
                       <TableCell sx = {{ bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367', borderLeft: '1px solid #606367', top: "59px" }}></TableCell>
-                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "59px", width: isVerySmallScreen ? 1/6 : 65 }}>{row.fiveRacesAgo}</TableCell>}
-                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "59px", width: isVerySmallScreen ? 1/6 : 65  }}>{row.fourRacesAgo}</TableCell>}
-                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "59px", width: isVerySmallScreen ? 1/6 : 65  }}>{row.threeRacesAgo}</TableCell>}
-                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "59px", width: isVerySmallScreen ? 1/6 : 65  }}>{row.twoRacesAgo}</TableCell>}
-                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367', top: "59px", width: isVerySmallScreen ? 1/6 : 65 }}>{row.oneRaceAgo}</TableCell>}
+                      {showCluster1 && <TableCell align="center" onMouseEnter={() => handleHover(1)} onMouseLeave={() => handleHover(null)} sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "59px", width: isVerySmallScreen ? 1/6 : 65, transition: 'opacity 0.3s ease-out', opacity: hoveredSection === 1 ? 1 : 0.7 }}>{row.fiveRacesAgo}</TableCell>}
+                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "59px", width: isVerySmallScreen ? 1/6 : 65, transition: 'opacity 0.3s ease-out', opacity: hoveredSection === 1 ? 1 : 0.7  }}>{row.fourRacesAgo}</TableCell>}
+                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "59px", width: isVerySmallScreen ? 1/6 : 65, transition: 'opacity 0.3s ease-out', opacity: hoveredSection === 1 ? 1 : 0.7  }}>{row.threeRacesAgo}</TableCell>}
+                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "59px", width: isVerySmallScreen ? 1/6 : 65, transition: 'opacity 0.3s ease-out', opacity: hoveredSection === 1 ? 1 : 0.7  }}>{row.twoRacesAgo}</TableCell>}
+                      {showCluster1 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, borderRight: '1px solid #606367', top: "59px", width: isVerySmallScreen ? 1/6 : 65, transition: 'opacity 0.3s ease-out', opacity: hoveredSection === 1 ? 1 : 0.7 }}>{row.oneRaceAgo}</TableCell>}
                       {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "59px", width: isVerySmallScreen ? 1/6 : 65 }}>{row.nextRace1}</TableCell>}
                       {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "59px", width: isVerySmallScreen ? 1/6 : 65  }}>{row.nextRace2}</TableCell>}
                       {showCluster2 && <TableCell align="center" sx={{ px: 0, bgcolor: "#17181a", borderBottom: 0, top: "59px", width: isVerySmallScreen ? 1/6 : 65  }}>{row.nextRace3}</TableCell>}
@@ -85,7 +85,8 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
                   ))}
                 {data2.map((row, i) => (
                 <TableRow
-                key={i} sx = {{ overflow: 'auto', bgcolor: "#17181a" }} 
+                key={i}
+                sx = {{ overflow: 'auto', bgcolor: "#17181a" }} 
                 >
                   <TableCell align="left" sx = {{ color: "#ffffff", bgcolor: "#17181a", borderBottom: '1px solid #606367', borderRight: '1px solid #606367', borderLeft: '1px solid #606367', top: "110px", px: isSmallScreen ? 0.5 : 1, fontSize: isSmallScreen ? '14px' : '14px'}}>Driver</TableCell>
                   {showCluster1 && <TableCell align="center" sx={{ px: 0.9, bgcolor: "#17181a", borderBottom: '1px solid #606367', top: "110px" }}><a href={row.fiveRacesAgoReport}  target="_blank" rel="noopener noreferrer">{row.fiveRacesAgo}</a></TableCell>}
