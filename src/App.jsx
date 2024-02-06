@@ -1303,8 +1303,7 @@ export default function App() {
             <div className="feature-text-container-3">
               <div className="feature-text-wrapper-A">Track the Trends</div>
               <p className="feature-text-wrapper-B">
-                Circuits are grouped into one of three types, based on the demands they place on an F1 car. See how drivers and teams
-                perform on different layouts.
+                Circuits are grouped into one of three types, based on the demands they place on an F1 car. See how circuit characteristics affect driver and team performance.
               </p>
             </div>
           </div>
