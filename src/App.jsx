@@ -71,6 +71,11 @@ export default function App() {
   const [allTableDataPopulated, setAllTableDataPopulated] = useState(false);
   const [selectedRace, setselectedRace] = useState('');
 
+  const [showFeature1, setShowFeature1] = useState(true);
+  const [showFeature2, setShowFeature2] = useState(true);
+  const [showFeature3, setShowFeature3] = useState(true);
+
+
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
 
@@ -247,6 +252,12 @@ export default function App() {
       setShowCluster2(false);
       setShowCluster3(false);
 
+      setShowFeature1(true);
+      setShowFeature2(true);
+      setShowFeature3(true);
+      setShowFeature2(false);
+      setShowFeature3(false);
+
       setLine5Style({height: 0, border: '1.50px #87C75F solid'});
       setLine7Style({height: 0, border: '1.50px #405E2C solid'});
       setLine8Style({height: 0, border: '1.50px #405E2C solid'});
@@ -282,6 +293,10 @@ export default function App() {
       setShowCluster1(true);
       setShowCluster2(true);
       setShowCluster3(true);
+
+      setShowFeature1(true);
+      setShowFeature2(true);
+      setShowFeature3(true);
     };  
   
     const handleResizeDown = () => {
@@ -332,6 +347,30 @@ export default function App() {
     setLine5Style({height: 0, border: '1.50px #405E2C solid'});
     setLine7Style({height: 0, border: '1.50px #405E2C solid'});
     setLine8Style({height: 0, border: '1.50px #87C75F solid'});
+  };
+
+  const showOnlyFeature1 = () => {
+    setShowFeature1(true);
+    setShowFeature2(true);
+    setShowFeature3(true);
+    setShowFeature2(false);
+    setShowFeature3(false);
+  };
+
+  const showOnlyFeature2 = () => {
+    setShowFeature1(true);
+    setShowFeature2(true);
+    setShowFeature3(true);
+    setShowFeature1(false);
+    setShowFeature3(false);
+  };
+
+  const showOnlyFeature3 = () => {
+    setShowFeature1(true);
+    setShowFeature2(true);
+    setShowFeature3(true);
+    setShowFeature1(false);
+    setShowFeature2(false);
   };
   
   // Getting driver names, current season results and events list
@@ -1189,18 +1228,18 @@ export default function App() {
           <div className="text-wrapper-6">Final Lap Features</div>
           <div className="featuresLine" />
 
-          <div className="feature-cluster-1">
-            <div className="feature-container-1">
+          {showFeature1 && <div className="feature-container-1">
+            <div className="feature-card-container-1">
               <div className="feature-card-1">
                 <img className="imageFeature1" alt="Cursor highlighting table column header" src={feature1} />
               </div>
-              <img className="rightArrow" alt="Arrow pointing right" src={rightArrow} />
-              <img className="leftArrow" alt="Arrow pointing left" src={leftArrow} />
+              <img className="leftArrow" alt="Arrow pointing left" src={leftArrow} onClick={showOnlyFeature3} />
+              <img className="rightArrow" alt="Arrow pointing right" src={rightArrow} onClick={showOnlyFeature2} />
             </div>
             <div className="feature-header-1">
               <div className="feature-header-text">Feature</div>
               <div className="feature-header-wrapper">
-                <div className="feature-lines-container-2">
+                <div className="feature-lines-container-1">
                   <div className="feature-line-1A"></div>
                   <div className="feature-line-2"></div>
                 </div>
@@ -1212,9 +1251,9 @@ export default function App() {
                 See an unusual race result and need more info? Click on the race header for a detailed report.
               </p>
             </div>
-          </div>
+          </div>}
 
-          <div className="feature-cluster-2">
+          {showFeature2 && <div className="feature-container-2">
             <div className="feature-card-2">
               <div className="card-section">
                 <div className="card-text">Win</div>
@@ -1243,8 +1282,8 @@ export default function App() {
               <div className="card-section">
                 <div className="card-text">DNF - Did Not Finish</div>
               </div>
-              <img className="rightArrow" alt="Arrow pointing right" src={rightArrow} />
-              <img className="leftArrow" alt="Arrow pointing left" src={leftArrow} />
+              <img className="leftArrow" alt="Arrow pointing left" src={leftArrow} onClick={showOnlyFeature1} />
+              <img className="rightArrowA" alt="Arrow pointing right" src={rightArrow} onClick={showOnlyFeature3} />
             </div>
             <div className="feature-header-2">
               <div className="feature-header-text">Feature</div>
@@ -1262,9 +1301,9 @@ export default function App() {
               can spot the stand-out performances; good and bad.
               </p>
             </div>
-          </div>
+          </div>}
 
-          <div className="feature-cluster-3">
+          {showFeature3 && <div className="feature-container-3"> 
             <div className="feature-card-3">
               <div className="card-column">
                 <div className="card-column-child">
@@ -1288,8 +1327,8 @@ export default function App() {
                   <img className="circuit-svg" src={circuitSuzuka} />
                 </div>
               </div>
-              <img className="rightArrow" alt="Arrow pointing right" src={rightArrow} />
-              <img className="leftArrow" alt="Arrow pointing left" src={leftArrow} />
+              <img className="leftArrow" alt="Arrow pointing left" src={leftArrow} onClick={showOnlyFeature2} />
+              <img className="rightArrowA" alt="Arrow pointing right" src={rightArrow} onClick={showOnlyFeature1} />
             </div>
             <div className="feature-header-3">
               <div className="feature-header-text">Feature</div>
@@ -1306,7 +1345,7 @@ export default function App() {
                 Circuits are grouped into one of three types, based on the demands they place on an F1 car. See how circuit characteristics affect driver and team performance.
               </p>
             </div>
-          </div>
+          </div>}
 
           <div className="overlap-7">
             <div className="rectangle-6" onClick={showOnlyCluster1}>

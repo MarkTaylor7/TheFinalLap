@@ -44,7 +44,7 @@ body {
 
 .iphone .div {
   background-color: #000000;
-  min-height: 2478px;
+  min-height: 2500px;
   /*overflow hides or reveals the extra feature cards*/
   overflow: hidden;
   position: relative;
@@ -531,7 +531,7 @@ body {
   height: 195px;
   left: 0;
   position: absolute;
-  top: 2286px;
+  top: 2308px;
   width: 100%;
 }
 
@@ -1143,7 +1143,7 @@ body {
   }
 }
 
-.iphone .feature-container-1 {
+.iphone .feature-card-container-1 {
   height: 374px;
   left: 38px;
   position: absolute;
@@ -1152,7 +1152,7 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-container-1 {
+  .iphone .feature-card-container-1 {
     width: 80.9%;
     left: 18.1%;
     top: 2010px;
@@ -1183,7 +1183,7 @@ body {
 
 .iphone .leftArrow {
   height: 43px;
-  left: -13px;
+  left: -27px;
   position: absolute;
   top: 166px;
   width: 19px;
@@ -1191,7 +1191,15 @@ body {
 
 .iphone .rightArrow {
   height: 43px;
-  right: 1px;
+  right: -13px;
+  position: absolute;
+  top: 166px;
+  width: 19px;
+}
+
+.iphone .rightArrowA {
+  height: 43px;
+  right: -27px;
   position: absolute;
   top: 166px;
   width: 19px;
@@ -1199,7 +1207,8 @@ body {
 
 @media screen and (min-width: 480px) {
   .iphone .leftArrow,
-  .iphone .rightArrow {
+  .iphone .rightArrow,
+  .iphone .rightArrowA {
     visibility: hidden;
   }
 }
@@ -1354,21 +1363,40 @@ body {
   transform-origin: 0 0;
 }
 
+.iphone .feature-lines-container-1 {
+  height: 35px;
+  left: -1px;
+  position: relative;
+  width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .feature-lines-container-1 {
+    width: 345px;
+  }
+}
+
 .iphone .feature-lines-container-2 {
   height: 35px;
   left: -1px;
   position: relative;
-  width: 313px;
-  
+  width: 100%;
 }
 
 .iphone .feature-lines-container-3 {
   height: 35px;
   left: -1px;
   position: relative;
-  width: 313px;
-  
+  width: 100%;
 }
+
+@media screen and (min-width: 480px) {
+  .iphone .feature-lines-container-2,
+  .iphone .feature-lines-container-3 {
+    width: 313px;
+  }
+}
+
 
 .iphone .overlap-7 {
   height: 142px;
@@ -1514,10 +1542,10 @@ body {
 
 .iphone .feature-text-container-3 {
   height: 131px;
-  left: 764px;
+  left: 36px;
   position: absolute;
   top: 2131px;
-  width: 312px;
+  width: 80%;
 }
 
 @media screen and (min-width: 480px) {
@@ -1576,10 +1604,10 @@ body {
 
 .iphone .feature-header-3 {
   height: 45px;
-  left: 767px;
+  left: 38px;
   position: absolute;
   top: 2080px;
-  width: 312px;
+  width: 80%;
 }
 
 @media screen and (min-width: 480px) {
@@ -1661,10 +1689,10 @@ body {
 .iphone .feature-card-3 {
   border-radius: 5px;
   height: 374px;
-  left: 767px;
+  left: 38px;
   position: absolute;
   top: 1703px;
-  width: 312px;
+  width: 80%;
   display: flex;
 }
 
@@ -1700,7 +1728,7 @@ body {
 .card-column-child:nth-child(3) { border-bottom-left-radius: 10px; }
 .card-column-child:nth-child(4) { border-top-right-radius: 10px; }
 .card-column-child:nth-child(5) { border-radius: 0px; }
-.card-column-child:nth-child(6) { border: 1px solid red; border-bottom-right-radius: 10px; }
+.card-column-child:nth-child(6) { border-bottom-right-radius: 10px; }
 
 
 
@@ -1718,14 +1746,6 @@ body {
   width: 100px;
   height: 100px;
 }
-
-@media screen and (max-width: 480px) {
-.iphone .feature-cluster-1,
-.iphone .feature-cluster-3 {
-    visibility: hidden;
-  }
-} 
-
 
 .iphone .overlap-11 {
   height: 65px;
