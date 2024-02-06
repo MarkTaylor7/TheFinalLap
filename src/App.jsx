@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import DenseTable from "./DenseTable";
 
 import { MyContext } from './MyContext';
@@ -17,6 +17,7 @@ import {
 } from "./utilities";
 
 import useMediaQuery from '@mui/material/useMediaQuery';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import { circuitTypes, raceTitles, allCareerData, dropdownOptions, nextRaceBanners } from "./consts";
 import { flags } from "./Flags";
@@ -90,16 +91,16 @@ export default function App() {
       const scrollPosition = window.scrollY;
       let isStickyNow;
       if (screenWidth1280) {
-        isStickyNow = scrollPosition >= 899;
+        isStickyNow = scrollPosition >= 1044;
       } else if (screenWidth1366) {
-        isStickyNow = scrollPosition >= 1129;
+        isStickyNow = scrollPosition >= 1274;
       } else if (screenWidth1440) {
-        isStickyNow = scrollPosition >= 1011;
+        isStickyNow = scrollPosition >= 1156;
       } else if (screenWidth1536) {
-        isStickyNow = scrollPosition >= 1043;
+        isStickyNow = scrollPosition >= 1188;
       }else if (screenWidth1920Plus) {
         isStickyNow = scrollPosition >= 993;
-       } else {isStickyNow = scrollPosition >= 129};
+       } else {isStickyNow = scrollPosition >= 1145};
 
       setSticky(isStickyNow);
     };
@@ -110,6 +111,19 @@ export default function App() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+  }, []);
+  
+  const targetElementRef = useRef(null);
+  const handleButtonClick = () => {
+    // Scroll to the target element
+    targetElementRef.current.scrollIntoView({
+      behavior: 'smooth', // Optional: adds smooth scrolling
+      block: 'start',     // Optional: align to the top of the element
+    });
+  };
+
+  useEffect(() => {
+    smoothscroll.polyfill();
   }, []);
 
   // Event handler for dropdown change
@@ -1099,7 +1113,7 @@ export default function App() {
                       <div className="divX">Schedule</div>
                     </a>
                     <div className="text-wrapper-2">About</div>
-                    <div className="text-wrapper-3">Features</div>
+                    <div className="text-wrapper-3" onClick={handleButtonClick}>Features</div>
                     <div className="mobileMenuLine1" />
                     <div className="mobileMenuLine2" />
                     <div className="mobileMenuLine3" />
@@ -1156,7 +1170,7 @@ export default function App() {
             </div>
             <div className="flexcontainer-2-Mobile">
               <p className="textMobile">
-                <span className="spanMobile">
+                <span className="spanMobile" onClick={handleButtonClick}>
                   Features
                   <br />
                 </span>
@@ -1189,7 +1203,7 @@ export default function App() {
             <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
               <div className="footer-text-wrapper-2">Drivers</div>
             </a>
-            <div className="footer-text-wrapper-3">Features</div>
+            <div className="footer-text-wrapper-3" onClick={handleButtonClick}>Features</div>
             <div className="footer-text-wrapper-4">About</div>
             <div className="footer-text-wrapper-5">The Final Lap</div>
             <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} />
@@ -1208,7 +1222,7 @@ export default function App() {
             <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
               <div className="text-wrapper-19">Schedule</div>
             </a>
-            <div className="text-wrapper-21">Features</div>
+            <div className="text-wrapper-21" onClick={handleButtonClick}>Features</div>
             <div className="text-wrapper-20">About</div>
             <div className="desktopMenuLine1" />
             <div className="desktopMenuLine2" />
@@ -1227,7 +1241,7 @@ export default function App() {
             />
           </div>
 
-          <div className="text-wrapper-6">Final Lap Features</div>
+          <div className="text-wrapper-6" ref={targetElementRef}>Final Lap Features</div>
           <div className="featuresLine" />
 
           {showFeature1 && <div className="feature-container-1">

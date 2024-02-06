@@ -820,28 +820,28 @@ body {
 @media screen and (min-width: 1000px) and (max-width: 1281px) {
   .iphone .desktop-sticky-menu.sticky {
     position: sticky;
-    top: 899px;
+    top: 1044px;
   }
 }
 
 @media screen and (min-width: 1282px) and (max-width: 1367px) {
   .iphone .desktop-sticky-menu.sticky {
     position: sticky;
-    top: 1129px;
+    top: 1274px;
   }
 }
 
 @media screen and (min-width: 1368px) and (max-width: 1441px) {
   .iphone .desktop-sticky-menu.sticky {
     position: sticky;
-    top: 1011px;
+    top: 1156px;
   }
 }
 
 @media screen and (min-width: 1442px) and (max-width: 1900px) {
   .iphone .desktop-sticky-menu.sticky {
     position: sticky;
-    top: 1043px;
+    top: 1188px;
   }
 }
 
