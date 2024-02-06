@@ -1096,7 +1096,7 @@ body {
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 1617px;
+  top: 1630px;
   width: 70.8%;
 }
 
@@ -1143,7 +1143,7 @@ body {
   }
 }
 
-.iphone .overlap-4 {
+.iphone .feature-container-1 {
   height: 374px;
   left: 38px;
   position: absolute;
@@ -1152,30 +1152,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .overlap-4 {
+  .iphone .feature-container-1 {
     width: 80.9%;
     left: 18.1%;
     top: 2010px;
   }
 }
 
-.iphone .rectangle-4 {
-  border-radius: 5px;
-  height: 374px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 95.7%;
-  
-}
-
-@media screen and (min-width: 480px) {
-  .iphone .rectangle-4 {
-    width: 100%;
-  }
-}
-
-.iphone .rectangle-5 {
+.iphone .feature-card-1 {
   background-color: #d9d9d91c;
   height: 374px;
   left: 0;
@@ -1186,7 +1170,7 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .rectangle-5 {
+  .iphone .feature-card-1 {
     width: 24.5%;
   }
 }
@@ -1220,7 +1204,7 @@ body {
   }
 }
 
-.iphone .overlap-5 {
+.iphone .feature-text-container-1 {
   height: 131px;
   left: 36px;
   position: absolute;
@@ -1229,14 +1213,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .overlap-5 {
+  .iphone .feature-text-container-1 {
     width: 80.9%;
     left: 18.1%;
     top: 2450px;
   }
 }
 
-.iphone .text-wrapper-7 {
+.iphone .feature-text-wrapper-A {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 22px;
@@ -1250,7 +1234,7 @@ body {
   width: 286px;
 }
 
-.iphone .text-wrapper-8 {
+.iphone .feature-text-wrapper-B {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 14px;
@@ -1265,12 +1249,12 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .text-wrapper-8 {
+  .iphone .feature-text-wrapper-B {
     width: 25%;
   }
 }
 
-.iphone .overlap-6 {
+.iphone .feature-header-1 {
   height: 45px;
   left: 38px;
   position: absolute;
@@ -1279,14 +1263,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .overlap-6 {
+  .iphone .feature-header-1 {
     left: 18.1%;
     width: 80.9%;
     top: 2390px;
   }
 }
 
-.iphone .text-wrapper-9 {
+.iphone .feature-header-text {
   color: #86c65f;
   font-family: "Roboto", Helvetica;
   font-size: 16px;
@@ -1300,7 +1284,7 @@ body {
   width: 91.6%;
 }
 
-.iphone .overlap-group-wrapper {
+.iphone .feature-header-wrapper {
   height: 35px;
   left: 0;
   position: relative;
@@ -1309,7 +1293,7 @@ body {
   
 }
 
-.iphone .overlap-group-2 {
+.iphone .feature-lines-container-1 {
   height: 35px;
   left: -1px;
   position: relative;
@@ -1317,13 +1301,13 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .overlap-group-2 {
+  .iphone .feature-lines-container-1 {
     width: 30%;
     left: 0;
   }
 }
 
-.iphone .line-3A {
+.iphone .feature-line-1A {
   height: 0px;
   left: 1px;
   position: absolute;
@@ -1333,12 +1317,12 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .line-3A {
+  .iphone .feature-line-1A {
     width: 81%;
   }
 }
 
-.iphone .line-3 {
+.iphone .feature-line-1 {
   height: 0px;
   left: 1px;
   position: absolute;
@@ -1348,18 +1332,18 @@ body {
 }
 
 @media screen and (min-width: 480px) and (max-width: 1280px) {
-  .iphone .line-3 {
+  .iphone .feature-line-1 {
     width: 80%;
   }
 }
 
 @media screen and (min-width: 1281px) {
-  .iphone .line-3 {
+  .iphone .feature-line-1 {
     width: 90%;
   }
 }
 
-.iphone .line-4 {
+.iphone .feature-line-2 {
   height: 35px;
   left: 1px;
   position: absolute;
@@ -1370,7 +1354,7 @@ body {
   transform-origin: 0 0;
 }
 
-.iphone .overlap-group-3 {
+.iphone .feature-lines-container-2 {
   height: 35px;
   left: -1px;
   position: relative;
@@ -1378,7 +1362,7 @@ body {
   
 }
 
-.iphone .overlap-group-4 {
+.iphone .feature-lines-container-3 {
   height: 35px;
   left: -1px;
   position: relative;
@@ -1413,7 +1397,7 @@ body {
   letter-spacing: 1.04px;
   line-height: normal;
   position: absolute;
-  top: 560px;
+  top: 550px;
   width: 100%;
   margin: auto;
   text-align: center;
@@ -1528,7 +1512,7 @@ body {
   width: 207px;
 }
 
-.iphone .overlap-8 {
+.iphone .feature-text-container-3 {
   height: 131px;
   left: 764px;
   position: absolute;
@@ -1537,7 +1521,7 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .overlap-8 {
+  .iphone .feature-text-container-3 {
     width: 80.9%;
     left: 78.1%;
     top: 2450px;
@@ -1558,16 +1542,16 @@ body {
   width: 312px;
 }
 
-.iphone .overlap-9 {
+.iphone .feature-header-2 {
   height: 45px;
-  left: 425px;
+  left: 38px;
   position: absolute;
   top: 2080px;
-  width: 312px;
+  width: 80%;
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .overlap-9 {
+  .iphone .feature-header-2 {
     left: 48.1%;
     top: 2390px;
   }
@@ -1590,7 +1574,7 @@ body {
   width: 35px;
 }
 
-.iphone .overlap-10 {
+.iphone .feature-header-3 {
   height: 45px;
   left: 767px;
   position: absolute;
@@ -1599,7 +1583,7 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .overlap-10 {
+  .iphone .feature-header-3 {
     left: 78.1%;
     top: 2390px;
   }
@@ -1614,22 +1598,26 @@ body {
   top: 517px;
 }
 
-.iphone .rectangle-8 {
+
+
+
+.iphone .feature-card-2 {
   border-radius: 5px;
   height: 374px;
-  left: 423px;
+  left: 38px;
   position: absolute;
   top: 1703px;
-  width: 312px;
+  width: 80%;
   display: flex;
   flex-direction: column;
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .rectangle-8 {
+  .iphone .feature-card-2 {
     top: 2010px;
     left: 48.1%;
     width: 20%;
+    visibility: visible;
   }
 }
 
@@ -1670,7 +1658,7 @@ body {
 
 
 
-.iphone .rectangle-9 {
+.iphone .feature-card-3 {
   border-radius: 5px;
   height: 374px;
   left: 767px;
@@ -1681,7 +1669,7 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .rectangle-9 {
+  .iphone .feature-card-3 {
     top: 2010px;
     left: 78.1%;
     width: 20%;
@@ -1731,21 +1719,13 @@ body {
   height: 100px;
 }
 
-.iphone .rectangle-10 {
-  height: 374px;
-  left: -4003px;
-  position: absolute;
-  top: 2185px;
-  width: 312px;
-}
+@media screen and (max-width: 480px) {
+.iphone .feature-cluster-1,
+.iphone .feature-cluster-3 {
+    visibility: hidden;
+  }
+} 
 
-.iphone .rectangle-11 {
-  height: 374px;
-  left: -4346px;
-  position: absolute;
-  top: 2185px;
-  width: 310px;
-}
 
 .iphone .overlap-11 {
   height: 65px;
@@ -1754,8 +1734,6 @@ body {
   top: 672px;
   width: 93.6%;
 }
-
-
 
 .iphone .rectangle-12 {
   background-color: #ffffff1c;
@@ -1862,16 +1840,16 @@ body {
   width: 22px;
 }
 
-.iphone .overlap-13 {
+.iphone .feature-text-container-2 {
   height: 131px;
-  left: 425px;
+  left: 36px;
   position: absolute;
   top: 2131px;
-  width: 312px;
+  width: 80%;
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .overlap-13 {
+  .iphone .feature-text-container-2 {
     width: 80.9%;
     left: 48.1%;
     top: 2450px;

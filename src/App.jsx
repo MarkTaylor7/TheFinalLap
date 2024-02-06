@@ -1188,120 +1188,133 @@ export default function App() {
 
           <div className="text-wrapper-6">Final Lap Features</div>
           <div className="featuresLine" />
-          <div className="overlap-4">
-            <div className="rectangle-4" />
-            <div className="rectangle-5">
-              <img className="imageFeature1" alt="Cursor highlighting table column header" src={feature1} />
+
+          <div className="feature-cluster-1">
+            <div className="feature-container-1">
+              <div className="feature-card-1">
+                <img className="imageFeature1" alt="Cursor highlighting table column header" src={feature1} />
+              </div>
+              <img className="rightArrow" alt="Arrow pointing right" src={rightArrow} />
+              <img className="leftArrow" alt="Arrow pointing left" src={leftArrow} />
             </div>
-            <img className="rightArrow" alt="Arrow pointing right" src={rightArrow} />
-            <img className="leftArrow" alt="Arrow pointing left" src={leftArrow} />
-          </div>   
-          <div className="overlap-5">
-            <div className="text-wrapper-7">Get the Full Story</div>
-            <p className="text-wrapper-8">
-              See an unusual race result and need more info? Click on the race header for a detailed report.
-            </p>
-          </div>
-          <div className="overlap-6">
-            <div className="text-wrapper-9">Feature</div>
-            <div className="overlap-group-wrapper">
-              <div className="overlap-group-2">
-                <div className="line-3A"></div>
-                <div className="line-4"></div>
+            <div className="feature-header-1">
+              <div className="feature-header-text">Feature</div>
+              <div className="feature-header-wrapper">
+                <div className="feature-lines-container-2">
+                  <div className="feature-line-1A"></div>
+                  <div className="feature-line-2"></div>
+                </div>
               </div>
             </div>
+            <div className="feature-text-container-1">
+              <div className="feature-text-wrapper-A">Get the Full Story</div>
+              <p className="feature-text-wrapper-B">
+                See an unusual race result and need more info? Click on the race header for a detailed report.
+              </p>
+            </div>
           </div>
+
+          <div className="feature-cluster-2">
+            <div className="feature-card-2">
+              <div className="card-section">
+                <div className="card-text">Win</div>
+              </div>
+              <div className="card-section">
+                <div className="card-text">Way Above Avg</div>
+              </div>
+              <div className="card-section">
+                <div className="card-text">Above Avg</div>
+              </div>
+              <div className="card-section">
+                <div className="card-text">Slightly Above Avg</div>
+              </div>
+              <div className="card-section">
+                <div className="card-text">Average</div>
+              </div>
+              <div className="card-section">
+                <div className="card-text">Slightly Below Avg</div>
+              </div>
+              <div className="card-section">
+                <div className="card-text">Below Avg</div>
+              </div>
+              <div className="card-section">
+                <div className="card-text">Way Below Avg</div>
+              </div>
+              <div className="card-section">
+                <div className="card-text">DNF - Did Not Finish</div>
+              </div>
+              <img className="rightArrow" alt="Arrow pointing right" src={rightArrow} />
+              <img className="leftArrow" alt="Arrow pointing left" src={leftArrow} />
+            </div>
+            <div className="feature-header-2">
+              <div className="feature-header-text">Feature</div>
+              <div className="feature-header-wrapper">
+                <div className="feature-lines-container-2">
+                  <div className="feature-line-1"></div>
+                  <div className="feature-line-2"></div>
+                </div>
+              </div>
+            </div>
+            <div className="feature-text-container-2">
+              <div className="feature-text-wrapper-A">Context is King</div>
+              <p className="feature-text-wrapper-B">
+              Race results are measured against that driver's in-season averages so that you
+              can spot the stand-out performances; good and bad.
+              </p>
+            </div>
+          </div>
+
+          <div className="feature-cluster-3">
+            <div className="feature-card-3">
+              <div className="card-column">
+                <div className="card-column-child">
+                  <div className="card-column-child-text">POWER</div>
+                </div>
+                <div className="card-column-child">
+                  <div className="card-column-child-text">BALANCED</div>
+                </div>
+                <div className="card-column-child">
+                  <div className="card-column-child-text">HIGH<br/>DOWNFORCE</div>
+                </div>
+              </div>
+              <div className="card-column">
+                <div className="card-column-child">
+                  <img className="circuit-svg" src={circuitMonza} />
+                </div>
+                <div className="card-column-child">
+                  <img className="circuit-svg" src={circuitShanghai} />
+                </div>
+                <div className="card-column-child">
+                  <img className="circuit-svg" src={circuitSuzuka} />
+                </div>
+              </div>
+              <img className="rightArrow" alt="Arrow pointing right" src={rightArrow} />
+              <img className="leftArrow" alt="Arrow pointing left" src={leftArrow} />
+            </div>
+            <div className="feature-header-3">
+              <div className="feature-header-text">Feature</div>
+              <div className="feature-header-wrapper">
+                <div className="feature-lines-container-3">
+                  <div className="feature-line-1"></div>
+                  <div className="feature-line-2"></div>
+                </div>
+              </div>
+            </div>
+            <div className="feature-text-container-3">
+              <div className="feature-text-wrapper-A">Track the Trends</div>
+              <p className="feature-text-wrapper-B">
+                Circuits are grouped into one of three types, based on the demands they place on an F1 car. See how drivers and teams
+                perform on different layouts.
+              </p>
+            </div>
+          </div>
+
           <div className="overlap-7">
             <div className="rectangle-6" onClick={showOnlyCluster1}>
               <img className="toggleButton" alt="Rectangle" src={toggleButton} />
               <div className="text-wrapper-11">Recent Form</div>
               <div className="line-5" style={line5Style}></div>
               <img className="toggleDropArrow" alt="Arrow pointed down" src={toggleDropArrow} />
-            </div>
-          </div>
-          <div className="overlap-13">
-            <div className="text-wrapper-7">Context is King</div>
-            <p className="text-wrapper-8">
-              Race results are measured against that driver's in-season averages so that you
-              can spot the stand-out performances; good and bad.
-            </p>
-          </div>
-          <div className="overlap-8">
-            <div className="text-wrapper-7">Track the Trends</div>
-            <p className="text-wrapper-8">
-              Circuits are grouped into one of three types, based on the demands they place on an F1 car. See how drivers and teams
-              perform on different layouts.
-            </p>
-          </div>
-          <div className="overlap-9">
-            <div className="text-wrapper-9">Feature</div>
-            <div className="overlap-group-wrapper">
-              <div className="overlap-group-3">
-                <div className="line-3"></div>
-                <div className="line-4"></div>
-              </div>
-            </div>
-          </div>
-          <div className="overlap-10">
-            <div className="text-wrapper-9">Feature</div>
-            <div className="overlap-group-wrapper">
-              <div className="overlap-group-4">
-                <div className="line-3"></div>
-                <div className="line-4"></div>
-              </div>
-            </div>
-          </div>
-          <div className="rectangle-8">
-            <div className="card-section">
-              <div className="card-text">Win</div>
-            </div>
-            <div className="card-section">
-              <div className="card-text">Way Above Avg</div>
-            </div>
-            <div className="card-section">
-              <div className="card-text">Above Avg</div>
-            </div>
-            <div className="card-section">
-              <div className="card-text">Slightly Above Avg</div>
-            </div>
-            <div className="card-section">
-              <div className="card-text">Average</div>
-            </div>
-            <div className="card-section">
-              <div className="card-text">Slightly Below Avg</div>
-            </div>
-            <div className="card-section">
-              <div className="card-text">Below Avg</div>
-            </div>
-            <div className="card-section">
-              <div className="card-text">Way Below Avg</div>
-            </div>
-            <div className="card-section">
-              <div className="card-text">DNF - Did Not Finish</div>
-            </div>
-          </div>
-          <div className="rectangle-9">
-            <div className="card-column">
-              <div className="card-column-child">
-                <div className="card-column-child-text">POWER</div>
-              </div>
-              <div className="card-column-child">
-                <div className="card-column-child-text">BALANCED</div>
-              </div>
-              <div className="card-column-child">
-                <div className="card-column-child-text">HIGH<br/>DOWNFORCE</div>
-              </div>
-            </div>
-            <div className="card-column">
-              <div className="card-column-child">
-                <img className="circuit-svg" src={circuitMonza} />
-              </div>
-              <div className="card-column-child">
-                <img className="circuit-svg" src={circuitShanghai} />
-              </div>
-              <div className="card-column-child">
-                <img className="circuit-svg" src={circuitSuzuka} />
-              </div>
             </div>
           </div>
           
@@ -1313,6 +1326,7 @@ export default function App() {
               <img className="toggleDropArrow-2" alt="Arrow pointed down" src={toggleDropArrow} />
             </div>
           </div>
+
           <div className="overlap-12">
             <div className="rectangle-14" onClick={showOnlyCluster3}>
               <img className="toggleButton3" alt="Rectangle" src={toggleButton} />
@@ -1321,6 +1335,7 @@ export default function App() {
               <img className="toggleDropArrow-3" alt="Arrow pointed down" src={toggleDropArrow} />
             </div>
           </div>
+
           <div className="dropdown-container">
             <select id="dropdown" value={selectedRace} onChange={handleDropdownChange}>
               <option value="">Select Circuit</option>
