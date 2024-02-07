@@ -1836,12 +1836,21 @@ body {
   width: 127px;
 }
 
-.iphone .toggleDropArrow-2 {
-  height: 10px;
-  left: 89.3%;
+.iphone .toggleButton2Status {
+  height: 32px;
+  right: 5%;
   position: absolute;
-  top: 19px;
-  width: 22px;
+  top: 14%;
+  width: 32px;
+}
+
+.iphone .toggleButton3Status {
+  font-size: 16px;
+  font-weight: 500;
+  height: 10px;
+  right: 5%;
+  position: absolute;
+  top: 25%;
 }
 
 .iphone .vector-5 {

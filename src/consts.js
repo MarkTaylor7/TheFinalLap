@@ -217,8 +217,10 @@ const highDownforceCircuits = {
     "Suzuka",
     "Losail",
     "Mexico City"
-  ]
+  ],
+  color: {color: "yellow"}
 };
+
 
 //Balanced Circuits are all-around tests of car/driver performance, where both power and downforce are in roughly
 //equal demand for a quick laptime.
@@ -243,7 +245,8 @@ const balancedCircuits = {
     "Yas Marina",
     "Shanghai",
     "Imola"
-  ]
+  ],
+  color: {color: "orange"}
 };
 
 //Power Circuits feature long straights that reward cars with powerful engines and low drag. Cornering ability
@@ -267,7 +270,8 @@ const powerCircuits = {
     "Spa",
     "Monza",
     "Las Vegas"
-  ]
+  ],
+  color: {color: "red"}
 };
 
 export const circuitTypes = [

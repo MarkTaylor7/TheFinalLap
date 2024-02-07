@@ -76,6 +76,12 @@ export default function App() {
   const [showFeature2, setShowFeature2] = useState(true);
   const [showFeature3, setShowFeature3] = useState(true);
 
+  
+  const [circuitTypeColor, setCircuitTypeColor] = useState({
+    color: 'black'
+  });
+
+  const [nextCircuitFlag, setNextCircuitFlag] = useState('');
 
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
@@ -142,99 +148,147 @@ export default function App() {
     switch (selectedValue) {
       case 'bahrain':
         setNextRace('bahrain');
+        setNextCircuitFlag('https://flagsapi.com/BH/flat/32.png');
         setNextRaceType('Power');
+        setCircuitTypeColor({color: 'red'})
         break;
       case 'jeddah':
         setNextRace('jeddah');
+        setNextCircuitFlag('https://flagsapi.com/SA/flat/32.png');
         setNextRaceType('Power');
+        setCircuitTypeColor({color: 'red'})
         break;
       case 'albert_park':
         setNextRace('albert_park');
+        setNextCircuitFlag('https://flagsapi.com/AU/flat/32.png');
         setNextRaceType('High Downforce');
+        setCircuitTypeColor({color: 'yellow'})
         break;
       case 'suzuka':
         setNextRace('suzuka');
+        setNextCircuitFlag('https://flagsapi.com/JP/flat/32.png');
         setNextRaceType('High Downforce');
+        setCircuitTypeColor({color: 'yellow'})
         break;
       case 'shanghai':
         setNextRace('shanghai');
+        setNextCircuitFlag('https://flagsapi.com/CN/flat/32.png');
         setNextRaceType('Balanced');
+        setCircuitTypeColor({color: 'orange'})
         break;
       case 'miami':
         setNextRace('miami');
+        setNextCircuitFlag('https://flagsapi.com/US/flat/32.png');
         setNextRaceType('Balanced');
+        setCircuitTypeColor({color: 'orange'})
         break;
       case 'imola':
         setNextRace('imola');
+        setNextCircuitFlag('https://flagsapi.com/IT/flat/32.png');
         setNextRaceType('Balanced');
+        setCircuitTypeColor({color: 'orange'})
         break;
       case 'monaco':
         setNextRace('monaco');
+        setNextCircuitFlag('https://flagsapi.com/MC/flat/32.png');
         setNextRaceType('High Downforce');
+        setCircuitTypeColor({color: 'yellow'})
         break;
       case 'villeneuve':
         setNextRace('villeneuve');
+        setNextCircuitFlag('https://flagsapi.com/CA/flat/32.png');
         setNextRaceType('Power');
+        setCircuitTypeColor({color: 'red'})
         break;
       case 'catalunya':
         setNextRace('catalunya');
+        setNextCircuitFlag('https://flagsapi.com/ES/flat/32.png');
         setNextRaceType('High Downforce');
+        setCircuitTypeColor({color: 'yellow'})
         break;
       case 'red_bull_ring':
         setNextRace('red_bull_ring');
+        setNextCircuitFlag('https://flagsapi.com/AT/flat/32.png');
         setNextRaceType('Balanced');
+        setCircuitTypeColor({color: 'orange'})
         break;
       case 'silverstone':
         setNextRace('silverstone');
+        setNextCircuitFlag('https://flagsapi.com/GB/flat/32.png');
         setNextRaceType('Balanced');
+        setCircuitTypeColor({color: 'orange'})
         break;
       case 'hungaroring':
         setNextRace('hungaroring');
+        setNextCircuitFlag('https://flagsapi.com/HU/flat/32.png');
         setNextRaceType('High Downforce');
+        setCircuitTypeColor({color: 'yellow'})
         break;
       case 'spa':
         setNextRace('spa');
+        setNextCircuitFlag('https://flagsapi.com/BE/flat/32.png');
         setNextRaceType('Power');
+        setCircuitTypeColor({color: 'red'})
         break;
       case 'zandvoort':
         setNextRace('zandvoort');
+        setNextCircuitFlag('https://flagsapi.com/NL/flat/32.png');
         setNextRaceType('High Downforce');
+        setCircuitTypeColor({color: 'yellow'})
         break;
       case 'monza':
         setNextRace('monza');
+        setNextCircuitFlag('https://flagsapi.com/IT/flat/32.png');
         setNextRaceType('Power');
+        setCircuitTypeColor({color: 'red'})
         break;
       case 'baku':
         setNextRace('baku');
+        setNextCircuitFlag('https://flagsapi.com/AZ/flat/32.png');
         setNextRaceType('Power');
+        setCircuitTypeColor({color: 'red'})
         break;
       case 'marina_bay':
         setNextRace('marina_bay');
+        setNextCircuitFlag('https://flagsapi.com/SG/flat/32.png');
         setNextRaceType('High Downforce');
+        setCircuitTypeColor({color: 'yellow'})
         break;
       case 'americas':
         setNextRace('americas');
+        setNextCircuitFlag('https://flagsapi.com/US/flat/32.png');
         setNextRaceType('Balanced');
+        setCircuitTypeColor({color: 'orange'})
         break;
       case 'rodriguez':
         setNextRace('rodriguez');
+        setNextCircuitFlag('https://flagsapi.com/MX/flat/32.png');
         setNextRaceType('High Downforce');
+        setCircuitTypeColor({color: 'yellow'})
         break;
       case 'interlagos':
         setNextRace('interlagos');
+        setNextCircuitFlag('https://flagsapi.com/BR/flat/32.png');
         setNextRaceType('Balanced');
+        setCircuitTypeColor({color: 'orange'})
         break;
       case 'vegas':
         setNextRace('vegas');
+        setNextCircuitFlag('https://flagsapi.com/US/flat/32.png');
         setNextRaceType('Power');
+        setCircuitTypeColor({color: 'red'})
         break;
       case 'losail':
         setNextRace('losail');
+        setNextCircuitFlag('https://flagsapi.com/QA/flat/32.png');
         setNextRaceType('High Downforce');
+        setCircuitTypeColor({color: 'yellow'})
         break;
       case 'yas_marina':
         setNextRace('yas_marina');
+        setNextCircuitFlag('https://flagsapi.com/AE/flat/32.png');
         setNextRaceType('Balanced');
+        setCircuitTypeColor({color: 'orange'})
         break;
       default:
         break;
@@ -442,7 +496,10 @@ export default function App() {
       let nextCircuitEventName;
       let rawNextCircuitEventDate = "2024-03-02";
       let nextCircuitName;
+      let nextRaceFlag;
       let nextCircuitType;
+      let nextCircuitTypeColor;
+
       /*Code below is temporarily commented out until the API updates its current season as "2024". Once update
        occurs, enable code below and remove "= "bahrain"" from let nextCircuitId. This will re-activate automated 
        selection of nextCircuitId. Also, remove "= "2024-03-02"" from let rawNextCircuitEventDate to automate date selection.
@@ -457,10 +514,10 @@ export default function App() {
       */
       let nextCircuitEventDate = formatDate(rawNextCircuitEventDate)
       
-      
       for (let i = 0; i < circuitTypes.length; i++) {
         if (circuitTypes[i].circuitIds.includes(nextCircuitId)) {
           nextCircuitType = circuitTypes[i].circuitType;
+          nextCircuitTypeColor = circuitTypes[i].color;
         }
       }
 
@@ -471,13 +528,25 @@ export default function App() {
         }
       }
 
+      for (let i = 0; i < flags.length; i++) {
+        if (flags[i].circuitId == nextCircuitId) {
+          nextRaceFlag = flags[i].url;
+        }
+      }
+
       setNextRace(nextCircuitId);
+      setNextCircuitFlag(nextRaceFlag);
       setNextEventName(nextCircuitEventName);
       setNextEventDate(nextCircuitEventDate);
       setNextEventCircuit(nextCircuitName);
       setNextRaceType(nextCircuitType);
+      setCircuitTypeColor(nextCircuitTypeColor);
     }
   }, [eventList, lastFiveRaceResults]);
+
+  useEffect(() => {
+    console.log(nextCircuitFlag)
+  }, [nextCircuitFlag]);
 
   function getNextCircuitProperName (nextRace, nextRaceType) {
     let nextCircuitName;
@@ -590,7 +659,7 @@ export default function App() {
           flagHeading.nextRaceResults[i] = nextRaceHistory[i].raceName;
           for (let z = 0; z < flags.length; z++) {
             if (flagHeading.nextRaceResults[i] == flags[z].raceName) {
-              flagHeading.nextRaceResults[i] = flags[z].flagImage
+              flagHeading.nextRaceResults[i] = flags[z].flagImage;
             }
           }
         }
@@ -601,6 +670,12 @@ export default function App() {
             if (flagHeading.nextRaceTypeResults[i] == flags[z].raceName) {
               flagHeading.nextRaceTypeResults[i] = flags[z].flagImage
             }
+          }
+        }
+
+        for (let z = 0; z < flags.length; z++) {
+          if (flagHeading.nextRaceResults[0] == flags[z].raceName) {
+            nextRaceFlag = flags[z].flagImage.src;
           }
         }
 
@@ -1394,7 +1469,7 @@ export default function App() {
               <img className="toggleButton2" alt="Rectangle" src={toggleButton} />
               <div className="text-wrapper-12">Circuit History</div>
               <div className="line-7" style={line7Style}></div>
-              <img className="toggleDropArrow-2" alt="Arrow pointed down" src={toggleDropArrow} />
+              <img className="toggleButton2Status" alt="Flag of next race's country" src={nextCircuitFlag} />
             </div>
           </div>
 
@@ -1403,7 +1478,7 @@ export default function App() {
               <img className="toggleButton3" alt="Rectangle" src={toggleButton} />
               <div className="text-wrapper-13">Circuit Type</div>
               <div className="line-8" style={line8Style}></div>
-              <img className="toggleDropArrow-3" alt="Arrow pointed down" src={toggleDropArrow} />
+              <div className="toggleButton3Status" style={circuitTypeColor} >{nextCircuitTypeProperName}</div>
             </div>
           </div>
 
