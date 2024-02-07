@@ -1235,7 +1235,6 @@ export default function App() {
           <div className="text-wrapper-10">Race Outlook</div>
           <div className="raceOutlookLine" />
           <div className="overlap-table">
-            <div className="rectangle-T" />
             <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
             boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}
             />
