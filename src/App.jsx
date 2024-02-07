@@ -500,9 +500,11 @@ export default function App() {
 
   // Update next race history
   useEffect(() => {
-    fetchNextTrackData(nextRace).then((results) => setNextRaceHistory(results));
-    setNextRaceDataFetched(true);
-    setTableDataPopulated(true);
+    if (nextRace != "") {
+      fetchNextTrackData(nextRace).then((results) => setNextRaceHistory(results));
+      setNextRaceDataFetched(true);
+      setTableDataPopulated(true);
+    };
   }, [nextRace]);
 
   useEffect(() => {
