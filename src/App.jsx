@@ -115,12 +115,20 @@ export default function App() {
   
   const targetElementRef = useRef(null);
   const handleButtonClick = () => {
-    // Scroll to the target element
     targetElementRef.current.scrollIntoView({
-      behavior: 'smooth', // Optional: adds smooth scrolling
-      block: 'start',     // Optional: align to the top of the element
+      behavior: 'smooth', 
+      block: 'start',     
     });
   };
+
+  const targetElementRefMobile = useRef(null);
+  const handleButtonClickMobile = () => {
+    targetElementRefMobile.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',     
+    });
+  };
+
 
   useEffect(() => {
     smoothscroll.polyfill();
@@ -1113,7 +1121,7 @@ export default function App() {
                       <div className="divX">Schedule</div>
                     </a>
                     <div className="text-wrapper-2">About</div>
-                    <div className="text-wrapper-3" onClick={handleButtonClick}>Features</div>
+                    <div className="text-wrapper-3" onClick={handleButtonClickMobile}>Features</div>
                     <div className="mobileMenuLine1" />
                     <div className="mobileMenuLine2" />
                     <div className="mobileMenuLine3" />
@@ -1149,7 +1157,7 @@ export default function App() {
           </div>
           <img className="nextRaceBoxImageDesktop" alt="Rectangle" src={nextRaceBox} />
           
-          <div className="footerBoxMobile">
+          <div className="footerBoxMobile" ref={targetElementRefMobile}>
             <div className="footerBoxBackgroundMobile" />
             <img className="siteLogoFooterMobile" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} />
             <p className="copyrightMobile">© 2024 The Final Lap</p>
@@ -1170,7 +1178,7 @@ export default function App() {
             </div>
             <div className="flexcontainer-2-Mobile">
               <p className="textMobile">
-                <span className="spanMobile" onClick={handleButtonClick}>
+                <span className="spanMobile" onClick={handleButtonClickMobile}>
                   Features
                   <br />
                 </span>
