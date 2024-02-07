@@ -1460,7 +1460,7 @@ export default function App() {
               <img className="toggleButton" alt="Rectangle" src={toggleButton} />
               <div className="text-wrapper-11">Recent Form</div>
               <div className="line-5" style={line5Style}></div>
-              <img className="toggleDropArrow" alt="Arrow pointed down" src={toggleDropArrow} />
+              <img className="toggleButton1Icon" alt="Arrow pointed down" src={toggleDropArrow} />
             </div>
           </div>
           

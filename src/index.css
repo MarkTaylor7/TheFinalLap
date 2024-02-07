@@ -1551,7 +1551,7 @@ body {
   width: 113px;
 }
 
-.iphone .toggleDropArrow {
+.iphone .toggleButton1Icon {
   height: 10px;
   left: 89.3%;
   position: absolute;
@@ -1892,14 +1892,6 @@ body {
   position: absolute;
   top: 32px;
   width: 106px;
-}
-
-.iphone .toggleDropArrow-3 {
-  height: 10px;
-  left: 89.3%;
-  position: absolute;
-  top: 19px;
-  width: 22px;
 }
 
 .iphone .feature-text-container-2 {
