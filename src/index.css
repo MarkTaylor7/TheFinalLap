@@ -562,13 +562,26 @@ body {
   font-family: "Roboto", Helvetica;
   font-size: 8px;
   font-weight: 400;
-  height: 49px;
-  left: 77%;
+  height: 15px;
+  right: 6%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 165px;
+  
+}
+
+.iphone .designCreditMobile {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 8px;
+  font-weight: 400;
+  height: 15px;
+  right: 10%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   top: 147px;
-  width: 349px;
 }
 
 .iphone .flexcontainerMobile {
@@ -631,6 +644,14 @@ body {
   width: 22px;
 }
 
+.iphone .linkedInMobileDesigner {
+  height: 12px;
+  position: absolute;
+  top: 154px;
+  right: 4.6%;
+  width: 22px;
+}
+
 .iphone .line-2 {
   height: 0px;
   left: 3.8%;
@@ -676,12 +697,24 @@ body {
   font-size: 16px;
   font-weight: 400;
   height: 14%;
-  left: 86.4%;
+  right: 3%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 78.9%;
-  width: 22.4%;
+  top: 82%;
+}
+
+.iphone .designCreditDesktop {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  height: 14%;
+  right: 5.5%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 72%;
 }
 
 .iphone .footer-text-wrapper-1 {
@@ -792,6 +825,14 @@ body {
     height: 58px;
     width: 58px;
   }
+}
+
+.iphone .linkedInDesktopDesigner {
+  height: 25px;
+  right: 3%;
+  position: absolute;
+  top: 76%;
+  width: 25px;
 }
 
 .iphone .desktop-sticky-menu {

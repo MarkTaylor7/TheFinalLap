@@ -1163,6 +1163,10 @@ export default function App() {
             <div className="footerBoxBackgroundMobile" />
             <img className="siteLogoFooterMobile" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} />
             <p className="copyrightMobile">© 2024 The Final Lap</p>
+            <p className="designCreditMobile">Designed by Abigail Z</p>
+            <a href="https://www.linkedin.com/in/abigail-zhuk/" target="_blank" rel="noreferrer">
+              <img className="linkedInMobileDesigner" alt="LinkedIn logo" src={linkedInMobile} />
+            </a>
             <div className="flexcontainerMobile">
               <p className="textMobile">
                 <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
@@ -1206,6 +1210,10 @@ export default function App() {
 
           <div className="footerBoxDesktop">
             <div className="footerBoxBackgroundDesktop" />
+            <p className="designCreditDesktop">Designed by Abigail Z</p>
+            <a href="https://www.linkedin.com/in/abigail-zhuk" target="_blank" rel="noreferrer">
+              <img className="linkedInDesktopDesigner" alt="Vector" src={linkedInDesktop} />
+            </a>
             <p className="copyrightDesktop">© 2024 The Final Lap</p>
             <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
               <div className="footer-text-wrapper-1">Schedule</div>
