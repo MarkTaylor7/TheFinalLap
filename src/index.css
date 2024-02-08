@@ -44,7 +44,7 @@ body {
 
 .iphone .div {
   background-color: #000000;
-  min-height: 2500px;
+  min-height: 2540px;
   /*overflow hides or reveals the extra feature cards*/
   overflow: hidden;
   position: relative;
@@ -545,7 +545,7 @@ body {
   height: 195px;
   left: 0;
   position: absolute;
-  top: 2308px;
+  top: 2348px;
   width: 100%;
 }
 
@@ -1133,7 +1133,7 @@ body {
   }
 }
 
-.iphone .text-wrapper-6 {
+.iphone .features-header {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 26px;
@@ -1144,12 +1144,12 @@ body {
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 1630px;
+  top: 1670px;
   width: 70.8%;
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .text-wrapper-6 {
+  .iphone .features-header {
     top: 1900px;
     font-size: 40px;
     left: 0;
@@ -1157,13 +1157,13 @@ body {
 }
 
 @media screen and (min-width: 1281px) {
-  .iphone .text-wrapper-6 {
+  .iphone .features-header {
     font-size: 50px;
     left: 3%;
   }
 }
 
-.iphone .featuresLine {
+.iphone .features-line {
   height: 0px;
   left: 51%;
   position: absolute;
@@ -1174,7 +1174,7 @@ body {
 }
 
 @media screen and (min-width: 1281px) {
-  .iphone .featuresLine {
+  .iphone .features-line {
     height: 0px;
     left: 56%;
     position: absolute;
@@ -1186,7 +1186,7 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .iphone .featuresLine {
+  .iphone .features-line {
     visibility: hidden;
   }
 }
@@ -1195,7 +1195,7 @@ body {
   height: 374px;
   left: 38px;
   position: absolute;
-  top: 1703px;
+  top: 1743px;
   width: 83.6%;
 }
 
@@ -1265,7 +1265,7 @@ body {
   height: 131px;
   left: 36px;
   position: absolute;
-  top: 2131px;
+  top: 2171px;
   width: 80%;
 }
 
@@ -1315,7 +1315,7 @@ body {
   height: 45px;
   left: 38px;
   position: absolute;
-  top: 2080px;
+  top: 2120px;
   width: 80%;
 }
 
@@ -1592,7 +1592,7 @@ body {
   height: 131px;
   left: 36px;
   position: absolute;
-  top: 2131px;
+  top: 2171px;
   width: 80%;
 }
 
@@ -1622,7 +1622,7 @@ body {
   height: 45px;
   left: 38px;
   position: absolute;
-  top: 2080px;
+  top: 2120px;
   width: 80%;
 }
 
@@ -1654,7 +1654,7 @@ body {
   height: 45px;
   left: 38px;
   position: absolute;
-  top: 2080px;
+  top: 2120px;
   width: 80%;
 }
 
@@ -1682,7 +1682,7 @@ body {
   height: 374px;
   left: 38px;
   position: absolute;
-  top: 1703px;
+  top: 1743px;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -1739,7 +1739,7 @@ body {
   height: 374px;
   left: 38px;
   position: absolute;
-  top: 1703px;
+  top: 1743px;
   width: 80%;
   display: flex;
 }
@@ -1913,7 +1913,7 @@ body {
   height: 131px;
   left: 36px;
   position: absolute;
-  top: 2131px;
+  top: 2171px;
   width: 80%;
 }
 
@@ -1995,30 +1995,97 @@ select {
 }
 
 .dataUpdatePill {
-  left: 2%;
-  position: relative;
-  top: 815px;
-  width: 96%;
-  height: 100px;
-  visibility: hidden;
+  font-size: 12px;
+  background-color: none;
+  border: 2px solid #606367;
+  color: #87C75F;
+  right: 2%;
+  position: absolute;
+  border-radius: 15px;
+  text-align: center;
+  top: 1610px;
+  width: 235px;
+  height: 26px;
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (min-width: 480px) {
   .iphone .dataUpdatePill {
-    font-size: 16px;
-    background-color: #17181a;
+    font-size: 14px;
+    background-color: none;
+    border: 2px solid #606367;
     color: #87C75F;
-    left: 45%;
-    width: 30%;
-    height: 40px;
-    top: 1060px;
-    border-radius: 20px;
-    align-content: center;
+    left: 77%;
+    width: 275px;
+    height: 36px;
+    top: 1068px;
+    border-radius: 15px;
     text-align: center;
-    
     position: absolute;
     visibility: visible;
   }
+}
+
+@media screen and (min-width: 1281px) {
+  .iphone .dataUpdatePill {
+    left: 78.5%;
+  }
+}
+
+.pillTextWrapper {
+  width: 90%;
+  line-height: 4px;
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .pillTextWrapper {
+  width: 90%;
+  line-height: 10px;
+  }
+}
+
+.pulse {
+	background: rgb(78, 227, 253);
+	border-radius: 50%;
+	margin: 8px;
+	height: 10px;
+	width: 10px;
+  display: flex;
+	box-shadow: 0 0 0 0 rgba(78, 227, 253, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@media screen and (min-width: 480px) {
+  .pulse {
+    background: rgb(78, 227, 253);
+    border-radius: 50%;
+    margin: 10px;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    box-shadow: 0 0 0 0 rgba(78, 227, 253, 1);
+    transform: scale(1);
+    animation: pulse 2s infinite;
+  }
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(78, 227, 253, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(78, 227, 253, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(78, 227, 253, 0);
+	}
 }
 
 .iphone .toggleButton4 {

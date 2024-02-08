@@ -333,7 +333,7 @@ export default function App() {
       setShowFeature1(true);
       setShowFeature2(true);
       setShowFeature3(true);
-      setShowFeature2(false);
+      setShowFeature1(false);
       setShowFeature3(false);
 
       setLine5Style({height: 0, border: '1.50px #87C75F solid'});
@@ -1194,15 +1194,24 @@ export default function App() {
         <div className="div">
           <div className="overlap">
             <div className="overlap-group">
-              
-              <img className="heroBannerMobile" src={heroBannerMobile} alt="an image of a Williams F1 car in Monaco" />
-              <img className="heroBannerDesktop" src={heroBannerDesktop} alt="an image of a Williams F1 car in Monaco" />
-              <div className="rectangle" />
-              <div className="rectangle-2" />
-              <p className="pDesktop">Live F1 form guide and driver data lets you predict results with confidence.</p>
-              <div className="text-wrapper-Desktop">The Final Lap</div>
-              <div className="menuTextWrapper" onClick={toggleMenu}>{isMenuOpen ? 'Close' : 'Menu'}</div>
-              
+
+              <div className={`desktop-sticky-menu ${isSticky ? 'sticky' : ''}`}>
+                <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
+                  <div className="text-wrapper-18">Drivers</div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
+                  <div className="text-wrapper-19">Schedule</div>
+                </a>
+                <div className="text-wrapper-21" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
+                <div className="text-wrapper-20">About</div>
+                <div className="desktopMenuLine1" />
+                <div className="desktopMenuLine2" />
+                <div className="desktopMenuLine3" />
+                <div className="desktopMenuLine4" />
+                <div className="desktopMenuLine5" />
+                <img className="group-3" alt="Site Logo" src={siteLogoDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
+              </div>
+
               <div className="box"> 
                 <div className={`iphone-menu ${isMenuOpen ? 'open' : 'closed'}`}>
                   <div className="overlap-group">
@@ -1221,9 +1230,18 @@ export default function App() {
                 </div>
               </div>
 
+              <img className="siteLogo" alt="site logo: stylized initials 'FL'" src={siteLogo} onClick={reloadPage} style={{ cursor: 'pointer' }} />
+              <img className="heroBannerDesktop" src={heroBannerDesktop} alt="an image of a Williams F1 car in Monaco" />
+              <img className="heroBannerMobile" src={heroBannerMobile} alt="an image of a Williams F1 car in Monaco" />
+              <div className="rectangle" />
+              <div className="rectangle-2" />
+              <p className="pDesktop">Live F1 form guide and driver data lets you predict results with confidence.</p>
+              <div className="text-wrapper-Desktop">The Final Lap</div>
+              <div className="menuTextWrapper" onClick={toggleMenu}>{isMenuOpen ? 'Close' : 'Menu'}</div>
+
               <div className="groupMobile">
                 <div className="overlap-2">
-                  <p className="p">Live F1 form guide and driver data lets you predict results with confidence.</p>
+                  <p className="p">Live F1 driver data and form guide lets you predict results with confidence.</p>
                   <div className="text-wrapper-2">The Final Lap</div>
                   <div className="nextRaceBoxMobile">
                     <img className="nextRaceBoxImageMobile" alt="Rectangle" src={nextRaceBox} />
@@ -1237,7 +1255,6 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <img className="siteLogo" alt="site logo: stylized initials 'FL'" src={siteLogo} onClick={reloadPage} style={{ cursor: 'pointer' }} />
           </div>
           <div className="nextRaceBoxDesktop">
             <div className="text-wrapperADesktop">Next Race</div>
@@ -1252,107 +1269,60 @@ export default function App() {
           </div>
           <img className="nextRaceBoxImageDesktop" alt="Rectangle" src={nextRaceBox} />
           
-          <div className="footerBoxMobile" ref={targetElementRefMobile}>
-            <div className="footerBoxBackgroundMobile" />
-            <img className="siteLogoFooterMobile" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} onClick={reloadPage} style={{ cursor: 'pointer' }} />
-            <p className="copyrightMobile">© 2024 The Final Lap</p>
-            <p className="designCreditMobile">Site Design by Abigail Z</p>
-            <a href="https://www.linkedin.com/in/abigail-zhuk/" target="_blank" rel="noreferrer">
-              <img className="linkedInMobileDesigner" alt="LinkedIn logo" src={linkedInMobile} />
-            </a>
-            <div className="flexcontainerMobile">
-              <p className="textMobile">
-                <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
-                  <span className="spanMobile">
-                    Drivers
-                    <br />
-                  </span>
-                </a>
-              </p>
-              <p className="textMobile">
-                <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
-                  <span className="span">Schedule</span>
-                </a>
-              </p>
-            </div>
-            <div className="flexcontainer-2-Mobile">
-              <p className="textMobile">
-                <span className="spanMobile" onClick={handleButtonClickMobile} style={{ cursor: 'pointer' }}>
-                  Features
-                  <br />
-                </span>
-              </p>
-              <p className="textMobile">
-                <span className="spanMobile">
-                  About
-                  <br />
-                </span>
-              </p>
-              <p className="textMobile">
-                <span className="spanMobile">{""}</span>
-              </p>
-            </div>
-            <a href="https://github.com/MarkTaylor7" target="_blank" rel="noreferrer">
-              <img className="gitHubMobile" alt="Github logo" src={gitHubMobile} />
-            </a>
-            <a href="https://www.linkedin.com/in/marktaylor27" target="_blank" rel="noreferrer">
-              <img className="linkedInMobile" alt="LinkedIn logo" src={linkedInMobile} />
-            </a>
-            <div className="line-2"></div>
-          </div>
-
-          <div className="footerBoxDesktop">
-            <div className="footerBoxBackgroundDesktop" />
-            <p className="designCreditDesktop">Site Design by Abigail Z</p>
-            <a href="https://www.linkedin.com/in/abigail-zhuk" target="_blank" rel="noreferrer">
-              <img className="linkedInDesktopDesigner" alt="Vector" src={linkedInDesktop} />
-            </a>
-            <p className="copyrightDesktop">© 2024 The Final Lap</p>
-            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
-              <div className="footer-text-wrapper-1">Schedule</div>
-            </a>
-            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
-              <div className="footer-text-wrapper-2">Drivers</div>
-            </a>
-            <div className="footer-text-wrapper-3" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
-            <div className="footer-text-wrapper-4">About</div>
-            <div className="footer-text-wrapper-5">The Final Lap</div>
-            <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
-            <a href="https://github.com/MarkTaylor7" target="_blank" rel="noreferrer">
-              <img className="gitHubDesktop" alt="Vector" src={gitHubDesktop} />
-            </a>
-            <a href="https://www.linkedin.com/in/marktaylor27" target="_blank" rel="noreferrer">
-              <img className="linkedInDesktop" alt="Vector" src={linkedInDesktop} />
-            </a>
-          </div>
-          
-          <div className={`desktop-sticky-menu ${isSticky ? 'sticky' : ''}`}>
-            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
-              <div className="text-wrapper-18">Drivers</div>
-            </a>
-            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
-              <div className="text-wrapper-19">Schedule</div>
-            </a>
-            <div className="text-wrapper-21" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
-            <div className="text-wrapper-20">About</div>
-            <div className="desktopMenuLine1" />
-            <div className="desktopMenuLine2" />
-            <div className="desktopMenuLine3" />
-            <div className="desktopMenuLine4" />
-            <div className="desktopMenuLine5" />
-            <img className="group-3" alt="Site Logo" src={siteLogoDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
-          </div>
-
           <div className="text-wrapper-10">Race Outlook</div>
           <div className="raceOutlookLine" />
+
+          <div className="overlap-7">
+            <div className="rectangle-6" onClick={showOnlyCluster1}>
+              <img className="toggleButton" alt="Rectangle" src={toggleButton} />
+              <div className="text-wrapper-11">Recent Form</div>
+              <div className="line-5" style={line5Style}></div>
+              <img className="toggleButton1Icon" src={lineChart} />
+            </div>
+          </div>
+          
+          <div className="overlap-11">
+            <div className="rectangle-12" onClick={showOnlyCluster2}>
+              <img className="toggleButton2" alt="Rectangle" src={toggleButton} />
+              <div className="text-wrapper-12">Circuit History</div>
+              <div className="line-7" style={line7Style}></div>
+              <img className="toggleButton2Status" src={nextCircuitFlag} />
+            </div>
+          </div>
+
+          <div className="overlap-12">
+            <div className="rectangle-14" onClick={showOnlyCluster3}>
+              <img className="toggleButton3" alt="Rectangle" src={toggleButton} />
+              <div className="text-wrapper-13">Circuit Type</div>
+              <div className="line-8" style={line8Style}></div>
+              <div className="toggleButton3Status" style={circuitTypeColor} >{nextCircuitTypeProperName}</div>
+            </div>
+          </div>
+
+          <div className="dropdown-container">
+            <select id="dropdown" value={selectedRace} onChange={handleDropdownChange}>
+              <option value="">Select Circuit</option>
+              {dropdownOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="dataUpdatePill">
+            <div class="pulse"></div>
+            <p class="pillTextWrapper">Updated {lastUpdateTime}</p>    
+          </div>
+
           <div className="overlap-table">
             <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
             boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}
             />
           </div>
 
-          <div className="text-wrapper-6" ref={targetElementRef}>Final Lap Features</div>
-          <div className="featuresLine" />
+          <div className="features-header" ref={targetElementRef}>Final Lap Features</div>
+          <div className="features-line" />
 
           {showFeature1 && <div className="feature-container-1">
             <div className="feature-card-container-1">
@@ -1473,47 +1443,79 @@ export default function App() {
             </div>
           </div>}
 
-          <div className="overlap-7">
-            <div className="rectangle-6" onClick={showOnlyCluster1}>
-              <img className="toggleButton" alt="Rectangle" src={toggleButton} />
-              <div className="text-wrapper-11">Recent Form</div>
-              <div className="line-5" style={line5Style}></div>
-              <img className="toggleButton1Icon" src={lineChart} />
+          <div className="footerBoxMobile" ref={targetElementRefMobile}>
+            <div className="footerBoxBackgroundMobile" />
+            <img className="siteLogoFooterMobile" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} onClick={reloadPage} style={{ cursor: 'pointer' }} />
+            <p className="copyrightMobile">© 2024 The Final Lap</p>
+            <p className="designCreditMobile">Site Design by Abigail Z</p>
+            <a href="https://www.linkedin.com/in/abigail-zhuk/" target="_blank" rel="noreferrer">
+              <img className="linkedInMobileDesigner" alt="LinkedIn logo" src={linkedInMobile} />
+            </a>
+            <div className="flexcontainerMobile">
+              <p className="textMobile">
+                <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
+                  <span className="spanMobile">
+                    Drivers
+                    <br />
+                  </span>
+                </a>
+              </p>
+              <p className="textMobile">
+                <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
+                  <span className="span">Schedule</span>
+                </a>
+              </p>
             </div>
-          </div>
-          
-          <div className="overlap-11">
-            <div className="rectangle-12" onClick={showOnlyCluster2}>
-              <img className="toggleButton2" alt="Rectangle" src={toggleButton} />
-              <div className="text-wrapper-12">Circuit History</div>
-              <div className="line-7" style={line7Style}></div>
-              <img className="toggleButton2Status" src={nextCircuitFlag} />
+            <div className="flexcontainer-2-Mobile">
+              <p className="textMobile">
+                <span className="spanMobile" onClick={handleButtonClickMobile} style={{ cursor: 'pointer' }}>
+                  Features
+                  <br />
+                </span>
+              </p>
+              <p className="textMobile">
+                <span className="spanMobile">
+                  About
+                  <br />
+                </span>
+              </p>
+              <p className="textMobile">
+                <span className="spanMobile">{""}</span>
+              </p>
             </div>
+            <a href="https://github.com/MarkTaylor7" target="_blank" rel="noreferrer">
+              <img className="gitHubMobile" alt="Github logo" src={gitHubMobile} />
+            </a>
+            <a href="https://www.linkedin.com/in/marktaylor27" target="_blank" rel="noreferrer">
+              <img className="linkedInMobile" alt="LinkedIn logo" src={linkedInMobile} />
+            </a>
+            <div className="line-2"></div>
           </div>
 
-          <div className="overlap-12">
-            <div className="rectangle-14" onClick={showOnlyCluster3}>
-              <img className="toggleButton3" alt="Rectangle" src={toggleButton} />
-              <div className="text-wrapper-13">Circuit Type</div>
-              <div className="line-8" style={line8Style}></div>
-              <div className="toggleButton3Status" style={circuitTypeColor} >{nextCircuitTypeProperName}</div>
-            </div>
-          </div>
-
-          <div className="dropdown-container">
-            <select id="dropdown" value={selectedRace} onChange={handleDropdownChange}>
-              <option value="">Select Circuit</option>
-              {dropdownOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="dataUpdatePill">
-            Most recent data update: {lastUpdateTime}
-          </div>     
-
+          <div className="footerBoxDesktop">
+            <div className="footerBoxBackgroundDesktop" />
+            <p className="designCreditDesktop">Site Design by Abigail Z</p>
+            <a href="https://www.linkedin.com/in/abigail-zhuk" target="_blank" rel="noreferrer">
+              <img className="linkedInDesktopDesigner" alt="Vector" src={linkedInDesktop} />
+            </a>
+            <p className="copyrightDesktop">© 2024 The Final Lap</p>
+            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
+              <div className="footer-text-wrapper-1">Schedule</div>
+            </a>
+            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
+              <div className="footer-text-wrapper-2">Drivers</div>
+            </a>
+            <div className="footer-text-wrapper-3" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
+            <div className="footer-text-wrapper-4">About</div>
+            <div className="footer-text-wrapper-5">The Final Lap</div>
+            <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
+            <a href="https://github.com/MarkTaylor7" target="_blank" rel="noreferrer">
+              <img className="gitHubDesktop" alt="Vector" src={gitHubDesktop} />
+            </a>
+            <a href="https://www.linkedin.com/in/marktaylor27" target="_blank" rel="noreferrer">
+              <img className="linkedInDesktop" alt="Vector" src={linkedInDesktop} />
+            </a>
+          </div> 
         </div>
       </div>
     </>
