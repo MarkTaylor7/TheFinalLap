@@ -574,14 +574,14 @@ body {
 .iphone .designCreditMobile {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 400;
   height: 15px;
   right: 10%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 147px;
+  top: 144px;
 }
 
 .iphone .flexcontainerMobile {
@@ -645,11 +645,11 @@ body {
 }
 
 .iphone .linkedInMobileDesigner {
-  height: 12px;
+  height: 15px;
   position: absolute;
-  top: 154px;
-  right: 4.6%;
-  width: 22px;
+  top: 153px;
+  right: 4.8%;
+  width: 15px;
 }
 
 .iphone .line-2 {

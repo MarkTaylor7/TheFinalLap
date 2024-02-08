@@ -1240,7 +1240,7 @@ export default function App() {
             <div className="footerBoxBackgroundMobile" />
             <img className="siteLogoFooterMobile" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} onClick={reloadPage} style={{ cursor: 'pointer' }} />
             <p className="copyrightMobile">© 2024 The Final Lap</p>
-            <p className="designCreditMobile">Designed by Abigail Z</p>
+            <p className="designCreditMobile">Site Design by Abigail Z</p>
             <a href="https://www.linkedin.com/in/abigail-zhuk/" target="_blank" rel="noreferrer">
               <img className="linkedInMobileDesigner" alt="LinkedIn logo" src={linkedInMobile} />
             </a>
@@ -1287,7 +1287,7 @@ export default function App() {
 
           <div className="footerBoxDesktop">
             <div className="footerBoxBackgroundDesktop" />
-            <p className="designCreditDesktop">Designed by Abigail Z</p>
+            <p className="designCreditDesktop">Site Design by Abigail Z</p>
             <a href="https://www.linkedin.com/in/abigail-zhuk" target="_blank" rel="noreferrer">
               <img className="linkedInDesktopDesigner" alt="Vector" src={linkedInDesktop} />
             </a>
