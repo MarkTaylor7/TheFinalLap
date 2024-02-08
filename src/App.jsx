@@ -76,7 +76,6 @@ export default function App() {
   const [showFeature2, setShowFeature2] = useState(true);
   const [showFeature3, setShowFeature3] = useState(true);
 
-  
   const [circuitTypeColor, setCircuitTypeColor] = useState({
     color: 'black'
   });
@@ -1164,14 +1163,17 @@ export default function App() {
     console.log(racerData)
   }, [racerData]);
   
-  // Function to toggle the menu's visibility
+  // Function to toggle the mobile site's menu visibility
   const toggleMenu = () => {
     if (isMenuOpen) {
       setMenuOpen(false)
     } else {setMenuOpen(true)}
   };
 
-  
+  const reloadWebpage = () => {
+    window.scrollTo(0, 0);
+    window.location.reload();
+  };
 
   return (
     <>
@@ -1222,7 +1224,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <img className="siteLogo" alt="site logo: stylized initials 'FL'" src={siteLogo} />
+            <img className="siteLogo" alt="site logo: stylized initials 'FL'" src={siteLogo} onClick={reloadWebpage} style={{ cursor: 'pointer' }} />
           </div>
           <div className="nextRaceBoxDesktop">
             <div className="text-wrapperADesktop">Next Race</div>
@@ -1236,7 +1238,7 @@ export default function App() {
           
           <div className="footerBoxMobile" ref={targetElementRefMobile}>
             <div className="footerBoxBackgroundMobile" />
-            <img className="siteLogoFooterMobile" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} />
+            <img className="siteLogoFooterMobile" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} onClick={reloadWebpage} style={{ cursor: 'pointer' }} />
             <p className="copyrightMobile">© 2024 The Final Lap</p>
             <p className="designCreditMobile">Designed by Abigail Z</p>
             <a href="https://www.linkedin.com/in/abigail-zhuk/" target="_blank" rel="noreferrer">
@@ -1299,7 +1301,7 @@ export default function App() {
             <div className="footer-text-wrapper-3" onClick={handleButtonClick}>Features</div>
             <div className="footer-text-wrapper-4">About</div>
             <div className="footer-text-wrapper-5">The Final Lap</div>
-            <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} />
+            <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} onClick={reloadWebpage} style={{ cursor: 'pointer' }} />
             <a href="https://github.com/MarkTaylor7" target="_blank" rel="noreferrer">
               <img className="gitHubDesktop" alt="Vector" src={gitHubDesktop} />
             </a>
@@ -1322,7 +1324,7 @@ export default function App() {
             <div className="desktopMenuLine3" />
             <div className="desktopMenuLine4" />
             <div className="desktopMenuLine5" />
-            <img className="group-3" alt="Group" src={siteLogoDesktop} />
+            <img className="group-3" alt="Site Logo" src={siteLogoDesktop} onClick={reloadWebpage} style={{ cursor: 'pointer' }} />
           </div>
 
           <div className="text-wrapper-10">Race Outlook</div>

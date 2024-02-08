@@ -12,21 +12,19 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Paper';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import { Oval } from "react-loader-spinner";
+import { Grid } from "react-loader-spinner";
 
 import { getBackgroundColor, getColor } from "./utilities";
 
-const cellLoading = <Oval
-  height={40}
-  width={40}
-  color="#1aa7ec"
-  wrapperStyle={{}}
-  wrapperClass=""
-  visible={true}
-  ariaLabel='oval-loading'
-  secondaryColor="#4fa94d"
-  strokeWidth={2}
-  strokeWidthSecondary={2}
+const cellLoading = <Grid
+visible={true}
+height="300"
+width="300"
+color="#87C75F"
+ariaLabel="grid-loading"
+radius="0"
+wrapperStyle={{}}
+wrapperClass="grid-wrapper"
 />
 
 export default function DenseTable({data1, data2, data3, data4, data5, boolean1, boolean2, boolean3, boolean4}) {
