@@ -1552,11 +1552,11 @@ body {
 }
 
 .iphone .toggleButton1Icon {
-  height: 10px;
-  left: 89.3%;
+  height: 23px;
+  right: 5%;
   position: absolute;
-  top: 18px;
-  width: 22px;
+  top: 12px;
+  width: 23px;
 }
 
 .iphone .text-wrapper-12 {

@@ -33,7 +33,7 @@ import heroBannerMobile from "./assets/images/heroBannerMobile.png";
 import heroBannerDesktop from "./assets/images/heroBannerDesktop.png";
 import feature1 from "./assets/images/feature1.png";
 import toggleButton from "./assets/toggleButton.svg";
-import toggleDropArrow from "./assets/toggleDropArrow.svg";
+import lineChart from "./assets/images/lineChart.png";
 import leftArrow from "./assets/leftArrow.svg";
 import rightArrow from "./assets/rightArrow.svg";
 import nextRaceBox from "./assets/nextRaceBox.svg";
@@ -1460,7 +1460,7 @@ export default function App() {
               <img className="toggleButton" alt="Rectangle" src={toggleButton} />
               <div className="text-wrapper-11">Recent Form</div>
               <div className="line-5" style={line5Style}></div>
-              <img className="toggleButton1Icon" alt="Arrow pointed down" src={toggleDropArrow} />
+              <img className="toggleButton1Icon" alt="Arrow pointed down" src={lineChart} />
             </div>
           </div>
           
@@ -1469,7 +1469,7 @@ export default function App() {
               <img className="toggleButton2" alt="Rectangle" src={toggleButton} />
               <div className="text-wrapper-12">Circuit History</div>
               <div className="line-7" style={line7Style}></div>
-              <img className="toggleButton2Status" alt="Flag of next race's country" src={nextCircuitFlag} />
+              <img className="toggleButton2Status" src={nextCircuitFlag} />
             </div>
           </div>
 
