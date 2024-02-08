@@ -277,18 +277,33 @@ body {
   width: 302px;
 }
 
+.iphone .nextRaceBoxCircuitContainer {
+  
+  left: 64%;
+  position: absolute;
+  top: 52%;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+}
+
 .iphone .text-wrapperFDesktop {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
   font-weight: 700;
-  height: 76px;
-  left: 64%;
+  height: 50px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
-  top: 52%;
-  width: 302px;
+  display: flex;
+}
+
+.iphone .nextRaceBoxFlag {
+  width: 48px;
+  height: 40px;
+  display: flex;
+  margin-left: 14px;
+  
 }
 
 .iphone .groupMobile {
@@ -1922,7 +1937,7 @@ body {
 @media screen and (min-width: 480px) {
   .iphone .dropdown-container {
     left: 18.1%;
-    width: 21.74%;
+    width: 25%;
     top: 1030px;
     position: absolute;
   }

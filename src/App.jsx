@@ -81,6 +81,7 @@ export default function App() {
   });
 
   const [nextCircuitFlag, setNextCircuitFlag] = useState('');
+  const [nextEventFlag, setNextEventFlag] = useState('');
 
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
@@ -491,9 +492,10 @@ export default function App() {
     /*May need to add an if statement to handle situations when lastFiveRaceResults.length <5. See state setter
     function for nextRaceTypeHistory*/
     if (lastFiveRaceResults.length === 5) {
-      let nextCircuitId = "bahrain";
+      let nextCircuitId = "red_bull_ring";
       let nextCircuitEventName;
       let rawNextCircuitEventDate = "2024-03-02";
+      let rawNextCircuitEventFlag;
       let nextCircuitName;
       let nextRaceFlag;
       let nextCircuitType;
@@ -530,13 +532,19 @@ export default function App() {
       for (let i = 0; i < flags.length; i++) {
         if (flags[i].circuitId == nextCircuitId) {
           nextRaceFlag = flags[i].url;
+          rawNextCircuitEventFlag = flags[i].url;
         }
       }
+
+      let nextCircuitEventFlag = rawNextCircuitEventFlag
+        .replace("32", "48")
+        .replace("flat", "shiny");
 
       setNextRace(nextCircuitId);
       setNextCircuitFlag(nextRaceFlag);
       setNextEventName(nextCircuitEventName);
       setNextEventDate(nextCircuitEventDate);
+      setNextEventFlag(nextCircuitEventFlag);
       setNextEventCircuit(nextCircuitName);
       setNextRaceType(nextCircuitType);
       setCircuitTypeColor(nextCircuitTypeColor);
@@ -544,8 +552,8 @@ export default function App() {
   }, [eventList, lastFiveRaceResults]);
 
   useEffect(() => {
-    console.log(nextCircuitFlag)
-  }, [nextCircuitFlag]);
+    console.log(nextEventFlag)
+  }, [nextEventFlag]);
 
   function getNextCircuitProperName (nextRace, nextRaceType) {
     let nextCircuitName;
@@ -1232,7 +1240,10 @@ export default function App() {
             <div className="text-wrapperCDesktop">Circuit</div>
             <div className="text-wrapperDDesktop">{nextEventName}</div>
             <div className="text-wrapperEDesktop">{nextEventDate}</div>
-            <div className="text-wrapperFDesktop">{nextEventCircuit}</div>
+            <div className="nextRaceBoxCircuitContainer">
+              <div className="text-wrapperFDesktop">{nextEventCircuit}</div>
+              <img className="nextRaceBoxFlag" src={nextEventFlag} />
+            </div>
           </div>
           <img className="nextRaceBoxImageDesktop" alt="Rectangle" src={nextRaceBox} />
           
