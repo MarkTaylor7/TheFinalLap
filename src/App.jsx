@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
 import DenseTable from "./DenseTable";
+import AboutModal from './Modal';
 
 import { MyContext } from './MyContext';
 
@@ -42,6 +43,7 @@ import circuitShanghai from "./assets/circuitShanghai.svg";
 import circuitSuzuka from "./assets/circuitSuzuka.svg";
 
 export default function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [standings, setStandings] = useState([]);
   const [names, setNames] = useState([]);
   const [driverIds, setDriverIds] = useState([]);
@@ -87,6 +89,37 @@ export default function App() {
   const [isSticky, setSticky] = useState(false);
 
   const [lastUpdateTime, setLastUpdateTime] = useState(null);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+
+    if (isModalOpen) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = 'auto';
+    }
+
+    return () => {
+      // Cleanup on component unmount
+      body.style.overflow = 'auto';
+    };
+  }, [isModalOpen]);
+
+  const modalContent = (
+    <div className="modalBody" style={{ fontFamily: "Roboto", fontSize: "24px", color: "#ffffff" }}>
+      {/* Your text and images go here */}
+      <div className="modalTextWrapper">This is some text in the modal.</div>
+      <img src="feature1.png" alt="Your Image" />
+    </div>
+  );
 
   const screenWidth1280 = useMediaQuery('(max-width:1281px)');
   const screenWidth1366 = useMediaQuery('(min-width:1282px) and (max-width:1367px)');
@@ -552,10 +585,6 @@ export default function App() {
       setCircuitTypeColor(nextCircuitTypeColor);
     }
   }, [eventList, lastFiveRaceResults]);
-
-  useEffect(() => {
-    console.log(nextEventFlag)
-  }, [nextEventFlag]);
 
   function getNextCircuitProperName (nextRace, nextRaceType) {
     let nextCircuitName;
@@ -1171,10 +1200,6 @@ export default function App() {
       ),
     );
   }, [driverTableData]);
-
-  useEffect(() => {
-    console.log(racerData)
-  }, [racerData]);
   
   // Function to toggle the mobile site's menu visibility
   const toggleMenu = () => {
@@ -1203,7 +1228,7 @@ export default function App() {
                   <div className="text-wrapper-19">Schedule</div>
                 </a>
                 <div className="text-wrapper-21" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
-                <div className="text-wrapper-20">About</div>
+                <div className="text-wrapper-20" onClick={handleOpenModal}>About</div>
                 <div className="desktopMenuLine1" />
                 <div className="desktopMenuLine2" />
                 <div className="desktopMenuLine3" />
@@ -1221,7 +1246,7 @@ export default function App() {
                     <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
                       <div className="divX">Schedule</div>
                     </a>
-                    <div className="text-wrapper-2">About</div>
+                    <div className="text-wrapper-2" onClick={handleOpenModal}>About</div>
                     <div className="text-wrapper-3" onClick={handleButtonClickMobile}>Features</div>
                     <div className="mobileMenuLine1" />
                     <div className="mobileMenuLine2" />
@@ -1311,8 +1336,8 @@ export default function App() {
           </div>
 
           <div className="dataUpdatePill">
-            <div class="pulse"></div>
-            <p class="pillTextWrapper">Updated {lastUpdateTime}</p>    
+            <div className="pulse"></div>
+            <p className="pillTextWrapper">Updated {lastUpdateTime}</p>    
           </div>
 
           <div className="overlap-table">
@@ -1474,7 +1499,7 @@ export default function App() {
                 </span>
               </p>
               <p className="textMobile">
-                <span className="spanMobile">
+                <span className="spanMobile" onClick={handleOpenModal}>
                   About
                   <br />
                 </span>
@@ -1506,7 +1531,7 @@ export default function App() {
               <div className="footer-text-wrapper-2">Drivers</div>
             </a>
             <div className="footer-text-wrapper-3" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
-            <div className="footer-text-wrapper-4">About</div>
+            <div className="footer-text-wrapper-4" onClick={handleOpenModal}>About</div>
             <div className="footer-text-wrapper-5">The Final Lap</div>
             <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
             <a href="https://github.com/MarkTaylor7" target="_blank" rel="noreferrer">
@@ -1515,8 +1540,14 @@ export default function App() {
             <a href="https://www.linkedin.com/in/marktaylor27" target="_blank" rel="noreferrer">
               <img className="linkedInDesktop" alt="Vector" src={linkedInDesktop} />
             </a>
-          </div> 
+          </div>
+          
         </div>
+        <AboutModal
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            content={modalContent}
+          /> 
       </div>
     </>
   );

@@ -2235,6 +2235,15 @@ select {
   border: 1px solid rgba(217, 217, 217, 0.3);
 }
 
+.ReactModal__Overlay {
+  z-index: 1000; /* Adjust as needed */
+}
+
+.ReactModal__Content {
+  max-height: 80vh; /* Adjust as needed */
+  overflow-y: auto;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
