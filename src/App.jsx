@@ -1170,7 +1170,7 @@ export default function App() {
     } else {setMenuOpen(true)}
   };
 
-  const reloadWebpage = () => {
+  const reloadPage = () => {
     window.scrollTo(0, 0);
     window.location.reload();
   };
@@ -1224,7 +1224,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <img className="siteLogo" alt="site logo: stylized initials 'FL'" src={siteLogo} onClick={reloadWebpage} style={{ cursor: 'pointer' }} />
+            <img className="siteLogo" alt="site logo: stylized initials 'FL'" src={siteLogo} onClick={reloadPage} style={{ cursor: 'pointer' }} />
           </div>
           <div className="nextRaceBoxDesktop">
             <div className="text-wrapperADesktop">Next Race</div>
@@ -1238,7 +1238,7 @@ export default function App() {
           
           <div className="footerBoxMobile" ref={targetElementRefMobile}>
             <div className="footerBoxBackgroundMobile" />
-            <img className="siteLogoFooterMobile" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} onClick={reloadWebpage} style={{ cursor: 'pointer' }} />
+            <img className="siteLogoFooterMobile" alt="site logo: stylized initials 'FL'" src={footerSiteLogo} onClick={reloadPage} style={{ cursor: 'pointer' }} />
             <p className="copyrightMobile">© 2024 The Final Lap</p>
             <p className="designCreditMobile">Designed by Abigail Z</p>
             <a href="https://www.linkedin.com/in/abigail-zhuk/" target="_blank" rel="noreferrer">
@@ -1261,7 +1261,7 @@ export default function App() {
             </div>
             <div className="flexcontainer-2-Mobile">
               <p className="textMobile">
-                <span className="spanMobile" onClick={handleButtonClickMobile}>
+                <span className="spanMobile" onClick={handleButtonClickMobile} style={{ cursor: 'pointer' }}>
                   Features
                   <br />
                 </span>
@@ -1298,10 +1298,10 @@ export default function App() {
             <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
               <div className="footer-text-wrapper-2">Drivers</div>
             </a>
-            <div className="footer-text-wrapper-3" onClick={handleButtonClick}>Features</div>
+            <div className="footer-text-wrapper-3" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
             <div className="footer-text-wrapper-4">About</div>
             <div className="footer-text-wrapper-5">The Final Lap</div>
-            <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} onClick={reloadWebpage} style={{ cursor: 'pointer' }} />
+            <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
             <a href="https://github.com/MarkTaylor7" target="_blank" rel="noreferrer">
               <img className="gitHubDesktop" alt="Vector" src={gitHubDesktop} />
             </a>
@@ -1317,14 +1317,14 @@ export default function App() {
             <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
               <div className="text-wrapper-19">Schedule</div>
             </a>
-            <div className="text-wrapper-21" onClick={handleButtonClick}>Features</div>
+            <div className="text-wrapper-21" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
             <div className="text-wrapper-20">About</div>
             <div className="desktopMenuLine1" />
             <div className="desktopMenuLine2" />
             <div className="desktopMenuLine3" />
             <div className="desktopMenuLine4" />
             <div className="desktopMenuLine5" />
-            <img className="group-3" alt="Site Logo" src={siteLogoDesktop} onClick={reloadWebpage} style={{ cursor: 'pointer' }} />
+            <img className="group-3" alt="Site Logo" src={siteLogoDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
           </div>
 
           <div className="text-wrapper-10">Race Outlook</div>
@@ -1462,7 +1462,7 @@ export default function App() {
               <img className="toggleButton" alt="Rectangle" src={toggleButton} />
               <div className="text-wrapper-11">Recent Form</div>
               <div className="line-5" style={line5Style}></div>
-              <img className="toggleButton1Icon" alt="Arrow pointed down" src={lineChart} />
+              <img className="toggleButton1Icon" src={lineChart} />
             </div>
           </div>
           
