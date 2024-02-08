@@ -34,6 +34,19 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
   getBackgroundColor(data3);
   getColor(data3);
 
+  const getColorForData5 = (value) => {
+    switch (value) {
+      case 'POWER':
+        return 'red';
+      case 'BALANCED':
+        return 'orange';
+      case 'HIGH DOWNFORCE':
+        return 'yellow';
+      default:
+        return '#ffffff';
+    }
+  };
+
   const [hoveredSection, setHoveredSection] = useState(null);
 
   const handleHover = (section) => {
@@ -57,8 +70,13 @@ export default function DenseTable({data1, data2, data3, data4, data5, boolean1,
                   <TableCell align="center" colSpan={1} sx={{ bgcolor: "#17181a", borderBottom: 0, borderTop: '1px solid #606367', borderRight: '1px solid #606367', borderLeft: '1px solid #606367' }}></TableCell>
                   {showCluster1 && <TableCell align="center" colSpan={5} onMouseEnter={() => handleHover(1)} onMouseLeave={() => handleHover(null)} sx={{ color: "#ffffff", transition: 'bgcolor 0.3s ease-out', bgcolor: (hoveredSection !== 2 && hoveredSection !== 3) ? "#17181a" : "#303133", borderTop: '1px solid #606367', borderBottom: 0, borderRight: '1px solid #606367', whiteSpace: 'pre-wrap' }}>{"RECENT FORM\nTHE LAST 5 RACES"}</TableCell>}
                   {showCluster2 && <TableCell align="center" colSpan={5} onMouseEnter={() => handleHover(2)} onMouseLeave={() => handleHover(null)} sx={{ color: "#ffffff", transition: 'bgcolor 0.3s ease-out', bgcolor: (hoveredSection !== 1 && hoveredSection !== 3) ? "#17181a" : "#303133", borderTop: '1px solid #606367', px: 0.5, borderBottom: 0, borderRight: '1px solid #606367', whiteSpace: 'pre-wrap' }}>{`CIRCUIT HISTORY\nRECENT RACES AT ${data4}`}</TableCell>}
-                  {showCluster3 && <TableCell align="center" colSpan={5} onMouseEnter={() => handleHover(3)} onMouseLeave={() => handleHover(null)} sx={{ color: "#ffffff", transition: 'bgcolor 0.3s ease-out', bgcolor: (hoveredSection !== 1 && hoveredSection !== 2) ? "#17181a" : "#303133", borderTop: '1px solid #606367', px: 0.5, borderBottom: 0, whiteSpace: 'pre-wrap' }}>{`CIRCUIT TYPE: ${data5}\nCIRCUITS SIMILAR TO ${data4}`}</TableCell>}
-
+                  {showCluster3 && <TableCell align="center" colSpan={5} onMouseEnter={() => handleHover(3)} onMouseLeave={() => handleHover(null)} sx={{ transition: 'bgcolor 0.3s ease-out', bgcolor: (hoveredSection !== 1 && hoveredSection !== 2) ? "#17181a" : "#303133", borderTop: '1px solid #606367', px: 0.5, borderBottom: 0, whiteSpace: 'pre-wrap' }}>
+                    <div style={{fontFamily: 'Roboto'}}>
+                      <span style={{ color:'#ffffff' }}>{`CIRCUIT TYPE: `}</span>
+                      <span style={{ color: getColorForData5(data5) }}>{data5}</span><div/>
+                      <span style={{ color:'#ffffff' }}>{`CIRCUITS SIMILAR TO ${data4}`}</span>
+                    </div>
+                  </TableCell>}
                 </TableRow>
                   {data1.map((row, i) => (
                     <TableRow
