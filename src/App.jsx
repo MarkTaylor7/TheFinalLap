@@ -86,6 +86,8 @@ export default function App() {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
 
+  const [lastUpdateTime, setLastUpdateTime] = useState(null);
+
   const screenWidth1280 = useMediaQuery('(max-width:1281px)');
   const screenWidth1366 = useMediaQuery('(min-width:1282px) and (max-width:1367px)');
   const screenWidth1440 = useMediaQuery('(min-width:1368px) and (max-width:1441px)');
@@ -492,7 +494,7 @@ export default function App() {
     /*May need to add an if statement to handle situations when lastFiveRaceResults.length <5. See state setter
     function for nextRaceTypeHistory*/
     if (lastFiveRaceResults.length === 5) {
-      let nextCircuitId = "red_bull_ring";
+      let nextCircuitId = "bahrain";
       let nextCircuitEventName;
       let rawNextCircuitEventDate = "2024-03-02";
       let rawNextCircuitEventFlag;
@@ -580,6 +582,9 @@ export default function App() {
       fetchNextTrackData(nextRace).then((results) => setNextRaceHistory(results));
       setNextRaceDataFetched(true);
       setTableDataPopulated(true);
+      const currentDate = new Date();
+      const formattedDate = currentDate.toLocaleString();
+      setLastUpdateTime(formattedDate);
     };
   }, [nextRace]);
 
@@ -1505,6 +1510,10 @@ export default function App() {
               ))}
             </select>
           </div>
+          <div className="dataUpdatePill">
+            Most recent data update: {lastUpdateTime}
+          </div>     
+
         </div>
       </div>
     </>

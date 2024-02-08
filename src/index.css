@@ -1994,6 +1994,33 @@ select {
   top: 53%;
 }
 
+.dataUpdatePill {
+  left: 2%;
+  position: relative;
+  top: 815px;
+  width: 96%;
+  height: 100px;
+  visibility: hidden;
+}
+
+@media screen and (min-width: 480px) {
+  .iphone .dataUpdatePill {
+    font-size: 16px;
+    background-color: #17181a;
+    color: #87C75F;
+    left: 45%;
+    width: 30%;
+    height: 40px;
+    top: 1060px;
+    border-radius: 20px;
+    align-content: center;
+    text-align: center;
+    
+    position: absolute;
+    visibility: visible;
+  }
+}
+
 .iphone .toggleButton4 {
   left: 0;
   position: absolute;
