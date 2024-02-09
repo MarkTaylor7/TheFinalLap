@@ -132,7 +132,7 @@ export default function App() {
         All of this data has to come from somewhere, so I have integrated the Ergast Developer API - which provides data for every driver, team, and race since 1950. This project would not have been possible without this excellent resource. I also used Country Flags API for consistent formatting of the many flag images on this site.
         <br/>
         <br/>
-        Design credit goes to Abigail Z, who I was fortunate enough to collaborate with during development of this project. She has elevated the style and user experience of The Final Lap to a level I never could have approached alone.
+        Design credit goes to Abigail Z, who I was fortunate enough to collaborate with during development of this project. She has elevated the style and user experience of <i>The Final Lap</i> to a level I never could have approached alone.
         <br/>
         <br/>
         I must also recognize my Get Coding coach, Hai Nghiem, who has been an excellent guide and source of encouragement to me as I learned my way around React.js. This project had its challenges, but Hai was a great support at every step of the journey. 
