@@ -452,8 +452,8 @@ body {
 
 .iphone .text-wrapperDMobile {
   color: #ffffff;
-  font-family: "Bai Jamjuree", Helvetica;
-  font-size: 12px;
+  font-family: "Roboto", Helvetica;
+  font-size: 13px;
   font-weight: 400;
   height: 76px;
   left: 5%;
@@ -466,8 +466,8 @@ body {
 
 .iphone .text-wrapperEMobile {
   color: #ffffff;
-  font-family: "Bai Jamjuree", Helvetica;
-  font-size: 12px;
+  font-family: "Roboto", Helvetica;
+  font-size: 13px;
   font-weight: 400;
   height: 76px;
   left: 42%;
@@ -480,8 +480,8 @@ body {
 
 .iphone .text-wrapperFMobile {
   color: #ffffff;
-  font-family: "Bai Jamjuree", Helvetica;
-  font-size: 12px;
+  font-family: "Roboto", Helvetica;
+  font-size: 13px;
   font-weight: 400;
   height: 76px;
   left: 72%;
@@ -495,7 +495,7 @@ body {
 .iphone .p {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   height: 26px;
   left: 8.33%;

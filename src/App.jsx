@@ -1244,8 +1244,8 @@ export default function App() {
               <div className="rectangle-2" />
               <p className="pDesktop">Live F1 form guide and driver data lets you predict results with confidence.</p>
               <div className="text-wrapper-Desktop">The Final Lap</div>
-              <div className="menuTextWrapper" onClick={toggleMenu}>{isMenuOpen ? 'Close' : 'Menu'}</div>
-
+              <div className="menuTextWrapper" style={{color: isMenuOpen ? '#f3610c' : 'white'}} onClick={toggleMenu}>{isMenuOpen ? 'Close' : 'Menu'}</div>
+F
               <div className="groupMobile">
                 <div className="overlap-2">
                   <p className="p">Live F1 driver data and form guide lets you predict results with confidence.</p>
@@ -1287,7 +1287,7 @@ export default function App() {
               <div className="text-wrapper-19">Schedule</div>
             </a>
             <div className="text-wrapper-21" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
-            <div className="text-wrapper-20" onClick={handleOpenModal}>About</div>
+            <div className="text-wrapper-20" onClick={handleOpenModal} style={{ cursor: 'pointer' }}>About</div>
             <div className="desktopMenuLine1" />
             <div className="desktopMenuLine2" />
             <div className="desktopMenuLine3" />
@@ -1486,7 +1486,7 @@ export default function App() {
               </p>
               <p className="textMobile">
                 <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
-                  <span className="span">Schedule</span>
+                  <span className="spanMobile">Schedule</span>
                 </a>
               </p>
             </div>
@@ -1530,7 +1530,7 @@ export default function App() {
               <div className="footer-text-wrapper-2">Drivers</div>
             </a>
             <div className="footer-text-wrapper-3" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
-            <div className="footer-text-wrapper-4" onClick={handleOpenModal}>About</div>
+            <div className="footer-text-wrapper-4" onClick={handleOpenModal} style={{ cursor: 'pointer' }}>About</div>
             <div className="footer-text-wrapper-5">The Final Lap</div>
             <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
             <a href="https://github.com/MarkTaylor7" target="_blank" rel="noreferrer">
