@@ -1,4 +1,5 @@
 
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -599,6 +600,32 @@ body {
   top: 144px;
 }
 
+.iphone .dev-credit-mobile {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  height: 15px;
+  right: 5%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 40px;
+}
+
+@media screen and (min-width: 380px) {
+  .iphone .dev-credit-mobile {
+    right: 6%;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .iphone .dev-credit-mobile {
+    right: 6.5%;
+  }
+}
+
+
 .iphone .flexcontainerMobile {
   align-items: flex-start;
   display: flex;
@@ -730,6 +757,25 @@ body {
   line-height: normal;
   position: absolute;
   top: 72%;
+}
+
+.iphone .dev-credit-desktop {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 22px;
+  font-weight: 400;
+  height: 14%;
+  right: 5.8%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 35%;
+}
+
+@media screen and (max-width: 1400px) {
+  .iphone .dev-credit-desktop {
+    right: 5.5%;
+  }
 }
 
 .iphone .footer-text-wrapper-1 {

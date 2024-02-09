@@ -113,11 +113,13 @@ export default function App() {
     };
   }, [isModalOpen]);
 
+  const isSmallScreen = useMediaQuery('(max-width:480px)');
+
   const modalContent = (
-    <div className="modalBody" style={{ fontFamily: "Roboto", fontSize: "24px", color: "#ffffff" }}>
+    <div className="modalBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '12px' :"24px", color: "#ffffff" }}>
       {/* Your text and images go here */}
-      <div className="modalTextHeader" style={{ color: '#87C75F', fontSize: "48px", textAlign: 'center' }}>About</div>
-      <div className="modalTextBody" style={{ fontFamily: "Roboto", fontSize: "22px", textAlign: 'left', marginTop: '18px' }}>
+      <div className="modalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>About</div>
+      <div className="modalTextBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', marginTop: '18px' }}>
         <i>The Final Lap</i> is a tool that provides contextual race results for all Formula 1 drivers participating in the 2024 season. In F1, the performance of the car is the most important factor in achieving success. Each of the 10 teams is responsible for designing and developing its own car, and each car's performance potential varies according to track layout, tire wear, fuel level, and even environmental conditions like temperature, wind, and rain. Of course, the driver in the car also makes a difference.<br/>
         <br/>
         There are many resources online that show things like total wins, podiums, poles, fastest laps, points, etc. These are just counting numbers that do not indicate what is likely to happen at the next race. Instead, <i>The Final Lap</i> attempts to capture the full picture by highlighting three key variables:<br/>
@@ -126,7 +128,7 @@ export default function App() {
         <ol><b>3. Circuit Type: </b>The driver's last five results at that track-type. Some tracks feature long straights and high speeds that require peak engine performance and low drag aero set-ups. Others consist of constant turns and direction changes which reward cornering ability and grip (high-downforce). Many tracks place roughly equal demands on power and downforce. Some cars excel at a specific circuit-type, while others struggle.</ol>
         For greater context, each race result is measured against that driver's average race finish for that specific season. Exceptionally good performances appear dark green, exceptionally poor ones are a deep red. Full race reports are embedded in the table header, and links to the 2024 driver line-ups and race schedule are a click away.<br/>
         <br/>
-        <div className="modalTextHeader" style={{color: '#87C75F', fontFamily: "Bai Jamjuree", fontSize: "30px", textAlign: 'center' }}>Resources and Partners</div><br/>
+        <div className="modalTextHeader" style={{color: '#87C75F', fontFamily: "Bai Jamjuree", fontSize: isSmallScreen ? '24px' :"30px", textAlign: 'center' }}>Resources and Partners</div><br/>
         All of this data has to come from somewhere, so I have integrated the Ergast Developer API - which provides data for every driver, team, and race since 1950. This project would not have been possible without this excellent resource. I also used Country Flags API for consistent formatting of the many flag images on this site.
         <br/>
         <br/>
@@ -136,7 +138,7 @@ export default function App() {
         I must also recognize my Get Coding coach, Hai Nghiem, who has been an excellent guide and source of encouragement to me as I learned my way around React.js. This project had its challenges, but Hai was a great support at every step of the journey. 
         <br/>
         <br/>
-        <div className="modalTextFooter" style={{fontFamily: "Roboto", fontSize: "15px", textAlign: 'right', marginBottom: '-5px'}}>Photo credit (hero image): F1-Fansite.com </div>
+        <div className="modalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}>Photo credit (hero image): F1-Fansite.com </div>
       </div>
       {/*<img src={feature1} alt="Your Image" />*/}
     </div>
@@ -1534,11 +1536,13 @@ export default function App() {
             <a href="https://www.linkedin.com/in/marktaylor27" target="_blank" rel="noreferrer">
               <img className="linkedInMobile" alt="LinkedIn logo" src={linkedInMobile} />
             </a>
+            <p className='dev-credit-mobile'>Mark Taylor</p>
             <div className="line-2"></div>
           </div>
 
           <div className="footerBoxDesktop">
             <div className="footerBoxBackgroundDesktop" />
+            <p className="dev-credit-desktop">Mark Taylor</p>
             <p className="designCreditDesktop">Site Design by Abigail Z</p>
             <a href="https://www.linkedin.com/in/abigail-zhuk" target="_blank" rel="noreferrer">
               <img className="linkedInDesktopDesigner" alt="Vector" src={linkedInDesktop} />
