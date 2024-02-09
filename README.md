@@ -4,12 +4,14 @@ Live website: https://marktaylor7.github.io/TheFinalLap/
 
 <i>The Final Lap</i> is a tool that provides contextual race results for all Formula 1 drivers participating in the 2024 season. In F1, the performance of the car is the most important factor in achieving success. Each of the 10 teams is responsible for designing and developing its own car, and each car's performance potential varies according to track layout, tire wear, fuel level, and even environmental conditions like temperature, wind, and rain. Of course, the driver in the car also makes a difference.<br/>
         <br/>
-![Screenshot of Kaboom Beach gameplay](images/screenshots/mobileScreenshot.png)
+![Screenshot of project desktop site](src/assets/images/desktopTitle.png)
+<br/><br/>
         There are many resources online that show things like total wins, podiums, poles, fastest laps, points, etc. These are just counting numbers that do not indicate what is likely to happen at the next race. Instead, <i>The Final Lap</i> attempts to capture the full picture by highlighting three key variables:<br/>
         <ol><b>1. Recent Form: </b>The driver's last five race results, as a driver's car can get relatively faster or slower over a season as the teams introduce upgrade packages. These upgrades usually help, but sometimes do not gel with a driver's driving-style. This makes the driver's recent results valuable in predicting outcomes at the next race.  </ol>
         <ol><b>2. Circuit History: </b>The driver's last five results at the circuit. Each driver has his own driving-style and preferences for circuit layouts. Some driver's seem to find an extra gear at their home race, and some have "bogey tracks" where nothing seems to go right. </ol>
         <ol><b>3. Circuit Type: </b>The driver's last five results at that track-type. Some tracks feature long straights and high speeds that require peak engine performance and low drag aero set-ups. Others consist of constant turns and direction changes which reward cornering ability and grip (high-downforce). Many tracks place roughly equal demands on power and downforce. Some cars excel at a specific circuit-type, while others struggle.</ol>
-        For greater context, each race result is measured against that driver's average race finish for that specific season. Exceptionally good performances appear dark green, exceptionally poor ones are a deep red. Full race reports are embedded in the table header, and links to the 2024 driver line-ups and race schedule are a click away.<br/>
+        For greater context, each race result is measured against that driver's average race finish for that specific season. Exceptionally good performances appear dark green, exceptionally poor ones are a deep red. Full race reports are embedded in the table header, and links to the 2024 driver line-ups and race schedule are a click away.<br/><br/>
+![Screenshot of project desktop site](src/assets/images/desktopTable.png)
 
 # 💡 Motivation
 I knew that learning React would be challenging and I would be dedicating a lot of time to this project, so I wanted to choose a topic that I am passionate about. I have been a F1 fan for most of my life - I haven't missed a race since the 2005 Hungarian Grand Prix (as of Feb 2024, that's 357 races ago). Every year, some friends and I take part in a "prediction pool", where before each race weekend we predict the top 10 finishing positions. Points are earned based how accurate our predictions are, and at the end of the season a champion is crowned. I would make my predictions based on my own knowledge of each car's strengths and weaknesses, the drivers historical results, and recent race results. <br/>
@@ -27,7 +29,10 @@ Netflix's <i>Drive to Survive</i> does a phenomenal job of hooking new fans with
 <li>See a strange result and need more details? Links to full race reports are embedded in the table header. </li>
 <li>"Next Race" widget tells you when and where the next event will happen.</li>   
 <li>2024 driver line-ups and race schedules are accessible from the main menu.</li>
-<li>Responsive design - the UI is optimized for both desktop and mobile viewports.</li>
+<li>Responsive design - the UI is optimized for both desktop and mobile viewports.</li><br/>
+
+![Screenshot of project desktop site](src/assets/images/mobileTitle.png)
+![Screenshot of project desktop site](src/assets/images/mobileTable.png)
 
 # 💻 Technologies used
 <li>React.js</li>
@@ -62,7 +67,7 @@ This project in its current state satisifies my original MVP requirements (and a
 <li>Qualifying results in same categories mentioned above.</li>
 <li>Results in rain-affected races. (Some drivers excel or struggle in the wet)</li>
 <li>Weather predictor – widget that has up-to-date forecast for upcoming race weekend.</li>
-<li>Team stats for in-season results (historical data is not as useful here: team competitiveness and car characteristics fluctuate season-to-season)</li>
+<li>Team stats for in-season results</li>
 <li>Results for fastest laps, fastest pitstops, practice sessions. Probabilities for safety cars, red flags at upcoming track.</li>
 <br/>
 I'm open to any ideas for new features and enhancements - please let me know if you have something in mind!
