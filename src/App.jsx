@@ -1265,7 +1265,7 @@ export default function App() {
               <img className="heroBannerMobile" src={heroBannerMobile} alt="an image of a Williams F1 car in Monaco" />
               <div className="rectangle" />
               <div className="rectangle-2" />
-              <p className="pDesktop">Live F1 form guide and driver data lets you predict results with confidence.</p>
+              <p className="pDesktop">Live F1 driver data and form guide lets you predict results with confidence.</p>
               <div className="text-wrapper-Desktop">The Final Lap</div>
               <div className="menuTextWrapper" style={{color: isMenuOpen ? '#f3610c' : 'white'}} onClick={toggleMenu}>{isMenuOpen ? 'Close' : 'Menu'}</div>
 
