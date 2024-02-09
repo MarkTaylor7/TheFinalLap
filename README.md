@@ -24,7 +24,7 @@ Netflix's <i>Drive to Survive</i> does a phenomenal job of hooking new fans with
 
 #  🏎️ Features
 <li>Dynamic data table that provides up-to-date race data across three key metrics. A heat map enables the user to quickly distinguish exceptional performances from average ones.</li>
-<li>Driver names are color-coded with official team colours for easy comparison of teammates.
+<li>Driver names are colour-coded with official team colours for easy comparison of teammates.
 <li>Circuit Selector allows user to see data on any circuit featured on the 2024 schedule.</li>
 <li>See a strange result and need more details? Links to full race reports are embedded in the table header. </li>
 <li>"Next Race" widget tells you when and where the next event will happen.</li>   
