@@ -1266,7 +1266,7 @@ export default function App() {
               <p className="pDesktop">Live F1 form guide and driver data lets you predict results with confidence.</p>
               <div className="text-wrapper-Desktop">The Final Lap</div>
               <div className="menuTextWrapper" style={{color: isMenuOpen ? '#f3610c' : 'white'}} onClick={toggleMenu}>{isMenuOpen ? 'Close' : 'Menu'}</div>
-F
+
               <div className="groupMobile">
                 <div className="overlap-2">
                   <p className="p">Live F1 driver data and form guide lets you predict results with confidence.</p>
