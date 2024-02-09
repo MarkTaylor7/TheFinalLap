@@ -1219,24 +1219,6 @@ export default function App() {
         <div className="div">
           <div className="overlap">
             <div className="overlap-group">
-
-              <div className={`desktop-sticky-menu ${isSticky ? 'sticky' : ''}`}>
-                <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
-                  <div className="text-wrapper-18">Drivers</div>
-                </a>
-                <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
-                  <div className="text-wrapper-19">Schedule</div>
-                </a>
-                <div className="text-wrapper-21" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
-                <div className="text-wrapper-20" onClick={handleOpenModal}>About</div>
-                <div className="desktopMenuLine1" />
-                <div className="desktopMenuLine2" />
-                <div className="desktopMenuLine3" />
-                <div className="desktopMenuLine4" />
-                <div className="desktopMenuLine5" />
-                <img className="group-3" alt="Site Logo" src={siteLogoDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
-              </div>
-
               <div className="box"> 
                 <div className={`iphone-menu ${isMenuOpen ? 'open' : 'closed'}`}>
                   <div className="overlap-group">
@@ -1296,6 +1278,23 @@ export default function App() {
           
           <div className="text-wrapper-10">Race Outlook</div>
           <div className="raceOutlookLine" />
+          
+          <div className={`desktop-sticky-menu ${isSticky ? 'sticky' : ''}`}>
+            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
+              <div className="text-wrapper-18">Drivers</div>
+            </a>
+            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
+              <div className="text-wrapper-19">Schedule</div>
+            </a>
+            <div className="text-wrapper-21" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
+            <div className="text-wrapper-20" onClick={handleOpenModal}>About</div>
+            <div className="desktopMenuLine1" />
+            <div className="desktopMenuLine2" />
+            <div className="desktopMenuLine3" />
+            <div className="desktopMenuLine4" />
+            <div className="desktopMenuLine5" />
+            <img className="group-3" alt="Site Logo" src={siteLogoDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
+          </div>
 
           <div className="overlap-7">
             <div className="rectangle-6" onClick={showOnlyCluster1}>
