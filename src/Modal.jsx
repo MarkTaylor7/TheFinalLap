@@ -11,9 +11,18 @@ const AboutModal = ({ isOpen, onClose, content }) => {
       padding: '20px',
       border: '2px solid #87C75F',
       borderRadius: '8px',
+      position: 'relative',
     },
     overlay: {
       zIndex: 1000,
+    },
+    closeButton: {
+      position: 'absolute',
+      top: 0,
+      right: '16px',
+      cursor: 'pointer',
+      fontSize: '40px',
+      color: '#ffffff',
     },
   };
 
@@ -26,8 +35,14 @@ const AboutModal = ({ isOpen, onClose, content }) => {
       style={customStyles}
     >
       <div>
+       <div
+          style={customStyles.closeButton}
+          onClick={onClose}
+        >
+          &times;
+        </div> 
         {content}
-        <button onClick={onClose}>Close Modal</button>
+        
       </div>
     </Modal>
   );
