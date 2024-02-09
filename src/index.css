@@ -611,6 +611,7 @@ body {
   line-height: normal;
   position: absolute;
   top: 40px;
+  visibility: hidden;
 }
 
 @media screen and (min-width: 380px) {
@@ -770,6 +771,7 @@ body {
   line-height: normal;
   position: absolute;
   top: 35%;
+  visibility: hidden;
 }
 
 @media screen and (max-width: 1400px) {
