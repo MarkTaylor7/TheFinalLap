@@ -86,7 +86,79 @@ export default function App() {
   const [nextEventFlag, setNextEventFlag] = useState('');
 
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [isSticky, setSticky] = useState(false);
+
+  const [show, setShow] = useState(true);
+
+  const controlNavBar = () => {
+    if (window.scrollY > 1200) {
+      setShow(false)
+    } else {
+      setShow(true)
+    } 
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll',
+    controlNavBar)
+    return () => {
+      window.removeEventListener('scroll',
+      controlNavBar)
+    }
+  }, [])
+  
+
+  {/*const [menuStyle, setMenuStyle] = useState({position: 'fixed', top: 3});
+
+  const scrollPosition = window.scrollY;
+
+  useEffect(() => {
+    // Get references to the menu and main elements
+    const menu = document.getElementById('menu');
+    const table = document.querySelector('.overlap-table');
+
+    const menuOffset = menu.getBoundingClientRect().bottom;
+    const tableOffset = table.getBoundingClientRect().bottom;
+
+    const handleScroll = () => {
+      console.log(menu.offsetHeight);
+      console.log(menuOffset);
+      console.log(tableOffset);
+      // Get the current scroll position
+      
+      console.log(scrollPosition);
+      // Calculate the bottom position of the main element
+      const tableBottom = table.offsetTop + table.offsetHeight;
+      console.log(tableBottom);
+      console.log(tableBottom - menu.offsetHeight);
+      const newMenuTop = tableBottom - (menu.offsetHeight + 96)
+      // Check if the scroll position is within the specified range
+      if (tableOffset <= menuOffset) {
+        // If true, set the menu's position to absolute
+        setMenuStyle({ position: 'fixed', top: newMenuTop });
+      } else {
+        // If false, set the menu's Style back to fixed
+        setMenuStyle({ position: 'fixed', top: 3 });
+      }
+      
+      if (tableOffset >= menuOffset) {
+        // If true, set the menu's position to absolute
+        setMenuStyle({ position: 'fixed', top: 3 });;
+      } else {
+        // If false, set the menu's Style back to fixed
+        setMenuStyle({ position: 'absolute', top: newMenuTop });
+      }
+      
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+  }, [scrollPosition]);*/}
+  
 
   const [lastUpdateTime, setLastUpdateTime] = useState(null);
 
@@ -144,39 +216,6 @@ export default function App() {
     </div>
   );
 
-  const screenWidth1280 = useMediaQuery('(max-width:1281px)');
-  const screenWidth1366 = useMediaQuery('(min-width:1282px) and (max-width:1367px)');
-  const screenWidth1440 = useMediaQuery('(min-width:1368px) and (max-width:1441px)');
-  const screenWidth1536 = useMediaQuery('(min-width:1442px) and (max-width: 1900px)');
-  const screenWidth1920Plus = useMediaQuery('(min-width:1901px)');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      let isStickyNow;
-      if (screenWidth1280) {
-        isStickyNow = scrollPosition >= 1044;
-      } else if (screenWidth1366) {
-        isStickyNow = scrollPosition >= 1274;
-      } else if (screenWidth1440) {
-        isStickyNow = scrollPosition >= 1156;
-      } else if (screenWidth1536) {
-        isStickyNow = scrollPosition >= 1188;
-      }else if (screenWidth1920Plus) {
-        isStickyNow = scrollPosition >= 993;
-       } else {isStickyNow = scrollPosition >= 1145};
-
-      setSticky(isStickyNow);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-  
   const targetElementRef = useRef(null);
   const handleButtonClick = () => {
     targetElementRef.current.scrollIntoView({
@@ -1302,7 +1341,7 @@ export default function App() {
           <div className="text-wrapper-10">Race Outlook</div>
           <div className="raceOutlookLine" />
           
-          <div className={`desktop-sticky-menu ${isSticky ? 'sticky' : ''}`}>
+          <div className={`desktop-sticky-menu ${show && 'desktop-sticky-menu__blue'}`}>
             <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
               <div className="text-wrapper-18">Drivers</div>
             </a>

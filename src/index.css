@@ -905,56 +905,45 @@ body {
   position: fixed;
   top: 3px;
   width: 17.4%;
+  transition-timing-function: ease-out;
+  transition: visibility 1s, opacity 1s;
+  visibility: hidden;
+  opacity:0;
 }
 
-.iphone .desktop-sticky-menu.sticky {
-  position: absolute;
-  top: 900px;
-  left: 0;
+.iphone .desktop-sticky-menu__blue {
+  visibility: visible;
+  opacity: 1;
 }
 
-@media screen and (min-width: 1442px) {
+@media screen and (min-width: 1441px) {
   .iphone .desktop-sticky-menu {
-    position: absolute;
-    top: 3px;
+    width: 247px;
+    left: 40px;
   }
 }
 
-
-@media screen and (min-width: 1000px) and (max-width: 1281px) {
-  .iphone .desktop-sticky-menu.sticky {
-    position: sticky;
-    top: 1044px;
+@media screen and (min-width: 1537px) {
+  .iphone .desktop-sticky-menu {
+    width: 247px;
+    left: 72px;
   }
 }
 
-@media screen and (min-width: 1282px) and (max-width: 1367px) {
-  .iphone .desktop-sticky-menu.sticky {
-    position: sticky;
-    top: 1274px;
+@media screen and (min-width: 1601px) {
+  .iphone .desktop-sticky-menu {
+    width: 247px;
+    left: 232px;
   }
 }
 
-@media screen and (min-width: 1368px) and (max-width: 1441px) {
-  .iphone .desktop-sticky-menu.sticky {
-    position: sticky;
-    top: 1156px;
+@media screen and (min-width: 1921px) {
+  .iphone .desktop-sticky-menu {
+    width: 247px;
+    left: 550px;
   }
 }
 
-@media screen and (min-width: 1442px) and (max-width: 1900px) {
-  .iphone .desktop-sticky-menu.sticky {
-    position: sticky;
-    top: 1188px;
-  }
-}
-
-@media screen and (min-width: 1901px) {
-  .iphone .desktop-sticky-menu.sticky {
-    position: sticky;
-    top: 993px;
-  }
-}
 
 @media screen and (max-width: 480px) {
   .iphone .desktop-sticky-menu {
