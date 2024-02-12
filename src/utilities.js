@@ -375,7 +375,7 @@ export function getBackgroundColor(data3) {
       break;
     case "Max Verstappen":
     case "Sergio Pérez":
-      color = "#3671C6";
+      color = "#0d202f";
       break;
     case "Lewis Hamilton":
     case "George Russell":
@@ -395,7 +395,7 @@ export function getBackgroundColor(data3) {
       break;
     case "Pierre Gasly":
     case "Esteban Ocon":
-      color = "#2293D1";
+      color = "#f5b6c7";
       break;
     case "Alexander Albon":
     case "Logan Sargeant":
@@ -405,7 +405,7 @@ export function getBackgroundColor(data3) {
     case "Daniel Ricciardo":
     case "Liam Lawson":
     case "Nyck de Vries":
-      color = "#5E8FAA";
+      color = "#1533cc";
       break; 
     case "Valtteri Bottas":
     case "Guanyu Zhou":
@@ -435,6 +435,10 @@ export function getColor(data3) {
     case "Carlos Sainz":
     case "Fernando Alonso":
     case "Lance Stroll":
+    case "Yuki Tsunoda":
+    case "Daniel Ricciardo":
+    case "Liam Lawson":
+    case "Nyck de Vries":
       color = "#ffffff";
       break;
     default:
