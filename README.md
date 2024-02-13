@@ -34,15 +34,24 @@ Netflix's <i>Drive to Survive</i> does a phenomenal job of hooking new fans with
 ![Screenshot of project desktop site](src/assets/images/mobileTitle.png)
 ![Screenshot of project desktop site](src/assets/images/mobileTable.png)
 
+# 🧗 Challenges
+<li>Learning to "think in React" was the biggest challenge to overcome. It was my first time using this technology and I had to master concepts like: state management, conditional rendering, component hierarchy, and hooks (useState, useEffect, useContext)</li>
+<li>This was my first experience integrating a API into a project, and I spent a lot of time getting comfortable with API calls, JSON, error- handling (try...catch statements).</li>
+<li>The project involves a significant amount of data manipulation (at least for me), and this forced me to keep my code organized, take care with naming variables, and think through my goals.</li>
+<li>Looking back this project's development, I wish I had spent more time breaking down my code base into multiple components and organizing them thoughtfully. As the project is currently a single webpage with little-to-no need for component re-use, it may not have been strictly necessary. However I recognize that this is an important aspect of React development, and in my career it will often be standard practice. Additionally, it would have saved me time in the future when I add additional features to ths project.
+<li>I wanted to present a large amount of data in a clear and visually appealing way, and with minimal scrolling required by the user. Early in development I set a goal of "no horizontal scrolling". This was relatively easy to achieve in desktop viewports, but required some creativity for mobile. I'm pleased to say that this goal was achieved in all devices with screen-width > 330px.</li>
+<li>My design partner, Abigail, was fantastic to collaborate with, so I'm reluctant to put this in the "Challenges" section. This was my first time working with a UX/UI designer, and so I had to make sure I was communicating the goals and purpose of the project clearly. As she was new to F1, I spent time getting her up-to-speed with the sport, and shared some of my design inspiration from other projects and resources. I learned a lot about principles and best practices of UI design, and how to think from the user's perspective.</li>
+
 # 💻 Technologies used
 <li>React.js</li>
-<li>Javascript</li>
+<li>JavaScript</li>
 <li>Material UI</li>
 <li>Figma</li>
 <li>Anima</li>
-<li>HTML</li>
-<li>CSS</li>
 <li>Google Fonts</li>
+<li>ChatGPT</li>
+<li>HTML/CSS</li>
+
 <li>Notion (for design collaboration)</li>
 
 # 🎯 Target Audience
