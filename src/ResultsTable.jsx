@@ -25,7 +25,7 @@ wrapperStyle={{}}
 wrapperClass="grid-wrapper"
 />
 
-export default function DenseTable({data1, data2, data3, data4, data5, boolean1, boolean2, boolean3, boolean4}) {
+export default function ResultsTable({data1, data2, data3, data4, data5, boolean1, boolean2, boolean3, boolean4}) {
   
   getBackgroundColor(data3);
   getColor(data3);

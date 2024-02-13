@@ -1,7 +1,7 @@
 import { React } from "react";
 import { MyContextProvider } from "./MyContext";
 import App from "./App";
-import DenseTable from "./DenseTable";
+import ResultsTable from "./ResultsTable";
 
 const ContextProvider = () => {
   return (

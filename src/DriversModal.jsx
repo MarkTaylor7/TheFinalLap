@@ -1,7 +1,9 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-const AboutModal = ({ isOpen, onClose, content }) => {
+import DriversTable from "./DriversTable";
+
+const DriversModal = ({ isOpen, onClose, content }) => {
   const customStyles = {
     content: {
       backgroundColor: '#17181a', // Set your desired background color
@@ -46,11 +48,12 @@ const AboutModal = ({ isOpen, onClose, content }) => {
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
-      contentLabel="About Modal"
+      contentLabel="Drivers Modal"
       ariaHideApp={false}
       style={window.innerWidth <= 600 ? { ...customStyles, ...smallScreenStyles } : customStyles}
     >
-      <div className="aboutTable">
+      <div className="driversTable">
+        <DriversTable/>
        <div
           style={customStyles.closeButton}
           onClick={onClose}
@@ -64,4 +67,4 @@ const AboutModal = ({ isOpen, onClose, content }) => {
   );
 };
 
-export default AboutModal;
+export default DriversModal;

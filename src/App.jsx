@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
-import DenseTable from "./DenseTable";
+import ResultsTable from "./ResultsTable";
 import AboutModal from './AboutModal';
+import DriversModal from './DriversModal';
 
 import { MyContext } from './MyContext';
 
@@ -43,7 +44,9 @@ import circuitShanghai from "./assets/circuitShanghai.svg";
 import circuitSuzuka from "./assets/circuitSuzuka.svg";
 
 export default function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDriversModalOpen, setIsDriversModalOpen] = useState(false);
+  const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
+  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [standings, setStandings] = useState([]);
   const [names, setNames] = useState([]);
   const [driverIds, setDriverIds] = useState([]);
@@ -105,75 +108,21 @@ export default function App() {
       controlNavBar)
     }
   }, [])
-  
-
-  {/*const [menuStyle, setMenuStyle] = useState({position: 'fixed', top: 3});
-
-  const scrollPosition = window.scrollY;
-
-  useEffect(() => {
-    // Get references to the menu and main elements
-    const menu = document.getElementById('menu');
-    const table = document.querySelector('.overlap-table');
-
-    const menuOffset = menu.getBoundingClientRect().bottom;
-    const tableOffset = table.getBoundingClientRect().bottom;
-
-    const handleScroll = () => {
-      console.log(menu.offsetHeight);
-      console.log(menuOffset);
-      console.log(tableOffset);
-      // Get the current scroll position
-      
-      console.log(scrollPosition);
-      // Calculate the bottom position of the main element
-      const tableBottom = table.offsetTop + table.offsetHeight;
-      console.log(tableBottom);
-      console.log(tableBottom - menu.offsetHeight);
-      const newMenuTop = tableBottom - (menu.offsetHeight + 96)
-      // Check if the scroll position is within the specified range
-      if (tableOffset <= menuOffset) {
-        // If true, set the menu's position to absolute
-        setMenuStyle({ position: 'fixed', top: newMenuTop });
-      } else {
-        // If false, set the menu's Style back to fixed
-        setMenuStyle({ position: 'fixed', top: 3 });
-      }
-      
-      if (tableOffset >= menuOffset) {
-        // If true, set the menu's position to absolute
-        setMenuStyle({ position: 'fixed', top: 3 });;
-      } else {
-        // If false, set the menu's Style back to fixed
-        setMenuStyle({ position: 'absolute', top: newMenuTop });
-      }
-      
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-
-  }, [scrollPosition]);*/}
-  
 
   const [lastUpdateTime, setLastUpdateTime] = useState(null);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
+  const handleOpenDriversModal = () => {
+    setIsDriversModalOpen(true);
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+  const handleCloseDriversModal = () => {
+    setIsDriversModalOpen(false);
   };
 
   useEffect(() => {
     const body = document.querySelector('body');
 
-    if (isModalOpen) {
+    if (isDriversModalOpen) {
       body.style.overflow = 'hidden';
     } else {
       body.style.overflow = 'auto';
@@ -183,15 +132,48 @@ export default function App() {
       // Cleanup on component unmount
       body.style.overflow = 'auto';
     };
-  }, [isModalOpen]);
+  }, [isDriversModalOpen]);
+
+  const handleOpenAboutModal = () => {
+    setIsAboutModalOpen(true);
+  };
+
+  const handleCloseAboutModal = () => {
+    setIsAboutModalOpen(false);
+  };
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+
+    if (isAboutModalOpen) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = 'auto';
+    }
+
+    return () => {
+      // Cleanup on component unmount
+      body.style.overflow = 'auto';
+    };
+  }, [isAboutModalOpen]);
 
   const isSmallScreen = useMediaQuery('(max-width:480px)');
 
-  const modalContent = (
-    <div className="modalBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '12px' :"24px", color: "#ffffff" }}>
-      {/* Your text and images go here */}
-      <div className="modalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>About</div>
-      <div className="modalTextBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', marginTop: '18px' }}>
+  const driversModalContent = (
+    <div className="driversModalBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '12px' :"24px", color: "#ffffff" }}>
+      <div className="driversModalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>drivers</div>
+      <div className="driversModalTextBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', marginTop: '18px' }}>
+        <i>The Final Lap</i> 
+        <div className="driversModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}>Photo credit (hero image): F1-Fansite.com </div>
+      </div>
+      {/*<img src={feature1} alt="Your Image" />*/}
+    </div>
+  );
+
+  const aboutModalContent = (
+    <div className="aboutModalBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '12px' :"24px", color: "#ffffff" }}>
+      <div className="aboutModalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>About</div>
+      <div className="aboutModalTextBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', marginTop: '18px' }}>
         <i>The Final Lap</i> is a tool that provides contextual race results for all Formula 1 drivers participating in the 2024 season. In F1, the performance of the car is the most important factor in achieving success. Each of the 10 teams is responsible for designing and developing its own car, and each car's performance potential varies according to track layout, tire wear, fuel level, and even environmental conditions like temperature, wind, and rain. Of course, the driver in the car also makes a difference.<br/>
         <br/>
         There are many resources online that show things like total wins, podiums, poles, fastest laps, points, etc. These are just counting numbers that do not indicate what is likely to happen at the next race. Instead, <i>The Final Lap</i> attempts to capture the full picture by highlighting three key variables:<br/>
@@ -200,7 +182,7 @@ export default function App() {
         <ol><b>3. Circuit Type: </b>The driver's last five results at that track-type. Some tracks feature long straights and high speeds that require peak engine performance and low drag aero set-ups. Others consist of constant turns and direction changes which reward cornering ability and grip (high-downforce). Many tracks place roughly equal demands on power and downforce. Some cars excel at a specific circuit-type, while others struggle.</ol>
         For greater context, each race result is measured against that driver's average race finish for that specific season. Exceptionally good performances appear dark green, exceptionally poor ones are a deep red. Full race reports are embedded in the table header, and links to the 2024 driver line-ups and race schedule are a click away.<br/>
         <br/>
-        <div className="modalTextHeader" style={{color: '#87C75F', fontFamily: "Bai Jamjuree", fontSize: isSmallScreen ? '24px' :"30px", textAlign: 'center' }}>Resources and Partners</div><br/>
+        <div className="aboutModalTextHeader" style={{color: '#87C75F', fontFamily: "Bai Jamjuree", fontSize: isSmallScreen ? '24px' :"30px", textAlign: 'center' }}>Resources and Partners</div><br/>
         All of this data has to come from somewhere, so I have integrated the Ergast Developer API - which provides data for every driver, team, and race since 1950. This project would not have been possible without this excellent resource. I also used Country Flags API for consistent formatting of the many flag images on this site.
         <br/>
         <br/>
@@ -210,7 +192,7 @@ export default function App() {
         I must also recognize my Get Coding coach, Hai Nghiem, who has been an excellent guide and source of encouragement to me as I learned my way around React.js. This project had its challenges, but Hai was a great support at every step of the journey. 
         <br/>
         <br/>
-        <div className="modalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}>Photo credit (hero image): F1-Fansite.com </div>
+        <div className="aboutModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}>Photo credit (hero image): F1-Fansite.com </div>
       </div>
       {/*<img src={feature1} alt="Your Image" />*/}
     </div>
@@ -1284,13 +1266,13 @@ export default function App() {
               <div className="box"> 
                 <div className={`iphone-menu ${isMenuOpen ? 'open' : 'closed'}`}>
                   <div className="overlap-group">
-                    <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
-                      <div className="text-wrapper">Drivers</div>
-                    </a>
+                    
+                    <div className="text-wrapper" onClick={handleOpenDriversModal}>Drivers</div>
+                    
                     <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
                       <div className="divX">Schedule</div>
                     </a>
-                    <div className="text-wrapper-2" onClick={handleOpenModal}>About</div>
+                    <div className="text-wrapper-2" onClick={handleOpenAboutModal}>About</div>
                     <div className="text-wrapper-3" onClick={handleButtonClickMobile}>Features</div>
                     <div className="mobileMenuLine1" />
                     <div className="mobileMenuLine2" />
@@ -1342,14 +1324,12 @@ export default function App() {
           <div className="raceOutlookLine" />
           
           <div className={`desktop-sticky-menu ${show && 'desktop-sticky-menu__blue'}`}>
-            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
-              <div className="text-wrapper-18">Drivers</div>
-            </a>
+            <div className="text-wrapper-18" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>Drivers</div>
             <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
               <div className="text-wrapper-19">Schedule</div>
             </a>
             <div className="text-wrapper-21" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
-            <div className="text-wrapper-20" onClick={handleOpenModal} style={{ cursor: 'pointer' }}>About</div>
+            <div className="text-wrapper-20" onClick={handleOpenAboutModal} style={{ cursor: 'pointer' }}>About</div>
             <div className="desktopMenuLine1" />
             <div className="desktopMenuLine2" />
             <div className="desktopMenuLine3" />
@@ -1402,7 +1382,7 @@ export default function App() {
           </div>
 
           <div className="overlap-table">
-            <DenseTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
+            <ResultsTable data1={flagHeadings} data2={tableHeadings} data3={racerData} data4={nextCircuitProperName} data5={nextCircuitTypeProperName}
             boolean1={lastFiveRacesDataFetched} boolean2={nextRaceDataFetched} boolean3={nextRaceTypeDataFetched} boolean4={allTableDataPopulated}
             />
           </div>
@@ -1539,12 +1519,10 @@ export default function App() {
             </a>
             <div className="flexcontainerMobile">
               <p className="textMobile">
-                <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
-                  <span className="spanMobile">
-                    Drivers
-                    <br />
-                  </span>
-                </a>
+                <span className="spanMobile" onClick={handleOpenDriversModal}>
+                  Drivers
+                  <br />
+                </span>
               </p>
               <p className="textMobile">
                 <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
@@ -1560,7 +1538,7 @@ export default function App() {
                 </span>
               </p>
               <p className="textMobile">
-                <span className="spanMobile" onClick={handleOpenModal}>
+                <span className="spanMobile" onClick={handleOpenAboutModal}>
                   About
                   <br />
                 </span>
@@ -1590,11 +1568,9 @@ export default function App() {
             <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
               <div className="footer-text-wrapper-1">Schedule</div>
             </a>
-            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Entries" target="_blank" rel="noreferrer">
-              <div className="footer-text-wrapper-2">Drivers</div>
-            </a>
+            <div className="footer-text-wrapper-2" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>Drivers</div>
             <div className="footer-text-wrapper-3" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
-            <div className="footer-text-wrapper-4" onClick={handleOpenModal} style={{ cursor: 'pointer' }}>About</div>
+            <div className="footer-text-wrapper-4" onClick={handleOpenAboutModal} style={{ cursor: 'pointer' }}>About</div>
             <div className="footer-text-wrapper-5">The Final Lap</div>
             <img className="siteLogoFooterDesktop" alt="Group" src={siteLogoFooterDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
             <a href="https://github.com/MarkTaylor7" target="_blank" rel="noreferrer">
@@ -1606,11 +1582,17 @@ export default function App() {
           </div>
           
         </div>
+        <DriversModal
+            isOpen={isDriversModalOpen}
+            onClose={handleCloseDriversModal}
+            content={driversModalContent}
+          />           
+
         <AboutModal
-            isOpen={isModalOpen}
-            onClose={handleCloseModal}
-            content={modalContent}
-          /> 
+            isOpen={isAboutModalOpen}
+            onClose={handleCloseAboutModal}
+            content={aboutModalContent}
+          />
       </div>
     </>
   );
