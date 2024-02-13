@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
 import DenseTable from "./DenseTable";
-import AboutModal from './Modal';
+import AboutModal from './AboutModal';
 
 import { MyContext } from './MyContext';
 
