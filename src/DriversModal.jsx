@@ -6,17 +6,17 @@ import DriversTable from "./DriversTable";
 const DriversModal = ({ isOpen, onClose, content }) => {
   const customStyles = {
     content: {
-      backgroundColor: '#17181a', // Set your desired background color
+      backgroundColor: '#000000', // Set your desired background color
       fontFamily: "Roboto",
-      width: '90%', // Adjust as needed
-      height: '90%',
+      width: '70%', // Adjust as needed
+      height: '100%',
       margin: 'auto',
       alignContent: 'center',
       padding: '20px',
       border: '2px solid #87C75F',
-      borderRadius: '8px',
+      
       position: 'absolute',
-      top: '90%',
+      top: '95%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
       overflowY: 'auto',

@@ -166,8 +166,7 @@ export default function App() {
       MuiPaper: {
         styleOverrides: {
           root: {
-            width: '60%',
-            margin: 'auto',
+            width: '100%',
             alignContent: 'center',
             // Add other styles as needed
           },
@@ -178,7 +177,7 @@ export default function App() {
         styleOverrides: {
           root: {
             backgroundColor: '#17181a',
-            borderRadius: '8px',
+            
             border: '1px solid #606367',
             // Add other styles as needed
           },
@@ -189,6 +188,7 @@ export default function App() {
           root: {
             fontSize: '16px',
             color: '#ffffff',
+            border: '1px solid #606367',
             // Add other styles as needed
           },
           
