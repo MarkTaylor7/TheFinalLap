@@ -60,7 +60,7 @@ const DriversModal = ({ isOpen, onClose, content }) => {
         >
           &times;
         </div> 
-        {content}
+        
         
       </div>
     </Modal>

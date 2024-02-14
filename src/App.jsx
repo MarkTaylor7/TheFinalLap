@@ -19,6 +19,7 @@ import {
 } from "./utilities";
 
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import smoothscroll from 'smoothscroll-polyfill';
 
 import { circuitTypes, raceTitles, allCareerData, dropdownOptions, nextRaceBanners } from "./consts";
@@ -159,12 +160,51 @@ export default function App() {
 
   const isSmallScreen = useMediaQuery('(max-width:480px)');
 
+  const theme = createTheme({
+    components: {
+      // Customize styles for specific MUI components
+      MuiPaper: {
+        styleOverrides: {
+          root: {
+            width: '60%',
+            margin: 'auto',
+            alignContent: 'center',
+            // Add other styles as needed
+          },
+        },
+      },
+
+      MuiTable: {
+        styleOverrides: {
+          root: {
+            backgroundColor: '#17181a',
+            borderRadius: '8px',
+            border: '1px solid #606367',
+            // Add other styles as needed
+          },
+        },
+      },
+      MuiTableCell: {
+        styleOverrides: {
+          root: {
+            fontSize: '16px',
+            color: '#ffffff',
+            // Add other styles as needed
+          },
+          
+        },
+      },
+      // Add more component styles as needed
+    },
+    // Customize other aspects of the theme, if needed
+  });
+
+
   const driversModalContent = (
     <div className="driversModalBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '12px' :"24px", color: "#ffffff" }}>
       <div className="driversModalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>drivers</div>
       <div className="driversModalTextBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', marginTop: '18px' }}>
-        <i>The Final Lap</i> 
-        <div className="driversModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}>Photo credit (hero image): F1-Fansite.com </div>
+        <div className="driversModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}></div>
       </div>
       {/*<img src={feature1} alt="Your Image" />*/}
     </div>
@@ -1582,11 +1622,13 @@ export default function App() {
           </div>
           
         </div>
-        <DriversModal
-            isOpen={isDriversModalOpen}
-            onClose={handleCloseDriversModal}
-            content={driversModalContent}
-          />           
+        <ThemeProvider theme={theme}>
+          <DriversModal
+              isOpen={isDriversModalOpen}
+              onClose={handleCloseDriversModal}
+              content={driversModalContent}
+            />
+        </ThemeProvider>     
 
         <AboutModal
             isOpen={isAboutModalOpen}
