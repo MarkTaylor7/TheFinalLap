@@ -109,7 +109,7 @@ const DriversModal = ({ isOpen, onClose, content }) => {
       <div style={window.innerWidth <= 600 ? { ...customStyles.notesSection, ...smallScreenStyles.notesSection } : customStyles.notesSection}>
         <li>Teams are listed in order of finishing position in the 2023 season. Max Verstappen and Red Bull Racing have won the last three championships.</li><br/>
         <li>
-          In F1, each car is numbered. Since 2014, drivers have been allowed to choose their number, and they use this it for the rest of their career.
+          In F1, each car is numbered. Since 2014, drivers have been allowed to choose their number, and they use it for the rest of their career.
           The number 1 is reserved for the World Drivers Champion. Should Max Verstappen fail to defend his title, he will return to his original number 33 next season.
         </li><br/>
         <li>Power units are comprised of an 6-cylinder internal combustion engine and electric motors powered by an Energy Recovery System (ERS).</li><br/>
