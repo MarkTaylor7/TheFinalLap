@@ -29,23 +29,23 @@ export const DriversTable = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell align='center' colSpan={2}>TEAM</TableCell>
+            <TableCell align='center' colSpan={2} style={{ fontFamily: 'Bai Jamjuree, Helvetica' }}>TEAM</TableCell>
             <TableCell align='center' colSpan={3}>DRIVERS</TableCell>
             <TableCell align='center'>CHASSIS</TableCell>
             <TableCell align='center'>POWER UNIT</TableCell>
             {/* Add more header cells as needed */}
           </TableRow>
         </TableHead>
-        <TableBody style={{ py: 3 }}>
+        <TableBody style={{ paddingTop: 0, paddingBottom: 0 }}>
           {entriesData.map((entry, index) => (
-            <TableRow key={index}>
-              <TableCell align='right' style={{ backgroundColor: entry.bgColor, borderRight: 'none' }}><img src={entry.teamFlag} /></TableCell>
-              <TableCell align='left' style={{ py: 3, backgroundColor: entry.bgColor, color: entry.color, borderLeft: 'none'}}>{entry.teamName}</TableCell>
-              <TableCell align='right' style={{ borderRight: 'none' }}>{entry.driverNumbers[0]}<br/>{entry.driverNumbers[1]}</TableCell>
-              <TableCell align='left' style={{ borderLeft: 'none', borderRight: 'none' }}>{entry.driverNames[0]}<br/>{entry.driverNames[1]}</TableCell>
-              <TableCell align='left' style={{ borderLeft: 'none', px: 0 }}><img src={entry.driverFlags[0]} /> <br/> <img src={entry.driverFlags[1]} /></TableCell>
-              <TableCell align='center'>{entry.chassis}</TableCell>
-              <TableCell align='center' style={{ color: entry.puColor }}>{entry.powerUnit}</TableCell>
+            <TableRow key={index} >
+              <TableCell align='right' style={{ paddingTop: '5px', paddingBottom: '5px', backgroundColor: entry.bgColor, borderRight: 'none' }}><img src={entry.teamFlag} /></TableCell>
+              <TableCell align='left' style={{ fontFamily: 'Bai Jamjuree, Helvetica', paddingTop: '5px', paddingBottom: '5px', backgroundColor: entry.bgColor, color: entry.color, borderLeft: 'none'}}>{entry.teamName}</TableCell>
+              <TableCell align='right' style={{ paddingTop: '5px', paddingBottom: '5px', borderRight: 'none', lineHeight: '30px' }}>{entry.driverNumbers[0]}<br/>{entry.driverNumbers[1]}</TableCell>
+              <TableCell align='left' style={{ paddingTop: '5px', paddingBottom: '5px', width: '18%', paddingRight: 0, borderLeft: 'none', borderRight: 'none', lineHeight: '30px' }}>{entry.driverNames[0]}<br/>{entry.driverNames[1]}</TableCell>
+              <TableCell align='left' style={{ paddingTop: '5px', paddingBottom: '5px', paddingLeft: 0, borderLeft: 'none', lineHeight: '20px' }}><img src={entry.driverFlags[0]} /> <br/> <img src={entry.driverFlags[1]} /></TableCell>
+              <TableCell align='center' style={{ paddingTop: '5px', paddingBottom: '5px' }}>{entry.chassis}</TableCell>
+              <TableCell align='center' style={{ paddingTop: '5px', paddingBottom: '5px', color: entry.puColor }}>{entry.powerUnit}</TableCell>
               
               {/* Add more cells based on your data structure */}
             </TableRow>

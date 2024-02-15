@@ -202,7 +202,7 @@ export default function App() {
 
   const driversModalContent = (
     <div className="driversModalBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '12px' :"24px", color: "#ffffff" }}>
-      <div className="driversModalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>drivers</div>
+      <div className="driversModalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>"The Grid"</div>
       <div className="driversModalTextBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', marginTop: '18px' }}>
         <div className="driversModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}></div>
       </div>
@@ -1307,7 +1307,7 @@ export default function App() {
                 <div className={`iphone-menu ${isMenuOpen ? 'open' : 'closed'}`}>
                   <div className="overlap-group">
                     
-                    <div className="text-wrapper" onClick={handleOpenDriversModal}>Drivers</div>
+                    <div className="text-wrapper" onClick={handleOpenDriversModal}>"The Grid"</div>
                     
                     <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
                       <div className="divX">Schedule</div>
@@ -1364,7 +1364,7 @@ export default function App() {
           <div className="raceOutlookLine" />
           
           <div className={`desktop-sticky-menu ${show && 'desktop-sticky-menu__blue'}`}>
-            <div className="text-wrapper-18" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>Drivers</div>
+            <div className="text-wrapper-18" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>"The Grid"</div>
             <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
               <div className="text-wrapper-19">Schedule</div>
             </a>
@@ -1560,7 +1560,7 @@ export default function App() {
             <div className="flexcontainerMobile">
               <p className="textMobile">
                 <span className="spanMobile" onClick={handleOpenDriversModal}>
-                  Drivers
+                  "The Grid"
                   <br />
                 </span>
               </p>
@@ -1608,7 +1608,7 @@ export default function App() {
             <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
               <div className="footer-text-wrapper-1">Schedule</div>
             </a>
-            <div className="footer-text-wrapper-2" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>Drivers</div>
+            <div className="footer-text-wrapper-2" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>"The Grid"</div>
             <div className="footer-text-wrapper-3" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
             <div className="footer-text-wrapper-4" onClick={handleOpenAboutModal} style={{ cursor: 'pointer' }}>About</div>
             <div className="footer-text-wrapper-5">The Final Lap</div>
