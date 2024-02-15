@@ -30,6 +30,7 @@ const AboutModal = ({ isOpen, onClose, content }) => {
       fontSize: '40px',
       color: '#ffffff',
     },
+    
   };
 
   const smallScreenStyles = {

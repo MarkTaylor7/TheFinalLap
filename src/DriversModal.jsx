@@ -19,6 +19,7 @@ const DriversModal = ({ isOpen, onClose, content }) => {
       left: '50%',
       transform: 'translate(-50%, -50%)',
       overflowY: 'auto',
+      overflowX: 'auto'
     },
     overlay: {
       zIndex: 1000,
@@ -48,12 +49,41 @@ const DriversModal = ({ isOpen, onClose, content }) => {
 
   const smallScreenStyles = {
     content: {
-      backgroundColor: '#17181a',
-      left: '5%',
-      width: '80%', // Adjust for smaller screens
+      backgroundColor: '#000000', // Set your desired background color
+      fontFamily: 'Roboto, Helvetica',
+      width: '85%', // Adjust as needed
+      minHeight: '90%',
+      margin: 'auto',
+      alignContent: 'center',
+      padding: '15px',
       border: '2px solid #87C75F',
-      borderRadius: '6px',
+      position: 'absolute',
+      top: '97.5%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      overflowY: 'auto',
     },
+
+    driversModalHeader: {
+      fontSize: '30px',
+      color: '#87C75F',
+      textAlign: 'center',
+      marginBottom: '14px'
+    },
+    closeButton: {
+      position: 'absolute',
+      top: 0,
+      right: '10px',
+      cursor: 'pointer',
+      fontSize: '30px',
+      color: '#ffffff',
+    },
+    notesSection: {
+      fontFamily: 'Roboto, Helvetica',
+      fontSize: '10px',
+      color: '#ffffff',
+      marginTop: '20px',
+    }
   };
 
   return (
@@ -64,19 +94,19 @@ const DriversModal = ({ isOpen, onClose, content }) => {
       ariaHideApp={false}
       style={window.innerWidth <= 600 ? { ...customStyles, ...smallScreenStyles } : customStyles}
     >
-      <div style={customStyles.driversModalHeader}>
+      <div style={window.innerWidth <= 600 ? { ...customStyles.driversModalHeader, ...smallScreenStyles.driversModalHeader } : customStyles.driversModalHeader}>
         "The Grid"
       </div>
       <div className="driversTable">
         <DriversTable/>
        <div
-          style={customStyles.closeButton}
+          style={window.innerWidth <= 600 ? { ...customStyles.closeButton, ...smallScreenStyles.closeButton } : customStyles.closeButton}
           onClick={onClose}
         >
           &times;
         </div> 
       </div>
-      <div style={customStyles.notesSection}>
+      <div style={window.innerWidth <= 600 ? { ...customStyles.notesSection, ...smallScreenStyles.notesSection } : customStyles.notesSection}>
         <li>Teams are listed in order of finishing position in the 2023 season. Max Verstappen and Red Bull Racing have won the last three championships.</li><br/>
         <li>
           In F1, each car is numbered. Since 2014, drivers have been allowed to choose their number, and they use this it for the rest of their career.
