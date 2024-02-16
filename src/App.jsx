@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext, useRef } from "react";
 import ResultsTable from "./ResultsTable";
 import AboutModal from './AboutModal';
 import DriversModal from './DriversModal';
+import ScheduleModal from './ScheduleModal';
 
 import { MyContext } from './MyContext';
 
@@ -135,6 +136,29 @@ export default function App() {
     };
   }, [isDriversModalOpen]);
 
+  const handleOpenScheduleModal = () => {
+    setIsScheduleModalOpen(true);
+  };
+
+  const handleCloseScheduleModal = () => {
+    setIsScheduleModalOpen(false);
+  };
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+
+    if (isScheduleModalOpen) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = 'auto';
+    }
+
+    return () => {
+      // Cleanup on component unmount
+      body.style.overflow = 'auto';
+    };
+  }, [isScheduleModalOpen]);
+
   const handleOpenAboutModal = () => {
     setIsAboutModalOpen(true);
   };
@@ -177,7 +201,6 @@ export default function App() {
         styleOverrides: {
           root: {
             backgroundColor: '#17181a',
-            
             border: '1px solid #606367',
             // Add other styles as needed
           },
@@ -205,6 +228,16 @@ export default function App() {
       <div className="driversModalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>"The Grid"</div>
       <div className="driversModalTextBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', marginTop: '18px' }}>
         <div className="driversModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}></div>
+      </div>
+      {/*<img src={feature1} alt="Your Image" />*/}
+    </div>
+  );
+
+  const scheduleModalContent = (
+    <div className="scheduleModalBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '12px' :"24px", color: "#ffffff" }}>
+      <div className="scheduleModalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>"The Grid"</div>
+      <div className="scheduleModalTextBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', marginTop: '18px' }}>
+        <div className="scheduleModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}></div>
       </div>
       {/*<img src={feature1} alt="Your Image" />*/}
     </div>
@@ -1308,10 +1341,7 @@ export default function App() {
                   <div className="overlap-group">
                     
                     <div className="text-wrapper" onClick={handleOpenDriversModal}>"The Grid"</div>
-                    
-                    <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
-                      <div className="divX">Schedule</div>
-                    </a>
+                    <div className="divX" onClick={handleOpenScheduleModal}>Schedule</div>
                     <div className="text-wrapper-2" onClick={handleOpenAboutModal}>About</div>
                     <div className="text-wrapper-3" onClick={handleButtonClickMobile}>Features</div>
                     <div className="mobileMenuLine1" />
@@ -1365,9 +1395,7 @@ export default function App() {
           
           <div className={`desktop-sticky-menu ${show && 'desktop-sticky-menu__blue'}`}>
             <div className="text-wrapper-18" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>"The Grid"</div>
-            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
-              <div className="text-wrapper-19">Schedule</div>
-            </a>
+            <div className="text-wrapper-19" onClick={handleOpenScheduleModal} style={{ cursor: 'pointer' }}>Schedule</div>
             <div className="text-wrapper-21" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
             <div className="text-wrapper-20" onClick={handleOpenAboutModal} style={{ cursor: 'pointer' }}>About</div>
             <div className="desktopMenuLine1" />
@@ -1565,14 +1593,12 @@ export default function App() {
                 </span>
               </p>
               <p className="textMobile">
-                <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
-                  <span className="spanMobile">Schedule</span>
-                </a>
+                <span className="spanMobile" onClick={handleOpenScheduleModal}>Schedule</span>
               </p>
             </div>
             <div className="flexcontainer-2-Mobile">
               <p className="textMobile">
-                <span className="spanMobile" onClick={handleButtonClickMobile} style={{ cursor: 'pointer' }}>
+                <span className="spanMobile" onClick={handleButtonClickMobile}>
                   Features
                   <br />
                 </span>
@@ -1605,9 +1631,7 @@ export default function App() {
               <img className="linkedInDesktopDesigner" alt="Vector" src={linkedInDesktop} />
             </a>
             <p className="copyrightDesktop">© 2024 The Final Lap</p>
-            <a href="https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship#Calendar" target="_blank" rel="noreferrer">
-              <div className="footer-text-wrapper-1">Schedule</div>
-            </a>
+            <div className="footer-text-wrapper-1" onClick={handleOpenScheduleModal} style={{ cursor: 'pointer' }}>Schedule</div>
             <div className="footer-text-wrapper-2" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>"The Grid"</div>
             <div className="footer-text-wrapper-3" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
             <div className="footer-text-wrapper-4" onClick={handleOpenAboutModal} style={{ cursor: 'pointer' }}>About</div>
@@ -1627,7 +1651,12 @@ export default function App() {
               isOpen={isDriversModalOpen}
               onClose={handleCloseDriversModal}
               content={driversModalContent}
-            />
+          />
+          <ScheduleModal
+              isOpen={isScheduleModalOpen}
+              onClose={handleCloseScheduleModal}
+              content={scheduleModalContent}
+          />
         </ThemeProvider>     
 
         <AboutModal

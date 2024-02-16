@@ -16,7 +16,6 @@ export const DriversTable = () => {
 
   const flagSize = isSmallScreen ? 16 : 24;
 
-  // Sample data structure (replace with your actual data)
   const entriesData = [
     { teamName: 'Red Bull Racing', chassis: 'RB20', powerUnit: 'Honda RBPT', teamFlag: `https://flagsapi.com/AT/flat/${flagSize}.png`, driverNumbers: ['1', '11'], driverNames: ['Max Verstappen', 'Sergio Pérez'], driverFlags: [`https://flagsapi.com/NL/flat/${flagSize}.png`, `https://flagsapi.com/MX/flat/${flagSize}.png`], bgColor: '#0d202f', puColor: '#0990ff' },
     { teamName: 'Mercedes-AMG F1 Team', chassis: 'F1 W15', powerUnit: 'Mercedes', teamFlag: `https://flagsapi.com/DE/flat/${flagSize}.png`, driverNumbers: ['44', '63'], driverNames: ['Lewis Hamilton', 'George Russell'], driverFlags: [`https://flagsapi.com/GB/flat/${flagSize}.png`, `https://flagsapi.com/GB/flat/${flagSize}.png`], bgColor: '#6CD3BF', color: '#000000', puColor: '#6CD3BF' },
@@ -28,7 +27,6 @@ export const DriversTable = () => {
     { teamName: 'RB F1 Team', chassis: 'VCARB 01', powerUnit: 'Honda RBPT', teamFlag: `https://flagsapi.com/IT/flat/${flagSize}.png`, driverNumbers: ['3', '22'], driverNames: ['Daniel Ricciardo', 'Yuki Tsunoda'], driverFlags: [`https://flagsapi.com/AU/flat/${flagSize}.png`, `https://flagsapi.com/JP/flat/${flagSize}.png`], bgColor: '#1533cc', puColor: '#0990ff' },
     { teamName: 'Stake F1 Team Kick Sauber', chassis: 'C44', powerUnit: 'Ferrari', teamFlag: `https://flagsapi.com/CH/flat/${flagSize}.png`, driverNumbers: ['24', '77'], driverNames: ['Guanyu Zhou', 'Valterri Bottas'], driverFlags: [`https://flagsapi.com/CN/flat/${flagSize}.png`, `https://flagsapi.com/FI/flat/${flagSize}.png`], bgColor: '#53fc18', color: '#000000', puColor: '#FF614D' },
     { teamName: 'Haas F1 Team', chassis: 'VF-24', powerUnit: 'Ferrari', teamFlag: `https://flagsapi.com/US/flat/${flagSize}.png`, driverNumbers: ['20', '27'], driverNames: ['Kevin Magnussen', ' Nico Hülkenberg'], driverFlags: [`https://flagsapi.com/DK/flat/${flagSize}.png`, `https://flagsapi.com/DE/flat/${flagSize}.png`], bgColor: '#B6BABD', color: '#000000', puColor: '#FF614D' },
-    // Add more entries as needed
   ];
 
   
@@ -42,7 +40,6 @@ export const DriversTable = () => {
             <TableCell align='center' colSpan={3} style={{ padding: isSmallScreen ? '5px' : null, fontSize: isSmallScreen ? '10px' : '16px' }}>DRIVERS</TableCell>
             <TableCell align='center' style={{ padding: isSmallScreen ? '5px' : null, fontSize: isSmallScreen ? '10px' : '16px' }}>CHASSIS</TableCell>
             <TableCell align='center' style={{ padding: isSmallScreen ? '5px' : null, fontSize: isSmallScreen ? '10px' : '16px', lineHeight: isSmallScreen ? '10px' : '30px' }}>POWER UNIT</TableCell>
-            {/* Add more header cells as needed */}
           </TableRow>
         </TableHead>
         <TableBody style={{ paddingTop: 0, paddingBottom: 0 }}>
@@ -55,8 +52,6 @@ export const DriversTable = () => {
               <TableCell align='left' style={{ padding: isSmallScreen ? '5px' : null, paddingTop: '5px', paddingBottom: '5px', paddingLeft: 0, borderLeft: 'none', lineHeight: isSmallScreen ? '10px' : '20px' }}><img src={entry.driverFlags[0]} /> <br/> <img src={entry.driverFlags[1]} /></TableCell>
               <TableCell align='center' style={{ padding: isSmallScreen ? '5px' : null, fontSize: isSmallScreen ? '9px' : '16px', paddingTop: '5px', paddingBottom: '5px' }}>{entry.chassis}</TableCell>
               <TableCell align='center' style={{ padding: isSmallScreen ? '5px' : null, fontSize: isSmallScreen ? '9px' : '16px', paddingTop: '5px', paddingBottom: '5px', color: entry.puColor }}>{entry.powerUnit}</TableCell>
-              
-              {/* Add more cells based on your data structure */}
             </TableRow>
           ))}
         </TableBody>

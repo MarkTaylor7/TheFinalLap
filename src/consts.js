@@ -189,8 +189,6 @@ export const allSeasonsArray = [
   2024
 ];
 
-
-
 //Every race has a unique circuitId, which is sorted into one of three circuitTypes based its characteristics:
 //High downforce circuits feature demanding corners and usually don't feature long straights, so high aerodynamic
 //grip (downforce) is required.

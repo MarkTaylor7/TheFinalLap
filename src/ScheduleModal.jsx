@@ -1,14 +1,14 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-import DriversTable from "./DriversTable";
+import ScheduleTable from "./ScheduleTable";
 
-const DriversModal = ({ isOpen, onClose, content }) => {
+const ScheduleModal = ({ isOpen, onClose, content }) => {
   const customStyles = {
     content: {
-      backgroundColor: '#000000', // Set your desired background color
+      backgroundColor: '#000000',
       fontFamily: "Roboto",
-      width: '70%', // Adjust as needed
+      width: '70%',
       minHeight: '90%',
       alignContent: 'center',
       padding: '20px',
@@ -24,7 +24,7 @@ const DriversModal = ({ isOpen, onClose, content }) => {
       zIndex: 1000,
     },
 
-    driversModalHeader: {
+    scheduleModalHeader: {
       fontSize: '48px',
       color: '#87C75F',
       textAlign: 'center',
@@ -60,9 +60,9 @@ const DriversModal = ({ isOpen, onClose, content }) => {
 
   const smallScreenStyles = {
     content: {
-      backgroundColor: '#000000', // Set your desired background color
+      backgroundColor: '#000000',
       fontFamily: 'Roboto, Helvetica',
-      width: '85%', // Adjust as needed
+      width: '85%',
       minHeight: '90%',
       margin: 'auto',
       alignContent: 'center',
@@ -75,7 +75,7 @@ const DriversModal = ({ isOpen, onClose, content }) => {
       overflowY: 'auto',
     },
 
-    driversModalHeader: {
+    scheduleModalHeader: {
       fontSize: '30px',
       color: '#87C75F',
       textAlign: 'center',
@@ -112,15 +112,15 @@ const DriversModal = ({ isOpen, onClose, content }) => {
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
-      contentLabel="Drivers Modal"
+      contentLabel="Schedule Modal"
       ariaHideApp={false}
       style={window.innerWidth <= 600 ? { ...customStyles, ...smallScreenStyles } : customStyles}
     >
-      <div style={window.innerWidth <= 600 ? { ...customStyles.driversModalHeader, ...smallScreenStyles.driversModalHeader } : customStyles.driversModalHeader}>
-        "The Grid"
+      <div style={window.innerWidth <= 600 ? { ...customStyles.scheduleModalHeader, ...smallScreenStyles.scheduleModalHeader } : customStyles.scheduleModalHeader}>
+        Schedule - 2024 F1 Season
       </div>
-      <div className="driversTable">
-        <DriversTable/>
+      <div className="scheduleTable">
+        <ScheduleTable/>
        <div
           style={window.innerWidth <= 600 ? { ...customStyles.closeButton, ...smallScreenStyles.closeButton } : customStyles.closeButton}
           onClick={onClose}
@@ -129,25 +129,18 @@ const DriversModal = ({ isOpen, onClose, content }) => {
         </div> 
       </div>
       <div style={window.innerWidth <= 600 ? { ...customStyles.notesSection, ...smallScreenStyles.notesSection } : customStyles.notesSection}>
-        <li>Teams are listed in order of finishing position in the 2023 season. Max Verstappen and Red Bull Racing have won the last three driver's and constructor's championships.</li><br/>
-        <li>This is the first season in F1 history that every team's driver line-up is unchanged from the end of the previous season.</li><br/>
         <li>
-          In F1, each car is numbered. Since 2014, drivers have been allowed to choose their number, and they use it for the rest of their career.
-          The number 1 is reserved for the World Drivers Champion. Should Max Verstappen fail to defend his title, he will return to his original number 33 next season.
+          * indicates that there will be a sprint race the day before the Grand Prix. Sprints are about 1/3rd the length of a Grand Prix, requiring drivers to complete 100 km.
+            Points are awarded to the top 8 finishers. On sprint weekends, qualifying for the Grand Prix is held on Friday instead of Saturday.
         </li><br/>
-        <li>Power units are comprised of an 6-cylinder internal combustion engine and electric motors powered by an Energy Recovery System (ERS).</li><br/>
-        <li>
-          There are four power unit manufacturers in F1: Ferrari, Mercedes, and Alpine (Renault) produce their own units, and Red Bull does so in collaboration
-          with Honda. All of the other "customer" teams purchase their units from one of the manufacturers. The exception is RB F1 Team, who are owned by Red Bull.
-        </li><br/><br/>
+        <li>At 24 races, this will be the longest season in F1 history.</li><br/>
         <div style={window.innerWidth <= 600 ? { ...customStyles.modalFooter, ...smallScreenStyles.modalFooter } : customStyles.modalFooter}
           onClick={onClose}>
           (Close)
         </div>
       </div>
-      
     </Modal>
   );
 };
 
-export default DriversModal;
+export default ScheduleModal;
