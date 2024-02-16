@@ -44,6 +44,7 @@ import nextRaceBox from "./assets/nextRaceBox.svg";
 import circuitMonza from "./assets/circuitMonza.svg";
 import circuitShanghai from "./assets/circuitShanghai.svg";
 import circuitSuzuka from "./assets/circuitSuzuka.svg";
+import circularProfilePic from "./assets/images/circularProfilePic.png";
 
 export default function App() {
   const [isDriversModalOpen, setIsDriversModalOpen] = useState(false);
@@ -253,7 +254,7 @@ export default function App() {
         <ol><b>1. Recent Form: </b>The driver's last five race results, as a driver's car can get relatively faster or slower over a season as the teams introduce upgrade packages. These upgrades usually help, but sometimes do not gel with a driver's driving-style. This makes the driver's recent results valuable in predicting outcomes at the next race.  </ol>
         <ol><b>2. Circuit History: </b>The driver's last five results at the circuit. Each driver has his own driving-style and preferences for circuit layouts. Some driver's seem to find an extra gear at their home race, and some have "bogey tracks" where nothing seems to go right. </ol>
         <ol><b>3. Circuit Type: </b>The driver's last five results at that track-type. Some tracks feature long straights and high speeds that require peak engine performance and low drag aero set-ups. Others consist of constant turns and direction changes which reward cornering ability and grip (high-downforce). Many tracks place roughly equal demands on power and downforce. Some cars excel at a specific circuit-type, while others struggle.</ol>
-        For greater context, each race result is measured against that driver's average race finish for that specific season. Exceptionally good performances appear dark green, exceptionally poor ones are a deep red. Full race reports are embedded in the table header, and links to the 2024 driver line-ups and race schedule are a click away.<br/>
+        For greater context, each race result is measured against that driver's average race finish for that specific season. Exceptionally good performances appear dark green, exceptionally poor ones are a deep red. Additionally, each driver's name is colour-coded based on team, allowing for easy comparison of teammates. Full race reports are embedded in the table header, and the 2024 driver line-ups and race schedule are accessbile via the menu.<br/>
         <br/>
         <div className="aboutModalTextHeader" style={{color: '#87C75F', fontFamily: "Bai Jamjuree", fontSize: isSmallScreen ? '24px' :"30px", textAlign: 'center' }}>Resources and Partners</div><br/>
         All of this data has to come from somewhere, so I have integrated the Ergast Developer API - which provides data for every driver, team, and race since 1950. This project would not have been possible without this excellent resource. I also used Country Flags API for consistent formatting of the many flag images on this site.
@@ -265,9 +266,21 @@ export default function App() {
         I must also recognize my Get Coding coach, Hai Nghiem, who has been an excellent guide and source of encouragement to me as I learned my way around React.js. This project had its challenges, but Hai was a great support at every step of the journey. 
         <br/>
         <br/>
-        <div className="aboutModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}>Photo credit (hero image): F1-Fansite.com </div>
+        <div className="aboutModalDevInfo" style={{  backgroundColor: '#ffffff1c', border: '2px solid #606367', borderRadius: '10px', padding: '10px', position: 'relative', height: '400px', display: 'flex' }}>
+          <div className="aboutModalDevInfoHeader" style={{ color: '#87C75F', fontFamily: "Bai Jamjuree", fontSize: isSmallScreen ? '24px' : "30px", margin: '0 auto', marginBottom: '10px', padding: '10px', position: 'absolute', top: '10%', left: '50%', textAlign: 'center',  }}>About Me</div>
+          <div className="aboutModalDevImgContainer" style={{ width: '30%', display: 'flex', justifyContent: 'center' }}>
+            <img src={circularProfilePic} alt="Mark Taylor's picture" style={{ width: '60%', height: 'auto', margin: 'auto' }}/>
+          </div>
+          <div className="aboutModalDevInfoTextWrapper" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', padding: '15px', position: 'absolute', top: '150px', left: '30%', }}>
+          My name is Mark Taylor, and I am a software developer from St. John's, Newfoundland & Labrador. I have been a student at Get Coding since April, 2023, and have a strong foundation in front-end development. I am currently diving into the world of back-end development, and will be using my new skills to add additional features to this site.&nbsp;
+          Check out my <a href="https://github.com/MarkTaylor7" aria-label="Mark Taylor's GitHub page" target="_blank" style={{color: '#87C75F', textDecoration: 'underline', }}>GitHub page</a> or <a href="https://www.linkedin.com/in/marktaylor27/" aria-label="Mark Taylor's LinkedIn profile" target="_blank" style={{color: '#87C75F', textDecoration: 'underline', }}>connect with me on LinkedIn</a> to see what I've been up to and follow along with my progress! 
+          </div>
+        </div>
+        <div className="aboutModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', position: 'absolute', bottom: '2%', right: '5px'}}>
+          <br/>Photo credit (hero image): F1-Fansite.com 
+        </div>
       </div>
-      {/*<img src={feature1} alt="Your Image" />*/}
+      
     </div>
   );
 
