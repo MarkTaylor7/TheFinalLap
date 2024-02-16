@@ -29,8 +29,6 @@ export const DriversTable = () => {
     { teamName: 'Haas F1 Team', chassis: 'VF-24', powerUnit: 'Ferrari', teamFlag: `https://flagsapi.com/US/flat/${flagSize}.png`, driverNumbers: ['20', '27'], driverNames: ['Kevin Magnussen', ' Nico Hülkenberg'], driverFlags: [`https://flagsapi.com/DK/flat/${flagSize}.png`, `https://flagsapi.com/DE/flat/${flagSize}.png`], bgColor: '#B6BABD', color: '#000000', puColor: '#FF614D' },
   ];
 
-  
-
   return (
     <Paper>
       <Table>

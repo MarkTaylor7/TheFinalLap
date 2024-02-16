@@ -6,9 +6,9 @@ import DriversTable from "./DriversTable";
 const DriversModal = ({ isOpen, onClose, content }) => {
   const customStyles = {
     content: {
-      backgroundColor: '#000000', // Set your desired background color
+      backgroundColor: '#000000',
       fontFamily: "Roboto",
-      width: '70%', // Adjust as needed
+      width: '70%',
       minHeight: '90%',
       alignContent: 'center',
       padding: '20px',
@@ -60,9 +60,9 @@ const DriversModal = ({ isOpen, onClose, content }) => {
 
   const smallScreenStyles = {
     content: {
-      backgroundColor: '#000000', // Set your desired background color
+      backgroundColor: '#000000',
       fontFamily: 'Roboto, Helvetica',
-      width: '85%', // Adjust as needed
+      width: '85%',
       minHeight: '90%',
       margin: 'auto',
       alignContent: 'center',
