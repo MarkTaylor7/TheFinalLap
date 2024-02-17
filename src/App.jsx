@@ -184,8 +184,9 @@ export default function App() {
   }, [isAboutModalOpen]);
 
   const isSmallScreen = useMediaQuery('(max-width:480px)');
-  const isLargeScreen = useMediaQuery('(min-width:1600px)');
+  const isLargeScreen = useMediaQuery('(min-width:1700px)');
   const isLargePhone = useMediaQuery('(min-width:400px) and (max-width:480px)');
+  
   const theme = createTheme({
     components: {
       // Customize styles for specific MUI components
@@ -268,12 +269,12 @@ export default function App() {
         I must also recognize my Get Coding coach, Hai Nghiem, who has been an excellent guide and source of encouragement to me as I learned my way around React.js. This project had its challenges, but Hai was a great support at every step of the journey. 
         <br/>
         <br/>
-        <div className="aboutModalDevInfo" style={{  backgroundColor: '#ffffff1c', border: '2px solid #606367', borderRadius: '10px', padding: '10px', position: 'relative', height: '400px',  display: 'flex' }}>
+        <div className="aboutModalDevInfo" style={{  backgroundColor: '#ffffff1c', border: '2px solid #606367', borderRadius: '10px', padding: '10px', position: 'relative',  height: isLargePhone ? '350px' : '400px', display: 'flex' }}>
           <div className="aboutModalDevInfoHeader" style={{ color: '#87C75F', fontFamily: "Bai Jamjuree", fontSize: isSmallScreen ? '24px' : "40px", marginBottom: '10px', padding: '10px', position: 'absolute', top: '5%', width: isSmallScreen ? '60%' : '100%', textAlign: 'center', right: isSmallScreen ? 0 : null  }}>About Me</div>
           <div className="aboutModalDevImgContainer" style={{ width: isSmallScreen ? '50%' : '30%', display: 'flex', justifyContent: 'center' }}>
             <img src={circularProfilePic} alt="Mark Taylor's picture" style={{ width: isSmallScreen ? '50%' : '60%', height: 'auto', margin: 'auto', marginTop: isSmallScreen ? '5%' : 'auto'}}/>
           </div>
-          <div className="aboutModalDevInfoTextWrapper" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', fontSize: isLargeScreen ? '26px': null, fontSize: isLargePhone ? '16px' : null, textAlign: 'left', padding: '20px', position: 'absolute', top: isSmallScreen ? '90px' : '120px', left: isSmallScreen ? '0%' : '30%', }}>
+          <div className="aboutModalDevInfoTextWrapper" style={{ fontFamily: "Roboto",  fontSize: isSmallScreen ? '14px' : '22px', fontSize: isLargeScreen ? '26px' : null,  textAlign: 'left', padding: '20px', position: 'absolute', top: isSmallScreen ? '90px' : '120px', left: isSmallScreen ? '0%' : '30%', }}>
           My name is Mark Taylor, and I am a software developer from St. John's, Newfoundland. I have been a student at Get Coding since April, 2023, and have a strong foundation in front-end development. I am currently diving into the world of back-end development, and will be using my new skills to add additional features to this site.&nbsp;
           Check out my <a href="https://github.com/MarkTaylor7" aria-label="Mark Taylor's GitHub page" target="_blank" style={{color: '#87C75F', textDecoration: 'underline', }}>GitHub page</a> or <a href="https://www.linkedin.com/in/marktaylor27/" aria-label="Mark Taylor's LinkedIn profile" target="_blank" style={{color: '#87C75F', textDecoration: 'underline', }}>connect with me on LinkedIn</a> to see what I've been up to and follow along with my progress! 
           </div>
