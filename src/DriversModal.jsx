@@ -117,7 +117,7 @@ const DriversModal = ({ isOpen, onClose, content }) => {
       style={window.innerWidth <= 600 ? { ...customStyles, ...smallScreenStyles } : customStyles}
     >
       <div style={window.innerWidth <= 600 ? { ...customStyles.driversModalHeader, ...smallScreenStyles.driversModalHeader } : customStyles.driversModalHeader}>
-        "The Grid"
+        The Grid
       </div>
       <div className="driversTable">
         <DriversTable/>

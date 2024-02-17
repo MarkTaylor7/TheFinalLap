@@ -606,26 +606,19 @@ body {
   font-size: 12px;
   font-weight: 400;
   height: 15px;
-  right: 5%;
+  right: 4.8%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   top: 40px;
-  visibility: hidden;
+  text-align: right;
 }
 
-@media screen and (min-width: 380px) {
+@media screen and (max-width: 400px) {
   .iphone .dev-credit-mobile {
-    right: 6%;
+    font-size: 11px;
   }
 }
-
-@media screen and (min-width: 400px) {
-  .iphone .dev-credit-mobile {
-    right: 6.5%;
-  }
-}
-
 
 .iphone .flexcontainerMobile {
   align-items: flex-start;
@@ -673,7 +666,7 @@ body {
 
 .iphone .gitHubMobile {
   height: 22px;
-  left: 79.5%;
+  right: 12%;
   position: absolute;
   top: 23px;
   width: 22px;
@@ -681,7 +674,7 @@ body {
 
 .iphone .linkedInMobile {
   height: 22px;
-  left: 88.5%;
+  right: 4.8%;
   position: absolute;
   top: 23px;
   width: 22px;
@@ -750,14 +743,14 @@ body {
 .iphone .designCreditDesktop {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   height: 14%;
   right: 5.5%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 72%;
+  top: 71%;
 }
 
 .iphone .dev-credit-desktop {
@@ -766,17 +759,17 @@ body {
   font-size: 22px;
   font-weight: 400;
   height: 14%;
-  right: 5.8%;
+  right: 3%;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   top: 35%;
-  visibility: hidden;
+  text-align: right;
 }
 
 @media screen and (max-width: 1400px) {
   .iphone .dev-credit-desktop {
-    right: 5.5%;
+    right: 3%;
   }
 }
 
@@ -868,7 +861,7 @@ body {
 
 .iphone .gitHubDesktop {
   height: 69px;
-  left: 84.65%;
+  right: 9%;
   position: absolute;
   top: 55px;
   width: 69px;
@@ -876,7 +869,7 @@ body {
 
 .iphone .linkedInDesktop {
   height: 69px;
-  left: 91.25%;
+  right: 3%;
   position: absolute;
   top: 55px;
   width: 69px;
@@ -900,7 +893,7 @@ body {
 
 .iphone .desktop-sticky-menu {
   background-color: #ffffff1c;
-  height: 90vh;
+  height: 92vh;
   left: 0;
   position: fixed;
   top: 3px;

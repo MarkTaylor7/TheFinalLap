@@ -40,6 +40,7 @@ import toggleButton from "./assets/toggleButton.svg";
 import lineChart from "./assets/images/lineChart.png";
 import leftArrow from "./assets/leftArrow.svg";
 import rightArrow from "./assets/rightArrow.svg";
+import downArrow from "./assets/toggleDropArrow.svg";
 import nextRaceBox from "./assets/nextRaceBox.svg";
 import circuitMonza from "./assets/circuitMonza.svg";
 import circuitShanghai from "./assets/circuitShanghai.svg";
@@ -660,7 +661,7 @@ export default function App() {
     /*May need to add an if statement to handle situations when lastFiveRaceResults.length <5. See state setter
     function for nextRaceTypeHistory*/
     if (lastFiveRaceResults.length === 5) {
-      let nextCircuitId = "bahrain";
+      let nextCircuitId = "red_bull_ring";
       let nextCircuitEventName;
       let rawNextCircuitEventDate = "2024-03-02";
       let rawNextCircuitEventFlag;
@@ -1403,6 +1404,19 @@ export default function App() {
               <div className="text-wrapperFDesktop">{nextEventCircuit}</div>
               <img className="nextRaceBoxFlag" src={nextEventFlag} />
             </div>
+            {/*Possible future addition: down arrows to signal to user to scroll down after main page loads.
+            Still deciding on placement, as variable sizing of hero banner (based on viewport width) means
+            multiple media queries may be needed.
+              <img className="downArrow" alt="An arrow pointing down" src={downArrow} 
+              style={{position: 'absolute', right: '2%', top: '50%' }}            
+              />
+              <img className="downArrow" alt="An arrow pointing down" src={downArrow} 
+              style={{position: 'absolute', right: '2%', top: '55%' }}            
+              />
+              <img className="downArrow" alt="An arrow pointing down" src={downArrow} 
+              style={{position: 'absolute', right: '2%', top: '60%' }}            
+            />
+            */}
           </div>
           <img className="nextRaceBoxImageDesktop" alt="Rectangle" src={nextRaceBox} />
           
@@ -1635,13 +1649,13 @@ export default function App() {
             <a href="https://www.linkedin.com/in/marktaylor27" target="_blank" rel="noreferrer">
               <img className="linkedInMobile" alt="LinkedIn logo" src={linkedInMobile} />
             </a>
-            <p className='dev-credit-mobile'>Mark Taylor</p>
+            <p className='dev-credit-mobile'>Mark Taylor<br/>Built with React.js</p>
             <div className="line-2"></div>
           </div>
 
           <div className="footerBoxDesktop">
             <div className="footerBoxBackgroundDesktop" />
-            <p className="dev-credit-desktop">Mark Taylor</p>
+            <p className="dev-credit-desktop">Mark Taylor<br/>Built with React.js</p>
             <p className="designCreditDesktop">Site Design by Abigail Z</p>
             <a href="https://www.linkedin.com/in/abigail-zhuk" target="_blank" rel="noreferrer">
               <img className="linkedInDesktopDesigner" alt="Vector" src={linkedInDesktop} />
