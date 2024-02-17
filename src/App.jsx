@@ -79,22 +79,41 @@ export default function App() {
   const [nextRaceTypeDataFetched, setNextRaceTypeDataFetched] = useState(false);
   const [tableDataPopulated, setTableDataPopulated] = useState(false);
   const [allTableDataPopulated, setAllTableDataPopulated] = useState(false);
-  const [selectedRace, setselectedRace] = useState('');
-
+  const [selectedRace, setSelectedRace] = useState('');
+  const [nextCircuitFlag, setNextCircuitFlag] = useState('');
+  const [nextEventFlag, setNextEventFlag] = useState('');
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [show, setShow] = useState(true);
   const [showFeature1, setShowFeature1] = useState(true);
   const [showFeature2, setShowFeature2] = useState(true);
   const [showFeature3, setShowFeature3] = useState(true);
+  const [lastUpdateTime, setLastUpdateTime] = useState(null);
+  const [circuitTypeColor, setCircuitTypeColor] = useState({color: 'black'});
+  const isSmallScreen = useMediaQuery('(max-width:480px)');
+  const isLargeScreen = useMediaQuery('(min-width:1700px)');
+  const isLargePhone = useMediaQuery('(min-width:400px) and (max-width:480px)');
 
-  const [circuitTypeColor, setCircuitTypeColor] = useState({
-    color: 'black'
+  const [line5Style, setLine5Style] = useState({
+    width: 113.20,
+    height: 0,
+    border: '1px #87C75F solid',
   });
 
-  const [nextCircuitFlag, setNextCircuitFlag] = useState('');
-  const [nextEventFlag, setNextEventFlag] = useState('');
+  const [line7Style, setLine7Style] = useState({
+    width: 126.696,
+    height: 0,
+    border: '1px #405E2C solid',
+  });
 
-  const [isMenuOpen, setMenuOpen] = useState(false);
-
-  const [show, setShow] = useState(true);
+  const [line8Style, setLine8Style] = useState({
+    width: 105.92,
+    height: 0,
+    border: '1px #405E2C solid',
+  });
+  
+  const { showCluster1, setShowCluster1,
+          showCluster2, setShowCluster2,
+          showCluster3, setShowCluster3 } = useContext(MyContext);
 
   const controlNavBar = () => {
     if (window.scrollY > 1200) {
@@ -104,6 +123,18 @@ export default function App() {
     } 
   }
 
+  // Function to toggle the mobile site's menu visibility
+  const toggleMenu = () => {
+    if (isMenuOpen) {
+      setMenuOpen(false)
+    } else {setMenuOpen(true)}
+  };
+
+  const reloadPage = () => {
+    window.scrollTo(0, 0);
+    window.location.reload();
+  };
+
   useEffect(() => {
     window.addEventListener('scroll',
     controlNavBar)
@@ -112,8 +143,6 @@ export default function App() {
       controlNavBar)
     }
   }, [])
-
-  const [lastUpdateTime, setLastUpdateTime] = useState(null);
 
   const handleOpenDriversModal = () => {
     setIsDriversModalOpen(true);
@@ -133,7 +162,6 @@ export default function App() {
     }
 
     return () => {
-      // Cleanup on component unmount
       body.style.overflow = 'auto';
     };
   }, [isDriversModalOpen]);
@@ -156,7 +184,6 @@ export default function App() {
     }
 
     return () => {
-      // Cleanup on component unmount
       body.style.overflow = 'auto';
     };
   }, [isScheduleModalOpen]);
@@ -179,24 +206,17 @@ export default function App() {
     }
 
     return () => {
-      // Cleanup on component unmount
       body.style.overflow = 'auto';
     };
   }, [isAboutModalOpen]);
-
-  const isSmallScreen = useMediaQuery('(max-width:480px)');
-  const isLargeScreen = useMediaQuery('(min-width:1700px)');
-  const isLargePhone = useMediaQuery('(min-width:400px) and (max-width:480px)');
   
   const theme = createTheme({
     components: {
-      // Customize styles for specific MUI components
       MuiPaper: {
         styleOverrides: {
           root: {
             width: '100%',
             alignContent: 'center',
-            // Add other styles as needed
           },
         },
       },
@@ -206,7 +226,6 @@ export default function App() {
           root: {
             backgroundColor: '#17181a',
             border: '1px solid #606367',
-            // Add other styles as needed
           },
         },
       },
@@ -216,16 +235,12 @@ export default function App() {
             fontSize: '16px',
             color: '#ffffff',
             border: '1px solid #606367',
-            // Add other styles as needed
           },
           
         },
       },
-      // Add more component styles as needed
     },
-    // Customize other aspects of the theme, if needed
   });
-
 
   const driversModalContent = (
     <div className="driversModalBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '12px' :"24px", color: "#ffffff" }}>
@@ -233,7 +248,6 @@ export default function App() {
       <div className="driversModalTextBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', marginTop: '18px' }}>
         <div className="driversModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}></div>
       </div>
-      {/*<img src={feature1} alt="Your Image" />*/}
     </div>
   );
 
@@ -243,7 +257,6 @@ export default function App() {
       <div className="scheduleModalTextBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', marginTop: '18px' }}>
         <div className="scheduleModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}></div>
       </div>
-      {/*<img src={feature1} alt="Your Image" />*/}
     </div>
   );
 
@@ -284,7 +297,6 @@ export default function App() {
           <br/>Photo credit (hero image): F1-Fansite.com 
         </div>
       </div>
-      
     </div>
   );
 
@@ -304,7 +316,6 @@ export default function App() {
     });
   };
 
-
   useEffect(() => {
     smoothscroll.polyfill();
   }, []);
@@ -312,7 +323,7 @@ export default function App() {
   // Event handler for dropdown change
   const handleDropdownChange = (event) => {
     const selectedValue = event.target.value;
-    setselectedRace(selectedValue);
+    setSelectedRace(selectedValue);
 
     switch (selectedValue) {
       case 'bahrain':
@@ -463,29 +474,6 @@ export default function App() {
         break;
     }
   };
-  
-
-  const [line5Style, setLine5Style] = useState({
-    width: 113.20,
-    height: 0,
-    border: '1px #87C75F solid',
-  });
-
-  const [line7Style, setLine7Style] = useState({
-    width: 126.696,
-    height: 0,
-    border: '1px #405E2C solid',
-  });
-
-  const [line8Style, setLine8Style] = useState({
-    width: 105.92,
-    height: 0,
-    border: '1px #405E2C solid',
-  });
-  
-  const { showCluster1, setShowCluster1,
-          showCluster2, setShowCluster2,
-          showCluster3, setShowCluster3 } = useContext(MyContext);
 
   let recordedWidth = window.innerWidth;
           
@@ -646,7 +634,6 @@ export default function App() {
   // Update last five race results
   useEffect(() => {
     const lastFiveRaceResults = currentSeasonRaceResults
-      //making copy for reverse
       .slice()
       .reverse()
       .slice(0, 5)
@@ -656,12 +643,11 @@ export default function App() {
   }, [currentSeasonRaceResults]);
 
   // Set next race data
-
   useEffect(() => {
     /*May need to add an if statement to handle situations when lastFiveRaceResults.length <5. See state setter
     function for nextRaceTypeHistory*/
     if (lastFiveRaceResults.length === 5) {
-      let nextCircuitId = "red_bull_ring";
+      let nextCircuitId = "bahrain";
       let nextCircuitEventName;
       let rawNextCircuitEventDate = "2024-03-02";
       let rawNextCircuitEventFlag;
@@ -1335,28 +1321,16 @@ export default function App() {
     );
   }, [driverTableData]);
   
-  // Function to toggle the mobile site's menu visibility
-  const toggleMenu = () => {
-    if (isMenuOpen) {
-      setMenuOpen(false)
-    } else {setMenuOpen(true)}
-  };
-
-  const reloadPage = () => {
-    window.scrollTo(0, 0);
-    window.location.reload();
-  };
-
   return (
     <>
       <div className="iphone">
         <div className="div">
           <div className="overlap">
             <div className="overlap-group">
+
               <div className="box"> 
                 <div className={`iphone-menu ${isMenuOpen ? 'open' : 'closed'}`}>
                   <div className="overlap-group">
-                    
                     <div className="text-wrapper" onClick={handleOpenDriversModal}>The Grid</div>
                     <div className="divX" onClick={handleOpenScheduleModal}>Schedule</div>
                     <div className="text-wrapper-2" onClick={handleOpenAboutModal}>About</div>
@@ -1394,6 +1368,7 @@ export default function App() {
               </div>
             </div>
           </div>
+
           <div className="nextRaceBoxDesktop">
             <div className="text-wrapperADesktop">Next Race</div>
             <div className="text-wrapperBDesktop">Date</div>
@@ -1676,6 +1651,7 @@ export default function App() {
           </div>
           
         </div>
+
         <ThemeProvider theme={theme}>
           <DriversModal
               isOpen={isDriversModalOpen}
@@ -1694,6 +1670,7 @@ export default function App() {
             onClose={handleCloseAboutModal}
             content={aboutModalContent}
           />
+          
       </div>
     </>
   );
