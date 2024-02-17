@@ -69,10 +69,28 @@ Design credit goes to Abigail Z, who I was fortunate enough to collaborate with 
 <br/>
 I must also recognize my Get Coding coach, Hai Nghiem, who has been an excellent guide and source of encouragement to me as I learned my way around React.js. This project had its challenges, but Hai was a great support at every step of the journey.
 
+# ❓ FAQs (Frequently Asked Questions)
+<b>What criteria does this site use to rate each driver's race results?</b><br/><br/>
+"Slightly above average" race results (light green) are greater than 1.5 finishing positions above the driver's season average.<br/>
+"Above average" (medium green) race results are greater than 2.5 finishing positions above the driver's season average.<br/>
+"Way above average" (dark green) race results are greater than 5 finishing positions above the driver's season average.<br/><br/>
+The same criteria applies to results that are below average, except shades of red are used.<br/>
+DNF (Did Not Finish) results do not affect the driver's averages (black squares)<br/><br/>
+
+<b>Why are none of the race results for the current season colour-coded? All race finishes appear as "average", despite significant variation in race results.</b><br/><br/>
+To ensure a sufficent sample size of race results, drivers must complete at least five race finishes in a season before the rating system is applied. Until this occurs, all race non-win race finishes for that driver are coded as "average" (white squares). I may revise the number of races for this sample size in the future. Let me know if you think it should be lower or higher!<br/><br/>
+
+<b>What do the letters in the black squares indicate?</b><br/><br/>
+DNF (Did Not Finish) results fall into three categories, based on the cause of the DNF.<br/>
+<li>R - Retirement. This is typically due to mechanical failure or collision damage.</li>
+<li>D - Disqualification. This is rare, but usually the result of a car that is found to be in violation of the technical regulations.</li>
+<li>W - Withdrawal. Also very rare, this can happen if a car suffers a mechanical failure between qualifying and the race start, or if a driver gets injured after qualifying for the race.</li><br/><br/>
+
+<b>Why "The Final Lap"?</b><br/><br/>
+I made it up very early in development, before I wrote a line of code. I thought it sounded cool, but it was only supposed to be a working title until something better came along. Nothing ever did, but then I'm not the most creative person. When my design parter, Abigail, showed me the site logo she designed, the name was locked-in! 😅<br/>
+
 # 🔮 Future Developments
 This project in its current state satisifies my original MVP requirements (and a little extra). Here is what I may add in the future:
-<br/>
-<li>Profile pages for each driver, providing full career race results in the same categories featured in the dashboard.</li>
 <li>Qualifying results in same categories mentioned above.</li>
 <li>Results in rain-affected races. (Some drivers excel or struggle in the wet)</li>
 <li>Weather predictor – widget that has up-to-date forecast for upcoming race weekend.</li>
