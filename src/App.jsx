@@ -184,7 +184,8 @@ export default function App() {
   }, [isAboutModalOpen]);
 
   const isSmallScreen = useMediaQuery('(max-width:480px)');
-
+  const isLargeScreen = useMediaQuery('(min-width:1600px)');
+  const isLargePhone = useMediaQuery('(min-width:400px) and (max-width:480px)');
   const theme = createTheme({
     components: {
       // Customize styles for specific MUI components
@@ -226,7 +227,7 @@ export default function App() {
 
   const driversModalContent = (
     <div className="driversModalBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '12px' :"24px", color: "#ffffff" }}>
-      <div className="driversModalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>"The Grid"</div>
+      <div className="driversModalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>The Grid</div>
       <div className="driversModalTextBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', marginTop: '18px' }}>
         <div className="driversModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}></div>
       </div>
@@ -236,7 +237,7 @@ export default function App() {
 
   const scheduleModalContent = (
     <div className="scheduleModalBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '12px' :"24px", color: "#ffffff" }}>
-      <div className="scheduleModalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>"The Grid"</div>
+      <div className="scheduleModalTextHeader" style={{ color: '#87C75F', fontSize: isSmallScreen ? '38px' :"48px", textAlign: 'center' }}>The Grid</div>
       <div className="scheduleModalTextBody" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', marginTop: '18px' }}>
         <div className="scheduleModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', marginBottom: '-5px'}}></div>
       </div>
@@ -254,7 +255,8 @@ export default function App() {
         <ol><b>1. Recent Form: </b>The driver's last five race results, as a driver's car can get relatively faster or slower over a season as the teams introduce upgrade packages. These upgrades usually help, but sometimes do not gel with a driver's driving-style. This makes the driver's recent results valuable in predicting outcomes at the next race.  </ol>
         <ol><b>2. Circuit History: </b>The driver's last five results at the circuit. Each driver has his own driving-style and preferences for circuit layouts. Some driver's seem to find an extra gear at their home race, and some have "bogey tracks" where nothing seems to go right. </ol>
         <ol><b>3. Circuit Type: </b>The driver's last five results at that track-type. Some tracks feature long straights and high speeds that require peak engine performance and low drag aero set-ups. Others consist of constant turns and direction changes which reward cornering ability and grip (high-downforce). Many tracks place roughly equal demands on power and downforce. Some cars excel at a specific circuit-type, while others struggle.</ol>
-        For greater context, each race result is measured against that driver's average race finish for that specific season. Exceptionally good performances appear dark green, exceptionally poor ones are a deep red. Additionally, each driver's name is colour-coded based on team, allowing for easy comparison of teammates. Full race reports are embedded in the table header, and the 2024 driver line-ups and race schedule are accessbile via the menu.<br/>
+        For greater context, each race result is measured against that driver's average race finish for that specific season. Exceptionally good performances appear dark green, exceptionally poor ones are a deep red. Additionally, each driver's name is colour-coded based on team, allowing for easy comparison of teammates. Full race reports are embedded in the table header, and the 2024 driver line-ups and race schedule are accessbile via the menu.
+        <br/><br/>For more detailed info on this website's features and functionality, please see the <a href="https://github.com/MarkTaylor7/TheFinalLap?tab=readme-ov-file#readme" aria-label="The Final Lap README file" target="_blank" style={{color: '#87C75F', textDecoration: 'underline', }}>README</a>. I also discuss my motivation for building this project, the challenges I encountered, technologies used, FAQ section, and future developments.<br/>
         <br/>
         <div className="aboutModalTextHeader" style={{color: '#87C75F', fontFamily: "Bai Jamjuree", fontSize: isSmallScreen ? '24px' :"30px", textAlign: 'center' }}>Resources and Partners</div><br/>
         All of this data has to come from somewhere, so I have integrated the Ergast Developer API - which provides data for every driver, team, and race since 1950. This project would not have been possible without this excellent resource. I also used Country Flags API for consistent formatting of the many flag images on this site.
@@ -266,17 +268,17 @@ export default function App() {
         I must also recognize my Get Coding coach, Hai Nghiem, who has been an excellent guide and source of encouragement to me as I learned my way around React.js. This project had its challenges, but Hai was a great support at every step of the journey. 
         <br/>
         <br/>
-        <div className="aboutModalDevInfo" style={{  backgroundColor: '#ffffff1c', border: '2px solid #606367', borderRadius: '10px', padding: '10px', position: 'relative', height: '400px', display: 'flex' }}>
-          <div className="aboutModalDevInfoHeader" style={{ color: '#87C75F', fontFamily: "Bai Jamjuree", fontSize: isSmallScreen ? '24px' : "30px", margin: '0 auto', marginBottom: '10px', padding: '10px', position: 'absolute', top: '10%', left: '50%', textAlign: 'center',  }}>About Me</div>
-          <div className="aboutModalDevImgContainer" style={{ width: '30%', display: 'flex', justifyContent: 'center' }}>
-            <img src={circularProfilePic} alt="Mark Taylor's picture" style={{ width: '60%', height: 'auto', margin: 'auto' }}/>
+        <div className="aboutModalDevInfo" style={{  backgroundColor: '#ffffff1c', border: '2px solid #606367', borderRadius: '10px', padding: '10px', position: 'relative', height: '400px',  display: 'flex' }}>
+          <div className="aboutModalDevInfoHeader" style={{ color: '#87C75F', fontFamily: "Bai Jamjuree", fontSize: isSmallScreen ? '24px' : "40px", marginBottom: '10px', padding: '10px', position: 'absolute', top: '5%', width: isSmallScreen ? '60%' : '100%', textAlign: 'center', right: isSmallScreen ? 0 : null  }}>About Me</div>
+          <div className="aboutModalDevImgContainer" style={{ width: isSmallScreen ? '50%' : '30%', display: 'flex', justifyContent: 'center' }}>
+            <img src={circularProfilePic} alt="Mark Taylor's picture" style={{ width: isSmallScreen ? '50%' : '60%', height: 'auto', margin: 'auto', marginTop: isSmallScreen ? '5%' : 'auto'}}/>
           </div>
-          <div className="aboutModalDevInfoTextWrapper" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', textAlign: 'left', padding: '15px', position: 'absolute', top: '150px', left: '30%', }}>
-          My name is Mark Taylor, and I am a software developer from St. John's, Newfoundland & Labrador. I have been a student at Get Coding since April, 2023, and have a strong foundation in front-end development. I am currently diving into the world of back-end development, and will be using my new skills to add additional features to this site.&nbsp;
+          <div className="aboutModalDevInfoTextWrapper" style={{ fontFamily: "Roboto", fontSize: isSmallScreen ? '14px' : '22px', fontSize: isLargeScreen ? '26px': null, fontSize: isLargePhone ? '16px' : null, textAlign: 'left', padding: '20px', position: 'absolute', top: isSmallScreen ? '90px' : '120px', left: isSmallScreen ? '0%' : '30%', }}>
+          My name is Mark Taylor, and I am a software developer from St. John's, Newfoundland. I have been a student at Get Coding since April, 2023, and have a strong foundation in front-end development. I am currently diving into the world of back-end development, and will be using my new skills to add additional features to this site.&nbsp;
           Check out my <a href="https://github.com/MarkTaylor7" aria-label="Mark Taylor's GitHub page" target="_blank" style={{color: '#87C75F', textDecoration: 'underline', }}>GitHub page</a> or <a href="https://www.linkedin.com/in/marktaylor27/" aria-label="Mark Taylor's LinkedIn profile" target="_blank" style={{color: '#87C75F', textDecoration: 'underline', }}>connect with me on LinkedIn</a> to see what I've been up to and follow along with my progress! 
           </div>
         </div>
-        <div className="aboutModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', position: 'absolute', bottom: '2%', right: '5px'}}>
+        <div className="aboutModalTextFooter" style={{fontFamily: "Roboto", fontSize: isSmallScreen ? '10px' : "15px", textAlign: 'right', bottom: '2px', right: '5px'}}>
           <br/>Photo credit (hero image): F1-Fansite.com 
         </div>
       </div>
@@ -1353,7 +1355,7 @@ export default function App() {
                 <div className={`iphone-menu ${isMenuOpen ? 'open' : 'closed'}`}>
                   <div className="overlap-group">
                     
-                    <div className="text-wrapper" onClick={handleOpenDriversModal}>"The Grid"</div>
+                    <div className="text-wrapper" onClick={handleOpenDriversModal}>The Grid</div>
                     <div className="divX" onClick={handleOpenScheduleModal}>Schedule</div>
                     <div className="text-wrapper-2" onClick={handleOpenAboutModal}>About</div>
                     <div className="text-wrapper-3" onClick={handleButtonClickMobile}>Features</div>
@@ -1407,7 +1409,7 @@ export default function App() {
           <div className="raceOutlookLine" />
           
           <div className={`desktop-sticky-menu ${show && 'desktop-sticky-menu__blue'}`}>
-            <div className="text-wrapper-18" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>"The Grid"</div>
+            <div className="text-wrapper-18" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>The Grid</div>
             <div className="text-wrapper-19" onClick={handleOpenScheduleModal} style={{ cursor: 'pointer' }}>Schedule</div>
             <div className="text-wrapper-21" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
             <div className="text-wrapper-20" onClick={handleOpenAboutModal} style={{ cursor: 'pointer' }}>About</div>
@@ -1601,7 +1603,7 @@ export default function App() {
             <div className="flexcontainerMobile">
               <p className="textMobile">
                 <span className="spanMobile" onClick={handleOpenDriversModal}>
-                  "The Grid"
+                  The Grid
                   <br />
                 </span>
               </p>
@@ -1645,7 +1647,7 @@ export default function App() {
             </a>
             <p className="copyrightDesktop">© 2024 The Final Lap</p>
             <div className="footer-text-wrapper-1" onClick={handleOpenScheduleModal} style={{ cursor: 'pointer' }}>Schedule</div>
-            <div className="footer-text-wrapper-2" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>"The Grid"</div>
+            <div className="footer-text-wrapper-2" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>The Grid</div>
             <div className="footer-text-wrapper-3" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
             <div className="footer-text-wrapper-4" onClick={handleOpenAboutModal} style={{ cursor: 'pointer' }}>About</div>
             <div className="footer-text-wrapper-5">The Final Lap</div>
