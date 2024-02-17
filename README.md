@@ -31,8 +31,12 @@ Netflix's <i>Drive to Survive</i> does a phenomenal job of hooking new fans with
 <li>2024 driver line-ups and race schedules are accessible from the main menu.</li>
 <li>Responsive design - the UI is optimized for both desktop and mobile viewports.</li><br/>
 
-![Screenshot of project desktop site](src/assets/images/mobileTitle.png)
-![Screenshot of project desktop site](src/assets/images/mobileTable.png)
+![Screenshot of project mobile site](src/assets/images/mobileTitle.png)
+![Screenshot of project mobile site](src/assets/images/mobileTable.png)
+<br/><br/>
+![Screenshot of project desktop site](src/assets/images/desktopF1Grid.png)
+<br/><br/>
+![Screenshot of project desktop site](src/assets/images/desktopSchedule.png)
 
 # 🧗 Challenges
 <li>Learning to "think in React" was the biggest challenge to overcome. It was my first time using this technology and I had to master concepts like: state management, conditional rendering, component hierarchy, and hooks (useState, useEffect, useContext)</li>
