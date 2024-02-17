@@ -87,7 +87,7 @@ DNF (Did Not Finish) results fall into three categories, based on the cause of t
 <li>W - Withdrawal. Also very rare, this can happen if a car suffers a mechanical failure between qualifying and the race start, or if a driver gets injured after qualifying for the race.</li><br/><br/>
 
 <b>Why "The Final Lap"?</b><br/><br/>
-I made it up very early in development, before I wrote a line of code. I thought it sounded cool, but it was only supposed to be a working title until something better came along. Nothing ever did, but then I'm not the most creative person. When my design parter, Abigail, showed me the site logo she designed, the name was locked-in! 😅<br/>
+I made it up very early in development, before I wrote a line of code. I thought it sounded cool, but it was only supposed to be a working title until something better came along. Nothing ever did, but then I'm not the most imaginative person. When my design parter, Abigail, showed me the site logo she designed, the name was locked-in! 😅<br/>
 
 # 🔮 Future Developments
 This project in its current state satisifies my original MVP requirements (and a little extra). Here is what I may add in the future:
