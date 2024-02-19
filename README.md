@@ -90,7 +90,7 @@ DNF (Did Not Finish) results fall into three categories, based on the cause of t
 <li>D - Disqualification. This is rare, but usually the result of a car that is found to be in violation of the technical regulations.</li>
 <li>W - Withdrawal. Also very rare, this can happen if a car suffers a mechanical failure between qualifying and the race start, or if a driver gets injured after qualifying for the race.</li><br/><br/>
 
-<b>WHow long after a race will the data update?</b><br/><br/>
+<b>How long after a race will the data update?</b><br/><br/>
 This site fetches race data from the Ergast Developer API, which updates 2-6 hours after a race ends.<br/><br/>
 
 <b>Why "The Final Lap"?</b><br/><br/>
