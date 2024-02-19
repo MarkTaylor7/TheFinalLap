@@ -132,7 +132,7 @@ const ScheduleModal = ({ isOpen, onClose, content }) => {
       <div style={window.innerWidth <= 600 ? { ...customStyles.notesSection, ...smallScreenStyles.notesSection } : customStyles.notesSection}>
         <li>
           *&ensp;indicates that there will be a sprint race the day before the Grand Prix. Sprints are about 1/3<sup>rd</sup> the length of a Grand Prix, requiring drivers to complete 100 km.
-            Points are awarded to the top 8 finishers. On sprint weekends, qualifying for the Grand Prix is held on Friday instead of Saturday.
+            Points are awarded to the top 8 finishers.
         </li><br/>
         <li>At 24 races, this will be the longest season in F1 history.</li><br/>
         <div style={window.innerWidth <= 600 ? { ...customStyles.modalFooter, ...smallScreenStyles.modalFooter } : customStyles.modalFooter}
