@@ -1,10 +1,18 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
+import { MyContext } from './MyContext';
+
 import ResultsTable from "./ResultsTable";
 import AboutModal from './AboutModal';
 import DriversModal from './DriversModal';
 import ScheduleModal from './ScheduleModal';
 
-import { MyContext } from './MyContext';
+import { 
+  circuitTypes,
+  raceTitles,
+  allCareerData,
+  dropdownOptions,
+  nextRaceBanners
+} from "./consts";
 
 import {
   fetchCurrentSeasonRaceResults,
@@ -18,12 +26,12 @@ import {
   formatDate
 } from "./utilities";
 
+import { flags } from "./Flags";
+
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import smoothscroll from 'smoothscroll-polyfill';
 
-import { circuitTypes, raceTitles, allCareerData, dropdownOptions, nextRaceBanners } from "./consts";
-import { flags } from "./Flags";
 import siteLogo from "./assets/siteLogo.svg";
 import siteLogoDesktop from "./assets/siteLogoDesktop.svg";
 import siteLogoFooterDesktop from "./assets/siteLogoFooterDesktop.svg";
@@ -81,12 +89,13 @@ export default function App() {
   const [nextCircuitFlag, setNextCircuitFlag] = useState('');
   const [nextEventFlag, setNextEventFlag] = useState('');
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [show, setShow] = useState(true);
+  const [showDesktopMenu, setShowDesktopMenu] = useState(true);
   const [showFeature1, setShowFeature1] = useState(true);
   const [showFeature2, setShowFeature2] = useState(true);
   const [showFeature3, setShowFeature3] = useState(true);
   const [lastUpdateTime, setLastUpdateTime] = useState(null);
   const [circuitTypeColor, setCircuitTypeColor] = useState({color: 'black'});
+
   const isSmallScreen = useMediaQuery('(max-width:480px)');
   const isLargeScreen = useMediaQuery('(min-width:1700px)');
   const isLargePhone = useMediaQuery('(min-width:400px) and (max-width:480px)');
@@ -113,11 +122,11 @@ export default function App() {
           showCluster2, setShowCluster2,
           showCluster3, setShowCluster3 } = useContext(MyContext);
 
-  const controlNavBar = () => {
+  const controlDesktopMenu = () => {
     if (window.scrollY > 1200) {
-      setShow(false)
+      setShowDesktopMenu(false)
     } else {
-      setShow(true)
+      setShowDesktopMenu(true)
     } 
   }
 
@@ -135,10 +144,10 @@ export default function App() {
 
   useEffect(() => {
     window.addEventListener('scroll',
-    controlNavBar)
+    controlDesktopMenu)
     return () => {
       window.removeEventListener('scroll',
-      controlNavBar)
+      controlDesktopMenu)
     }
   }, [])
 
@@ -234,7 +243,6 @@ export default function App() {
             color: '#ffffff',
             border: '1px solid #606367',
           },
-          
         },
       },
     },
@@ -1396,7 +1404,7 @@ export default function App() {
           <div className="text-wrapper-10">Race Outlook</div>
           <div className="raceOutlookLine" />
           
-          <div className={`desktop-sticky-menu ${show && 'desktop-sticky-menu__blue'}`}>
+          <div className={`desktop-sticky-menu ${showDesktopMenu && 'desktop-sticky-menu__visible'}`}>
             <div className="text-wrapper-18" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>The Grid</div>
             <div className="text-wrapper-19" onClick={handleOpenScheduleModal} style={{ cursor: 'pointer' }}>Schedule</div>
             <div className="text-wrapper-21" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>

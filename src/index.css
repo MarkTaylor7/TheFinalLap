@@ -904,7 +904,7 @@ body {
   opacity:0;
 }
 
-.global-container .desktop-sticky-menu__blue {
+.global-container .desktop-sticky-menu__visible {
   visibility: visible;
   opacity: 1;
 }

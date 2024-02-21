@@ -1,10 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import { allSeasonsArray, emptyRaceObject } from "./consts";
 
 export async function getDriverData(driverName) {
   const url = `https://ergast.com/api/f1/2023/drivers/${driverName}.json`;
-
   try {
     const response = await fetch(url);
     const json = await response.json();
@@ -77,6 +74,8 @@ export async function fetchCurrentSeasonRaceResults() {
   return null;
 }
 
+
+//Will need to replace "2022" with "2023" when 2024 season starts
 export async function fetchPreviousSeasonRaceResults() {
   const url = "https://ergast.com/api/f1/2022/results.json?limit=500";
   try {
@@ -447,10 +446,6 @@ export function getColor(data3) {
 
   return color
 };
-
-
-
-
 
 export async function createSeasonResultsProps() {
   const array = [];
