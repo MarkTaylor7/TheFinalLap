@@ -73,7 +73,7 @@ Design credit goes to Abigail Z, who I was fortunate enough to collaborate with 
 <br/>
 I must also recognize my Get Coding coach, Hai Nghiem, who has been an excellent guide and source of encouragement to me as I learned my way around React.js. This project had its challenges, but Hai was a great support at every step of the journey.
 
-# ❓ FAQs (Frequently Asked Questions)
+# ❓ FAQ (Frequently Asked Questions)
 <b>What criteria does this site use to rate each driver's race results?</b><br/><br/>
 "Slightly above average" race results (light green) are greater than 1.5 finishing positions above the driver's season average.<br/>
 "Above average" (medium green) race results are greater than 2.5 finishing positions above the driver's season average.<br/>
@@ -89,6 +89,9 @@ DNF (Did Not Finish) results fall into three categories, based on the cause of t
 <li>R - Retirement. This is typically due to mechanical failure or collision damage.</li>
 <li>D - Disqualification. This is rare, but usually the result of a car that is found to be in violation of the technical regulations.</li>
 <li>W - Withdrawal. Also very rare, this can happen if a car suffers a mechanical failure between qualifying and the race start, or if a driver gets injured after qualifying for the race.</li><br/><br/>
+
+<b>How long after a race will the data update?</b><br/><br/>
+This site fetches race data from the Ergast Developer API, which updates 2-6 hours after a race ends.<br/><br/>
 
 <b>Why "The Final Lap"?</b><br/><br/>
 I made it up very early in development, before I wrote a line of code. I thought it sounded cool, but it was only supposed to be a working title until something better came along. Nothing ever did, but then I'm not the most imaginative person. When my design parter, Abigail, showed me the site logo she designed, the name was locked-in! 😅<br/>
