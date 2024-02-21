@@ -35,7 +35,7 @@ body {
   cursor: default;
 }
 
-.iphone {
+.global-container {
   background-color: #000000;
   display: flex;
   flex-direction: row;
@@ -43,7 +43,7 @@ body {
   width: 100%;
 }
 
-.iphone .div {
+.global-container .main-container {
   background-color: #000000;
   min-height: 2540px;
   /*overflow hides or reveals the extra feature cards*/
@@ -55,12 +55,12 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .div {
+  .global-container .main-container {
     min-height: 2982px;
   }
 }
 
-.iphone .overlap {
+.global-container .overlap {
   height: 473px;
   left: 0;
   position: absolute;
@@ -69,14 +69,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .overlap {
+  .global-container .overlap {
     width: 80.9%;
     left: 18.1%;
     height: 930px;
   }
 }
 
-.iphone .overlap-group {
+.global-container .overlap-group {
   height: 473px;
   left: 0;
   position: absolute;
@@ -113,7 +113,7 @@ body {
   }
 }
 
-.iphone .rectangle {
+.global-container .rectangle {
   background-color: #00000038;
   height: 242px;
   left: 0;
@@ -123,14 +123,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .rectangle {
+  .global-container .rectangle {
     height: 720px;
     top: 3px;
     
   }
 }
 
-.iphone .rectangle-2 {
+.global-container .rectangle-2 {
   background: linear-gradient(360deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
   height: 132px;
   left: 0;
@@ -140,7 +140,7 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .rectangle-2 {
+  .global-container .rectangle-2 {
     height: 392px;
     top: 330px;
   }
@@ -166,7 +166,7 @@ body {
   }
 }
 
-.iphone .nextRaceBoxDesktop {
+.global-container .nextRaceBoxDesktop {
   height: 222px;
   position: absolute;
   height: 222px;
@@ -176,12 +176,12 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .iphone .nextRaceBoxDesktop {
+  .global-container .nextRaceBoxDesktop {
     visibility: hidden;
   }
 }
 
-.iphone .nextRaceBoxImageDesktop {
+.global-container .nextRaceBoxImageDesktop {
   position: absolute;
   height: 222px;
   width: 81%;
@@ -190,25 +190,25 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .iphone .nextRaceBoxImageDesktop {
+  .global-container .nextRaceBoxImageDesktop {
     visibility: hidden;
   }
 }
 
-.iphone .nextRaceBoxMobile {
+.global-container .nextRaceBoxMobile {
   width: 100%;
   top: 132px;
   height: 57px;
   position: absolute;
 }
 
-.iphone .nextRaceBoxImageMobile {
+.global-container .nextRaceBoxImageMobile {
   position: absolute;
   height: auto;
   width: 100%;
 }
 
-.iphone .text-wrapperADesktop {
+.global-container .text-wrapperADesktop {
   color: #606367;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
@@ -222,7 +222,7 @@ body {
   width: 290px;
 }
 
-.iphone .text-wrapperBDesktop {
+.global-container .text-wrapperBDesktop {
   color: #606367;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
@@ -236,7 +236,7 @@ body {
   width: 290px;
 }
 
-.iphone .text-wrapperCDesktop {
+.global-container .text-wrapperCDesktop {
   color: #606367;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
@@ -250,7 +250,7 @@ body {
   width: 290px;
 }
 
-.iphone .text-wrapperDDesktop {
+.global-container .text-wrapperDDesktop {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
@@ -264,7 +264,7 @@ body {
   width: 302px;
 }
 
-.iphone .text-wrapperEDesktop {
+.global-container .text-wrapperEDesktop {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
@@ -278,7 +278,7 @@ body {
   width: 302px;
 }
 
-.iphone .nextRaceBoxCircuitContainer {
+.global-container .nextRaceBoxCircuitContainer {
   
   left: 64%;
   position: absolute;
@@ -288,7 +288,7 @@ body {
   flex-direction: row;
 }
 
-.iphone .text-wrapperFDesktop {
+.global-container .text-wrapperFDesktop {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
@@ -299,7 +299,7 @@ body {
   display: flex;
 }
 
-.iphone .nextRaceBoxFlag {
+.global-container .nextRaceBoxFlag {
   width: 48px;
   height: 40px;
   display: flex;
@@ -307,7 +307,7 @@ body {
   
 }
 
-.iphone .groupMobile {
+.global-container .groupMobile {
   height: auto;
   left: 18.2%;
   position: absolute;
@@ -316,24 +316,24 @@ body {
 }
 
 @media screen and (max-width: 370px) {
-  .iphone .groupMobile {
+  .global-container .groupMobile {
     top: 55%; 
   }
 }
 
 @media screen and (min-width: 410px) {
-  .iphone .groupMobile {
+  .global-container .groupMobile {
     top: 61%; 
   }
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .groupMobile {
+  .global-container .groupMobile {
     visibility: hidden; 
   }
 }
 
-.iphone .pDesktop {
+.global-container .pDesktop {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 22px;
@@ -348,20 +348,20 @@ body {
 }
 
 @media screen and (max-width: 1300px) {
-  .iphone .pDesktop {
+  .global-container .pDesktop {
     top: 510px;
   }
 }
 
 @media screen and (max-width: 1390px) {
-  .iphone .pDesktop {
+  .global-container .pDesktop {
     font-size: 20px;
     left: 54%;
     width: 450px;
   }
 }
 
-.iphone .text-wrapper-Desktop {
+.global-container .text-wrapper-Desktop {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 82px;
@@ -376,19 +376,19 @@ body {
 }
 
 @media screen and (max-width: 1300px) {
-  .iphone .text-wrapper-Desktop {
+  .global-container .text-wrapper-Desktop {
     font-size: 72px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .iphone .pDesktop,
-  .iphone .text-wrapper-Desktop {
+  .global-container .pDesktop,
+  .global-container .text-wrapper-Desktop {
     visibility: hidden;
   }
 }
 
-.iphone .overlap-2 {
+.global-container .overlap-2 {
   background-color: #60636754;
   height: 189px;
   position: relative;
@@ -396,20 +396,20 @@ body {
   top: 0px;
 }
 
-.iphone .nextRaceBoxMobile {
+.global-container .nextRaceBoxMobile {
   width: 100%;
   top: 132px;
   height: 57px;
   position: absolute;
 }
 
-.iphone .nextRaceBoxImageMobile {
+.global-container .nextRaceBoxImageMobile {
   position: absolute;
   height: auto;
   width: 100%;
 }
 
-.iphone .text-wrapperAMobile {
+.global-container .text-wrapperAMobile {
   color: #87C75F;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 12px;
@@ -423,7 +423,7 @@ body {
   width: 24%;
 }
 
-.iphone .text-wrapperBMobile {
+.global-container .text-wrapperBMobile {
   color: #87C75F;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 12px;
@@ -437,7 +437,7 @@ body {
   width: 20%;
 }
 
-.iphone .text-wrapperCMobile {
+.global-container .text-wrapperCMobile {
   color: #87C75F;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 12px;
@@ -451,7 +451,7 @@ body {
   width: 20%;
 }
 
-.iphone .text-wrapperDMobile {
+.global-container .text-wrapperDMobile {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 13px;
@@ -465,7 +465,7 @@ body {
   width: 34%;
 }
 
-.iphone .text-wrapperEMobile {
+.global-container .text-wrapperEMobile {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 13px;
@@ -479,7 +479,7 @@ body {
   width: 20%;
 }
 
-.iphone .text-wrapperFMobile {
+.global-container .text-wrapperFMobile {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 13px;
@@ -493,7 +493,7 @@ body {
   width: 28%;
 }
 
-.iphone .p {
+.global-container .p {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 13px;
@@ -508,12 +508,12 @@ body {
 }
 
 @media screen and (max-width: 378px) {
-  .iphone .p {
+  .global-container .p {
     font-size: 13px;
   }
 }
 
-.iphone .text-wrapper-2 {
+.global-container .mainTitle{
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 32px;
@@ -528,7 +528,7 @@ body {
   width: 226px;
 }
 
-.iphone .siteLogo {
+.global-container .siteLogo {
   height: 37px;
   left: 5%;
   position: absolute;
@@ -537,12 +537,12 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .siteLogo {
+  .global-container .siteLogo {
     visibility: hidden;
   }
 }
 
-.iphone .footerBoxMobile {
+.global-container .footerBoxMobile {
   height: 195px;
   left: 0;
   position: absolute;
@@ -551,12 +551,12 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .footerBoxMobile {
+  .global-container .footerBoxMobile {
     visibility: hidden;
   }
 }
 
-.iphone .footerBoxBackgroundMobile {
+.global-container .footerBoxBackgroundMobile {
   background-color: #ffffff1c;
   height: 190px;
   left: 0;
@@ -565,7 +565,7 @@ body {
   width: 100%;
 }
 
-.iphone .siteLogoFooterMobile {
+.global-container .siteLogoFooterMobile {
   height: 46px;
   left: 3.6%;
   position: absolute;
@@ -573,7 +573,7 @@ body {
   width: 40px;
 }
 
-.iphone .copyrightMobile {
+.global-container .copyrightMobile {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 8px;
@@ -587,7 +587,7 @@ body {
   
 }
 
-.iphone .designCreditMobile {
+.global-container .designCreditMobile {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 10px;
@@ -600,7 +600,7 @@ body {
   top: 144px;
 }
 
-.iphone .dev-credit-mobile {
+.global-container .dev-credit-mobile {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 12px;
@@ -615,12 +615,12 @@ body {
 }
 
 @media screen and (max-width: 400px) {
-  .iphone .dev-credit-mobile {
+  .global-container .dev-credit-mobile {
     font-size: 11px;
   }
 }
 
-.iphone .flexcontainerMobile {
+.global-container .flexcontainerMobile {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -632,7 +632,7 @@ body {
   width: 110px;
 }
 
-.iphone .textMobile {
+.global-container .textMobile {
   align-self: stretch;
   color: #ffffff;
   font-family: "Roboto", Helvetica;
@@ -643,7 +643,7 @@ body {
   position: relative;
 }
 
-.iphone .spanMobile {
+.global-container .spanMobile {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 12px;
@@ -652,7 +652,7 @@ body {
   line-height: 10.8px;
 }
 
-.iphone .flexcontainer-2-Mobile {
+.global-container .flexcontainer-2-Mobile {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -664,7 +664,7 @@ body {
   width: 200px;
 }
 
-.iphone .gitHubMobile {
+.global-container .gitHubMobile {
   height: 22px;
   right: 12%;
   position: absolute;
@@ -672,7 +672,7 @@ body {
   width: 22px;
 }
 
-.iphone .linkedInMobile {
+.global-container .linkedInMobile {
   height: 22px;
   right: 4.8%;
   position: absolute;
@@ -680,7 +680,7 @@ body {
   width: 22px;
 }
 
-.iphone .linkedInMobileDesigner {
+.global-container .linkedInMobileDesigner {
   height: 15px;
   position: absolute;
   top: 153px;
@@ -688,7 +688,7 @@ body {
   width: 15px;
 }
 
-.iphone .line-2 {
+.global-container .line-2 {
   height: 0px;
   left: 3.8%;
   object-fit: cover;
@@ -699,12 +699,12 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .line-2 {
+  .global-container .line-2 {
     visibility: hidden;
   }
 }
 
-.iphone .footerBoxDesktop {
+.global-container .footerBoxDesktop {
   height: 322px;
   left: 0;
   position: absolute;
@@ -713,12 +713,12 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .iphone .footerBoxDesktop {
+  .global-container .footerBoxDesktop {
     visibility: hidden;
   }
 }
 
-.iphone .footerBoxBackgroundDesktop {
+.global-container .footerBoxBackgroundDesktop {
   background-color: #1c1c1c;
   height: 322px;
   left: 0;
@@ -727,7 +727,7 @@ body {
   width: 100%;
 }
 
-.iphone .copyrightDesktop {
+.global-container .copyrightDesktop {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 16px;
@@ -740,7 +740,7 @@ body {
   top: 82%;
 }
 
-.iphone .designCreditDesktop {
+.global-container .designCreditDesktop {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 18px;
@@ -753,7 +753,7 @@ body {
   top: 71%;
 }
 
-.iphone .dev-credit-desktop {
+.global-container .dev-credit-desktop {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 22px;
@@ -768,12 +768,12 @@ body {
 }
 
 @media screen and (max-width: 1400px) {
-  .iphone .dev-credit-desktop {
+  .global-container .dev-credit-desktop {
     right: 3%;
   }
 }
 
-.iphone .footer-text-wrapper-1 {
+.global-container .footer-text-wrapper-1 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 26px;
@@ -787,7 +787,7 @@ body {
   width: 90px;
 }
 
-.iphone .footer-text-wrapper-2 {
+.global-container .footer-text-wrapper-2 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 26px;
@@ -801,7 +801,7 @@ body {
   width: 120px;
 }
 
-.iphone .footer-text-wrapper-3 {
+.global-container .footer-text-wrapper-3 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 26px;
@@ -815,7 +815,7 @@ body {
   width: 100px;
 }
 
-.iphone .footer-text-wrapper-4 {
+.global-container .footer-text-wrapper-4 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 26px;
@@ -829,15 +829,15 @@ body {
   width: 80px;
 }
 
-.iphone .footer-text-wrapper-1:hover,
-.iphone .footer-text-wrapper-2:hover,
-.iphone .footer-text-wrapper-3:hover,
-.iphone .footer-text-wrapper-4:hover {
+.global-container .footer-text-wrapper-1:hover,
+.global-container .footer-text-wrapper-2:hover,
+.global-container .footer-text-wrapper-3:hover,
+.global-container .footer-text-wrapper-4:hover {
   color: #87C75F;
 }
 
 
-.iphone .footer-text-wrapper-5 {
+.global-container .footer-text-wrapper-5 {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 82px;
@@ -851,7 +851,7 @@ body {
   width: 558px;
 }
 
-.iphone .siteLogoFooterDesktop {
+.global-container .siteLogoFooterDesktop {
   height: 64px;
   left: 2.29%;
   position: absolute;
@@ -859,7 +859,7 @@ body {
   width: 55px;
 }
 
-.iphone .gitHubDesktop {
+.global-container .gitHubDesktop {
   height: 69px;
   right: 9%;
   position: absolute;
@@ -867,7 +867,7 @@ body {
   width: 69px;
 }
 
-.iphone .linkedInDesktop {
+.global-container .linkedInDesktop {
   height: 69px;
   right: 3%;
   position: absolute;
@@ -876,14 +876,14 @@ body {
 }
 
 @media screen and (max-width: 1281px) {
-  .iphone .gitHubDesktop,
-  .iphone .linkedInDesktop {
+  .global-container .gitHubDesktop,
+  .global-container .linkedInDesktop {
     height: 58px;
     width: 58px;
   }
 }
 
-.iphone .linkedInDesktopDesigner {
+.global-container .linkedInDesktopDesigner {
   height: 25px;
   right: 3%;
   position: absolute;
@@ -891,7 +891,7 @@ body {
   width: 25px;
 }
 
-.iphone .desktop-sticky-menu {
+.global-container .desktop-sticky-menu {
   background-color: #ffffff1c;
   height: 92vh;
   left: 0;
@@ -904,34 +904,34 @@ body {
   opacity:0;
 }
 
-.iphone .desktop-sticky-menu__blue {
+.global-container .desktop-sticky-menu__blue {
   visibility: visible;
   opacity: 1;
 }
 
 @media screen and (min-width: 1441px) {
-  .iphone .desktop-sticky-menu {
+  .global-container .desktop-sticky-menu {
     width: 247px;
     left: 40px;
   }
 }
 
 @media screen and (min-width: 1537px) {
-  .iphone .desktop-sticky-menu {
+  .global-container .desktop-sticky-menu {
     width: 247px;
     left: 72px;
   }
 }
 
 @media screen and (min-width: 1601px) {
-  .iphone .desktop-sticky-menu {
+  .global-container .desktop-sticky-menu {
     width: 247px;
     left: 232px;
   }
 }
 
 @media screen and (min-width: 1921px) {
-  .iphone .desktop-sticky-menu {
+  .global-container .desktop-sticky-menu {
     width: 247px;
     left: 550px;
   }
@@ -939,12 +939,12 @@ body {
 
 
 @media screen and (max-width: 480px) {
-  .iphone .desktop-sticky-menu {
+  .global-container .desktop-sticky-menu {
     visibility: hidden;
   }
 }
 
-.iphone .text-wrapper-18 {
+.global-container .text-wrapper-18 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 26px;
@@ -958,11 +958,11 @@ body {
   width: 130px;
 }
 
-.iphone .text-wrapper-18:hover {
+.global-container .text-wrapper-18:hover {
   color:#87C75F;
 }
 
-.iphone .text-wrapper-19 {
+.global-container .text-wrapper-19 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 26px;
@@ -976,11 +976,11 @@ body {
   width: 120px;
 }
 
-.iphone .text-wrapper-19:hover {
+.global-container .text-wrapper-19:hover {
   color:#87C75F;
 }
 
-.iphone .text-wrapper-20 {
+.global-container .text-wrapper-20 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 26px;
@@ -994,11 +994,11 @@ body {
   width: 80px;
 }
 
-.iphone .text-wrapper-20:hover {
+.global-container .text-wrapper-20:hover {
   color:#87C75F;
 }
 
-.iphone .text-wrapper-21 {
+.global-container .text-wrapper-21 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 26px;
@@ -1012,11 +1012,11 @@ body {
   width: 120px;
 }
 
-.iphone .text-wrapper-21:hover {
+.global-container .text-wrapper-21:hover {
   color:#87C75F;
 }
 
-.iphone .desktopMenuLine1 {
+.global-container .desktopMenuLine1 {
   height: 0px;
   left: 21px;
   object-fit: cover;
@@ -1027,7 +1027,7 @@ body {
   
 }
 
-.iphone .desktopMenuLine2 {
+.global-container .desktopMenuLine2 {
   height: 0px;
   left: 21px;
   object-fit: cover;
@@ -1037,7 +1037,7 @@ body {
   border: 1px solid rgba(217, 217, 217, 0.3);
 }
 
-.iphone .desktopMenuLine3 {
+.global-container .desktopMenuLine3 {
   height: 0px;
   left: 21px;
   object-fit: cover;
@@ -1047,7 +1047,7 @@ body {
   border: 1px solid rgba(217, 217, 217, 0.3);
 }
 
-.iphone .desktopMenuLine4 {
+.global-container .desktopMenuLine4 {
   height: 0px;
   left: 21px;
   object-fit: cover;
@@ -1057,7 +1057,7 @@ body {
   border: 1px solid rgba(217, 217, 217, 0.3);
 }
 
-.iphone .desktopMenuLine5 {
+.global-container .desktopMenuLine5 {
   height: 0px;
   left: 21px;
   object-fit: cover;
@@ -1067,7 +1067,7 @@ body {
   border: 1px solid rgba(217, 217, 217, 0.3);
 }
 
-.iphone .group-3 {
+.global-container .group-3 {
   height: 20.85%;
   left: 48px;
   position: absolute;
@@ -1075,7 +1075,7 @@ body {
   width: 64.4%;
 }
 
-.iphone .overlap-table {
+.global-container .overlap-table {
   height: 800px;
   left: 18.1%;
   position: absolute;
@@ -1084,7 +1084,7 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .iphone .overlap-table {
+  .global-container .overlap-table {
     left: 2%;
     width: 96%;
     top: 900px;
@@ -1163,7 +1163,7 @@ body {
   }
 }
 
-.iphone .features-header {
+.global-container .features-header {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 26px;
@@ -1179,7 +1179,7 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .features-header {
+  .global-container .features-header {
     top: 1900px;
     font-size: 40px;
     left: 0;
@@ -1187,13 +1187,13 @@ body {
 }
 
 @media screen and (min-width: 1281px) {
-  .iphone .features-header {
+  .global-container .features-header {
     font-size: 50px;
     left: 3%;
   }
 }
 
-.iphone .features-line {
+.global-container .features-line {
   height: 0px;
   left: 51%;
   position: absolute;
@@ -1204,7 +1204,7 @@ body {
 }
 
 @media screen and (min-width: 1281px) {
-  .iphone .features-line {
+  .global-container .features-line {
     height: 0px;
     left: 56%;
     position: absolute;
@@ -1216,12 +1216,12 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .iphone .features-line {
+  .global-container .features-line {
     visibility: hidden;
   }
 }
 
-.iphone .feature-card-container-1 {
+.global-container .feature-card-container-1 {
   height: 374px;
   left: 38px;
   position: absolute;
@@ -1230,14 +1230,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-card-container-1 {
+  .global-container .feature-card-container-1 {
     width: 80.9%;
     left: 18.1%;
     top: 2010px;
   }
 }
 
-.iphone .feature-card-1 {
+.global-container .feature-card-1 {
   background-color: #d9d9d91c;
   height: 374px;
   left: 0;
@@ -1248,18 +1248,18 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-card-1 {
+  .global-container .feature-card-1 {
     width: 24.5%;
   }
 }
 
-.iphone .imageFeature1 {
+.global-container .imageFeature1 {
   width: 100%;
   height: 100%;
   border-radius: 5px;
 }
 
-.iphone .leftArrow {
+.global-container .leftArrow {
   height: 43px;
   left: -27px;
   position: absolute;
@@ -1267,7 +1267,7 @@ body {
   width: 19px;
 }
 
-.iphone .rightArrow {
+.global-container .rightArrow {
   height: 43px;
   right: -13px;
   position: absolute;
@@ -1275,7 +1275,7 @@ body {
   width: 19px;
 }
 
-.iphone .rightArrowA {
+.global-container .rightArrowA {
   height: 43px;
   right: -27px;
   position: absolute;
@@ -1284,14 +1284,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .leftArrow,
-  .iphone .rightArrow,
-  .iphone .rightArrowA {
+  .global-container .leftArrow,
+  .global-container .rightArrow,
+  .global-container .rightArrowA {
     visibility: hidden;
   }
 }
 
-.iphone .feature-text-container-1 {
+.global-container .feature-text-container-1 {
   height: 131px;
   left: 36px;
   position: absolute;
@@ -1300,14 +1300,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-text-container-1 {
+  .global-container .feature-text-container-1 {
     width: 80.9%;
     left: 18.1%;
     top: 2450px;
   }
 }
 
-.iphone .feature-text-wrapper-A {
+.global-container .feature-text-wrapper-A {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 22px;
@@ -1321,7 +1321,7 @@ body {
   width: 286px;
 }
 
-.iphone .feature-text-wrapper-B {
+.global-container .feature-text-wrapper-B {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 14px;
@@ -1336,12 +1336,12 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-text-wrapper-B {
+  .global-container .feature-text-wrapper-B {
     width: 25%;
   }
 }
 
-.iphone .feature-header-1 {
+.global-container .feature-header-1 {
   height: 45px;
   left: 38px;
   position: absolute;
@@ -1350,14 +1350,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-header-1 {
+  .global-container .feature-header-1 {
     left: 18.1%;
     width: 80.9%;
     top: 2390px;
   }
 }
 
-.iphone .feature-header-text {
+.global-container .feature-header-text {
   color: #86c65f;
   font-family: "Roboto", Helvetica;
   font-size: 16px;
@@ -1371,7 +1371,7 @@ body {
   width: 91.6%;
 }
 
-.iphone .feature-header-wrapper {
+.global-container .feature-header-wrapper {
   height: 35px;
   left: 0;
   position: relative;
@@ -1380,7 +1380,7 @@ body {
   
 }
 
-.iphone .feature-lines-container-1 {
+.global-container .feature-lines-container-1 {
   height: 35px;
   left: -1px;
   position: relative;
@@ -1388,13 +1388,13 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-lines-container-1 {
+  .global-container .feature-lines-container-1 {
     width: 30%;
     left: 0;
   }
 }
 
-.iphone .feature-line-1A {
+.global-container .feature-line-1A {
   height: 0px;
   left: 1px;
   position: absolute;
@@ -1404,12 +1404,12 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-line-1A {
+  .global-container .feature-line-1A {
     width: 81%;
   }
 }
 
-.iphone .feature-line-1 {
+.global-container .feature-line-1 {
   height: 0px;
   left: 1px;
   position: absolute;
@@ -1419,18 +1419,18 @@ body {
 }
 
 @media screen and (min-width: 480px) and (max-width: 1280px) {
-  .iphone .feature-line-1 {
+  .global-container .feature-line-1 {
     width: 80%;
   }
 }
 
 @media screen and (min-width: 1281px) {
-  .iphone .feature-line-1 {
+  .global-container .feature-line-1 {
     width: 90%;
   }
 }
 
-.iphone .feature-line-2 {
+.global-container .feature-line-2 {
   height: 35px;
   left: 1px;
   position: absolute;
@@ -1441,7 +1441,7 @@ body {
   transform-origin: 0 0;
 }
 
-.iphone .feature-lines-container-1 {
+.global-container .feature-lines-container-1 {
   height: 35px;
   left: -1px;
   position: relative;
@@ -1449,19 +1449,19 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-lines-container-1 {
+  .global-container .feature-lines-container-1 {
     width: 345px;
   }
 }
 
-.iphone .feature-lines-container-2 {
+.global-container .feature-lines-container-2 {
   height: 35px;
   left: -1px;
   position: relative;
   width: 100%;
 }
 
-.iphone .feature-lines-container-3 {
+.global-container .feature-lines-container-3 {
   height: 35px;
   left: -1px;
   position: relative;
@@ -1469,14 +1469,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-lines-container-2,
-  .iphone .feature-lines-container-3 {
+  .global-container .feature-lines-container-2,
+  .global-container .feature-lines-container-3 {
     width: 313px;
   }
 }
 
 
-.iphone .overlap-7 {
+.global-container .overlap-7 {
   height: 142px;
   left: 3.8%;
   position: absolute;
@@ -1487,14 +1487,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .overlap-7,
-  .iphone .overlap-11,
-  .iphone .overlap-12 {
+  .global-container .overlap-7,
+  .global-container .overlap-11,
+  .global-container .overlap-12 {
     visibility: hidden;
   }
 }
 
-.iphone .text-wrapper-10 {
+.global-container .text-wrapper-10 {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 26px;
@@ -1510,7 +1510,7 @@ body {
 }
 
 @media screen and (min-width: 481px) and (max-width: 1280px) {
-  .iphone .text-wrapper-10 {
+  .global-container .text-wrapper-10 {
     font-size: 50px;
     top: 954px;
     position: absolute;
@@ -1520,7 +1520,7 @@ body {
 }
 
 @media screen and (min-width: 1281px) {
-  .iphone .text-wrapper-10 {
+  .global-container .text-wrapper-10 {
     font-size: 50px;
     top: 950px;
     position: absolute;
@@ -1529,7 +1529,7 @@ body {
   }
 }
 
-.iphone .raceOutlookLine {
+.global-container .raceOutlookLine {
   height: 0px;
   left: 50%;
   position: absolute;
@@ -1540,7 +1540,7 @@ body {
 }
 
 @media screen and (min-width: 1281px) {
-  .iphone .raceOutlookLine {
+  .global-container .raceOutlookLine {
     height: 0px;
     left: 46%;
     position: absolute;
@@ -1552,12 +1552,12 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .iphone .raceOutlookLine {
+  .global-container .raceOutlookLine {
     visibility: hidden;
   }
 }
 
-.iphone .rectangle-6 {
+.global-container .rectangle-6 {
   background-color: #ffffff1c;
   border-radius: 4px;
   height: 45px;
@@ -1567,14 +1567,14 @@ body {
   width: 100%;
 }
 
-.iphone .toggleButton {
+.global-container .toggleButton {
   left: 0;
   position: absolute;
   top: 0px;
   width: 100%;
 }
 
-.iphone .text-wrapper-11 {
+.global-container .text-wrapper-11 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 18px;
@@ -1588,7 +1588,7 @@ body {
   width: 207px;
 }
 
-.iphone .line-5 {
+.global-container .line-5 {
   height: 2px;
   left: 19px;
   position: absolute;
@@ -1596,7 +1596,7 @@ body {
   width: 113px;
 }
 
-.iphone .toggleButton1Icon {
+.global-container .toggleButton1Icon {
   height: 23px;
   right: 5%;
   position: absolute;
@@ -1604,7 +1604,7 @@ body {
   width: 23px;
 }
 
-.iphone .text-wrapper-12 {
+.global-container .text-wrapper-12 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 18px;
@@ -1618,7 +1618,7 @@ body {
   width: 207px;
 }
 
-.iphone .feature-text-container-3 {
+.global-container .feature-text-container-3 {
   height: 131px;
   left: 36px;
   position: absolute;
@@ -1627,14 +1627,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-text-container-3 {
+  .global-container .feature-text-container-3 {
     width: 80.9%;
     left: 78.1%;
     top: 2450px;
   }
 }
 
-.iphone .all-race-results-are {
+.global-container .all-race-results-are {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 4px;
@@ -1648,7 +1648,7 @@ body {
   width: 312px;
 }
 
-.iphone .feature-header-2 {
+.global-container .feature-header-2 {
   height: 45px;
   left: 38px;
   position: absolute;
@@ -1657,13 +1657,13 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-header-2 {
+  .global-container .feature-header-2 {
     left: 48.1%;
     top: 2390px;
   }
 }
 
-.iphone .line-wrapper {
+.global-container .line-wrapper {
   background-image: url(./line-17-2.svg);
   background-size: 100% 100%;
   height: 1px;
@@ -1672,7 +1672,7 @@ body {
   top: 517px;
 }
 
-.iphone .line-6 {
+.global-container .line-6 {
   height: 1px;
   left: 1px;
   position: absolute;
@@ -1680,7 +1680,7 @@ body {
   width: 35px;
 }
 
-.iphone .feature-header-3 {
+.global-container .feature-header-3 {
   height: 45px;
   left: 38px;
   position: absolute;
@@ -1689,13 +1689,13 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-header-3 {
+  .global-container .feature-header-3 {
     left: 78.1%;
     top: 2390px;
   }
 }
 
-.iphone .img-wrapper {
+.global-container .img-wrapper {
   background-image: url(./line-17-3.svg);
   background-size: 100% 100%;
   height: 1px;
@@ -1707,7 +1707,7 @@ body {
 
 
 
-.iphone .feature-card-2 {
+.global-container .feature-card-2 {
   border-radius: 5px;
   height: 374px;
   left: 38px;
@@ -1719,7 +1719,7 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-card-2 {
+  .global-container .feature-card-2 {
     top: 2010px;
     left: 48.1%;
     width: 20%;
@@ -1727,7 +1727,7 @@ body {
   }
 }
 
-.iphone .card-section {
+.global-container .card-section {
   flex: 1;
   border-bottom: 1px solid #606367;
   display: flex;
@@ -1745,7 +1745,7 @@ body {
 .card-section:nth-child(8) { background-color: #f44336; }
 .card-section:nth-child(9) { background-color: #212121; border-bottom: none; border-bottom-left-radius: 2.5px; border-bottom-right-radius: 2.5px; }
 
-.iphone .card-text {
+.global-container .card-text {
   text-align: center;
   font-family: "Roboto", Helvetica;
   font-size: 18px;
@@ -1764,7 +1764,7 @@ body {
 
 
 
-.iphone .feature-card-3 {
+.global-container .feature-card-3 {
   border-radius: 5px;
   height: 374px;
   left: 38px;
@@ -1775,14 +1775,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-card-3 {
+  .global-container .feature-card-3 {
     top: 2010px;
     left: 78.1%;
     width: 20%;
   }
 }
 
-.iphone .card-column {
+.global-container .card-column {
   flex: 1;
   box-sizing: border-box;
   border-radius: 5px;
@@ -1791,7 +1791,7 @@ body {
 .card-column:nth-child(1) { background-color: #ffffff1c; }
 .card-column:nth-child(2) { background-color: #d9d9d9; border-top-left-radius: 0px; border-bottom-left-radius: 0px; }
 
-.iphone .card-column-child {
+.global-container .card-column-child {
   width: 100%;
   height: 33%;
   display: flex;
@@ -1810,7 +1810,7 @@ body {
 
 
 
-.iphone .card-column-child-text {
+.global-container .card-column-child-text {
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 20px;
   font-weight: 500px;
@@ -1820,12 +1820,12 @@ body {
 .card-column-child:nth-child(2) .card-column-child-text { color: orange; font-size: 22px; }
 .card-column-child:nth-child(3) .card-column-child-text { color: yellow; }
 
-.iphone .circuit-svg {
+.global-container .circuit-svg {
   width: 100px;
   height: 100px;
 }
 
-.iphone .overlap-11 {
+.global-container .overlap-11 {
   height: 65px;
   left: 3.8%;
   position: absolute;
@@ -1833,7 +1833,7 @@ body {
   width: 93.6%;
 }
 
-.iphone .rectangle-12 {
+.global-container .rectangle-12 {
   background-color: #ffffff1c;
   border-radius: 4px;
   height: 45px;
@@ -1843,14 +1843,14 @@ body {
   width: 100%;
 }
 
-.iphone .toggleButton2 {
+.global-container .toggleButton2 {
   left: 0;
   position: absolute;
   top: 0px;
   width: 100%;
 }
 
-.iphone .rectangle-13 {
+.global-container .rectangle-13 {
   height: 45px;
   left: 0;
   position: absolute;
@@ -1858,7 +1858,7 @@ body {
   width: 365px;
 }
 
-.iphone .text-wrapper-13 {
+.global-container .text-wrapper-13 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 18px;
@@ -1873,7 +1873,7 @@ body {
 }
 
 
-.iphone .line-7 {
+.global-container .line-7 {
   height: 2px;
   left: 19px;
   position: absolute;
@@ -1881,7 +1881,7 @@ body {
   width: 127px;
 }
 
-.iphone .toggleButton2Status {
+.global-container .toggleButton2Status {
   height: 32px;
   right: 5%;
   position: absolute;
@@ -1889,7 +1889,7 @@ body {
   width: 32px;
 }
 
-.iphone .toggleButton3Status {
+.global-container .toggleButton3Status {
   font-size: 16px;
   font-weight: 500;
   height: 10px;
@@ -1898,7 +1898,7 @@ body {
   top: 25%;
 }
 
-.iphone .vector-5 {
+.global-container .vector-5 {
   height: 10px;
   left: 326px;
   position: absolute;
@@ -1906,7 +1906,7 @@ body {
   width: 22px;
 }
 
-.iphone .overlap-12 {
+.global-container .overlap-12 {
   height: 65px;
   left: 3.8%;
   position: absolute;
@@ -1914,7 +1914,7 @@ body {
   width: 93.6%;
 }
 
-.iphone .rectangle-14 {
+.global-container .rectangle-14 {
   background-color: #ffffff1c;
   border-radius: 4px;
   height: 45px;
@@ -1924,14 +1924,14 @@ body {
   width: 100%;
 }
 
-.iphone .toggleButton3 {
+.global-container .toggleButton3 {
   left: 0;
   position: absolute;
   top: 0px;
   width: 100%;
 }
 
-.iphone .line-8 {
+.global-container .line-8 {
   height: 2px;
   left: 17px;
   position: absolute;
@@ -1939,7 +1939,7 @@ body {
   width: 106px;
 }
 
-.iphone .feature-text-container-2 {
+.global-container .feature-text-container-2 {
   height: 131px;
   left: 36px;
   position: absolute;
@@ -1948,7 +1948,7 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .feature-text-container-2 {
+  .global-container .feature-text-container-2 {
     width: 80.9%;
     left: 48.1%;
     top: 2450px;
@@ -1965,7 +1965,7 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .dropdown-container {
+  .global-container .dropdown-container {
     left: 18.1%;
     width: 25%;
     top: 1030px;
@@ -2041,7 +2041,7 @@ select {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .dataUpdatePill {
+  .global-container .dataUpdatePill {
     font-size: 14px;
     background-color: none;
     border: 2px solid #606367;
@@ -2058,7 +2058,7 @@ select {
 }
 
 @media screen and (min-width: 1281px) {
-  .iphone .dataUpdatePill {
+  .global-container .dataUpdatePill {
     left: 78.5%;
   }
 }
@@ -2069,7 +2069,7 @@ select {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .pillTextWrapper {
+  .global-container .pillTextWrapper {
   width: 90%;
   line-height: 10px;
   }
@@ -2118,7 +2118,7 @@ select {
 	}
 }
 
-.iphone .toggleButton4 {
+.global-container .toggleButton4 {
   left: 0;
   position: absolute;
   top: 24px;
@@ -2127,15 +2127,15 @@ select {
 }
 
 @media screen and (max-width: 480px) {
-  .iphone .overlap-8,
-  .iphone .overlap-9,
-  .iphone .overlap-10,
-  .iphone .overlap-13 {
+  .global-container .overlap-8,
+  .global-container .overlap-9,
+  .global-container .overlap-10,
+  .global-container .overlap-13 {
     visibility: hidden;
   }
 }
 
-.box {
+.mobile-menu-container {
   height: 368px;
   position: relative;
   width: 50%;
@@ -2144,12 +2144,12 @@ select {
 }
 
 @media screen and (min-width: 480px) {
-  .iphone .box {
+  .global-container .mobile-menu-container {
     visibility: hidden;
   }
 }
 
-.iphone-menu {
+.global-container-menu {
   height: 368px;
   right: -200%;
   position: absolute;
@@ -2159,17 +2159,17 @@ select {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.iphone-menu.closed {
+.global-container-menu.closed {
   right: -200%;
   transition: right 0.3s ease-in-out;
 }
 
-.iphone-menu.open {
+.global-container-menu.open {
   right: -100%;
   transition: right 0.3s ease-in-out;
 }
 
-.box .overlap-group {
+.mobile-menu-container .overlap-group {
   background-color: #1c1c1c;
   height: 388px;
   right: 0;
@@ -2179,7 +2179,7 @@ select {
   
 }
 
-.box .text-wrapper {
+.mobile-menu-container .text-wrapper-1 {
   color: #ffffff;
   font-family: "Roboto-Regular", Helvetica;
   font-size: 22px;
@@ -2193,7 +2193,7 @@ select {
   width: 199px;
 }
 
-.box .divX {
+.mobile-menu-container .text-wrapper-2 {
   color: #ffffff;
   font-family: "Roboto-Regular", Helvetica;
   font-size: 22px;
@@ -2207,7 +2207,7 @@ select {
   width: 199px;
 }
 
-.box .text-wrapper-2 {
+.mobile-menu-container .text-wrapper-3 {
   color: #ffffff;
   font-family: "Roboto-Regular", Helvetica;
   font-size: 22px;
@@ -2221,7 +2221,7 @@ select {
   width: 199px;
 }
 
-.box .text-wrapper-3 {
+.mobile-menu-container .text-wrapper-4 {
   color: #ffffff;
   font-family: "Roboto-Regular", Helvetica;
   font-size: 22px;
@@ -2235,7 +2235,7 @@ select {
   width: 199px;
 }
 
-.box .mobileMenuLine1 {
+.mobile-menu-container .mobileMenuLine1 {
   height: 0px;
   left: 6%;
   object-fit: cover;
@@ -2245,7 +2245,7 @@ select {
   border: 1px solid rgba(217, 217, 217, 0.3);
 }
   
-.box .mobileMenuLine2 {
+.mobile-menu-container .mobileMenuLine2 {
   height: 0px;
   left: 6%;
   object-fit: cover;
@@ -2255,7 +2255,7 @@ select {
   border: 1px solid rgba(217, 217, 217, 0.3);
 }
 
-.box .mobileMenuLine3 {
+.mobile-menu-container .mobileMenuLine3 {
   height: 0px;
   left: 6%;
   object-fit: cover;

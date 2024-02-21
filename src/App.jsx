@@ -15,8 +15,7 @@ import {
   getDriverAverages,
   matchAveragesWithTableResults,
   rateTableResults,
-  formatDate,
-  createSeasonResultsProps
+  formatDate
 } from "./utilities";
 
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -40,7 +39,6 @@ import toggleButton from "./assets/toggleButton.svg";
 import lineChart from "./assets/images/lineChart.png";
 import leftArrow from "./assets/leftArrow.svg";
 import rightArrow from "./assets/rightArrow.svg";
-import downArrow from "./assets/toggleDropArrow.svg";
 import nextRaceBox from "./assets/nextRaceBox.svg";
 import circuitMonza from "./assets/circuitMonza.svg";
 import circuitShanghai from "./assets/circuitShanghai.svg";
@@ -656,7 +654,7 @@ export default function App() {
       let nextCircuitType;
       let nextCircuitTypeColor;
 
-      /*Code below is temporarily commented out until the API updates its current season as "2024". Once update
+      /*:Code below is temporarily commented out until the API updates its current season as "2024". Once update
        occurs, enable code below and remove "= "bahrain"" from let nextCircuitId. This will re-activate automated 
        selection of nextCircuitId. Also, remove "= "2024-03-02"" from let rawNextCircuitEventDate to automate date selection.
       let lastRound = Number(lastFiveRaceResults[4]?.round);
@@ -1323,18 +1321,18 @@ export default function App() {
   
   return (
     <>
-      <div className="iphone">
-        <div className="div">
+      <div className="global-container">
+        <div className="main-container">
           <div className="overlap">
             <div className="overlap-group">
 
-              <div className="box"> 
-                <div className={`iphone-menu ${isMenuOpen ? 'open' : 'closed'}`}>
+              <div className="mobile-menu-container"> 
+                <div className={`global-container-menu ${isMenuOpen ? 'open' : 'closed'}`}>
                   <div className="overlap-group">
-                    <div className="text-wrapper" onClick={handleOpenDriversModal}>The Grid</div>
-                    <div className="divX" onClick={handleOpenScheduleModal}>Schedule</div>
-                    <div className="text-wrapper-2" onClick={handleOpenAboutModal}>About</div>
-                    <div className="text-wrapper-3" onClick={handleButtonClickMobile}>Features</div>
+                    <div className="text-wrapper-1" onClick={handleOpenDriversModal}>The Grid</div>
+                    <div className="text-wrapper-2" onClick={handleOpenScheduleModal}>Schedule</div>
+                    <div className="text-wrapper-3" onClick={handleOpenAboutModal}>About</div>
+                    <div className="text-wrapper-4" onClick={handleButtonClickMobile}>Features</div>
                     <div className="mobileMenuLine1" />
                     <div className="mobileMenuLine2" />
                     <div className="mobileMenuLine3" />
@@ -1354,7 +1352,7 @@ export default function App() {
               <div className="groupMobile">
                 <div className="overlap-2">
                   <p className="p">Live F1 driver data and form guide lets you predict results with confidence.</p>
-                  <div className="text-wrapper-2">The Final Lap</div>
+                  <div className="mainTitle">The Final Lap</div>
                   <div className="nextRaceBoxMobile">
                     <img className="nextRaceBoxImageMobile" alt="Rectangle" src={nextRaceBox} />
                     <div className="text-wrapperAMobile">Next Race</div>
@@ -1670,7 +1668,7 @@ export default function App() {
             onClose={handleCloseAboutModal}
             content={aboutModalContent}
           />
-          
+
       </div>
     </>
   );
