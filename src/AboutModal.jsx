@@ -4,9 +4,9 @@ import Modal from 'react-modal';
 const AboutModal = ({ isOpen, onClose, content }) => {
   const customStyles = {
     content: {
-      backgroundColor: '#17181a', // Set your desired background color
+      backgroundColor: '#17181a',
       fontFamily: "Roboto",
-      width: '90%', // Adjust as needed
+      width: '90%',
       height: '90%',
       margin: 'auto',
       alignContent: 'center',
@@ -37,7 +37,7 @@ const AboutModal = ({ isOpen, onClose, content }) => {
     content: {
       backgroundColor: '#17181a',
       left: '5%',
-      width: '80%', // Adjust for smaller screens
+      width: '80%',
       border: '2px solid #87C75F',
       borderRadius: '6px',
     },

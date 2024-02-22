@@ -100,19 +100,19 @@ export default function App() {
   const isLargeScreen = useMediaQuery('(min-width:1700px)');
   const isLargePhone = useMediaQuery('(min-width:400px) and (max-width:480px)');
 
-  const [line5Style, setLine5Style] = useState({
+  const [toggleLine1Style, setToggleLine1Style] = useState({
     width: 113.20,
     height: 0,
     border: '1px #87C75F solid',
   });
 
-  const [line7Style, setLine7Style] = useState({
+  const [toggleLine2Style, setToggleLine2Style] = useState({
     width: 126.696,
     height: 0,
     border: '1px #405E2C solid',
   });
 
-  const [line8Style, setLine8Style] = useState({
+  const [toggleLine3Style, setToggleLine3Style] = useState({
     width: 105.92,
     height: 0,
     border: '1px #405E2C solid',
@@ -326,7 +326,6 @@ export default function App() {
     smoothscroll.polyfill();
   }, []);
 
-  // Event handler for dropdown change
   const handleDropdownChange = (event) => {
     const selectedValue = event.target.value;
     setSelectedRace(selectedValue);
@@ -497,9 +496,9 @@ export default function App() {
       setShowFeature1(false);
       setShowFeature3(false);
 
-      setLine5Style({height: 0, border: '1.50px #87C75F solid'});
-      setLine7Style({height: 0, border: '1.50px #405E2C solid'});
-      setLine8Style({height: 0, border: '1.50px #405E2C solid'});
+      setToggleLine1Style({height: 0, border: '1.50px #87C75F solid'});
+      setToggleLine2Style({height: 0, border: '1.50px #405E2C solid'});
+      setToggleLine3Style({height: 0, border: '1.50px #405E2C solid'});
     };
 
     const handleInitialScreenWidth = () => {
@@ -559,9 +558,9 @@ export default function App() {
     setShowCluster2(false);
     setShowCluster3(false);
 
-    setLine5Style({height: 0, border: '1.50px #87C75F solid'});
-    setLine7Style({height: 0, border: '1.50px #405E2C solid'});
-    setLine8Style({height: 0, border: '1.50px #405E2C solid'});
+    setToggleLine1Style({height: 0, border: '1.50px #87C75F solid'});
+    setToggleLine2Style({height: 0, border: '1.50px #405E2C solid'});
+    setToggleLine3Style({height: 0, border: '1.50px #405E2C solid'});
   };
 
   const showOnlyCluster2 = () => {
@@ -571,9 +570,9 @@ export default function App() {
     setShowCluster1(false);
     setShowCluster3(false);
 
-    setLine5Style({height: 0, border: '1.50px #405E2C solid'});
-    setLine7Style({height: 0, border: '1.50px #87C75F solid'});
-    setLine8Style({height: 0, border: '1.50px #405E2C solid'});
+    setToggleLine1Style({height: 0, border: '1.50px #405E2C solid'});
+    setToggleLine2Style({height: 0, border: '1.50px #87C75F solid'});
+    setToggleLine3Style({height: 0, border: '1.50px #405E2C solid'});
   };
 
   const showOnlyCluster3 = () => {
@@ -583,9 +582,9 @@ export default function App() {
     setShowCluster1(false);
     setShowCluster2(false);
 
-    setLine5Style({height: 0, border: '1.50px #405E2C solid'});
-    setLine7Style({height: 0, border: '1.50px #405E2C solid'});
-    setLine8Style({height: 0, border: '1.50px #87C75F solid'});
+    setToggleLine1Style({height: 0, border: '1.50px #405E2C solid'});
+    setToggleLine2Style({height: 0, border: '1.50px #405E2C solid'});
+    setToggleLine3Style({height: 0, border: '1.50px #87C75F solid'});
   };
 
   const showOnlyFeature1 = () => {
@@ -1401,46 +1400,46 @@ export default function App() {
           </div>
           <img className="nextRaceBoxImageDesktop" alt="Rectangle" src={nextRaceBox} />
           
-          <div className="text-wrapper-10">Race Outlook</div>
-          <div className="raceOutlookLine" />
+          <div className="table-header">Race Outlook</div>
+          <div className="table-header-line" />
           
           <div className={`desktop-sticky-menu ${showDesktopMenu && 'desktop-sticky-menu__visible'}`}>
-            <div className="text-wrapper-18" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>The Grid</div>
-            <div className="text-wrapper-19" onClick={handleOpenScheduleModal} style={{ cursor: 'pointer' }}>Schedule</div>
-            <div className="text-wrapper-21" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
-            <div className="text-wrapper-20" onClick={handleOpenAboutModal} style={{ cursor: 'pointer' }}>About</div>
-            <div className="desktopMenuLine1" />
-            <div className="desktopMenuLine2" />
-            <div className="desktopMenuLine3" />
-            <div className="desktopMenuLine4" />
-            <div className="desktopMenuLine5" />
-            <img className="group-3" alt="Site Logo" src={siteLogoDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
+            <div className="sticky-menu-text-wrapper-1" onClick={handleOpenDriversModal} style={{ cursor: 'pointer' }}>The Grid</div>
+            <div className="sticky-menu-text-wrapper-2" onClick={handleOpenScheduleModal} style={{ cursor: 'pointer' }}>Schedule</div>
+            <div className="sticky-menu-text-wrapper-3" onClick={handleButtonClick} style={{ cursor: 'pointer' }}>Features</div>
+            <div className="sticky-menu-text-wrapper-4" onClick={handleOpenAboutModal} style={{ cursor: 'pointer' }}>About</div>
+            <div className="desktop-menu-line-1" />
+            <div className="desktop-menu-line-2" />
+            <div className="desktop-menu-line-3" />
+            <div className="desktop-menu-line-4" />
+            <div className="desktop-menu-line-5" />
+            <img className="desktop-site-logo" alt="Site Logo" src={siteLogoDesktop} onClick={reloadPage} style={{ cursor: 'pointer' }} />
           </div>
 
-          <div className="overlap-7">
-            <div className="rectangle-6" onClick={showOnlyCluster1}>
-              <img className="toggleButton" alt="Rectangle" src={toggleButton} />
-              <div className="text-wrapper-11">Recent Form</div>
-              <div className="line-5" style={line5Style}></div>
-              <img className="toggleButton1Icon" src={lineChart} />
+          <div className="toggle-button-1-container">
+            <div className="toggle-button-1" onClick={showOnlyCluster1}>
+              <img className="toggle-button-1-background" alt="Rectangle" src={toggleButton} />
+              <div className="toggle-button-1-text-wrapper">Recent Form</div>
+              <div className="toggle-button-1-line" style={toggleLine1Style}></div>
+              <img className="toggle-button-1-icon" src={lineChart} />
             </div>
           </div>
           
-          <div className="overlap-11">
-            <div className="rectangle-12" onClick={showOnlyCluster2}>
-              <img className="toggleButton2" alt="Rectangle" src={toggleButton} />
-              <div className="text-wrapper-12">Circuit History</div>
-              <div className="line-7" style={line7Style}></div>
-              <img className="toggleButton2Status" src={nextCircuitFlag} />
+          <div className="toggle-button-2-container">
+            <div className="toggle-button-2" onClick={showOnlyCluster2}>
+              <img className="toggle-button-2-background" alt="Rectangle" src={toggleButton} />
+              <div className="toggle-button-2-text-wrapper">Circuit History</div>
+              <div className="toggle-button-2-line" style={toggleLine2Style}></div>
+              <img className="toggle-button-2-status" src={nextCircuitFlag} />
             </div>
           </div>
 
-          <div className="overlap-12">
-            <div className="rectangle-14" onClick={showOnlyCluster3}>
-              <img className="toggleButton3" alt="Rectangle" src={toggleButton} />
-              <div className="text-wrapper-13">Circuit Type</div>
-              <div className="line-8" style={line8Style}></div>
-              <div className="toggleButton3Status" style={circuitTypeColor} >{nextCircuitTypeProperName}</div>
+          <div className="toggle-button-3-container">
+            <div className="toggle-button-3" onClick={showOnlyCluster3}>
+              <img className="toggle-button-3-background" alt="Rectangle" src={toggleButton} />
+              <div className="toggle-button-3-text-wrapper">Circuit Type</div>
+              <div className="toggle-button-3-line" style={toggleLine3Style}></div>
+              <div className="toggle-button-3-status" style={circuitTypeColor} >{nextCircuitTypeProperName}</div>
             </div>
           </div>
 

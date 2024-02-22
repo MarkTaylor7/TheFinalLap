@@ -944,7 +944,7 @@ body {
   }
 }
 
-.global-container .text-wrapper-18 {
+.global-container .sticky-menu-text-wrapper-1 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 26px;
@@ -958,11 +958,11 @@ body {
   width: 130px;
 }
 
-.global-container .text-wrapper-18:hover {
+.global-container .sticky-menu-text-wrapper-1:hover {
   color:#87C75F;
 }
 
-.global-container .text-wrapper-19 {
+.global-container .sticky-menu-text-wrapper-2 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 26px;
@@ -976,11 +976,11 @@ body {
   width: 120px;
 }
 
-.global-container .text-wrapper-19:hover {
+.global-container .sticky-menu-text-wrapper-2:hover {
   color:#87C75F;
 }
 
-.global-container .text-wrapper-20 {
+.global-container .sticky-menu-text-wrapper-3 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 26px;
@@ -994,11 +994,11 @@ body {
   width: 80px;
 }
 
-.global-container .text-wrapper-20:hover {
+.global-container .sticky-menu-text-wrapper-3:hover {
   color:#87C75F;
 }
 
-.global-container .text-wrapper-21 {
+.global-container .sticky-menu-text-wrapper-4 {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 26px;
@@ -1012,11 +1012,11 @@ body {
   width: 120px;
 }
 
-.global-container .text-wrapper-21:hover {
+.global-container .sticky-menu-text-wrapper-4:hover {
   color:#87C75F;
 }
 
-.global-container .desktopMenuLine1 {
+.global-container .desktop-menu-line-1 {
   height: 0px;
   left: 21px;
   object-fit: cover;
@@ -1027,7 +1027,7 @@ body {
   
 }
 
-.global-container .desktopMenuLine2 {
+.global-container .desktop-menu-line-2 {
   height: 0px;
   left: 21px;
   object-fit: cover;
@@ -1037,7 +1037,7 @@ body {
   border: 1px solid rgba(217, 217, 217, 0.3);
 }
 
-.global-container .desktopMenuLine3 {
+.global-container .desktop-menu-line-3 {
   height: 0px;
   left: 21px;
   object-fit: cover;
@@ -1047,7 +1047,7 @@ body {
   border: 1px solid rgba(217, 217, 217, 0.3);
 }
 
-.global-container .desktopMenuLine4 {
+.global-container .desktop-menu-line-4 {
   height: 0px;
   left: 21px;
   object-fit: cover;
@@ -1057,7 +1057,7 @@ body {
   border: 1px solid rgba(217, 217, 217, 0.3);
 }
 
-.global-container .desktopMenuLine5 {
+.global-container .desktop-menu-line-5 {
   height: 0px;
   left: 21px;
   object-fit: cover;
@@ -1067,7 +1067,7 @@ body {
   border: 1px solid rgba(217, 217, 217, 0.3);
 }
 
-.global-container .group-3 {
+.global-container .desktop-site-logo {
   height: 20.85%;
   left: 48px;
   position: absolute;
@@ -1476,7 +1476,7 @@ body {
 }
 
 
-.global-container .overlap-7 {
+.global-container .toggle-button-1-container {
   height: 142px;
   left: 3.8%;
   position: absolute;
@@ -1487,14 +1487,14 @@ body {
 }
 
 @media screen and (min-width: 480px) {
-  .global-container .overlap-7,
-  .global-container .overlap-11,
-  .global-container .overlap-12 {
+  .global-container .toggle-button-1-container,
+  .global-container .toggle-button-2-container,
+  .global-container .toggle-button-3-container {
     visibility: hidden;
   }
 }
 
-.global-container .text-wrapper-10 {
+.global-container .table-header {
   color: #ffffff;
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 26px;
@@ -1510,7 +1510,7 @@ body {
 }
 
 @media screen and (min-width: 481px) and (max-width: 1280px) {
-  .global-container .text-wrapper-10 {
+  .global-container .table-header {
     font-size: 50px;
     top: 954px;
     position: absolute;
@@ -1520,7 +1520,7 @@ body {
 }
 
 @media screen and (min-width: 1281px) {
-  .global-container .text-wrapper-10 {
+  .global-container .table-header {
     font-size: 50px;
     top: 950px;
     position: absolute;
@@ -1529,7 +1529,7 @@ body {
   }
 }
 
-.global-container .raceOutlookLine {
+.global-container .table-header-line {
   height: 0px;
   left: 50%;
   position: absolute;
@@ -1540,7 +1540,7 @@ body {
 }
 
 @media screen and (min-width: 1281px) {
-  .global-container .raceOutlookLine {
+  .global-container .table-header-line {
     height: 0px;
     left: 46%;
     position: absolute;
@@ -1552,12 +1552,12 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .global-container .raceOutlookLine {
+  .global-container .table-header-line {
     visibility: hidden;
   }
 }
 
-.global-container .rectangle-6 {
+.global-container .toggle-button-1 {
   background-color: #ffffff1c;
   border-radius: 4px;
   height: 45px;
@@ -1567,14 +1567,14 @@ body {
   width: 100%;
 }
 
-.global-container .toggleButton {
+.global-container .toggle-button-1-background {
   left: 0;
   position: absolute;
   top: 0px;
   width: 100%;
 }
 
-.global-container .text-wrapper-11 {
+.global-container .toggle-button-1-text-wrapper {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 18px;
@@ -1588,7 +1588,7 @@ body {
   width: 207px;
 }
 
-.global-container .line-5 {
+.global-container .toggle-button-1-line {
   height: 2px;
   left: 19px;
   position: absolute;
@@ -1596,7 +1596,7 @@ body {
   width: 113px;
 }
 
-.global-container .toggleButton1Icon {
+.global-container .toggle-button-1-icon {
   height: 23px;
   right: 5%;
   position: absolute;
@@ -1604,7 +1604,7 @@ body {
   width: 23px;
 }
 
-.global-container .text-wrapper-12 {
+.global-container .toggle-button-2-text-wrapper {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 18px;
@@ -1825,7 +1825,7 @@ body {
   height: 100px;
 }
 
-.global-container .overlap-11 {
+.global-container .toggle-button-2-container {
   height: 65px;
   left: 3.8%;
   position: absolute;
@@ -1833,7 +1833,7 @@ body {
   width: 93.6%;
 }
 
-.global-container .rectangle-12 {
+.global-container .toggle-button-2 {
   background-color: #ffffff1c;
   border-radius: 4px;
   height: 45px;
@@ -1843,7 +1843,7 @@ body {
   width: 100%;
 }
 
-.global-container .toggleButton2 {
+.global-container .toggle-button-2-background {
   left: 0;
   position: absolute;
   top: 0px;
@@ -1858,7 +1858,7 @@ body {
   width: 365px;
 }
 
-.global-container .text-wrapper-13 {
+.global-container .toggle-button-3-text-wrapper {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 18px;
@@ -1873,7 +1873,7 @@ body {
 }
 
 
-.global-container .line-7 {
+.global-container .toggle-button-2-line {
   height: 2px;
   left: 19px;
   position: absolute;
@@ -1881,7 +1881,7 @@ body {
   width: 127px;
 }
 
-.global-container .toggleButton2Status {
+.global-container .toggle-button-2-status {
   height: 32px;
   right: 5%;
   position: absolute;
@@ -1889,7 +1889,7 @@ body {
   width: 32px;
 }
 
-.global-container .toggleButton3Status {
+.global-container .toggle-button-3-status {
   font-size: 16px;
   font-weight: 500;
   height: 10px;
@@ -1906,7 +1906,7 @@ body {
   width: 22px;
 }
 
-.global-container .overlap-12 {
+.global-container .toggle-button-3-container {
   height: 65px;
   left: 3.8%;
   position: absolute;
@@ -1914,7 +1914,7 @@ body {
   width: 93.6%;
 }
 
-.global-container .rectangle-14 {
+.global-container .toggle-button-3 {
   background-color: #ffffff1c;
   border-radius: 4px;
   height: 45px;
@@ -1924,14 +1924,14 @@ body {
   width: 100%;
 }
 
-.global-container .toggleButton3 {
+.global-container .toggle-button-3-background {
   left: 0;
   position: absolute;
   top: 0px;
   width: 100%;
 }
 
-.global-container .line-8 {
+.global-container .toggle-button-3-line {
   height: 2px;
   left: 17px;
   position: absolute;
@@ -2266,11 +2266,11 @@ select {
 }
 
 .ReactModal__Overlay {
-  z-index: 1000; /* Adjust as needed */
+  z-index: 1000;
 }
 
 .ReactModal__Content {
-  max-height: 80vh; /* Adjust as needed */
+  max-height: 80vh;
   overflow-y: auto;
 }
 
