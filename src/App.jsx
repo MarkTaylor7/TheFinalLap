@@ -622,6 +622,10 @@ export default function App() {
     fetchEventList().then((results) => setEventList(results));
   }, []);
 
+  useEffect(() => {
+    console.log(currentSeasonRaceResults)
+  }, [currentSeasonRaceResults]);
+
   useEffect (() => {
     const fullNames = standings.map(function (element) {
       return `${element.Driver.givenName} ${element.Driver.familyName}`;
@@ -646,6 +650,10 @@ export default function App() {
     setLastFiveRaceResults(lastFiveRaceResults);
     setLastFiveRacesDataFetched(true);
   }, [currentSeasonRaceResults]);
+
+  useEffect(() => {
+    console.log(lastFiveRaceResults)
+  }, [lastFiveRaceResults]);
 
   // Set next race data
   useEffect(() => {
@@ -745,7 +753,8 @@ export default function App() {
   useEffect(() => {
     if (nextRaceType != "" && currentSeasonRaceResults.length != 0) {
       /**
-       * This function returns full race results for the last 5 races that have a circuit type which matches the next race's circuit type. (I.e. If the next race is a power circuit, it will get the last 5 race results from power circuits)
+       * This function returns full race results for the last 5 races that have a circuit type which matches the next race's circuit type.
+       * (I.e. If the next race is a power circuit, it will get the last 5 race results from power circuits)
        */
       function getCurrentSeasonTypeMatches(nextRaceType) {
         const typeMatch = circuitTypes.find(
