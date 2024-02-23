@@ -131,7 +131,11 @@ body {
 }
 
 .global-container .rectangle-2 {
-  background: linear-gradient(360deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    360deg,
+    rgb(0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   height: 132px;
   left: 0;
   position: absolute;
@@ -1735,15 +1739,38 @@ body {
   justify-content: center;
 }
 
-.card-section:nth-child(1) { background-color: #ffeb3b; border-top-left-radius: 2.5px; border-top-right-radius: 2.5px;}
-.card-section:nth-child(2) { background-color: #4caf50; }
-.card-section:nth-child(3) { background-color: #81c784 }
-.card-section:nth-child(4) { background-color: #c8e6c9; }
-.card-section:nth-child(5) { background-color: #ffffff; }
-.card-section:nth-child(6) { background-color: #ffcdd2; }
-.card-section:nth-child(7) { background-color: #e57373; }
-.card-section:nth-child(8) { background-color: #f44336; }
-.card-section:nth-child(9) { background-color: #212121; border-bottom: none; border-bottom-left-radius: 2.5px; border-bottom-right-radius: 2.5px; }
+.card-section:nth-child(1) {
+  background-color: #ffeb3b;
+  border-top-left-radius: 2.5px;
+  border-top-right-radius: 2.5px;
+}
+.card-section:nth-child(2) {
+  background-color: #4caf50;
+}
+.card-section:nth-child(3) {
+  background-color: #81c784
+}
+.card-section:nth-child(4) {
+  background-color: #c8e6c9;
+}
+.card-section:nth-child(5) {
+  background-color: #ffffff;
+}
+.card-section:nth-child(6) {
+  background-color: #ffcdd2;
+}
+.card-section:nth-child(7) {
+  background-color: #e57373;
+}
+.card-section:nth-child(8) {
+  background-color: #f44336;
+}
+.card-section:nth-child(9) {
+  background-color: #212121;
+  border-bottom: none;
+  border-bottom-left-radius: 2.5px;
+  border-bottom-right-radius: 2.5px;
+}
 
 .global-container .card-text {
   text-align: center;
@@ -1789,7 +1816,10 @@ body {
 }
 
 .card-column:nth-child(1) { background-color: #ffffff1c; }
-.card-column:nth-child(2) { background-color: #d9d9d9; border-top-left-radius: 0px; border-bottom-left-radius: 0px; }
+.card-column:nth-child(2) { background-color: #d9d9d9;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
 
 .global-container .card-column-child {
   width: 100%;
@@ -1808,17 +1838,23 @@ body {
 .card-column-child:nth-child(5) { border-radius: 0px; }
 .card-column-child:nth-child(6) { border-bottom-right-radius: 10px; }
 
-
-
 .global-container .card-column-child-text {
   font-family: "Bai Jamjuree", Helvetica;
   font-size: 20px;
   font-weight: 500px;
 }
 
-.card-column-child:nth-child(1) .card-column-child-text { color: red; font-size: 24px; }
-.card-column-child:nth-child(2) .card-column-child-text { color: orange; font-size: 22px; }
-.card-column-child:nth-child(3) .card-column-child-text { color: yellow; }
+.card-column-child:nth-child(1) .card-column-child-text {
+  color: red;
+  font-size: 24px;
+}
+.card-column-child:nth-child(2) .card-column-child-text {
+  color: orange;
+  font-size: 22px;
+}
+.card-column-child:nth-child(3) .card-column-child-text {
+  color: yellow;
+}
 
 .global-container .circuit-svg {
   width: 100px;
