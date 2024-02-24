@@ -1062,7 +1062,6 @@ export default function App() {
           }
           driverData.push(driver);
         });
-
         setDriverTableData(driverData);
       }
       mapNamesAndResultsToDrivers();
