@@ -622,9 +622,11 @@ export default function App() {
     fetchEventList().then((results) => setEventList(results));
   }, []);
 
+  /*Enable for debugging if needed when new season starts
   useEffect(() => {
     console.log(currentSeasonRaceResults)
   }, [currentSeasonRaceResults]);
+  */
 
   useEffect (() => {
     const fullNames = standings.map(function (element) {
@@ -642,23 +644,36 @@ export default function App() {
 
   // Update last five race results
   useEffect(() => {
-    const lastFiveRaceResults = currentSeasonRaceResults
-      .slice()
-      .reverse()
-      .slice(0, 5)
-      .reverse();
-    setLastFiveRaceResults(lastFiveRaceResults);
-    setLastFiveRacesDataFetched(true);
+    if (currentSeasonRaceResults.length >= 5) {
+      const lastFiveRaceResults = currentSeasonRaceResults.slice(-5);
+      setLastFiveRaceResults(lastFiveRaceResults);
+      setLastFiveRacesDataFetched(true);
+    } else if (currentSeasonRaceResults.length < 5) {
+      function getLastSeasonRaceResults() {
+        fetchPreviousSeasonRaceResults().then((results) =>
+            setPreviousSeasonRaceResults(results)
+        );
+      }
+      setTimeout(getLastSeasonRaceResults(), 1000);
+
+      const bothSeasonsRaceResults =
+            previousSeasonRaceResults.concat(
+              currentSeasonRaceResults
+            );
+      const results = bothSeasonsRaceResults.slice(-5);
+      setLastFiveRaceResults(results);  
+      setLastFiveRacesDataFetched(true);      
+    }
   }, [currentSeasonRaceResults]);
 
+  /*Enable for debugging if needed when new season starts
   useEffect(() => {
     console.log(lastFiveRaceResults)
   }, [lastFiveRaceResults]);
+  */
 
   // Set next race data
   useEffect(() => {
-    /*May need to add an if statement to handle situations when lastFiveRaceResults.length <5. See state setter
-    function for nextRaceTypeHistory*/
     if (lastFiveRaceResults.length === 5) {
       let nextCircuitId = "bahrain";
       let nextCircuitEventName;
@@ -800,11 +815,10 @@ export default function App() {
             previousSeasonsCircuitTypeMatchesMostRecent.concat(
               currentSeasonCircuitTypeMatches
             );
-          const results = bothSeasonsCircuitTypeMatchesMostRecent.slice(-5);
-          setNextRaceTypeHistory(results);
-          setNextRaceTypeDataFetched(true);
-
-    }
+        const results = bothSeasonsCircuitTypeMatchesMostRecent.slice(-5);
+        setNextRaceTypeHistory(results);
+        setNextRaceTypeDataFetched(true);
+      }
   }, [currentSeasonCircuitTypeMatches]);
 
   useEffect(() => {
@@ -969,7 +983,6 @@ export default function App() {
                   raceResults: [],
                   raceFinishes: [],
                   meanRaceFinish: ""
-                  //function: function goes here
                 },
                 {season: 2006,
                   raceResults: [],

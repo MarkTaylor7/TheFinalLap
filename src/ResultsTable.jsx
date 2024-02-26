@@ -125,7 +125,6 @@ export default function ResultsTable({data1, data2, data3, data4, data5, boolean
                 {data3.map((row, i) => (
                   <TableRow
                     key={i}
-                    //sx={{ height: 50, overflow: 'auto' }}
                   >
                     <TableCell component="th" scope="row" align="left" variant={isSmallScreen ? 'body2' : 'body1'} sx = {{px: isSmallScreen ? 0.5 : 1, fontSize: isSmallScreen ? '11px' : '14px', whiteSpace: 'nowrap', height: '100%', width: isSmallScreen ? 1/8 : 1/13, bgcolor: getBackgroundColor(row.name), color: getColor(row.name), borderBottom: '1px solid #606367', borderRight: '1px solid #606367', borderLeft: '1px solid #606367' }} >
                       <div style={{ fontFamily: 'Roboto' }}>{row.name.split(' ')[0]}</div>
