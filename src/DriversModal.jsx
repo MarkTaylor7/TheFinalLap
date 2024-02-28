@@ -129,7 +129,7 @@ const DriversModal = ({ isOpen, onClose, content }) => {
         </div> 
       </div>
       <div style={window.innerWidth <= 600 ? { ...customStyles.notesSection, ...smallScreenStyles.notesSection } : customStyles.notesSection}>
-        <li>Teams are listed in order of finishing position in the 2023 season. Max Verstappen and Red Bull Racing have won the last three driver's and constructor's championships.</li><br/>
+        <li>Teams are listed in order of finishing position in the 2023 season. Max Verstappen is seeking his fourth-consecutive World Driver's Championship. Red Bull Racing have won the last two World Constructors Championships.</li><br/>
         <li>This is the first season in F1 history that every team's driver line-up is unchanged from the end of the previous season.</li><br/>
         <li>
           In F1, each car is numbered. Since 2014, drivers have been allowed to choose their number, and they use it for the rest of their career.
