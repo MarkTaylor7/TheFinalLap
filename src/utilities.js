@@ -74,7 +74,6 @@ export async function fetchCurrentSeasonRaceResults() {
   return null;
 }
 
-
 //Will need to replace "2022" with "2023" when 2024 season starts
 export async function fetchPreviousSeasonRaceResults() {
   const url = "https://ergast.com/api/f1/2022/results.json?limit=500";
@@ -104,10 +103,8 @@ export async function fetchEventList() {
   return null;
 }
 
-/**
-     * This function fetches the full race results for the last 5 events held at the next race circuit
-     * (typically the last 5 years, with some exceptions due to COVID)
-     */
+/*This function fetches the full race results for the last 5 events held at the next race circuit
+(typically the last 5 years, with some exceptions due to COVID)*/
 export async function fetchNextTrackData(nextRace) {
   let url;
   
@@ -187,7 +184,6 @@ export function getDriverAverages(driverTableData, allCareerData) {
               };
             };  
           };
-      
       };
     }; 
   };
@@ -403,7 +399,6 @@ export function getBackgroundColor(data3) {
     case "Yuki Tsunoda":
     case "Daniel Ricciardo":
     case "Liam Lawson":
-    case "Nyck de Vries":
       color = "#2c1fb4";
       break; 
     case "Valtteri Bottas":
@@ -435,7 +430,6 @@ export function getColor(data3) {
     case "Yuki Tsunoda":
     case "Daniel Ricciardo":
     case "Liam Lawson":
-    case "Nyck de Vries":
       color = "#ffffff";
       break;
     default:
