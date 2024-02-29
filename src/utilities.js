@@ -76,7 +76,7 @@ export async function fetchCurrentSeasonRaceResults() {
 
 //Will need to replace "2022" with "2023" when 2024 season starts
 export async function fetchPreviousSeasonRaceResults() {
-  const url = "https://ergast.com/api/f1/2022/results.json?limit=500";
+  const url = "https://ergast.com/api/f1/2023/results.json?limit=500";
   try {
     const response = await fetch(url);
     const json = await response.json();

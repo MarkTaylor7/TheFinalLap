@@ -4,4 +4,4 @@ Remove placeholders for nextRaceCircuitId and rawNextCircuitEventDate
 Remove commmented code to enable auto selection of nextCircuitId and rawNextCircuitEventDate
 
 utilities.jsx
-Adjust url in fetchPreviousSeasonRaceResults so that it fetches 2023 race results
+Adjust url in fetchPreviousSeasonRaceResults so that it fetches 2023 race results - DONE
