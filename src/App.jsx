@@ -675,9 +675,9 @@ export default function App() {
   // Set next race data
   useEffect(() => {
     if (lastFiveRaceResults.length === 5) {
-      let nextCircuitId = "bahrain";
+      let nextCircuitId;
       let nextCircuitEventName;
-      let rawNextCircuitEventDate = "2024-03-02";
+      let rawNextCircuitEventDate;
       let rawNextCircuitEventFlag;
       let nextCircuitName;
       let nextRaceFlag;
@@ -686,7 +686,7 @@ export default function App() {
 
       /*:Code below is temporarily commented out until the API updates its current season as "2024". Once update
        occurs, enable code below and remove "= "bahrain"" from let nextCircuitId. This will re-activate automated 
-       selection of nextCircuitId. Also, remove "= "2024-03-02"" from let rawNextCircuitEventDate to automate date selection.
+       selection of nextCircuitId. Also, remove "= "2024-03-02"" from let rawNextCircuitEventDate to automate date selection.*/
       let lastRound = Number(lastFiveRaceResults[4]?.round);
       let nextRound = (lastRound += 1);
       for (let i = 0; i < eventList.length; i++) {
@@ -695,7 +695,7 @@ export default function App() {
           rawNextCircuitEventDate = eventList[i].date;
         }
       }
-      */
+      
       let nextCircuitEventDate = formatDate(rawNextCircuitEventDate)
       
       for (let i = 0; i < circuitTypes.length; i++) {
