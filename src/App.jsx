@@ -622,18 +622,10 @@ export default function App() {
     fetchEventList().then((results) => setEventList(results));
   }, []);
 
-  /*Enable for debugging if needed when new season starts
-  useEffect(() => {
-    console.log(currentSeasonRaceResults)
-  }, [currentSeasonRaceResults]);
-  */
-
   useEffect (() => {
     const fullNames = standings.map(function (element) {
       return `${element.Driver.givenName} ${element.Driver.familyName}`;
     });
-    //Remove the line below after 2024 season starts to ensure no limit on number of drivers reported in table
-    fullNames.length = 21;
     setNames(fullNames);
 
     const driverIds = standings.map(function (element) {
@@ -665,12 +657,6 @@ export default function App() {
       setLastFiveRacesDataFetched(true);      
     }
   }, [currentSeasonRaceResults]);
-
-  /*Enable for debugging if needed when new season starts
-  useEffect(() => {
-    console.log(lastFiveRaceResults)
-  }, [lastFiveRaceResults]);
-  */
 
   // Set next race data
   useEffect(() => {
@@ -1033,6 +1019,11 @@ export default function App() {
                   raceResults: [],
                   raceFinishes: [],
                   meanRaceFinish: ""
+                },
+                {season: 2024,
+                  raceResults: [],
+                  raceFinishes: [],
+                  meanRaceFinish: ""
                 }
               ]
             }
@@ -1093,6 +1084,10 @@ export default function App() {
 
   useEffect (() => {
     rateTableResults(driverTableData)
+  }, [driverTableData]);
+
+  useEffect (() => {
+    console.log(driverTableData)
   }, [driverTableData]);
 
 

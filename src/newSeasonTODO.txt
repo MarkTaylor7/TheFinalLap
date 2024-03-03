@@ -1,7 +1,7 @@
 App.jsx
-Remove driver quantity limiter: "fullNames.length = 21;"
-Remove placeholders for nextRaceCircuitId and rawNextCircuitEventDate
-Remove commmented code to enable auto selection of nextCircuitId and rawNextCircuitEventDate
+Remove placeholders for nextRaceCircuitId and rawNextCircuitEventDate - DONE
+Remove commmented code to enable auto selection of nextCircuitId and rawNextCircuitEventDate - DONE
+In mapNamesAndResultsToDrivers(), add the new season to careerData.raceResultsBySeason - DONE
 
 utilities.jsx
 Adjust url in fetchPreviousSeasonRaceResults so that it fetches 2023 race results - DONE
