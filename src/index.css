@@ -492,6 +492,14 @@ body {
   width: 28%;
 }
 
+@media screen and (max-width: 370px) {
+  .global-container .text-wrapperDMobile,
+  .global-container .text-wrapperEMobile,
+  .global-container .text-wrapperFMobile {
+    font-size: 12px;
+  }
+}
+
 .global-container .p {
   color: #ffffff;
   font-family: "Roboto", Helvetica;
