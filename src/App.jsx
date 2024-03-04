@@ -280,7 +280,8 @@ export default function App() {
         <br/><br/>For more detailed info on this website's features and functionality, please see the <a href="https://github.com/MarkTaylor7/TheFinalLap?tab=readme-ov-file#readme" aria-label="The Final Lap README file" target="_blank" style={{color: '#87C75F', textDecoration: 'underline', }}>README</a>. I also discuss my motivation for building this project, the challenges I encountered, technologies used, FAQ section, and future developments.<br/>
         <br/>
         <div className="aboutModalTextHeader" style={{color: '#87C75F', fontFamily: "Bai Jamjuree", fontSize: isSmallScreen ? '24px' :"30px", textAlign: 'center' }}>Resources and Partners</div><br/>
-        All of this data has to come from somewhere, so I have integrated the Ergast Developer API - which provides data for every driver, team, and race since 1950. This project would not have been possible without this excellent resource. I also used Country Flags API for consistent formatting of the many flag images on this site.
+        All of this data has to come from somewhere, so I have integrated the <a href="https://ergast.com/mrd" aria-label="Ergast API" target="_blank" style={{color: '#87C75F', textDecoration: 'underline', }}>Ergast API</a> - which provides data for every driver, team, and race since 1950. This project would not have been possible without this excellent resource.
+        I also used <a href="https://flagsapi.com/" aria-label="Country Flags API" target="_blank" style={{color: '#87C75F', textDecoration: 'underline', }}>Country Flags API</a> for consistent formatting of the many flag images on this site.
         <br/>
         <br/>
         Design credit goes to Abigail Z, who I was fortunate enough to collaborate with during development of this project. She has elevated the style and user experience of <i>The Final Lap</i> to a level I never could have approached alone.
