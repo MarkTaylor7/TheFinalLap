@@ -745,7 +745,6 @@ export default function App() {
     if (nextRace != "") {
       fetchNextTrackData(nextRace).then((results) => setNextRaceHistory(results));
       setNextRaceDataFetched(true);
-      setTableDataPopulated(true);
       const currentDate = new Date();
       const formattedDate = currentDate.toLocaleString();
       setLastUpdateTime(formattedDate);
@@ -1084,7 +1083,8 @@ export default function App() {
   }, [driverTableData, lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
 
   useEffect (() => {
-    rateTableResults(driverTableData)
+    rateTableResults(driverTableData);
+    setTableDataPopulated(true);
   }, [driverTableData]);
 
   function test() {
@@ -1096,7 +1096,11 @@ export default function App() {
   useEffect (() => {
     test()
   }, [tableDataPopulated]);
-  
+
+  useEffect (() => {
+    console.log(allTableDataPopulated)
+  }, [allTableDataPopulated]);
+
   function formatRow(
     name,
     fiveRacesAgo,
