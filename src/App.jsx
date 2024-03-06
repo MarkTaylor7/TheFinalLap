@@ -624,6 +624,18 @@ export default function App() {
   }, []);
 
   useEffect (() => {
+    console.log(standings)
+  }, [standings]);
+
+  useEffect (() => {
+    console.log(currentSeasonRaceResults)
+  }, [currentSeasonRaceResults]);
+  
+  useEffect (() => {
+    console.log(eventList)
+  }, [eventList]);
+
+  useEffect (() => {
     const fullNames = standings.map(function (element) {
       return `${element.Driver.givenName} ${element.Driver.familyName}`;
     });
@@ -635,6 +647,25 @@ export default function App() {
     setDriverIds(driverIds);
   }, [standings]);
 
+  useEffect (() => {
+    console.log(names)
+  }, [names]);
+
+  useEffect (() => {
+    console.log(driverIds)
+  }, [driverIds]);
+
+  useEffect(() => {
+    if (currentSeasonRaceResults.length < 5) {
+      function getLastSeasonRaceResults() {
+        fetchPreviousSeasonRaceResults().then((results) =>
+            setPreviousSeasonRaceResults(results)
+        );
+      }
+      setTimeout(getLastSeasonRaceResults(), 1000);
+    }
+  }, [currentSeasonRaceResults]);
+
   // Update last five race results
   useEffect(() => {
     if (currentSeasonRaceResults.length >= 5) {
@@ -642,13 +673,6 @@ export default function App() {
       setLastFiveRaceResults(lastFiveRaceResults);
       setLastFiveRacesDataFetched(true);
     } else if (currentSeasonRaceResults.length < 5) {
-      function getLastSeasonRaceResults() {
-        fetchPreviousSeasonRaceResults().then((results) =>
-            setPreviousSeasonRaceResults(results)
-        );
-      }
-      setTimeout(getLastSeasonRaceResults(), 1000);
-
       const bothSeasonsRaceResults =
             previousSeasonRaceResults.concat(
               currentSeasonRaceResults
@@ -658,6 +682,14 @@ export default function App() {
       setLastFiveRacesDataFetched(true);      
     }
   }, [currentSeasonRaceResults]);
+
+  useEffect (() => {
+    console.log(previousSeasonRaceResults)
+  }, [previousSeasonRaceResults]);
+
+  useEffect (() => {
+    console.log(lastFiveRaceResults)
+  }, [lastFiveRaceResults]);
 
   // Set next race data
   useEffect(() => {
