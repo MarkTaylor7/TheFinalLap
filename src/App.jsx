@@ -623,14 +623,6 @@ export default function App() {
     fetchEventList().then((results) => setEventList(results));
   }, []);
 
-  useEffect(() => {
-    console.log(currentSeasonRaceResults);
-  }, [currentSeasonRaceResults]);
-
-  useEffect(() => {
-    console.log(eventList);
-  }, [eventList]);
-
   useEffect (() => {
     const fullNames = standings.map(function (element) {
       return `${element.Driver.givenName} ${element.Driver.familyName}`;
@@ -667,17 +659,9 @@ export default function App() {
     }
   }, [currentSeasonRaceResults]);
 
-  useEffect(() => {
-    console.log(previousSeasonRaceResults)
-  }, [previousSeasonRaceResults]);
-
-  useEffect(() => {
-    console.log(lastFiveRaceResults)
-  }, [lastFiveRaceResults]);
-
   // Set next race data
   useEffect(() => {
-    if (lastFiveRaceResults.length === 5) {
+    if (lastFiveRaceResults.length === 5 && eventList != "") {
       let nextCircuitId;
       let nextCircuitEventName;
       let rawNextCircuitEventDate;
@@ -1101,10 +1085,6 @@ export default function App() {
 
   useEffect (() => {
     rateTableResults(driverTableData)
-  }, [driverTableData]);
-
-  useEffect (() => {
-    console.log(driverTableData)
   }, [driverTableData]);
 
   function test() {
