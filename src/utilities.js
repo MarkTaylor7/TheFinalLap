@@ -378,6 +378,8 @@ export function getBackgroundColor(data3) {
       break;
     case "Charles Leclerc":
     case "Carlos Sainz":
+    case "Oliver Bearman":
+    case "Ollie Bearman":
       color = "#e6002a";
       break;
     case "Lando Norris":
@@ -427,6 +429,8 @@ export function getColor(data3) {
     case "Sergio Pérez":
     case "Charles Leclerc":
     case "Carlos Sainz":
+    case "Oliver Bearman":
+    case "Ollie Bearman":
     case "Yuki Tsunoda":
     case "Daniel Ricciardo":
     case "Liam Lawson":
