@@ -650,6 +650,7 @@ export default function App() {
     console.log(previousSeasonRaceResults)
   }, [previousSeasonRaceResults]);
 
+  
   // Update last five race results
   useEffect(() => {
     if (currentSeasonRaceResults.length >= 5) {
