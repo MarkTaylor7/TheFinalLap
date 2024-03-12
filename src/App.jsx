@@ -661,7 +661,7 @@ export default function App() {
       setLastFiveRaceResults(results);  
       setLastFiveRacesDataFetched(true);      
     }
-  }, [currentSeasonRaceResults]);
+  }, [names, standings, currentSeasonRaceResults]);
 
   useEffect(() => {
     console.log(lastFiveRaceResults)
