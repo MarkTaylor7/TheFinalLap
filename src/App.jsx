@@ -621,7 +621,18 @@ export default function App() {
     );
 
     fetchEventList().then((results) => setEventList(results));
+
+    function getLastSeasonRaceResults() {
+      fetchPreviousSeasonRaceResults().then((results) =>
+          setPreviousSeasonRaceResults(results)
+      );
+    }
+    getLastSeasonRaceResults();
   }, []);
+
+  useEffect(() => {
+    console.log(currentSeasonRaceResults)
+  }, [currentSeasonRaceResults]);
 
   useEffect (() => {
     const fullNames = standings.map(function (element) {
@@ -635,27 +646,13 @@ export default function App() {
     setDriverIds(driverIds);
   }, [standings]);
 
-  useEffect(() => {
-      function getLastSeasonRaceResults() {
-        fetchPreviousSeasonRaceResults().then((results) =>
-            setPreviousSeasonRaceResults(results)
-        );
-      }
-      getLastSeasonRaceResults();
-    }, [currentSeasonRaceResults]);
-
-  useEffect(() => {
-    console.log(previousSeasonRaceResults)
-  }, [previousSeasonRaceResults]);
-
-
   // Update last five race results
   useEffect(() => {
-    if (currentSeasonRaceResults.length >= 5) {
+    if (currentSeasonRaceResults.length >= 5 && previousSeasonRaceResults.length !== 0) {
       const lastFiveRaceResults = currentSeasonRaceResults.slice(-5);
       setLastFiveRaceResults(lastFiveRaceResults);
       setLastFiveRacesDataFetched(true);
-    } else if (currentSeasonRaceResults.length < 5) {
+    } else if (currentSeasonRaceResults.length < 5 && previousSeasonRaceResults.length !== 0) {
       const bothSeasonsRaceResults =
             previousSeasonRaceResults.concat(
               currentSeasonRaceResults
@@ -664,7 +661,7 @@ export default function App() {
       setLastFiveRaceResults(results);  
       setLastFiveRacesDataFetched(true);      
     }
-  }, [currentSeasonRaceResults, previousSeasonRaceResults]);
+  }, [currentSeasonRaceResults]);
 
   useEffect(() => {
     console.log(lastFiveRaceResults)
@@ -758,6 +755,10 @@ export default function App() {
   useEffect(() => {
     getNextCircuitProperName (nextRace, nextRaceType)
   }, [nextRace, nextRaceType]);
+
+  useEffect(() => {
+    console.log(nextCircuitProperName)
+  }, [nextCircuitProperName]);
 
   // Update next race history
   useEffect(() => {
