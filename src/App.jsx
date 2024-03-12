@@ -764,11 +764,14 @@ export default function App() {
   // Update next race history
   useEffect(() => {
     if (nextRace != "") {
-      fetchNextTrackData(nextRace).then((results) => setNextRaceHistory(results));
-      setNextRaceDataFetched(true);
-      const currentDate = new Date();
-      const formattedDate = currentDate.toLocaleString();
-      setLastUpdateTime(formattedDate);
+      setTimeout(() => {
+        fetchNextTrackData(nextRace)
+          .then((results) => setNextRaceHistory(results));      
+        setNextRaceDataFetched(true);
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleString();
+        setLastUpdateTime(formattedDate);
+      }, 1000);
     };
   }, [nextRace]);
 
