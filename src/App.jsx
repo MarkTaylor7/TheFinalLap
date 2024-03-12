@@ -661,7 +661,7 @@ export default function App() {
       setLastFiveRaceResults(results);  
       setLastFiveRacesDataFetched(true);      
     }
-  }, [names, standings, currentSeasonRaceResults]);
+  }, [currentSeasonRaceResults, previousSeasonRaceResults]);
 
   useEffect(() => {
     console.log(lastFiveRaceResults)
@@ -736,6 +736,10 @@ export default function App() {
   useEffect(() => {
     console.log(nextRaceType)
   }, [nextRaceType]);
+
+  useEffect(() => {
+    console.log(circuitTypeColor)
+  }, [circuitTypeColor]);
 
   function getNextCircuitProperName (nextRace, nextRaceType) {
     let nextCircuitName;
