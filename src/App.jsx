@@ -636,15 +636,13 @@ export default function App() {
   }, [standings]);
 
   useEffect(() => {
-    if (currentSeasonRaceResults.length < 5) {
       function getLastSeasonRaceResults() {
         fetchPreviousSeasonRaceResults().then((results) =>
             setPreviousSeasonRaceResults(results)
         );
       }
       getLastSeasonRaceResults();
-    }
-  }, [currentSeasonRaceResults]);
+    }, [currentSeasonRaceResults]);
 
   useEffect(() => {
     console.log(previousSeasonRaceResults)
@@ -666,7 +664,7 @@ export default function App() {
       setLastFiveRaceResults(results);  
       setLastFiveRacesDataFetched(true);      
     }
-  }, [currentSeasonRaceResults, previousSeasonRaceResults]);
+  }, [currentSeasonRaceResults]);
 
   useEffect(() => {
     console.log(lastFiveRaceResults)
