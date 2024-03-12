@@ -646,13 +646,17 @@ export default function App() {
     }
   }, [currentSeasonRaceResults]);
 
+  useEffect(() => {
+    console.log(previousSeasonRaceResults)
+  }, [previousSeasonRaceResults]);
+
   // Update last five race results
   useEffect(() => {
     if (currentSeasonRaceResults.length >= 5) {
       const lastFiveRaceResults = currentSeasonRaceResults.slice(-5);
       setLastFiveRaceResults(lastFiveRaceResults);
       setLastFiveRacesDataFetched(true);
-    } else if (currentSeasonRaceResults.length < 5) {
+    } else if (currentSeasonRaceResults.length < 5 && previousSeasonRaceResults != "") {
       const bothSeasonsRaceResults =
             previousSeasonRaceResults.concat(
               currentSeasonRaceResults
@@ -661,7 +665,11 @@ export default function App() {
       setLastFiveRaceResults(results);  
       setLastFiveRacesDataFetched(true);      
     }
-  }, [currentSeasonRaceResults, previousSeasonRaceResults]);
+  }, [currentSeasonRaceResults]);
+
+  useEffect(() => {
+    console.log(lastFiveRaceResults)
+  }, [lastFiveRaceResults]);
 
   // Set next race data
   useEffect(() => {
@@ -724,6 +732,14 @@ export default function App() {
       setCircuitTypeColor(nextCircuitTypeColor);
     }
   }, [eventList, lastFiveRaceResults]);
+
+  useEffect(() => {
+    console.log(nextEventCircuit)
+  }, [nextEventCircuit]);
+
+  useEffect(() => {
+    console.log(nextRaceType)
+  }, [nextRaceType]);
 
   function getNextCircuitProperName (nextRace, nextRaceType) {
     let nextCircuitName;
