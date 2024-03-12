@@ -650,14 +650,14 @@ export default function App() {
     console.log(previousSeasonRaceResults)
   }, [previousSeasonRaceResults]);
 
-  
+
   // Update last five race results
   useEffect(() => {
-    if (currentSeasonRaceResults.length >= 5) {
+    if (currentSeasonRaceResults.length >= 5 && previousSeasonRaceResults.length > 0) {
       const lastFiveRaceResults = currentSeasonRaceResults.slice(-5);
       setLastFiveRaceResults(lastFiveRaceResults);
       setLastFiveRacesDataFetched(true);
-    } else if (currentSeasonRaceResults.length < 5 && previousSeasonRaceResults != "") {
+    } else if (currentSeasonRaceResults.length < 5 && previousSeasonRaceResults.length > 0) {
       const bothSeasonsRaceResults =
             previousSeasonRaceResults.concat(
               currentSeasonRaceResults
