@@ -642,7 +642,7 @@ export default function App() {
             setPreviousSeasonRaceResults(results)
         );
       }
-      setTimeout(getLastSeasonRaceResults(), 1000);
+      getLastSeasonRaceResults();
     }
   }, [currentSeasonRaceResults]);
 
@@ -653,11 +653,11 @@ export default function App() {
 
   // Update last five race results
   useEffect(() => {
-    if (currentSeasonRaceResults.length >= 5 && previousSeasonRaceResults.length > 0) {
+    if (currentSeasonRaceResults.length >= 5) {
       const lastFiveRaceResults = currentSeasonRaceResults.slice(-5);
       setLastFiveRaceResults(lastFiveRaceResults);
       setLastFiveRacesDataFetched(true);
-    } else if (currentSeasonRaceResults.length < 5 && previousSeasonRaceResults.length > 0) {
+    } else if (currentSeasonRaceResults.length < 5) {
       const bothSeasonsRaceResults =
             previousSeasonRaceResults.concat(
               currentSeasonRaceResults
