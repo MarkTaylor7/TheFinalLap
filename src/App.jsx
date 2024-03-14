@@ -663,6 +663,7 @@ export default function App() {
     }
   }, [currentSeasonRaceResults, previousSeasonRaceResults]);
 
+  
   useEffect(() => {
     console.log(lastFiveRaceResults)
   }, [lastFiveRaceResults]);
