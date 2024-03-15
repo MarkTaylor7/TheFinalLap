@@ -616,9 +616,7 @@ export default function App() {
   useEffect(() => {
     fetchCurrentStandings().then((results) => setStandings(results));
 
-    fetchCurrentSeasonRaceResults().then((results) =>
-      setCurrentSeasonRaceResults(results)
-    );
+    
 
     fetchEventList().then((results) => setEventList(results));
 
@@ -628,6 +626,10 @@ export default function App() {
       );
     }
     getLastSeasonRaceResults();
+
+    fetchCurrentSeasonRaceResults().then((results) =>
+      setCurrentSeasonRaceResults(results)
+    );
   }, []);
 
   useEffect(() => {
@@ -661,7 +663,7 @@ export default function App() {
       setLastFiveRaceResults(results);  
       setLastFiveRacesDataFetched(true);      
     }
-  }, [currentSeasonRaceResults, previousSeasonRaceResults]);
+  }, [currentSeasonRaceResults]);
 
   
   useEffect(() => {
