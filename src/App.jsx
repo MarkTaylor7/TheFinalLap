@@ -632,10 +632,6 @@ export default function App() {
     );
   }, []);
 
-  useEffect(() => {
-    console.log(currentSeasonRaceResults)
-  }, [currentSeasonRaceResults]);
-
   useEffect (() => {
     const fullNames = standings.map(function (element) {
       return `${element.Driver.givenName} ${element.Driver.familyName}`;
@@ -664,10 +660,6 @@ export default function App() {
       setLastFiveRacesDataFetched(true);      
     }
   }, [currentSeasonRaceResults, previousSeasonRaceResults]);
-
-  useEffect(() => {
-    console.log(lastFiveRaceResults)
-  }, [lastFiveRaceResults]);
 
   // Set next race data
   useEffect(() => {
@@ -731,18 +723,6 @@ export default function App() {
     }
   }, [eventList, lastFiveRaceResults]);
 
-  useEffect(() => {
-    console.log(nextEventCircuit)
-  }, [nextEventCircuit]);
-
-  useEffect(() => {
-    console.log(nextRaceType)
-  }, [nextRaceType]);
-
-  useEffect(() => {
-    console.log(circuitTypeColor)
-  }, [circuitTypeColor]);
-
   function getNextCircuitProperName (nextRace, nextRaceType) {
     let nextCircuitName;
     let nextCircuitTypeName;
@@ -761,10 +741,6 @@ export default function App() {
   useEffect(() => {
     getNextCircuitProperName (nextRace, nextRaceType)
   }, [nextRace, nextRaceType]);
-
-  useEffect(() => {
-    console.log(nextCircuitProperName)
-  }, [nextCircuitProperName]);
 
   // Update next race history
   useEffect(() => {
