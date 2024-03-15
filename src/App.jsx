@@ -665,6 +665,8 @@ export default function App() {
     }
   }, [currentSeasonRaceResults, previousSeasonRaceResults]);
 
+  //FETCH FOR PREVOUSSEASONRACERESULTS IS FIRING MULTIPLE TIMES - MAYBE THIS IS THE ISSUE!?
+
   
   useEffect(() => {
     console.log(lastFiveRaceResults)
@@ -808,13 +810,6 @@ export default function App() {
       const results = currentSeasonCircuitTypeMatches.slice(-5);
       setNextRaceTypeHistory(results);
     } else if (currentSeasonCircuitTypeMatches.length < 5) {
-        function getLastSeasonRaceResults() {
-          fetchPreviousSeasonRaceResults().then((results) =>
-            setPreviousSeasonRaceResults(results)
-          );
-        }
-        setTimeout(getLastSeasonRaceResults(), 1000);
-
         const previousSeasonTypeMatch = circuitTypes.find(
           (type) => type.circuitType === nextRaceType
         );
