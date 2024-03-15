@@ -665,9 +665,6 @@ export default function App() {
     }
   }, [currentSeasonRaceResults, previousSeasonRaceResults]);
 
-  //FETCH FOR PREVOUSSEASONRACERESULTS IS FIRING MULTIPLE TIMES - MAYBE THIS IS THE ISSUE!?
-
-  
   useEffect(() => {
     console.log(lastFiveRaceResults)
   }, [lastFiveRaceResults]);
