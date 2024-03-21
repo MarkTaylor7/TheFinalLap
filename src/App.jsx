@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, useRef } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
 import { MyContext } from './MyContext';
 
 import ResultsTable from "./ResultsTable";
