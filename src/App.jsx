@@ -936,7 +936,7 @@ export default function App() {
   }, [lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
 
   useEffect(() => {
-    if (lastFiveRaceResults != 0 && nextRaceHistory !=0 && nextRaceTypeHistory !=0) {
+    if (lastFiveRaceResults != 0 && nextRaceHistory != 0 && nextRaceTypeHistory != 0) {
      
       const driverData = [];
       /**
@@ -1026,9 +1026,9 @@ export default function App() {
               ]
             }
           };
-
+          
           for (let z = 0; z < lastFiveRaceResults.length; z++) {
-            for (let i = 0; i < lastFiveRaceResults[0].Results.length; i++) {
+            for (let i = 0; i < lastFiveRaceResults[z].Results.length; i++) {
               if (
                 lastFiveRaceResults[z].Results[i].Driver.driverId ===
                 driver.driverId
@@ -1040,7 +1040,7 @@ export default function App() {
           }
 
           for (let z = 0; z < nextRaceHistory.length; z++) {
-            for (let i = 0; i < nextRaceHistory[0].Results.length; i++) {
+            for (let i = 0; i < nextRaceHistory[z].Results.length; i++) {
               if (
                 nextRaceHistory[z].Results[i]?.Driver.driverId ===
                 driver.driverId
@@ -1052,7 +1052,7 @@ export default function App() {
           }
 
           for (let z = 0; z < nextRaceTypeHistory?.length; z++) {
-            for (let i = 0; i < nextRaceTypeHistory[0].Results.length; i++) {
+            for (let i = 0; i < nextRaceTypeHistory[z].Results.length; i++) {
               if (
                 nextRaceTypeHistory[z].Results[i].Driver.driverId ===
                 driver.driverId
@@ -1069,7 +1069,6 @@ export default function App() {
       mapNamesAndResultsToDrivers();
     };
 
-    
   }, [lastFiveRaceResults, names, nextRaceHistory, nextRaceTypeHistory]);
 
   useEffect (() => {
