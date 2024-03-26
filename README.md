@@ -40,7 +40,7 @@ Netflix's <i>Drive to Survive</i> does a phenomenal job of hooking new fans with
 
 # 🧗 Challenges
 <li>Learning to "think in React" was the biggest challenge to overcome. It was my first time using this technology and I had to master concepts like: state management, conditional rendering, component hierarchy, and hooks (useState, useEffect, useContext)</li>
-<li>This was my first experience integrating a API into a project, and I spent a lot of time getting comfortable with API calls, JSON, error- handling (try...catch statements).</li>
+<li>This was my first experience integrating a API into a project, and I spent a lot of time getting comfortable with API calls, JSON, error-handling (try...catch statements).</li>
 <li>The project involves a significant amount of data manipulation (at least for me), and this forced me to keep my code organized, take care with naming variables, and think through my goals.</li>
 <li>Looking back this project's development, I wish I had spent more time breaking down my code base into multiple components and organizing them thoughtfully. As the project is currently a single webpage with little-to-no need for component re-use, it may not have been strictly necessary. However I recognize that this is an important aspect of React development, and in my career it will often be standard practice. Additionally, it would have saved me time in the future when I add additional features to ths project.
 <li>I wanted to present a large amount of data in a clear and visually appealing way, and with minimal scrolling required by the user. Early in development I set a goal of "no horizontal scrolling". This was relatively easy to achieve in desktop viewports, but required some creativity for mobile. I'm pleased to say that this goal was achieved in all devices with screen-width > 330px.</li>
@@ -82,7 +82,7 @@ The same criteria applies to results that are below average, except shades of re
 DNF (Did Not Finish) results do not affect the driver's averages (black squares)<br/><br/>
 
 <b>Why are none of the race results for the current season colour-coded? All race finishes appear as "average", despite significant variation in race results.</b><br/><br/>
-To ensure a sufficent sample size of race results, drivers must complete at least five race finishes in a season before the rating system is applied. Until this occurs, all race non-win race finishes for that driver are coded as "average" (white squares). I may revise the number of races for this sample size in the future. Let me know if you think it should be lower or higher!<br/><br/>
+To ensure a sufficent sample size of race results, drivers must complete at least five race finishes in a season before the rating system is applied. Until this occurs, all non-win race finishes for that driver are coded as "average" (white squares). I may revise the number of races for this sample size in the future. Let me know if you think it should be lower or higher!<br/><br/>
 
 <b>What do the letters in the black squares indicate?</b><br/><br/>
 DNF (Did Not Finish) results fall into three categories, based on the cause of the DNF.<br/>
