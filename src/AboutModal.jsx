@@ -9,7 +9,6 @@ const AboutModal = ({ isOpen, onClose, content }) => {
       width: '90%',
       height: '90%',
       margin: 'auto',
-      alignContent: 'center',
       padding: '20px',
       border: '2px solid #87C75F',
       borderRadius: '8px',
