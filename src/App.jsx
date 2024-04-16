@@ -633,6 +633,8 @@ export default function App() {
   }, []);
 
   useEffect (() => {
+    console.log(standings);
+    console.log(currentSeasonRaceResults);
     const fullNames = standings.map(function (element) {
       return `${element.Driver.givenName} ${element.Driver.familyName}`;
     });
