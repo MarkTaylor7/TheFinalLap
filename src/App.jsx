@@ -1064,6 +1064,11 @@ export default function App() {
               }
             }
           }
+
+          for (let z = 0; z < currentSeasonRaceResults?.length; z++) {
+            //insert code here that matches each race result with driver based on driver Id and push to allCareerData
+          }
+
           driverData.push(driver);
         });
         setDriverTableData(driverData);
@@ -1075,13 +1080,15 @@ export default function App() {
 
   useEffect (() => {
     getDriverAverages(driverTableData, allCareerData)
-  }, [driverTableData]);
+  }, [driverTableData, allCareerData]);
 
   useEffect (() => {
+    console.log(driverTableData)
     matchAveragesWithTableResults(driverTableData, lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory);
   }, [driverTableData, lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
 
   useEffect (() => {
+    console.log(driverTableData)
     rateTableResults(driverTableData);
     setTableDataPopulated(true);
   }, [driverTableData]);
@@ -1298,6 +1305,7 @@ export default function App() {
   }
 
   useEffect(() => {
+    console.log(driverTableData); 
     setRacerData(
       driverTableData.map((driver) =>
         formatDataRow(
