@@ -155,36 +155,46 @@ export async function fetchNextTrackData(nextRace) {
     }
 }
 
-export function getDriverAverages(driverTableData, allCareerData) {
+export function getDriverAverages(driverTableData, allCareerData, currentSeasonRaceResults) {
   for (let n = 0; n < driverTableData.length; n++) {
     for (let y = 0; y < allCareerData.length; y++) {
       if (driverTableData[n].driverId == allCareerData[y].MRData.RaceTable.driverId) {
         driverTableData[n].allRaceResults = allCareerData[y].MRData.RaceTable.Races;
-          for (let i = 0; i < driverTableData[n].allRaceResults.length; i++) {
-            for (let z = 0; z < driverTableData[n].careerData.raceResultsBySeason.length; z++) {
-              if (driverTableData[n].allRaceResults[i].season == driverTableData[n].careerData.raceResultsBySeason[z].season) {
-                driverTableData[n].careerData.raceResultsBySeason[z].raceResults.push(driverTableData[n].allRaceResults[i].Results[0].positionText);
-                driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes = driverTableData[n].careerData.raceResultsBySeason[z].raceResults.filter(Number);
-                  let nums = driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes.map(function(str) {
-                    return parseInt(str)
-                  });
-              
-                  function calculateAverage(array) {
-                  let total = 0;
-                  let count = 0;
-                  array.forEach(function(item, index) {
-                    total += item;
-                    count++;
-              
-                  });
-                  return total/count;
-                  }
-                  driverTableData[n].careerData.raceResultsBySeason[z].meanRaceFinish = calculateAverage(nums);
-            
-              };
-            };  
+          for (let q = 0; q < currentSeasonRaceResults.length; q++) {
+            for (let u = 0; u < currentSeasonRaceResults[q].Results.length; u++) {
+              if (driverTableData[n].driverId == currentSeasonRaceResults[q].Results[u].Driver.driverId) {
+                driverTableData[n].currentSeasonRaces.push(currentSeasonRaceResults[q]);
+                  /*for (let c = 0; c < driverTableData[n].currentSeasonRaces.length; c++) {*/
+                    /*filter for matching driverid results*/                         
+                      for (let i = 0; i < driverTableData[n].allRaceResults.length; i++) {
+                        for (let z = 0; z < driverTableData[n].careerData.raceResultsBySeason.length; z++) {
+                          if (driverTableData[n].allRaceResults[i].season == driverTableData[n].careerData.raceResultsBySeason[z].season) {
+                            driverTableData[n].careerData.raceResultsBySeason[z].raceResults.push(driverTableData[n].allRaceResults[i].Results[0].positionText);
+                            driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes = driverTableData[n].careerData.raceResultsBySeason[z].raceResults.filter(Number);
+                              let nums = driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes.map(function(str) {
+                                return parseInt(str)
+                              });
+                          
+                              function calculateAverage(array) {
+                              let total = 0;
+                              let count = 0;
+                              array.forEach(function(item, index) {
+                                total += item;
+                                count++;
+                          
+                              });
+                              return total/count;
+                              }
+                              driverTableData[n].careerData.raceResultsBySeason[z].meanRaceFinish = calculateAverage(nums);
+                        
+                          };
+                        };  
+                      };
+                  
+              }; 
+            };
           };
-      };
+      };           
     }; 
   };
 };

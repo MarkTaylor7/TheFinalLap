@@ -963,6 +963,7 @@ export default function App() {
               nextRaceTypeResults: ["N/A", "N/A", "N/A", "N/A", "N/A"]
             },
             allRaceResults: [],
+            currentSeasonRaces: [],
             careerData: {
               raceResultsBySeason: [
                 {season: 2005,
@@ -1065,10 +1066,6 @@ export default function App() {
             }
           }
 
-          for (let z = 0; z < currentSeasonRaceResults?.length; z++) {
-            //insert code here that matches each race result with driver based on driver Id and push to allCareerData
-          }
-
           driverData.push(driver);
         });
         setDriverTableData(driverData);
@@ -1079,7 +1076,7 @@ export default function App() {
   }, [lastFiveRaceResults, names, nextRaceHistory, nextRaceTypeHistory]);
 
   useEffect (() => {
-    getDriverAverages(driverTableData, allCareerData)
+    getDriverAverages(driverTableData, allCareerData, currentSeasonRaceResults)
   }, [driverTableData, allCareerData]);
 
   useEffect (() => {
