@@ -20,6 +20,8 @@ import {
   fetchEventList,
   fetchNextTrackData,
   fetchPreviousSeasonRaceResults,
+  getHistResults,
+  getCurrentResults,
   getDriverAverages,
   matchAveragesWithTableResults,
   rateTableResults,
@@ -964,6 +966,7 @@ export default function App() {
             },
             allRaceResults: [],
             currentSeasonRaces: [],
+            currentSeasonRacesFiltered: [],
             careerData: {
               raceResultsBySeason: [
                 {season: 2005,
@@ -1076,8 +1079,16 @@ export default function App() {
   }, [lastFiveRaceResults, names, nextRaceHistory, nextRaceTypeHistory]);
 
   useEffect (() => {
-    getDriverAverages(driverTableData, allCareerData, currentSeasonRaceResults)
+    getHistResults(driverTableData, allCareerData)
   }, [driverTableData, allCareerData]);
+
+  useEffect (() => {
+    getCurrentResults(driverTableData, currentSeasonRaceResults)
+  }, [driverTableData, currentSeasonRaceResults]);
+
+  useEffect (() => {
+    getDriverAverages(driverTableData)
+  }, [driverTableData]);
 
   useEffect (() => {
     console.log(driverTableData)

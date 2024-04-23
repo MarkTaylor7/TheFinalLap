@@ -155,7 +155,58 @@ export async function fetchNextTrackData(nextRace) {
     }
 }
 
-export function getDriverAverages(driverTableData, allCareerData, currentSeasonRaceResults) {
+export function getHistResults (driverTableData, allCareerData) {
+  for (let i = 0; i < driverTableData.length; i++) {
+    for (let x = 0; x < allCareerData.length; x++) {
+      if (driverTableData[i].driverId == allCareerData[x].MRData.RaceTable.driverId) {
+        driverTableData[i].allRaceResults = allCareerData[x].MRData.RaceTable.Races;
+      };
+    }
+  };
+}
+
+export function getCurrentResults (driverTableData, currentSeasonRaceResults) {
+  for (let z = 0; z < driverTableData.length; z++) {
+    for (let i = 0; i < currentSeasonRaceResults.length; i++) {
+      for (let x = 0; x < currentSeasonRaceResults[i].Results.length; x++) {
+        if (driverTableData[z].driverId == currentSeasonRaceResults[i].Results[x].Driver.driverId) {
+          driverTableData[z].currentSeasonRaces.push(currentSeasonRaceResults[i]);
+        };
+      };
+    };
+  };
+}
+
+export function getDriverAverages(driverTableData) {
+  for (let z = 0; z < driverTableData.length; z++) {
+    for (let i = 0; i < driverTableData[z].allRaceResults.length; i++) {
+      for (let x = 0; x < driverTableData[z].careerData.raceResultsBySeason.length; x++) {
+        if (driverTableData[z].allRaceResults[i].season == driverTableData[z].careerData.raceResultsBySeason[x].season) {
+          driverTableData[z].careerData.raceResultsBySeason[x].raceResults.push(driverTableData[z].allRaceResults[i].Results[0].positionText);
+          driverTableData[z].careerData.raceResultsBySeason[x].raceFinishes = driverTableData[z].careerData.raceResultsBySeason[x].raceResults.filter(Number);
+            let nums = driverTableData[z].careerData.raceResultsBySeason[x].raceFinishes.map(function(str) {
+              return parseInt(str)
+            });
+        
+            function calculateAverage(array) {
+            let total = 0;
+            let count = 0;
+            array.forEach(function(item, index) {
+              total += item;
+              count++;
+        
+            });
+            return total/count;
+            }
+            driverTableData[z].careerData.raceResultsBySeason[x].meanRaceFinish = calculateAverage(nums);
+      
+        };
+      };  
+    };
+  };
+}
+
+/*export function getDriverAverages(driverTableData, allCareerData, currentSeasonRaceResults) {
   for (let n = 0; n < driverTableData.length; n++) {
     for (let y = 0; y < allCareerData.length; y++) {
       if (driverTableData[n].driverId == allCareerData[y].MRData.RaceTable.driverId) {
@@ -164,40 +215,44 @@ export function getDriverAverages(driverTableData, allCareerData, currentSeasonR
             for (let u = 0; u < currentSeasonRaceResults[q].Results.length; u++) {
               if (driverTableData[n].driverId == currentSeasonRaceResults[q].Results[u].Driver.driverId) {
                 driverTableData[n].currentSeasonRaces.push(currentSeasonRaceResults[q]);
-                  /*for (let c = 0; c < driverTableData[n].currentSeasonRaces.length; c++) {*/
-                    /*filter for matching driverid results*/                         
-                      for (let i = 0; i < driverTableData[n].allRaceResults.length; i++) {
-                        for (let z = 0; z < driverTableData[n].careerData.raceResultsBySeason.length; z++) {
-                          if (driverTableData[n].allRaceResults[i].season == driverTableData[n].careerData.raceResultsBySeason[z].season) {
-                            driverTableData[n].careerData.raceResultsBySeason[z].raceResults.push(driverTableData[n].allRaceResults[i].Results[0].positionText);
-                            driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes = driverTableData[n].careerData.raceResultsBySeason[z].raceResults.filter(Number);
-                              let nums = driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes.map(function(str) {
-                                return parseInt(str)
-                              });
-                          
-                              function calculateAverage(array) {
-                              let total = 0;
-                              let count = 0;
-                              array.forEach(function(item, index) {
-                                total += item;
-                                count++;
-                          
-                              });
-                              return total/count;
-                              }
-                              driverTableData[n].careerData.raceResultsBySeason[z].meanRaceFinish = calculateAverage(nums);
-                        
+                  for (let c = 0; c < driverTableData[n].currentSeasonRaces.length; c++) {
+                    for (let d = 0; d < driverTableData[n].currentSeasonRaces[c].Results.length; d++) {
+                      if (driverTableData[n].driverId != driverTableData[n].currentSeasonRaces[c].Results[d].Driver.driverId) {
+                        driverTableData[n].currentSeasonRaces[c].Results.slice(driverTableData[n].currentSeasonRaces[c].Results[d]);
+                          for (let i = 0; i < driverTableData[n].allRaceResults.length; i++) {
+                            for (let z = 0; z < driverTableData[n].careerData.raceResultsBySeason.length; z++) {
+                              if (driverTableData[n].allRaceResults[i].season == driverTableData[n].careerData.raceResultsBySeason[z].season) {
+                                driverTableData[n].careerData.raceResultsBySeason[z].raceResults.push(driverTableData[n].allRaceResults[i].Results[0].positionText);
+                                driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes = driverTableData[n].careerData.raceResultsBySeason[z].raceResults.filter(Number);
+                                  let nums = driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes.map(function(str) {
+                                    return parseInt(str)
+                                  });
+                              
+                                  function calculateAverage(array) {
+                                  let total = 0;
+                                  let count = 0;
+                                  array.forEach(function(item, index) {
+                                    total += item;
+                                    count++;
+                              
+                                  });
+                                  return total/count;
+                                  }
+                                  driverTableData[n].careerData.raceResultsBySeason[z].meanRaceFinish = calculateAverage(nums);
+                            
+                              };
+                            };  
                           };
-                        };  
-                      };
-                  
-              }; 
+                        
+                      
+                   
+                }; 
             };
           };
       };           
     }; 
   };
-};
+};*/
 
 export function matchAveragesWithTableResults(driverTableData, lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory) {
   for (let x = 0; x < driverTableData.length; x++) {
