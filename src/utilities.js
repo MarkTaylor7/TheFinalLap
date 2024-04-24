@@ -171,8 +171,28 @@ export function getCurrentResults (driverTableData, currentSeasonRaceResults) {
       for (let x = 0; x < currentSeasonRaceResults[i].Results.length; x++) {
         if (driverTableData[z].driverId == currentSeasonRaceResults[i].Results[x].Driver.driverId) {
           driverTableData[z].currentSeasonRaces.push(currentSeasonRaceResults[i]);
+          //Look here for bug. Max's results already appear to have populated before next function is triggered
         };
+          
       };
+    };
+  };
+}
+
+export function filterCurrentResults (driverTableData) {
+  console.log(driverTableData);
+  for (let z = 0; z < driverTableData.length; z++) {
+    console.log(`Iterating index ${z}:`, driverTableData[z]);
+    for (let x = 0; x < driverTableData[z].currentSeasonRaces.length; x++) {  
+      let indexOfMatch = driverTableData[z].currentSeasonRaces[x].Results.findIndex(result => result.Driver.driverId == driverTableData[z].driverId);
+      console.log(indexOfMatch)
+      
+        let [removedElement] = driverTableData[z].currentSeasonRaces[x].Results.splice(indexOfMatch, 1);
+        console.log(removedElement);
+        driverTableData[z].currentSeasonRaces[x].Results = [removedElement];
+        console.log(driverTableData[z].currentSeasonRaces[x].Results);
+        driverTableData[z].allRaceResults.push(driverTableData[z].currentSeasonRaces[x]);
+      
     };
   };
 }
