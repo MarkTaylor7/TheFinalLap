@@ -107,7 +107,6 @@ export async function fetchEventList() {
 (typically the last 5 years, with some exceptions due to COVID)*/
 export async function fetchNextTrackData(nextRace) {
   let url;
-  
   switch (nextRace) {
     case "monaco":
     case "monza":
@@ -171,30 +170,23 @@ export function getCurrentResults (driverTableData, currentSeasonRaceResults) {
       for (let x = 0; x < currentSeasonRaceResults[i].Results.length; x++) {
         if (driverTableData[z].driverId == currentSeasonRaceResults[i].Results[x].Driver.driverId) {
           driverTableData[z].currentSeasonRaces.push(currentSeasonRaceResults[i]);
-          //Look here for bug. Max's results already appear to have populated before next function is triggered
-        };
-          
+        };  
       };
     };
   };
 }
 
-export function filterCurrentResults (driverTableData) {
-  console.log(driverTableData);
-  for (let z = 0; z < driverTableData.length; z++) {
-    console.log(`Iterating index ${z}:`, driverTableData[z]);
-    for (let x = 0; x < driverTableData[z].currentSeasonRaces.length; x++) {  
-      let indexOfMatch = driverTableData[z].currentSeasonRaces[x].Results.findIndex(result => result.Driver.driverId == driverTableData[z].driverId);
-      console.log(indexOfMatch)
-      
-        let [removedElement] = driverTableData[z].currentSeasonRaces[x].Results.splice(indexOfMatch, 1);
-        console.log(removedElement);
-        driverTableData[z].currentSeasonRaces[x].Results = [removedElement];
-        console.log(driverTableData[z].currentSeasonRaces[x].Results);
-        driverTableData[z].allRaceResults.push(driverTableData[z].currentSeasonRaces[x]);
-      
-    };
-  };
+export function extractAndIsolateDriverResults(driverTableData) {
+  driverTableData.forEach(driver => {
+    driver.allRaceResults = driver.allRaceResults || [];
+      driver.currentSeasonRaces.forEach(race => {
+        const indexOfMatch = race.Results.findIndex(result => result.Driver.driverId === driver.driverId);
+          if (indexOfMatch !== -1) {
+            const isolatedResult = {...race, Results: [race.Results[indexOfMatch]]};
+            driver.allRaceResults.push(isolatedResult);
+          }
+      });
+  });
 }
 
 export function getDriverAverages(driverTableData) {
@@ -225,54 +217,6 @@ export function getDriverAverages(driverTableData) {
     };
   };
 }
-
-/*export function getDriverAverages(driverTableData, allCareerData, currentSeasonRaceResults) {
-  for (let n = 0; n < driverTableData.length; n++) {
-    for (let y = 0; y < allCareerData.length; y++) {
-      if (driverTableData[n].driverId == allCareerData[y].MRData.RaceTable.driverId) {
-        driverTableData[n].allRaceResults = allCareerData[y].MRData.RaceTable.Races;
-          for (let q = 0; q < currentSeasonRaceResults.length; q++) {
-            for (let u = 0; u < currentSeasonRaceResults[q].Results.length; u++) {
-              if (driverTableData[n].driverId == currentSeasonRaceResults[q].Results[u].Driver.driverId) {
-                driverTableData[n].currentSeasonRaces.push(currentSeasonRaceResults[q]);
-                  for (let c = 0; c < driverTableData[n].currentSeasonRaces.length; c++) {
-                    for (let d = 0; d < driverTableData[n].currentSeasonRaces[c].Results.length; d++) {
-                      if (driverTableData[n].driverId != driverTableData[n].currentSeasonRaces[c].Results[d].Driver.driverId) {
-                        driverTableData[n].currentSeasonRaces[c].Results.slice(driverTableData[n].currentSeasonRaces[c].Results[d]);
-                          for (let i = 0; i < driverTableData[n].allRaceResults.length; i++) {
-                            for (let z = 0; z < driverTableData[n].careerData.raceResultsBySeason.length; z++) {
-                              if (driverTableData[n].allRaceResults[i].season == driverTableData[n].careerData.raceResultsBySeason[z].season) {
-                                driverTableData[n].careerData.raceResultsBySeason[z].raceResults.push(driverTableData[n].allRaceResults[i].Results[0].positionText);
-                                driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes = driverTableData[n].careerData.raceResultsBySeason[z].raceResults.filter(Number);
-                                  let nums = driverTableData[n].careerData.raceResultsBySeason[z].raceFinishes.map(function(str) {
-                                    return parseInt(str)
-                                  });
-                              
-                                  function calculateAverage(array) {
-                                  let total = 0;
-                                  let count = 0;
-                                  array.forEach(function(item, index) {
-                                    total += item;
-                                    count++;
-                              
-                                  });
-                                  return total/count;
-                                  }
-                                  driverTableData[n].careerData.raceResultsBySeason[z].meanRaceFinish = calculateAverage(nums);
-                            
-                              };
-                            };  
-                          };
-                        
-                      
-                   
-                }; 
-            };
-          };
-      };           
-    }; 
-  };
-};*/
 
 export function matchAveragesWithTableResults(driverTableData, lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory) {
   for (let x = 0; x < driverTableData.length; x++) {

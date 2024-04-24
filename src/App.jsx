@@ -22,7 +22,7 @@ import {
   fetchPreviousSeasonRaceResults,
   getHistResults,
   getCurrentResults,
-  filterCurrentResults,
+  extractAndIsolateDriverResults,
   getDriverAverages,
   matchAveragesWithTableResults,
   rateTableResults,
@@ -636,8 +636,6 @@ export default function App() {
   }, []);
 
   useEffect (() => {
-    console.log(standings);
-    console.log(currentSeasonRaceResults);
     const fullNames = standings.map(function (element) {
       return `${element.Driver.givenName} ${element.Driver.familyName}`;
     });
@@ -1088,8 +1086,7 @@ export default function App() {
   }, [driverTableData, currentSeasonRaceResults]);
 
   useEffect (() => {
-    console.log(driverTableData);
-    filterCurrentResults(driverTableData);
+    extractAndIsolateDriverResults(driverTableData);
   }, [driverTableData, currentSeasonRaceResults]);
 
   useEffect (() => {
@@ -1097,12 +1094,10 @@ export default function App() {
   }, [driverTableData]);
 
   useEffect (() => {
-    console.log(driverTableData)
     matchAveragesWithTableResults(driverTableData, lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory);
   }, [driverTableData, lastFiveRaceResults, nextRaceHistory, nextRaceTypeHistory]);
 
   useEffect (() => {
-    console.log(driverTableData)
     rateTableResults(driverTableData);
     setTableDataPopulated(true);
   }, [driverTableData]);
