@@ -179,13 +179,17 @@ export function getCurrentResults (driverTableData, currentSeasonRaceResults) {
 export function extractAndIsolateDriverResults(driverTableData) {
   driverTableData.forEach(driver => {
     driver.allRaceResults = driver.allRaceResults || [];
-      driver.currentSeasonRaces.forEach(race => {
-        const indexOfMatch = race.Results.findIndex(result => result.Driver.driverId === driver.driverId);
-          if (indexOfMatch !== -1) {
-            const isolatedResult = {...race, Results: [race.Results[indexOfMatch]]};
-            driver.allRaceResults.push(isolatedResult);
-          }
-      });
+        driver.currentSeasonRaces.forEach(race => {
+          const indexOfMatch = race.Results.findIndex(result => result.Driver.driverId === driver.driverId);
+            if (indexOfMatch !== -1) {
+              const isolatedResult = {...race, Results: [race.Results[indexOfMatch]]};
+              let currentSeason = "2024";
+              let racesParticipated = driver.currentSeasonRaces.length;
+              if (driver.allRaceResults.filter(result => result.season === currentSeason).length < racesParticipated) {
+                driver.allRaceResults.push(isolatedResult);
+              };
+            };
+        });
   });
 }
 

@@ -1087,7 +1087,7 @@ export default function App() {
 
   useEffect (() => {
     extractAndIsolateDriverResults(driverTableData);
-  }, [driverTableData, currentSeasonRaceResults]);
+  }, [driverTableData]);
 
   useEffect (() => {
     getDriverAverages(driverTableData);
