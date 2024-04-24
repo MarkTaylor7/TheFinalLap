@@ -5,3 +5,4 @@ In mapNamesAndResultsToDrivers(), add the new season to careerData.raceResultsBy
 
 utilities.jsx
 Adjust url in fetchPreviousSeasonRaceResults so that it fetches 2023 race results - DONE
+Update currentSeason in extractAndIsolateDriverResults() to current year - DONE
