@@ -428,7 +428,7 @@ export function getBackgroundColor(data3) {
       break;
     case "Alexander Albon":
     case "Logan Sargeant":
-    case "Franco Colapinto":
+    case "Franco Colapinto ":
       color = "#65c0f8";
       break;
     case "Yuki Tsunoda":
